@@ -11,10 +11,11 @@ public class City {
     public City() {
     }
 
-    public City(String name, String code, Department department) {
+    public City(Long id,String name, String code, Department department) {
         DataValidator.validateNull(name, THE_NAME_IS_REQUIRED);
         DataValidator.validateNull(code, THE_CODE_IS_REQUIRED);
 
+        this.id = id;
         this.name = name;
         this.code = code;
         this.department = department;

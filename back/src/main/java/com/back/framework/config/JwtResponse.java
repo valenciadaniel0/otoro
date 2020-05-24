@@ -1,6 +1,7 @@
 package com.back.framework.config;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class JwtResponse implements Serializable {
 
@@ -10,13 +11,15 @@ public class JwtResponse implements Serializable {
     private final String email;
     private final int active;
     private final String deviceToken;
+    private final List<String> roles;
 
-    public JwtResponse(String jwttoken, String name, String email, int active, String deviceToken) {
+    public JwtResponse(String jwttoken, String name, String email, int active, String deviceToken, List<String> roles) {
         this.jwttoken = jwttoken;
         this.name = name;
         this.email = email;
         this.active = active;
         this.deviceToken = deviceToken;
+        this.roles = roles;
     }
 
     public String getToken() {
@@ -37,5 +40,9 @@ public class JwtResponse implements Serializable {
 
     public String getDeviceToken() {
         return this.deviceToken;
+    }
+
+    public List<String> getRoles() {
+        return this.roles;
     }
 }

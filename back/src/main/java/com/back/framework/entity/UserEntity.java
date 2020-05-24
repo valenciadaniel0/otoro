@@ -41,7 +41,7 @@ public class UserEntity {
     @Column(name = "active", nullable = false)
     private Integer active;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "city_id")
     @JsonIgnore
     private CityEntity city;

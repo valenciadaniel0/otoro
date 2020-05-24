@@ -11,9 +11,10 @@ public class Department {
     public Department() {
     }
 
-    public Department(String code, String name) {
+    public Department(Long id,String code, String name) {
         DataValidator.validateNull(code, THE_CODE_IS_REQUIRED);
         DataValidator.validateNull(name, THE_NAME_IS_REQUIRED);
+        this.id = id;
         this.code = code;
         this.name = name;
     }
