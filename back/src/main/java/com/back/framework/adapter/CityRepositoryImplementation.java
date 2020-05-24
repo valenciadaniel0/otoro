@@ -1,5 +1,6 @@
 package com.back.framework.adapter;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,8 +30,7 @@ public class CityRepositoryImplementation implements CityRepository {
 
     @Override
     public List<City> findAll() {
-        List<CityEntity> cityEntities = this.cityDBRepository.findAll();        
-
+        List<CityEntity> cityEntities = this.cityDBRepository.findAll();                
         for (CityEntity cityEntity : cityEntities) {
             System.out.println(cityEntity.getName());
         }

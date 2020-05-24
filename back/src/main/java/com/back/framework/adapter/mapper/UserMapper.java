@@ -3,15 +3,16 @@ package com.back.framework.adapter.mapper;
 import com.back.domain.model.User;
 import com.back.framework.entity.UserEntity;
 
+import org.modelmapper.ModelMapper;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class UserMapper {
 
     public static UserEntity modelToEntity(User user) {
-        return new UserEntity(user.getId(), user.getUsername(), user.getEmail(), user.getPassword(),
-                user.getDeviceToken(), user.getName(), user.getActive(), CityMapper.modelToEntity(user.getCity()),
-                RoleMapper.modelsListToEntitiesList(user.getRoles()));
+        ModelMapper modelMapper = new ModelMapper();
+        return modelMapper.map(user, UserEntity.class);
     }
 
     public static List<UserEntity> modelsListToEntitiesList(List<User> users) {

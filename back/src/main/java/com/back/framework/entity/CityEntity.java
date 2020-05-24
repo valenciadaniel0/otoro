@@ -26,17 +26,7 @@ public class CityEntity {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "department_id", nullable = false)
     @JsonIgnore
-    private DepartmentEntity department;
-
-    public CityEntity() {
-    }
-
-    public CityEntity(Long id, String name, String code, DepartmentEntity department) {
-        this.id = id;
-        this.name = name;
-        this.code = code;
-        this.department = department;
-    }
+    private DepartmentEntity department;    
 
     public Long getId() {
         return this.id;
@@ -60,5 +50,13 @@ public class CityEntity {
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public DepartmentEntity getDepartment() {
+        return this.department;
+    }
+
+    public void setDepartment(DepartmentEntity department) {
+        this.department = department;
     }
 }

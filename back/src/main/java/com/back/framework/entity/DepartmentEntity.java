@@ -16,16 +16,7 @@ public class DepartmentEntity {
     private String name;
 
     @Column(name = "code", nullable = false, unique = true)
-    private String code;
-
-    public DepartmentEntity() {
-    }
-
-    public DepartmentEntity(Long id, String name, String code) {
-        this.id = id;
-        this.name = name;
-        this.code = code;
-    }
+    private String code;      
 
     public Long getId() {
         return this.id;
@@ -49,5 +40,5 @@ public class DepartmentEntity {
 
     public void setCode(String code) {
         this.code = code;
-    }
+    }    
 }

@@ -55,8 +55,7 @@ public class UserController {
         User user = this.getUserByEmailHandler.run(userCommand.getEmail());
         final String token = jwtTokenUtil.generateToken(userDetails);
         List<String> roles = new ArrayList<>();
-        for (Role role : user.getRoles()) {
-            System.out.println(role.getName());
+        for (Role role : user.getRoles()) {            
             roles.add(role.getName());
         }
 

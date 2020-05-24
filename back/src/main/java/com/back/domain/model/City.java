@@ -11,7 +11,7 @@ public class City {
     public City() {
     }
 
-    public City(Long id,String name, String code, Department department) {
+    public City(Long id, String name, String code, Department department) {
         DataValidator.validateNull(name, THE_NAME_IS_REQUIRED);
         DataValidator.validateNull(code, THE_CODE_IS_REQUIRED);
 
@@ -25,15 +25,31 @@ public class City {
         return this.id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getName() {
         return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getCode() {
         return this.code;
     }
 
+    public void setCode(String code) {
+        this.code = code;
+    }
+
     public Department getDepartment() {
         return this.department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 }
