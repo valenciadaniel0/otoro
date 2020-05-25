@@ -1,7 +1,7 @@
 import React from "react";
 import { compose } from "redux";
 import { Field, reduxForm } from "redux-form";
-import { Form, FormGroup } from "react-bootstrap";
+import { Form, FormGroup, ButtonGroup } from "react-bootstrap";
 import PrimaryButton from "../buttons/primaryButton";
 
 class LoginForm extends React.Component {
@@ -40,7 +40,7 @@ class LoginForm extends React.Component {
       <Form
         onSubmit={this.props.handleSubmit(this.onSubmit)}
         className="ui form error"
-        style={{ "marginTop": "5%" }}
+        style={{ marginTop: "5%" }}
       >
         <FormGroup className="form-group">
           <Field
@@ -59,7 +59,9 @@ class LoginForm extends React.Component {
             label="Contraseña"
           />
         </FormGroup>
-        <PrimaryButton text="Ingresar" isSubmit={true} />
+        <ButtonGroup>
+          <PrimaryButton text="Ingresar" isSubmit={true} />
+        </ButtonGroup>
       </Form>
     );
   }

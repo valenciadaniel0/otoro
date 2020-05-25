@@ -21,5 +21,6 @@ export const signIn = (formValues) => async (dispatch) => {
     type: SIGN_IN,
     payload: response.data,
   });
-  history.push("/admin");
+  console.log(response);
+  //history.push("/admin");
 };
