@@ -1,7 +1,5 @@
 {
   "name": "front",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "react"
+  "integrations": {},
+  "type": "angular"
 }

@@ -1,0 +1,23 @@
+<ion-content>
+  <div id="container">
+    <form [formGroup]="myForm">
+      <div class="form-group">
+        <label class="bold">Correo electrónico</label>
+        <input type="text" class="form-control" formControlName="email" />
+        <span *ngIf="controlHasError('email', 'required')">
+          <strong class="error">Campo requerido</strong>
+        </span>
+      </div>
+      <div class="form-group">
+        <label class="bold">Contraseña</label>
+        <input type="password" class="form-control" formControlName="password" />
+        <span *ngIf="controlHasError('password', 'required')">
+          <strong class="error">Campo requerido</strong>
+        </span>
+      </div>
+      <button class="btn btn-primary" (click)="login()">
+        Ingresar
+      </button>
+    </form>
+  </div>
+</ion-content>

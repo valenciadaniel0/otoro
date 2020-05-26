@@ -3,9 +3,13 @@ package com.back.framework.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import com.back.application.handler.command.UserCommand;
 import com.back.application.handler.users.CreateUserHandler;
 import com.back.application.handler.users.GetUserByEmailHandler;
+import org.springframework.security.core.context.SecurityContextHolder;
 import com.back.domain.model.Role;
 import com.back.domain.model.User;
 import com.back.framework.adapter.UserRepositoryImplementation;
@@ -18,7 +22,9 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -71,6 +77,14 @@ public class UserController {
     @GetMapping("/get-by-email")
     public User getUserByEmail(@RequestBody UserCommand userCommand) {
         return this.getUserByEmailHandler.run(userCommand.getEmail());
+    }
+
+    @GetMapping(value = "/logout")
+    public void logout(HttpServletRequest request, HttpServletResponse response) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth != null) {            
+            new SecurityContextLogoutHandler().logout(request, response, auth);
+        }        
     }
 
     private void authenticate(String username, String password) throws Exception {
