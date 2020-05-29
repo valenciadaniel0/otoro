@@ -19,7 +19,7 @@ public class RoleEntity {
     private String name;
 
     @ManyToMany(mappedBy = "roles")
-    List<UserEntity> users;    
+    private List<UserEntity> users;    
 
     public Long getId() {
         return this.id;

@@ -1,23 +1,62 @@
 <ion-content>
   <div id="container">
-    <form [formGroup]="myForm">
-      <div class="form-group">
-        <label class="bold">Correo electrónico</label>
-        <input type="text" class="form-control" formControlName="email" />
-        <span *ngIf="controlHasError('email', 'required')">
-          <strong class="error">Campo requerido</strong>
-        </span>
-      </div>
-      <div class="form-group">
-        <label class="bold">Contraseña</label>
-        <input type="password" class="form-control" formControlName="password" />
-        <span *ngIf="controlHasError('password', 'required')">
-          <strong class="error">Campo requerido</strong>
-        </span>
-      </div>
-      <button class="btn btn-primary" (click)="login()">
-        Ingresar
-      </button>
-    </form>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="ion-align-self-center" col-8 offset="2">
+          <img src="../../../assets/logo/otoro.png" width="70%" height="auto" />
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <h4 class="no-margin-bottom">Iniciar sesi&oacute;n</h4>
+          <small>Es genial verte de nuevo</small>
+        </ion-col>
+      </ion-row>
+      <ion-row id="form-container">
+        <ion-col col-12>
+          <form [formGroup]="myForm">
+            <div class="form-group">
+              <label class="bold">Correo electrónico</label>
+              <input
+                type="text"
+                class="form-control width-100"
+                formControlName="email"
+              />
+              <span *ngIf="controlHasError('email', 'required')">
+                <strong class="error">Campo requerido</strong>
+              </span>
+            </div>
+            <div class="form-group">
+              <label class="bold">Contraseña</label>
+              <input
+                type="password"
+                class="form-control width-100"
+                formControlName="password"
+              />
+              <span *ngIf="controlHasError('password', 'required')">
+                <strong class="error">Campo requerido</strong>
+              </span>
+            </div>
+            <div class="display-flex" id="btn-container">
+              <ion-button
+                color="primary"
+                (click)="login()"
+                class="margin-center"
+              >
+                Ingresar
+              </ion-button>
+            </div>
+          </form>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6>
+          <small>Olvid&eacute; mi contrase&ntilde;a</small>
+        </ion-col>
+        <ion-col col-6 class="align-text-right">
+          <small>Registrarme</small>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 </ion-content>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 import { RestService } from "../../core/services/rest.service";
 import { LoginService } from "./login.service";
 
@@ -10,12 +11,17 @@ import { LoginService } from "./login.service";
 })
 export class FormPage implements OnInit {
   public myForm: FormGroup;
+  public imageUrl: string;
+  public imageId: string;
   constructor(
     private restService: RestService,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private router: Router
   ) {}
 
   ngOnInit() {
+    this.imageUrl = "../../assets/logo/otoro-logo.png";
+    this.imageId = "top-image";
     this.myForm = new FormGroup({
       email: new FormControl("email", [Validators.required]),
       password: new FormControl("password", [Validators.required]),
@@ -56,12 +62,12 @@ export class FormPage implements OnInit {
       .toPromise()
       .then(
         (res) => {
-          const result = res;
-          console.log(result);
+          const result = res.json();
+          this.router.navigate(["/dashboard"]);
         },
-        (err) => {          
+        (err) => {
           let error = JSON.parse(err._body);
-          console.log(error);        
+          console.log(error);
         }
       );
   }
