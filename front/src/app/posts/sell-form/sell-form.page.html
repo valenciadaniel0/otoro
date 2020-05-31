@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>sell-form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  sell
+</ion-content>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button
+      class="inactive"
+      (click)="goToShippingForm()"
+    >
+      <ion-icon name="send"></ion-icon>
+      <ion-label>Envio</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button
+      tab="speakers"
+      class="active"
+    >
+      <ion-icon name="pricetag"></ion-icon>
+      <ion-label>Venta</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { TopContentComponent } from './top-content.component';
+import { SellFormPage } from './sell-form.page';
 
-describe('TopContentComponent', () => {
-  let component: TopContentComponent;
-  let fixture: ComponentFixture<TopContentComponent>;
+describe('SellFormPage', () => {
+  let component: SellFormPage;
+  let fixture: ComponentFixture<SellFormPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TopContentComponent ],
+      declarations: [ SellFormPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(TopContentComponent);
+    fixture = TestBed.createComponent(SellFormPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

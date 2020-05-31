@@ -13,8 +13,7 @@ export class FormPage implements OnInit {
   public myForm: FormGroup;
   public imageUrl: string;
   public imageId: string;
-  constructor(
-    private restService: RestService,
+  constructor(    
     private loginService: LoginService,
     private router: Router
   ) {}

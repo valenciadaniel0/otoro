@@ -28,7 +28,12 @@
 .align-text-right {
   text-align: end;
 }
-
+.black-text {
+  color: #000000;
+}
+.centered-text {
+  text-align: center;
+}
 .display-flex {
   display: flex;
 }

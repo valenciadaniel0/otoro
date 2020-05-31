@@ -6,7 +6,6 @@ import { LoginRoutingModule } from "./login-routing.module";
 import { SharedModule } from "../shared/shared.module";
 import { IonicModule } from "@ionic/angular";
 import { FormPage } from "./form/form.page";
-import { TopContentComponent } from './top-content/top-content.component';
 import { DashboardPageModule } from '../dashboard/dashboard.module';
 
 @NgModule({
@@ -20,6 +19,6 @@ import { DashboardPageModule } from '../dashboard/dashboard.module';
     SharedModule,
     DashboardPageModule
   ],
-  declarations: [FormPage,TopContentComponent],
+  declarations: [FormPage],
 })
 export class LoginModule {}
