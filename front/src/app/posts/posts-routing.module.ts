@@ -14,7 +14,8 @@ const routes: Routes = [
     path: "create-sell",
     loadChildren: () =>
       import("./sell-form/sell-form.module").then((m) => m.SellFormPageModule),
-  },
+  }
+
 ];
 
 @NgModule({

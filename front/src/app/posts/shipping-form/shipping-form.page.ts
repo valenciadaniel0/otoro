@@ -9,22 +9,26 @@ import { Router } from "@angular/router";
   styleUrls: ["./shipping-form.page.scss"],
 })
 export class ShippingFormPage implements OnInit {
-  public shippingForm: FormGroup;  
-  public activeTab:number;
-  constructor(private postService: PostService, private router: Router) {}
+  public shippingForm: FormGroup;
+  public activeTab: number;
 
-  ngOnInit() {    
+  constructor(
+    private postService: PostService,
+    private router: Router
+  ) {}
+
+  ngOnInit() {
     this.activeTab = 1;
 
     this.shippingForm = new FormGroup({
       title: new FormControl("title", [Validators.required]),
       description: new FormControl("description", [Validators.required]),
-      date: new FormControl("date", [Validators.required]),
+      date: new FormControl("date", [Validators.required])      
     });
 
     this.shippingForm.controls["title"].setValue(null);
     this.shippingForm.controls["description"].setValue(null);
-    this.shippingForm.controls["date"].setValue(null);
+    this.shippingForm.controls["date"].setValue(null);    
   }
 
   saveShipping() {
@@ -39,7 +43,7 @@ export class ShippingFormPage implements OnInit {
     const body = {
       title: controls["title"].value,
       description: controls["description"].value,
-      date: controls["date"].value,
+      date: controls["date"].value,      
     };
 
     this.postService
