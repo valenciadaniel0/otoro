@@ -13,10 +13,7 @@ export class FormPage implements OnInit {
   public myForm: FormGroup;
   public imageUrl: string;
   public imageId: string;
-  constructor(    
-    private loginService: LoginService,
-    private router: Router
-  ) {}
+  constructor(private loginService: LoginService, private router: Router) {}
 
   ngOnInit() {
     this.imageUrl = "../../assets/logo/otoro-logo.png";
@@ -60,11 +57,12 @@ export class FormPage implements OnInit {
       .run(body)
       .toPromise()
       .then(
-        (res) => {
-          const result = res.json();
+        (res) => {          
+          //const result = res.json();
           this.router.navigate(["/dashboard"]);
         },
-        (err) => {
+        (err) => { 
+          console.log(err);         
           let error = JSON.parse(err._body);
           console.log(error);
         }

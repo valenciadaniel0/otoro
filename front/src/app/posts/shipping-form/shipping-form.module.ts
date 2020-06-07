@@ -8,14 +8,16 @@ import { ShippingFormPageRoutingModule } from "./shipping-form-routing.module";
 
 import { ShippingFormPage } from "./shipping-form.page";
 
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    ShippingFormPageRoutingModule,
+    ShippingFormPageRoutingModule,     
   ],
   declarations: [ShippingFormPage],
+  exports:[AngularCropperjsModule]
 })
 export class ShippingFormPageModule {}

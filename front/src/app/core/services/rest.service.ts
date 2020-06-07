@@ -1,19 +1,26 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 import { environment } from "../../../environments/environment";
 import { Http, Headers, RequestOptions } from "@angular/http";
+import { HTTP } from "@ionic-native/http/ngx";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class RestService {
-public apiUrl: string = environment.api_url;
-  constructor(private http: Http) {}
+  public apiUrl: string = environment.api_url;
+  constructor(private http: Http, private httpNative: HTTP) {
+    this.httpNative.setDataSerializer('json');
+  }
 
   /**
    *
    **/
-  queryPostRegular(route: string, body) {
+  queryPostRegular(route: string, body: any) {
     let repos = this.http.post(this.apiUrl.concat(route), body);
+    /* var data = JSON.stringify(body);
+    let repos = this.httpNative.post(this.apiUrl.concat(route), body, {
+      "Content-Type": "application/json",
+    }); */
     return repos;
   }
 

@@ -7,6 +7,7 @@ import { IonicModule } from "@ionic/angular";
 import { SharedModule } from "../shared/shared.module";
 import { SellFormPageModule } from "./sell-form/sell-form.module";
 import { ShippingFormPageModule } from "./shipping-form/shipping-form.module";
+import { HTTP } from "@ionic-native/http/ngx";
 
 @NgModule({
   declarations: [],
@@ -16,12 +17,12 @@ import { ShippingFormPageModule } from "./shipping-form/shipping-form.module";
     PostsRoutingModule,
     IonicModule,
     ReactiveFormsModule,
-    CommonModule,
+    CommonModule,    
     SharedModule,
     ShippingFormPageModule,
-    SellFormPageModule
+    SellFormPageModule,    
   ],
-  providers: [],
+  providers: [HTTP],
   exports: [],
 })
 export class PostsModule {}

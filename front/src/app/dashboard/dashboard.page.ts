@@ -30,7 +30,7 @@ export class DashboardPage implements OnInit {
     };
   }
 
-  goToPostCreation() {
+  goToPostCreation() {    
     this.router.navigate(["posts/create-shipping"]);
   }
 }

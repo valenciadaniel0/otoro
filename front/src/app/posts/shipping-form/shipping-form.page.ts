@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { PostService } from "../post.service";
 import { Router } from "@angular/router";
@@ -11,11 +11,8 @@ import { Router } from "@angular/router";
 export class ShippingFormPage implements OnInit {
   public shippingForm: FormGroup;
   public activeTab: number;
-
-  constructor(
-    private postService: PostService,
-    private router: Router
-  ) {}
+  constructor(private postService: PostService, private router: Router) {    
+  }
 
   ngOnInit() {
     this.activeTab = 1;
@@ -23,12 +20,12 @@ export class ShippingFormPage implements OnInit {
     this.shippingForm = new FormGroup({
       title: new FormControl("title", [Validators.required]),
       description: new FormControl("description", [Validators.required]),
-      date: new FormControl("date", [Validators.required])      
+      date: new FormControl("date", [Validators.required]),
     });
 
     this.shippingForm.controls["title"].setValue(null);
     this.shippingForm.controls["description"].setValue(null);
-    this.shippingForm.controls["date"].setValue(null);    
+    this.shippingForm.controls["date"].setValue(null);
   }
 
   saveShipping() {
@@ -43,7 +40,7 @@ export class ShippingFormPage implements OnInit {
     const body = {
       title: controls["title"].value,
       description: controls["description"].value,
-      date: controls["date"].value,      
+      date: controls["date"].value,
     };
 
     this.postService
@@ -51,15 +48,15 @@ export class ShippingFormPage implements OnInit {
       .toPromise()
       .then(
         (res) => {
-          const result = res.json();
-          console.log(result);
+          //const result = res.json();
+          console.log(res);
         },
         (err) => {
           let error = JSON.parse(err._body);
           console.log(error);
         }
       );
-  }
+  }  
 
   goBackToDashboard() {
     this.router.navigate(["/dashboard"]);

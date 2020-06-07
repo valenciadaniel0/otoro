@@ -7,6 +7,7 @@ import { SharedModule } from "../shared/shared.module";
 import { IonicModule } from "@ionic/angular";
 import { FormPage } from "./form/form.page";
 import { DashboardPageModule } from '../dashboard/dashboard.module';
+import { HTTP } from '@ionic-native/http/ngx';
 
 @NgModule({
   imports: [
@@ -17,8 +18,9 @@ import { DashboardPageModule } from '../dashboard/dashboard.module';
     ReactiveFormsModule,
     CommonModule,
     SharedModule,
-    DashboardPageModule
+    DashboardPageModule,    
   ],
   declarations: [FormPage],
+  providers:[HTTP]
 })
 export class LoginModule {}
