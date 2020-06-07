@@ -18,6 +18,6 @@ import { ShippingFormPage } from "./shipping-form.page";
     ShippingFormPageRoutingModule,     
   ],
   declarations: [ShippingFormPage],
-  exports:[AngularCropperjsModule]
+  exports:[]
 })
 export class ShippingFormPageModule {}
