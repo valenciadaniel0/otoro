@@ -8,6 +8,7 @@ import { SharedModule } from "../shared/shared.module";
 import { SellFormPageModule } from "./sell-form/sell-form.module";
 import { ShippingFormPageModule } from "./shipping-form/shipping-form.module";
 import { HTTP } from "@ionic-native/http/ngx";
+import { ImagePicker } from '@ionic-native/image-picker/ngx';
 
 @NgModule({
   declarations: [],
@@ -22,7 +23,7 @@ import { HTTP } from "@ionic-native/http/ngx";
     ShippingFormPageModule,
     SellFormPageModule,    
   ],
-  providers: [HTTP],
+  providers: [HTTP,ImagePicker],
   exports: [],
 })
 export class PostsModule {}
