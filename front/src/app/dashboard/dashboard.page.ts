@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { ModalController } from "@ionic/angular";
 import { Router } from "@angular/router";
+import { Storage } from "@ionic/storage";
 
 @Component({
   selector: "app-dashboard",
@@ -8,15 +8,20 @@ import { Router } from "@angular/router";
   styleUrls: ["./dashboard.page.scss"],
 })
 export class DashboardPage implements OnInit {
+  private auth: any;
   private goToMyPosts: () => void;
   private goToAllPosts: () => void;
   private goToTransporters: () => void;
-  constructor(
-    private modalController: ModalController,
-    private router: Router
+  constructor(    
+    private router: Router,
+    private storage: Storage
   ) {}
 
   ngOnInit() {
+    this.storage.get("auth").then((auth) => {
+      this.auth = auth;
+    });
+
     this.goToMyPosts = () => {
       console.log("My posts");
     };
@@ -30,7 +35,7 @@ export class DashboardPage implements OnInit {
     };
   }
 
-  goToPostCreation() {    
+  goToPostCreation() {
     this.router.navigate(["posts/create-shipping"]);
   }
 }

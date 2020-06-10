@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { RestService } from "../../core/services/rest.service";
+import { Storage } from "@ionic/storage";
 import { LoginService } from "./login.service";
 
 @Component({
@@ -13,7 +13,11 @@ export class FormPage implements OnInit {
   public myForm: FormGroup;
   public imageUrl: string;
   public imageId: string;
-  constructor(private loginService: LoginService, private router: Router) {}
+  constructor(
+    private loginService: LoginService,
+    private router: Router,
+    public storage: Storage
+  ) {}
 
   ngOnInit() {
     this.imageUrl = "../../assets/logo/otoro-logo.png";
@@ -57,12 +61,12 @@ export class FormPage implements OnInit {
       .run(body)
       .toPromise()
       .then(
-        (res) => {          
-          //const result = res.json();
+        (res) => {
+          const result = res.json();
+          this.storage.set("auth", result);
           this.router.navigate(["/dashboard"]);
         },
-        (err) => { 
-          console.log(err);         
+        (err) => {
           let error = JSON.parse(err._body);
           console.log(error);
         }

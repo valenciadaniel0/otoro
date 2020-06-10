@@ -1,26 +1,16 @@
 import { Injectable } from "@angular/core";
 import { environment } from "../../../environments/environment";
 import { Http, Headers, RequestOptions } from "@angular/http";
-import { HTTP } from "@ionic-native/http/ngx";
 
 @Injectable({
   providedIn: "root",
 })
 export class RestService {
   public apiUrl: string = environment.api_url;
-  constructor(private http: Http, private httpNative: HTTP) {
-    this.httpNative.setDataSerializer('json');
-  }
+  constructor(private http: Http) {}
 
-  /**
-   *
-   **/
   queryPostRegular(route: string, body: any) {
     let repos = this.http.post(this.apiUrl.concat(route), body);
-    /* var data = JSON.stringify(body);
-    let repos = this.httpNative.post(this.apiUrl.concat(route), body, {
-      "Content-Type": "application/json",
-    }); */
     return repos;
   }
 
@@ -37,10 +27,9 @@ export class RestService {
     return repos;
   }
 
-  queryPost(route: string, body) {
-    let token = localStorage.getItem("token");
-    let headers = new Headers({ Authorization: token });
-    let options = new RequestOptions({ headers: headers });
+  queryPost(route: string, body: any, token: string) {
+    let headers = new Headers({ Authorization: `Bearer ${token}` });
+    let options = new RequestOptions({ headers: headers });    
     let repos = this.http.post(this.apiUrl.concat(route), body, options);
     return repos;
   }

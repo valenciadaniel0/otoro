@@ -2,7 +2,8 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { PostService } from "../post.service";
 import { Router } from "@angular/router";
-import { ImagePicker } from '@ionic-native/image-picker/ngx';
+import { ImagePicker } from "@ionic-native/image-picker/ngx";
+import { Storage } from "@ionic/storage";
 
 @Component({
   selector: "app-shipping-form",
@@ -10,15 +11,23 @@ import { ImagePicker } from '@ionic-native/image-picker/ngx';
   styleUrls: ["./shipping-form.page.scss"],
 })
 export class ShippingFormPage implements OnInit {
+  private auth: any;
   public shippingForm: FormGroup;
   public activeTab: number;
   imageResponse: any;
   options: any;
-  constructor(private postService: PostService, private router: Router,private imagePicker: ImagePicker) {    
-  }
+  constructor(
+    private postService: PostService,
+    private router: Router,
+    private imagePicker: ImagePicker,
+    private storage: Storage
+  ) {}
 
   ngOnInit() {
     this.activeTab = 1;
+    this.storage.get("auth").then((auth) => {
+      this.auth = auth;
+    });
 
     this.shippingForm = new FormGroup({
       title: new FormControl("title", [Validators.required]),
@@ -41,13 +50,16 @@ export class ShippingFormPage implements OnInit {
     }
 
     const body = {
+      type: 1,
+      image: "",
       title: controls["title"].value,
       description: controls["description"].value,
       date: controls["date"].value,
+      user: { id: 2 },
     };
 
     this.postService
-      .save(body)
+      .save(body, this.auth.token)
       .toPromise()
       .then(
         (res) => {
@@ -59,7 +71,7 @@ export class ShippingFormPage implements OnInit {
           console.log(error);
         }
       );
-  }  
+  }
 
   getImages() {
     this.options = {
@@ -79,19 +91,22 @@ export class ShippingFormPage implements OnInit {
       quality: 25,
 
       // output type, defaults to FILE_URIs.
-      // available options are 
-      // window.imagePicker.OutputType.FILE_URI (0) or 
+      // available options are
+      // window.imagePicker.OutputType.FILE_URI (0) or
       // window.imagePicker.OutputType.BASE64_STRING (1)
-      outputType: 1
+      outputType: 1,
     };
     this.imageResponse = [];
-    this.imagePicker.getPictures(this.options).then((results) => {
-      for (var i = 0; i < results.length; i++) {
-        this.imageResponse.push('data:image/jpeg;base64,' + results[i]);
+    this.imagePicker.getPictures(this.options).then(
+      (results) => {
+        for (var i = 0; i < results.length; i++) {
+          this.imageResponse.push("data:image/jpeg;base64," + results[i]);
+        }
+      },
+      (err) => {
+        alert(err);
       }
-    }, (err) => {
-      alert(err);
-    });
+    );
   }
 
   goBackToDashboard() {

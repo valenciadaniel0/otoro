@@ -6,8 +6,9 @@ import { LoginRoutingModule } from "./login-routing.module";
 import { SharedModule } from "../shared/shared.module";
 import { IonicModule } from "@ionic/angular";
 import { FormPage } from "./form/form.page";
-import { DashboardPageModule } from '../dashboard/dashboard.module';
-import { HTTP } from '@ionic-native/http/ngx';
+import { DashboardPageModule } from "../dashboard/dashboard.module";
+import { HTTP } from "@ionic-native/http/ngx";
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   imports: [
@@ -18,9 +19,10 @@ import { HTTP } from '@ionic-native/http/ngx';
     ReactiveFormsModule,
     CommonModule,
     SharedModule,
-    DashboardPageModule,    
+    DashboardPageModule,
+    IonicStorageModule.forRoot(),
   ],
   declarations: [FormPage],
-  providers:[HTTP]
+  providers: [HTTP],
 })
 export class LoginModule {}
