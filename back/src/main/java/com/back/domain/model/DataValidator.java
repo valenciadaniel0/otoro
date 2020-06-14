@@ -17,7 +17,7 @@ public class DataValidator {
         }
     }
 
-    public static void validateDateNull(Date value, String message) {
+    public static void validateObjectNull(Object value, String message) {
         if (value == null) {
             throw new GeneralException(message);
         }

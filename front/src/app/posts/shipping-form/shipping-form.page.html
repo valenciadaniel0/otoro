@@ -20,12 +20,12 @@
         <!-- More Pinterest floating gallery style -->
         <div class="images">
           <div class="one-image" *ngFor="let img of imageResponse">
-            <img src="{{img}}" alt="" srcset="">
+            <img src="{{img}}" alt="" srcset="" />
           </div>
         </div>
       </ion-col>
     </ion-row>
-    <ion-row id="form-container">      
+    <ion-row id="form-container">
       <ion-col col-12>
         <form [formGroup]="shippingForm">
           <div class="form-group">
@@ -61,6 +61,38 @@
             </ion-item>
             <span *ngIf="controlHasError('date', 'required')">
               <strong class="error">Campo requerido</strong>
+            </span>
+          </div>
+          <div class="form-group">
+            <label class="bold">Origen del envio</label>
+            <ion-item (click)="openOriginModal()">
+              <span *ngIf="!origin">Selecciona un origen</span>
+              <span *ngIf="origin">{{origin.name}}</span>
+            </ion-item>
+            <input
+              type="text"
+              class="display-none"
+              formControlName="origin"             
+            />
+            <span *ngIf="controlHasError('origin', 'required')">
+              <strong class="error">Selecciona una ciudad</strong>
+            </span>
+          </div>
+
+          <div class="form-group">
+            <label class="bold">Origen del destino</label>
+            <ion-item (click)="openDestinationModal()">
+              <span *ngIf="!destination">Selecciona un destino</span>
+              <span *ngIf="destination">{{destination.name}}</span>
+            </ion-item>
+            <input
+              type="text"
+              class="display-none"
+              formControlName="destination"
+              display="none"
+            />
+            <span *ngIf="controlHasError('destination', 'required')">
+              <strong class="error">Selecciona una ciudad</strong>
             </span>
           </div>
         </form>

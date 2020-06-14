@@ -1,6 +1,5 @@
 import { Routes, RouterModule } from "@angular/router";
 import { NgModule } from "@angular/core";
-import { ShippingFormPage } from "./shipping-form/shipping-form.page";
 
 const routes: Routes = [
   {
@@ -14,8 +13,14 @@ const routes: Routes = [
     path: "create-sell",
     loadChildren: () =>
       import("./sell-form/sell-form.module").then((m) => m.SellFormPageModule),
-  }
-
+  },
+  {
+    path: "list/:user-id",
+    loadChildren: () =>
+      import("./posts-list/posts-list.module").then(
+        (m) => m.PostsListPageModule
+      ),
+  },
 ];
 
 @NgModule({

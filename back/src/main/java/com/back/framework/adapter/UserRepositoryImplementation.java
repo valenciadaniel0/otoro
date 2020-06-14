@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.back.domain.model.User;
-import com.back.domain.port.UserRepository;
+import com.back.domain.port.repository.UserRepository;
 import com.back.framework.adapter.mapper.UserMapper;
 import com.back.framework.dbRepository.UserDBRepository;
 import com.back.framework.entity.RoleEntity;

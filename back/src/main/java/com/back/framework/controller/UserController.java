@@ -60,11 +60,11 @@ public class UserController {
         User user = this.getUserByEmailHandler.run(userCommand.getEmail());
         final String token = jwtTokenUtil.generateToken(userDetails);
         List<String> roles = new ArrayList<>();
-        for (Role role : user.getRoles()) {            
+        for (Role role : user.getRoles()) {
             roles.add(role.getName());
         }
 
-        return ResponseEntity.ok(new JwtResponse(token, user.getName(), user.getEmail(), user.getActive(),
+        return ResponseEntity.ok(new JwtResponse(token, user.getId(), user.getName(), user.getEmail(), user.getActive(),
                 user.getDeviceToken(), roles));
     }
 
@@ -81,9 +81,9 @@ public class UserController {
     @GetMapping(value = "/logout")
     public void logout(HttpServletRequest request, HttpServletResponse response) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if (auth != null) {            
+        if (auth != null) {
             new SecurityContextLogoutHandler().logout(request, response, auth);
-        }        
+        }
     }
 
     private void authenticate(String username, String password) throws Exception {

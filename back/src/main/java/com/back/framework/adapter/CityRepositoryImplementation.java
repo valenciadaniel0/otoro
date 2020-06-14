@@ -4,10 +4,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.back.domain.model.City;
-import com.back.domain.port.CityRepository;
+import com.back.domain.port.repository.CityRepository;
 import com.back.framework.adapter.mapper.CityMapper;
 import com.back.framework.dbRepository.CityDBRepository;
-import com.back.framework.entity.CityEntity;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Repository;
@@ -29,11 +28,13 @@ public class CityRepositoryImplementation implements CityRepository {
 
     @Override
     public List<City> findAll() {
-        List<CityEntity> cityEntities = this.cityDBRepository.findAll();                
-        for (CityEntity cityEntity : cityEntities) {
-            System.out.println(cityEntity.getName());
-        }
         return this.cityDBRepository.findAll().stream().map((city) -> this.modelMapper.map(city, City.class))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<City> search(String query) {
+        return this.cityDBRepository.search(query).stream().map((city) -> this.modelMapper.map(city, City.class))
                 .collect(Collectors.toList());
     }
 }

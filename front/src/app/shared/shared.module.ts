@@ -2,14 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ImageComponent } from './image/image.component';
 import { CardComponent } from './card/card.component';
+import { PostCardComponent } from './post-card/post-card.component';
+import { SelectCityComponent } from './select-city/select-city.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
-  declarations: [CardComponent],
+  declarations: [CardComponent,PostCardComponent,ImageComponent,SelectCityComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  exports:[CardComponent]
+  exports:[CardComponent,PostCardComponent,ImageComponent,SelectCityComponent]
 })
 export class SharedModule { }

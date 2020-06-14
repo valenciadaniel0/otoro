@@ -1,6 +1,6 @@
 package com.back.framework.config.beans;
 
-import com.back.domain.port.UserRepository;
+import com.back.domain.port.repository.UserRepository;
 import com.back.domain.service.users.CreateUserService;
 import com.back.domain.service.users.GetUserByEmailService;
 

@@ -1,7 +1,7 @@
 package com.back.domain.service.users;
 
 import com.back.domain.model.User;
-import com.back.domain.port.UserRepository;
+import com.back.domain.port.repository.UserRepository;
 
 public class GetUserByEmailService {
     private UserRepository userRepository;

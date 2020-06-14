@@ -7,6 +7,8 @@ public class Post {
     private static final String THE_DESCRIPTION_IS_REQUIRED = "El campo descripción es requerido";
     private static final String THE_PRICE_IS_REQUIRED = "El campo precio es requerido";
     private static final String THE_DATE_IS_REQUIRED = "El campo fecha es requerido";
+    private static final String THE_ORIGIN_IS_REQUIRED = "El origen del envio es requerido";
+    private static final String THE_DESTINATION_IS_REQUIRED = "El destino del envio es requerido";
 
     private Long id;
     private int type;
@@ -16,13 +18,21 @@ public class Post {
     private Double price;
     private Date date;
     private User user;
+    private City origin;
+    private City destination;
 
-    public Post(Long id, int type, String image, String title, String description, Double price, Date date,
-            User user) {
+    public Post() {
+
+    }
+
+    public Post(Long id, int type, String image, String title, String description, Double price, Date date, User user,
+            City origin, City destination) {
         DataValidator.validateNull(title, THE_TITLE_IS_REQUIRED);
         DataValidator.validateNull(description, THE_DESCRIPTION_IS_REQUIRED);
         if (type == 1) {
-            DataValidator.validateDateNull(date, THE_DATE_IS_REQUIRED);
+            DataValidator.validateObjectNull(date, THE_DATE_IS_REQUIRED);
+            DataValidator.validateObjectNull(origin, THE_ORIGIN_IS_REQUIRED);
+            DataValidator.validateObjectNull(destination, THE_DESTINATION_IS_REQUIRED);
         }
 
         if (type == 2) {
@@ -36,6 +46,8 @@ public class Post {
         this.price = price;
         this.date = date;
         this.user = user;
+        this.origin = origin;
+        this.destination = destination;
     }
 
     public Long getId() {
@@ -100,6 +112,22 @@ public class Post {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public City getOrigin() {
+        return origin;
+    }
+
+    public void setOrigin(City origin) {
+        this.origin = origin;
+    }
+
+    public City getDestination() {
+        return destination;
+    }
+
+    public void setDestination(City destination) {
+        this.destination = destination;
     }
 
 }

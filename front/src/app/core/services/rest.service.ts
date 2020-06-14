@@ -19,17 +19,21 @@ export class RestService {
     return repos;
   }
 
-  queryGet(route: string) {
-    let token = localStorage.getItem("token");
-    let headers = new Headers({ Authorization: token });
+  queryGet(route: string, token: string) {
+    let headers = new Headers({
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    });
     let options = new RequestOptions({ headers: headers });
     let repos = this.http.get(this.apiUrl.concat(route), options);
     return repos;
   }
 
   queryPost(route: string, body: any, token: string) {
-    let headers = new Headers({ Authorization: `Bearer ${token}` });
-    let options = new RequestOptions({ headers: headers });    
+    let headers = new Headers({
+      Authorization: `Bearer ${token}`,
+    });
+    let options = new RequestOptions({ headers: headers });
     let repos = this.http.post(this.apiUrl.concat(route), body, options);
     return repos;
   }

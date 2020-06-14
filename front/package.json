@@ -33,6 +33,7 @@
     "cordova-plugin-advanced-http": "^2.5.1",
     "cordova-plugin-file": "^6.0.2",
     "cordova-plugin-telerik-imagepicker": "^2.3.3",
+    "ionic-angular": "^3.9.10",
     "jetifier": "^1.6.5",
     "node-sass": "^4.14.1",
     "rxjs": "~6.5.1",

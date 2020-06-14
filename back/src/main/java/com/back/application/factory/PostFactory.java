@@ -10,6 +10,7 @@ public class PostFactory {
 
     public static Post create(PostCommand postCommand) {
         return new Post(postCommand.getId(), postCommand.getType(), postCommand.getImage(), postCommand.getTitle(),
-                postCommand.getDescription(), postCommand.getPrice(), postCommand.getDate(), postCommand.getUser());
+                postCommand.getDescription(), postCommand.getPrice(), postCommand.getDate(), postCommand.getUser(),
+                postCommand.getOrigin(), postCommand.getDestination());
     }
 }

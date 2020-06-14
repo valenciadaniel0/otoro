@@ -12,10 +12,7 @@ export class DashboardPage implements OnInit {
   private goToMyPosts: () => void;
   private goToAllPosts: () => void;
   private goToTransporters: () => void;
-  constructor(    
-    private router: Router,
-    private storage: Storage
-  ) {}
+  constructor(private router: Router, private storage: Storage) {}
 
   ngOnInit() {
     this.storage.get("auth").then((auth) => {
@@ -23,7 +20,7 @@ export class DashboardPage implements OnInit {
     });
 
     this.goToMyPosts = () => {
-      console.log("My posts");
+      this.router.navigate([`posts/list/${this.auth.id}`]);
     };
 
     this.goToAllPosts = () => {

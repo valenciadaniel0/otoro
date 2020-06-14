@@ -4,6 +4,8 @@ import { PostService } from "../post.service";
 import { Router } from "@angular/router";
 import { ImagePicker } from "@ionic-native/image-picker/ngx";
 import { Storage } from "@ionic/storage";
+import { ModalController } from "@ionic/angular";
+import { SelectCityComponent } from "src/app/shared/select-city/select-city.component";
 
 @Component({
   selector: "app-shipping-form",
@@ -11,16 +13,20 @@ import { Storage } from "@ionic/storage";
   styleUrls: ["./shipping-form.page.scss"],
 })
 export class ShippingFormPage implements OnInit {
+  private activeTab: number;
   private auth: any;
-  public shippingForm: FormGroup;
-  public activeTab: number;
-  imageResponse: any;
-  options: any;
+  private destination: any;
+  private imageResponse: any;
+  private options: any;
+  private origin: any;
+  private shippingForm: FormGroup;
+
   constructor(
     private postService: PostService,
     private router: Router,
     private imagePicker: ImagePicker,
-    private storage: Storage
+    private storage: Storage,
+    private modalController: ModalController
   ) {}
 
   ngOnInit() {
@@ -33,12 +39,52 @@ export class ShippingFormPage implements OnInit {
       title: new FormControl("title", [Validators.required]),
       description: new FormControl("description", [Validators.required]),
       date: new FormControl("date", [Validators.required]),
+      origin: new FormControl("origin", [Validators.required]),
+      destination: new FormControl("destination", [Validators.required]),
     });
 
     this.shippingForm.controls["title"].setValue(null);
     this.shippingForm.controls["description"].setValue(null);
     this.shippingForm.controls["date"].setValue(null);
+    this.shippingForm.controls["origin"].setValue(null);
+    this.shippingForm.controls["destination"].setValue(null);
   }
+
+  async openOriginModal() {
+    const modal = await this.modalController.create({
+      component: SelectCityComponent,
+      cssClass: "my-custom-class",
+    });
+
+    return await modal.present().then(() => {
+      modal.onWillDismiss().then((response: any) => {
+        this.origin = response.data.city; 
+        if(this.origin){  
+          this.shippingForm.controls["origin"].setValue(this.origin.name);    
+        }else{
+          this.shippingForm.controls["origin"].setValue(null);
+        }
+      });
+    });
+  }  
+
+  async openDestinationModal() {
+    const modal = await this.modalController.create({
+      component: SelectCityComponent,
+      cssClass: "my-custom-class",
+    });
+
+    return await modal.present().then(() => {
+      modal.onWillDismiss().then((response: any) => {
+        this.destination = response.data.city;  
+        if(this.destination){  
+          this.shippingForm.controls["destination"].setValue(this.destination.name);    
+        }else{
+          this.shippingForm.controls["destination"].setValue(null);
+        }      
+      });
+    });
+  } 
 
   saveShipping() {
     let controls = this.shippingForm.controls;

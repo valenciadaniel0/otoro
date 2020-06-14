@@ -1,7 +1,7 @@
 package com.back.domain.service.departments;
 
 import com.back.domain.model.Department;
-import com.back.domain.port.DepartmentRepository;
+import com.back.domain.port.repository.DepartmentRepository;
 
 public class CreateDepartmentService {
     private DepartmentRepository departmentRepository;

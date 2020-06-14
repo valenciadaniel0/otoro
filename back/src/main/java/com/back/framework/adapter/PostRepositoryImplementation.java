@@ -1,7 +1,7 @@
 package com.back.framework.adapter;
 
 import com.back.domain.model.Post;
-import com.back.domain.port.PostRepository;
+import com.back.domain.port.repository.PostRepository;
 import com.back.framework.adapter.mapper.PostMapper;
 import com.back.framework.dbRepository.PostDBRepository;
 
@@ -18,6 +18,5 @@ public class PostRepositoryImplementation implements PostRepository {
     @Override
     public void save(Post post) {
         this.postDBRepository.save(PostMapper.modelToEntity(post));
-    }
-
+    }   
 }

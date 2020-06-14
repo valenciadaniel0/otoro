@@ -1,7 +1,7 @@
 package com.back.framework.adapter;
 
 import com.back.domain.model.Department;
-import com.back.domain.port.DepartmentRepository;
+import com.back.domain.port.repository.DepartmentRepository;
 import com.back.framework.adapter.mapper.DepartmentMapper;
 import com.back.framework.dbRepository.DepartmentDBRepository;
 

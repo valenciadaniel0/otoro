@@ -1,6 +1,6 @@
 package com.back.framework.config.beans;
 
-import com.back.domain.port.CityRepository;
+import com.back.domain.port.repository.CityRepository;
 import com.back.domain.service.cities.CreateCityService;
 import com.back.domain.service.cities.GetAllCitiesService;
 

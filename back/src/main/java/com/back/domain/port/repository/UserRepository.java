@@ -1,4 +1,4 @@
-package com.back.domain.port;
+package com.back.domain.port.repository;
 
 import com.back.domain.model.User;
 

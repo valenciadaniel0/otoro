@@ -1,6 +1,6 @@
 package com.back.framework.config.beans;
 
-import com.back.domain.port.PostRepository;
+import com.back.domain.port.repository.PostRepository;
 import com.back.domain.service.posts.CreatePostService;
 
 import org.springframework.context.annotation.Bean;

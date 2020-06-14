@@ -1,6 +1,6 @@
 package com.back.framework.config.beans;
 
-import com.back.domain.port.DepartmentRepository;
+import com.back.domain.port.repository.DepartmentRepository;
 import com.back.domain.service.departments.CreateDepartmentService;
 
 import org.springframework.context.annotation.Bean;

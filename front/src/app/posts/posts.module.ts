@@ -9,6 +9,7 @@ import { SellFormPageModule } from "./sell-form/sell-form.module";
 import { ShippingFormPageModule } from "./shipping-form/shipping-form.module";
 import { HTTP } from "@ionic-native/http/ngx";
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
+import { PostsListPageModule } from './posts-list/posts-list.module';
 
 @NgModule({
   declarations: [],
@@ -21,7 +22,8 @@ import { ImagePicker } from '@ionic-native/image-picker/ngx';
     CommonModule,    
     SharedModule,
     ShippingFormPageModule,
-    SellFormPageModule,    
+    SellFormPageModule,
+    PostsListPageModule    
   ],
   providers: [HTTP,ImagePicker],
   exports: [],

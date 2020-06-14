@@ -42,6 +42,16 @@ public class PostEntity {
     @JsonIgnore
     private UserEntity user;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "origin_id")
+    @JsonIgnore
+    private CityEntity origin;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "destination_id")
+    @JsonIgnore
+    private CityEntity destination;
+
     public Long getId() {
         return id;
     }
@@ -104,6 +114,22 @@ public class PostEntity {
 
     public void setUser(UserEntity user) {
         this.user = user;
+    }
+
+    public CityEntity getOrigin() {
+        return origin;
+    }
+
+    public void setOrigin(CityEntity origin) {
+        this.origin = origin;
+    }
+
+    public CityEntity getDestination() {
+        return destination;
+    }
+
+    public void setDestination(CityEntity destination) {
+        this.destination = destination;
     }
 
 }

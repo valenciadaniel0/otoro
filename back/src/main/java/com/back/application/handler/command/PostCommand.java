@@ -2,6 +2,7 @@ package com.back.application.handler.command;
 
 import java.util.Date;
 
+import com.back.domain.model.City;
 import com.back.domain.model.User;
 
 public class PostCommand {
@@ -13,13 +14,15 @@ public class PostCommand {
     private Double price;
     private Date date;
     private User user;
+    private City origin;
+    private City destination;
 
     public PostCommand() {
 
     }
 
     public PostCommand(Long id, int type, String image, String title, String description, Double price, Date date,
-            User user) {
+            User user, City origin, City destination) {
         this.id = id;
         this.type = type;
         this.image = image;
@@ -28,6 +31,8 @@ public class PostCommand {
         this.price = price;
         this.date = date;
         this.user = user;
+        this.origin = origin;
+        this.destination = destination;
     }
 
     public Long getId() {
@@ -60,6 +65,14 @@ public class PostCommand {
 
     public User getUser() {
         return user;
+    }
+
+    public City getOrigin() {
+        return origin;
+    }
+
+    public City getDestination() {
+        return destination;
     }
 
 }

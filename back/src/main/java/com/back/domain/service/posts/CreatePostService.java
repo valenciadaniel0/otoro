@@ -1,7 +1,7 @@
 package com.back.domain.service.posts;
 
 import com.back.domain.model.Post;
-import com.back.domain.port.PostRepository;
+import com.back.domain.port.repository.PostRepository;
 
 public class CreatePostService {
     private PostRepository postRepository;
