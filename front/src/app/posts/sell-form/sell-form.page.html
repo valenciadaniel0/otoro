@@ -1,28 +1,108 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>sell-form</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ folder }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  sell
+  <div id="container">
+    <h4 class="centered-text">Que quieres publicar?</h4>    
+    <ion-row>
+      <ion-col text-center>
+        <ion-button (click)="getImages()">Choose Images</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <!-- More Pinterest floating gallery style -->
+        <div class="images">
+          <div class="one-image" *ngFor="let img of imageResponse">
+            <img src="{{img}}" alt="" srcset="" />
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row id="form-container">
+      <ion-col col-12>
+        <form [formGroup]="sellForm">
+          <div class="form-group">
+            <label class="bold">T&iacute;tulo</label>
+            <input
+              type="text"
+              class="form-control width-100"
+              formControlName="title"
+            />
+            <span *ngIf="controlHasError('title', 'required')">
+              <strong class="error">Campo requerido</strong>
+            </span>
+          </div>
+          <div class="form-group">
+            <label class="bold">Descripci&oacute;n</label>
+            <textarea
+              class="form-control width-100"
+              formControlName="description"
+            ></textarea>
+            <span *ngIf="controlHasError('description', 'required')">
+              <strong class="error">Campo requerido</strong>
+            </span>
+          </div>
+          <div class="form-group">
+            <label class="bold">Precio</label>
+            <input
+              class="form-control width-100"
+              formControlName="price"
+              type="number"
+            />
+            <span *ngIf="controlHasError('price', 'required')">
+              <strong class="error">Campo requerido</strong>
+            </span>
+          </div>
+          <div class="form-group">
+            <label class="bold">Ubicaci&oacute;n</label>
+            <ion-item (click)="openOriginModal()">
+              <span *ngIf="!origin">Selecciona una ubicaci&oacute;n</span>
+              <span *ngIf="origin">{{origin.name}}</span>
+            </ion-item>
+            <input type="text" class="display-none" formControlName="origin" />
+            <span *ngIf="controlHasError('origin', 'required')">
+              <strong class="error">Selecciona una ciudad</strong>
+            </span>
+          </div>
+        </form>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <ion-button color="primary" (click)="saveSell()" class="width-100">
+          Guardar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <ion-button
+          color="danger"
+          (click)="goBackToDashboard()"
+          class="width-100"
+        >
+          Cancelar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+  <ion-grid id="tabs-container">
+    <ion-row>
+      <ion-col (click)="goToShippingForm()" col-6 class="centered-text">
+        <ion-icon name="send"></ion-icon>
+        <ion-label>Envio</ion-label>
+      </ion-col>
+      <ion-col col-6 class="centered-text">
+        <ion-icon name="pricetag"></ion-icon>
+        <ion-label>Venta</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button
-      class="inactive"
-      (click)="goToShippingForm()"
-    >
-      <ion-icon name="send"></ion-icon>
-      <ion-label>Envio</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button
-      tab="speakers"
-      class="active"
-    >
-      <ion-icon name="pricetag"></ion-icon>
-      <ion-label>Venta</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>

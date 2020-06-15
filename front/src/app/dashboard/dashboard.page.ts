@@ -24,7 +24,7 @@ export class DashboardPage implements OnInit {
     };
 
     this.goToAllPosts = () => {
-      console.log("All posts");
+      this.router.navigate([`posts/posts-list-general`]);
     };
 
     this.goToTransporters = () => {

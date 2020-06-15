@@ -21,6 +21,13 @@ const routes: Routes = [
         (m) => m.PostsListPageModule
       ),
   },
+  {
+    path: "posts-list-general",
+    loadChildren: () =>
+      import("./posts-list-general/posts-list-general.module").then(
+        (m) => m.PostsListGeneralPageModule
+      ),
+  },
 ];
 
 @NgModule({

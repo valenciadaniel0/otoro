@@ -12,9 +12,17 @@ export class PostService {
     return this.service.queryPost(url, body, token);
   }
 
-  getAll(auth: any, type: number) {
-    let url = `posts/get-by-type/${type}/${auth.id}`;
-    console.log(url);
+  getByType(auth: any, type: number) {
+    let url = `posts/get-by-type/${type}/${auth.id}`;    
+    return this.service.queryGet(url, auth.token);
+  }
+
+  search(auth:any,query:string, type: number) {
+    let url = `posts/search/${type}${
+      undefined != query && null != query && "" != query
+        ? `?query=${query}`
+        : ``
+    }`;    
     return this.service.queryGet(url, auth.token);
   }
 }

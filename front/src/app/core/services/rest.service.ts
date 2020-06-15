@@ -31,6 +31,7 @@ export class RestService {
 
   queryPost(route: string, body: any, token: string) {
     let headers = new Headers({
+      "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     });
     let options = new RequestOptions({ headers: headers });

@@ -21,13 +21,19 @@ public class PostDaoImplementation implements PostDao {
     }
 
     @Override
-    public List<Post> getByType(int type,int userId) {
-        if(userId == 0){
-            return this.postDBRepository.findAllByType(type).stream().map((post) -> this.modelMapper.map(post, Post.class))
-                .collect(Collectors.toList());
+    public List<Post> getByType(int type, int userId) {
+        if (userId == 0) {
+            return this.postDBRepository.findAllByType(type).stream()
+                    .map((post) -> this.modelMapper.map(post, Post.class)).collect(Collectors.toList());
         }
 
-        return this.postDBRepository.findAllByTypeAndUser(type,userId).stream().map((post) -> this.modelMapper.map(post, Post.class))
+        return this.postDBRepository.findAllByTypeAndUser(type, userId).stream()
+                .map((post) -> this.modelMapper.map(post, Post.class)).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Post> search(int type, String query) {
+        return this.postDBRepository.search(type, query).stream().map((post) -> this.modelMapper.map(post, Post.class))
                 .collect(Collectors.toList());
     }
 

@@ -6,8 +6,11 @@
       </ion-col>
       <ion-col size="8">
         <h4 class="post-title">{{ title }}</h4>
-        <div class="post-details" *ngIf="type == 1">
-          <span><ion-icon name="calendar"></ion-icon>{{date}}</span>          
+        <div class="post-details" *ngIf="type === 1">
+          <span><ion-icon name="calendar"></ion-icon>{{ date }}</span>
+        </div>
+        <div class="post-details" *ngIf="type === 2">
+          <span><ion-icon name="pricetag"></ion-icon>{{ price }}</span>
         </div>
       </ion-col>
     </ion-row>

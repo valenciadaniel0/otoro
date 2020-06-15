@@ -67,6 +67,7 @@ export class FormPage implements OnInit {
           this.router.navigate(["/dashboard"]);
         },
         (err) => {
+          console.log(err);
           let error = JSON.parse(err._body);
           console.log(error);
         }

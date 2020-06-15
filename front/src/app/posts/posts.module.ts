@@ -10,6 +10,7 @@ import { ShippingFormPageModule } from "./shipping-form/shipping-form.module";
 import { HTTP } from "@ionic-native/http/ngx";
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { PostsListPageModule } from './posts-list/posts-list.module';
+import { PostsListGeneralPageModule } from './posts-list-general/posts-list-general.module';
 
 @NgModule({
   declarations: [],
@@ -23,7 +24,8 @@ import { PostsListPageModule } from './posts-list/posts-list.module';
     SharedModule,
     ShippingFormPageModule,
     SellFormPageModule,
-    PostsListPageModule    
+    PostsListPageModule,
+    PostsListGeneralPageModule    
   ],
   providers: [HTTP,ImagePicker],
   exports: [],

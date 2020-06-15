@@ -18,7 +18,19 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <h4 class="centered-text">{{title}}</h4>
+  <h4 class="centered-text">Todas las publicaciones</h4>
+  <form [formGroup]="searchForm">
+    <ion-item>
+      <input
+        name="query"
+        type="text"
+        class="form-control"
+        placeholder="Busca una ciudad"
+        formControlName="queryControl"
+        (keyup)="search()"
+      />
+    </ion-item>
+  </form>
   <ion-row class="top-tab-container">
     <ion-col (click)="changeActiveTab(1)"><span>Envios</span></ion-col>
     <ion-col (click)="changeActiveTab(2)"><span>Ventas</span></ion-col>

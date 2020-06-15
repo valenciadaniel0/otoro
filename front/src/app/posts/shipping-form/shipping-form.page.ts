@@ -58,15 +58,15 @@ export class ShippingFormPage implements OnInit {
 
     return await modal.present().then(() => {
       modal.onWillDismiss().then((response: any) => {
-        this.origin = response.data.city; 
-        if(this.origin){  
-          this.shippingForm.controls["origin"].setValue(this.origin.name);    
-        }else{
+        this.origin = response.data.city;
+        if (this.origin) {
+          this.shippingForm.controls["origin"].setValue(this.origin.name);
+        } else {
           this.shippingForm.controls["origin"].setValue(null);
         }
       });
     });
-  }  
+  }
 
   async openDestinationModal() {
     const modal = await this.modalController.create({
@@ -76,15 +76,17 @@ export class ShippingFormPage implements OnInit {
 
     return await modal.present().then(() => {
       modal.onWillDismiss().then((response: any) => {
-        this.destination = response.data.city;  
-        if(this.destination){  
-          this.shippingForm.controls["destination"].setValue(this.destination.name);    
-        }else{
+        this.destination = response.data.city;
+        if (this.destination) {
+          this.shippingForm.controls["destination"].setValue(
+            this.destination.name
+          );
+        } else {
           this.shippingForm.controls["destination"].setValue(null);
-        }      
+        }
       });
     });
-  } 
+  }
 
   saveShipping() {
     let controls = this.shippingForm.controls;
@@ -101,7 +103,9 @@ export class ShippingFormPage implements OnInit {
       title: controls["title"].value,
       description: controls["description"].value,
       date: controls["date"].value,
-      user: { id: 2 },
+      origin: this.origin,
+      destination: this.destination,
+      user: { id: this.auth.id },
     };
 
     this.postService
