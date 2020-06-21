@@ -10,6 +10,6 @@ public class UserFactory {
 
     public static User create(UserCommand commandUser) {
         return new User(commandUser.getId(),commandUser.getUsername(),commandUser.getEmail(), commandUser.getPassword(), commandUser.getDeviceToken(),
-                commandUser.getName(), commandUser.getActive(), commandUser.getCity(), commandUser.getRoles());
+                commandUser.getName(), commandUser.getActive(),commandUser.getRecoverCode(), commandUser.getCity(), commandUser.getRoles());
     }
 }

@@ -22,4 +22,9 @@ public interface UserDBRepository extends JpaRepository<UserEntity, Long> {
     @Transactional
     @Query(value = "UPDATE users SET password = ?2 WHERE id=?1", nativeQuery = true)
     void updatePassword(Long id,String newPassword);
+
+    @Modifying
+    @Transactional
+    @Query(value = "UPDATE users SET recover_code = ?2 WHERE id=?1", nativeQuery = true)
+    void updateRecoverCode(Long id,String newCode);
 }

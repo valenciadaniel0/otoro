@@ -5,9 +5,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.back.application.handler.users.CreateUserHandler;
 import com.back.application.handler.users.GetUserByEmailHandler;
+import com.back.application.handler.users.RecoverPasswordHandler;
 import com.back.application.handler.users.UpdatePasswordHandler;
+import com.back.application.handler.users.UpdateRecoverCodeHandler;
 import com.back.application.handler.users.UpdateUserHandler;
-import com.back.application.handler.users.command.EmailCommand;
 import com.back.application.handler.users.command.UserCommand;
 
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -41,6 +42,8 @@ public class UserController {
     private GetUserByEmailHandler getUserByEmailHandler;
     private UpdateUserHandler updateUserHandler;
     private UpdatePasswordHandler updatePasswordHandler;
+    private UpdateRecoverCodeHandler updateRecoverCodeHandler;
+    private RecoverPasswordHandler recoverPasswordHandler;
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -52,11 +55,14 @@ public class UserController {
     private UserRepositoryImplementation userRepositoryImplementation;
 
     public UserController(CreateUserHandler createUserHandler, GetUserByEmailHandler getUserByEmailHandler,
-            UpdateUserHandler updateUserHandler, UpdatePasswordHandler updatePasswordHandler) {
+            UpdateUserHandler updateUserHandler, UpdatePasswordHandler updatePasswordHandler,
+            UpdateRecoverCodeHandler updateRecoverCodeHandler, RecoverPasswordHandler recoverPasswordHandler) {
         this.createUserHandler = createUserHandler;
         this.getUserByEmailHandler = getUserByEmailHandler;
         this.updateUserHandler = updateUserHandler;
         this.updatePasswordHandler = updatePasswordHandler;
+        this.updateRecoverCodeHandler = updateRecoverCodeHandler;
+        this.recoverPasswordHandler = recoverPasswordHandler;
     }
 
     @PostMapping(value = "/authenticate")
@@ -76,9 +82,14 @@ public class UserController {
     }
 
     @PostMapping(value = "/recover-password")
-    public void updatePassword(@RequestBody UserCommand userCommand) {        
-        User user = this.getUserByEmailHandler.run(userCommand.getEmail());        
-        this.updatePasswordHandler.run(user);
+    public void updatePassword(@RequestBody UserCommand userCommand) {
+        User user = this.getUserByEmailHandler.run(userCommand.getEmail());
+        this.recoverPasswordHandler.run(user,userCommand.getRecoverCode());
+    }
+
+    @PostMapping(value = "/set-recover-code")
+    public void updateRecoverCode(@RequestBody UserCommand userCommand) {
+        this.updateRecoverCodeHandler.run(userCommand.getEmail());
     }
 
     @PutMapping(value = "")

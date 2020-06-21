@@ -49,8 +49,11 @@ public class UserRepositoryImplementation implements UserRepository, UserDetails
 
     @Override
     public User findByEmail(String email) {
-        System.out.println(email);
-        return this.modelMapper.map(this.userDBRepository.findByEmail(email), User.class);
+        UserEntity userEntity = this.userDBRepository.findByEmail(email);
+        if (null != userEntity) {
+            return this.modelMapper.map(userEntity, User.class);
+        }
+        return null;
     }
 
     @Override
@@ -77,10 +80,21 @@ public class UserRepositoryImplementation implements UserRepository, UserDetails
         }
 
         UserEntity userEntity = this.userDBRepository.findByUsername(user.getEmail());
-        System.out.println(newPassword);
         userEntity.setPassword(newPassword);
         userEntity.encryptPassword(bcryptEncoder);
 
         this.userDBRepository.updatePassword(userEntity.getId(), userEntity.getPassword());
+    }
+
+    @Override
+    public void updateRecoverCode(User user, String newCode) {
+        if (user == null) {
+            throw new UsernameNotFoundException(this.USER_WITH_EMAIL_NOT_FOUND + user.getEmail());
+        }
+
+        UserEntity userEntity = this.userDBRepository.findByUsername(user.getEmail());
+        userEntity.setRecoverCode(newCode);
+
+        this.userDBRepository.updateRecoverCode(userEntity.getId(), userEntity.getRecoverCode());
     }
 }
