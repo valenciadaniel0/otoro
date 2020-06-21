@@ -1,7 +1,7 @@
 package com.back.application.handler.users;
 
 import com.back.application.factory.UserFactory;
-import com.back.application.handler.command.UserCommand;
+import com.back.application.handler.users.command.UserCommand;
 import com.back.domain.service.users.CreateUserService;
 
 import org.springframework.stereotype.Component;

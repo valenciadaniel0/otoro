@@ -6,7 +6,20 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eaa0f7e4-a19d-4b32-b3c3-d87a4bcc0d08" name="Default Changelist" comment="" />
+    <list default="true" id="eaa0f7e4-a19d-4b32-b3c3-d87a4bcc0d08" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/domain/port/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/domain/port/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/adapter/UserRepositoryImplementation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/adapter/UserRepositoryImplementation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/config/JwtResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/config/JwtResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/dbRepository/UserDBRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/dbRepository/UserDBRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/entity/UserEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/entity/UserEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/domain/port/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/domain/port/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/adapter/UserRepositoryImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/adapter/UserRepositoryImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/config/JwtResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/config/JwtResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/dbRepository/UserDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/dbRepository/UserDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/entity/UserEntity.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +49,6 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
@@ -128,9 +140,13 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1592235017265">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1592681880505">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1592235017265" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592681880505" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1592686125473">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1592686125473" />
   </component>
 </project>

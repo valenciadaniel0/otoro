@@ -72,7 +72,7 @@ INJECTED from C:\Users\ingdm\projects\otoro\front\android\app\src\main\AndroidMa
 INJECTED from C:\Users\ingdm\projects\otoro\front\android\app\src\main\AndroidManifest.xml:2:1-64:12
 INJECTED from C:\Users\ingdm\projects\otoro\front\android\app\src\main\AndroidManifest.xml:2:1-64:12
 	package
-		ADDED from C:\Users\ingdm\projects\otoro\front\android\app\src\main\AndroidManifest.xml:3:5-31
+		ADDED from C:\Users\ingdm\projects\otoro\front\android\app\src\main\AndroidManifest.xml:3:5-27
 		INJECTED from C:\Users\ingdm\projects\otoro\front\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\ingdm\projects\otoro\front\android\app\src\main\AndroidManifest.xml
 	android:versionName
@@ -143,7 +143,7 @@ MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\
 		ADDED from C:\Users\ingdm\projects\otoro\front\android\app\src\main\AndroidManifest.xml:11:9-40
 	android:usesCleartextTraffic
 		ADDED from C:\Users\ingdm\projects\otoro\front\android\app\src\main\AndroidManifest.xml:12:9-44
-activity#io.ionic.starter.MainActivity
+activity#co.app.otoro.MainActivity
 ADDED from C:\Users\ingdm\projects\otoro\front\android\app\src\main\AndroidManifest.xml:14:9-33:20
 	android:label
 		ADDED from C:\Users\ingdm\projects\otoro\front\android\app\src\main\AndroidManifest.xml:17:13-56
@@ -154,7 +154,7 @@ ADDED from C:\Users\ingdm\projects\otoro\front\android\app\src\main\AndroidManif
 	android:theme
 		ADDED from C:\Users\ingdm\projects\otoro\front\android\app\src\main\AndroidManifest.xml:18:13-62
 	android:name
-		ADDED from C:\Users\ingdm\projects\otoro\front\android\app\src\main\AndroidManifest.xml:16:13-57
+		ADDED from C:\Users\ingdm\projects\otoro\front\android\app\src\main\AndroidManifest.xml:16:13-53
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\ingdm\projects\otoro\front\android\app\src\main\AndroidManifest.xml:21:13-24:29
 action#android.intent.action.MAIN

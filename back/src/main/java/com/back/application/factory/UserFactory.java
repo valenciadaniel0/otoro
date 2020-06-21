@@ -1,6 +1,6 @@
 package com.back.application.factory;
 
-import com.back.application.handler.command.UserCommand;
+import com.back.application.handler.users.command.UserCommand;
 import com.back.domain.model.User;
 
 public class UserFactory {

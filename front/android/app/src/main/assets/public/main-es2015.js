@@ -436,7 +436,7 @@ module.exports = webpackAsyncContext;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\">\r\n      <ion-content>\r\n        <ion-list id=\"inbox-list\">\r\n          <ion-list-header>Inbox</ion-list-header>\r\n          <ion-note>hi@ionicframework.com</ion-note>\r\n\r\n          <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of appPages; let i = index\">\r\n            <ion-item (click)=\"selectedIndex = i\" routerDirection=\"root\" [routerLink]=\"[p.url]\" lines=\"none\" detail=\"false\" [class.selected]=\"selectedIndex == i\">\r\n              <ion-icon slot=\"start\" [ios]=\"p.icon + '-outline'\" [md]=\"p.icon + '-sharp'\"></ion-icon>\r\n              <ion-label>{{ p.title }}</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n\r\n        <ion-list id=\"labels-list\">\r\n          <ion-list-header>Labels</ion-list-header>\r\n\r\n          <ion-item *ngFor=\"let label of labels\" lines=\"none\">\r\n            <ion-icon slot=\"start\" ios=\"bookmark-outline\" md=\"bookmark-sharp\"></ion-icon>\r\n            <ion-label>{{ label }}</ion-label>\r\n          </ion-item>\r\n        </ion-list>\r\n      </ion-content>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\">\r\n      <ion-content>\r\n        <ion-list id=\"inbox-list\">\r\n          <ion-list-header>Inbox</ion-list-header>\r\n          <ion-note>hi@ionicframework.com</ion-note>\r\n\r\n          <ion-menu-toggle\r\n            auto-hide=\"false\"\r\n            *ngFor=\"let p of appPages; let i = index\"\r\n          >\r\n            <ion-item\r\n              (click)=\"selectedIndex = i\"\r\n              routerDirection=\"root\"\r\n              [routerLink]=\"[p.url]\"\r\n              lines=\"none\"\r\n              detail=\"false\"\r\n              [class.selected]=\"selectedIndex == i\"\r\n            >\r\n              <ion-icon\r\n                slot=\"start\"\r\n                [ios]=\"p.icon + '-outline'\"\r\n                [md]=\"p.icon + '-sharp'\"\r\n              ></ion-icon>\r\n              <ion-label>{{ p.title }}</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item (click)=\"logout()\" lines=\"none\" detail=\"false\">\r\n              <ion-icon name=\"log-out\"></ion-icon>\r\n              <ion-label>Cerrar Sesi&oacute;n</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n\r\n        <ion-list id=\"labels-list\">\r\n          <ion-list-header>Labels</ion-list-header>\r\n          <ion-item *ngFor=\"let label of labels\" lines=\"none\">\r\n            <ion-icon\r\n              slot=\"start\"\r\n              ios=\"bookmark-outline\"\r\n              md=\"bookmark-sharp\"\r\n            ></ion-icon>\r\n            <ion-label>{{ label }}</ion-label>\r\n          </ion-item>\r\n        </ion-list>\r\n      </ion-content>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n");
 
 /***/ }),
 
@@ -464,15 +464,19 @@ const routes = [
     },
     {
         path: "login",
-        loadChildren: () => Promise.all(/*! import() | login-login-module */[__webpack_require__.e("default~dashboard-dashboard-module~login-login-module~posts-posts-module"), __webpack_require__.e("common"), __webpack_require__.e("login-login-module")]).then(__webpack_require__.bind(null, /*! ./login/login.module */ "./src/app/login/login.module.ts")).then((m) => m.LoginModule),
+        loadChildren: () => Promise.all(/*! import() | login-login-module */[__webpack_require__.e("default~dashboard-dashboard-module~login-login-module"), __webpack_require__.e("common"), __webpack_require__.e("login-login-module")]).then(__webpack_require__.bind(null, /*! ./login/login.module */ "./src/app/login/login.module.ts")).then((m) => m.LoginModule),
     },
     {
         path: "dashboard",
-        loadChildren: () => Promise.all(/*! import() | dashboard-dashboard-module */[__webpack_require__.e("default~dashboard-dashboard-module~login-login-module~posts-posts-module"), __webpack_require__.e("common")]).then(__webpack_require__.bind(null, /*! ./dashboard/dashboard.module */ "./src/app/dashboard/dashboard.module.ts")).then((m) => m.DashboardPageModule),
+        loadChildren: () => __webpack_require__.e(/*! import() | dashboard-dashboard-module */ "default~dashboard-dashboard-module~login-login-module").then(__webpack_require__.bind(null, /*! ./dashboard/dashboard.module */ "./src/app/dashboard/dashboard.module.ts")).then((m) => m.DashboardPageModule),
     },
     {
         path: "posts",
-        loadChildren: () => Promise.all(/*! import() | posts-posts-module */[__webpack_require__.e("default~dashboard-dashboard-module~login-login-module~posts-posts-module"), __webpack_require__.e("posts-posts-module")]).then(__webpack_require__.bind(null, /*! ./posts/posts.module */ "./src/app/posts/posts.module.ts")).then((m) => m.PostsModule),
+        loadChildren: () => __webpack_require__.e(/*! import() | posts-posts-module */ "posts-posts-module").then(__webpack_require__.bind(null, /*! ./posts/posts.module */ "./src/app/posts/posts.module.ts")).then((m) => m.PostsModule),
+    },
+    {
+        path: 'users',
+        loadChildren: () => Promise.all(/*! import() | users-users-module */[__webpack_require__.e("common"), __webpack_require__.e("users-users-module")]).then(__webpack_require__.bind(null, /*! ./users/users.module */ "./src/app/users/users.module.ts")).then(m => m.UsersPageModule)
     }
 ];
 let AppRoutingModule = class AppRoutingModule {
@@ -516,75 +520,136 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
-/* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/__ivy_ngcc__/ngx/index.js");
+/* harmony import */ var _capacitor_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @capacitor/core */ "./node_modules/@capacitor/core/dist/esm/index.js");
 /* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/__ivy_ngcc__/ngx/index.js");
+/* harmony import */ var _ionic_native_app_version_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/app-version/ngx */ "./node_modules/@ionic-native/app-version/__ivy_ngcc__/ngx/index.js");
+/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/__ivy_ngcc__/fesm2015/ionic-storage.js");
+/* harmony import */ var _core_services_rest_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./core/services/rest.service */ "./src/app/core/services/rest.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+
+
+
+
 
 
 
 
 
 let AppComponent = class AppComponent {
-    constructor(platform, splashScreen, statusBar) {
+    constructor(platform, statusBar, appVersion, storage, alertController, restService, navController, router) {
         this.platform = platform;
-        this.splashScreen = splashScreen;
         this.statusBar = statusBar;
+        this.appVersion = appVersion;
+        this.storage = storage;
+        this.alertController = alertController;
+        this.restService = restService;
+        this.navController = navController;
+        this.router = router;
         this.selectedIndex = 0;
         this.appPages = [
             {
-                title: 'Login',
-                url: '/login',
-                icon: 'mail'
+                title: "Perfil",
+                url: "/login",
+                icon: "person",
             },
             {
-                title: 'Outbox',
-                url: '/folder/Outbox',
-                icon: 'paper-plane'
+                title: "Notificaciones",
+                url: "/folder/Outbox",
+                icon: "notifications",
             },
-            {
-                title: 'Favorites',
-                url: '/folder/Favorites',
-                icon: 'heart'
-            },
-            {
-                title: 'Archived',
-                url: '/folder/Archived',
-                icon: 'archive'
-            },
-            {
-                title: 'Trash',
-                url: '/folder/Trash',
-                icon: 'trash'
-            },
-            {
-                title: 'Spam',
-                url: '/folder/Spam',
-                icon: 'warning'
-            }
         ];
-        this.labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+        this.labels = ["Family", "Friends", "Notes", "Work", "Travel", "Reminders"];
         this.initializeApp();
     }
     initializeApp() {
+        const { SplashScreen } = _capacitor_core__WEBPACK_IMPORTED_MODULE_3__["Plugins"];
         this.platform.ready().then(() => {
             this.statusBar.styleDefault();
-            this.splashScreen.hide();
+            if (this.platform.is("android")) {
+                this.statusBar.styleLightContent();
+            }
+            else {
+                this.statusBar.styleDefault();
+            }
+            // Hide the splash (you should do this on app launch)
+            SplashScreen.hide();
+            // Show the splash for two seconds and then auto hide:
+            SplashScreen.show({
+                showDuration: 2000,
+                autoHide: true,
+            });
+            this.initCapacitorPushNotification();
+            this.appVersion.getVersionNumber().then((version) => {
+                this.storage.set("version", version);
+            });
+        });
+    }
+    initCapacitorPushNotification() {
+        const { PushNotifications } = _capacitor_core__WEBPACK_IMPORTED_MODULE_3__["Plugins"];
+        PushNotifications.requestPermission().then((result) => {
+            if (result.granted) {
+                // Register with Apple / Google to receive push via APNS/FCM
+                PushNotifications.register();
+            }
+            else {
+                // Show some error
+            }
+        });
+        PushNotifications.addListener("registration", (token) => {
+            alert("Push registration success, token: " + token.value);
+            this.storage.set("deviceToken", token.value);
+        });
+        // Some issue with our setup and push will not work
+        PushNotifications.addListener("registrationError", (error) => {
+            alert("Error on registration: " + JSON.stringify(error));
+        });
+        // Show us the notification payload if the app is open on our device
+        PushNotifications.addListener("pushNotificationReceived", (notification) => {
+            alert("Push received: " + JSON.stringify(notification));
+        });
+        // Method called when tapping on a notification
+        PushNotifications.addListener("pushNotificationActionPerformed", (notification) => {
+            alert("Push action performed: " + JSON.stringify(notification));
+        });
+    }
+    logout() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            let body = new FormData();
+            let auth = yield this.storage.get("auth");
+            this.restService
+                .queryPost("users/logout", body, auth.token)
+                .subscribe((response) => {
+                this.storage.remove("auth");
+                this.router.navigate(["/login"]);
+                (err) => {
+                    if (err["status"] == 401) {
+                        this.storage.remove("auth");
+                        this.router.navigate(["/login"]);
+                    }
+                };
+            });
         });
     }
     ngOnInit() {
-        const path = window.location.pathname.split('/login')[1];
+        const path = window.location.pathname.split("/login")[1];
         if (path !== undefined) {
-            this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
+            this.selectedIndex = this.appPages.findIndex((page) => page.title.toLowerCase() === path.toLowerCase());
         }
     }
 };
 AppComponent.ctorParameters = () => [
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Platform"] },
-    { type: _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_3__["SplashScreen"] },
-    { type: _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__["StatusBar"] }
+    { type: _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__["StatusBar"] },
+    { type: _ionic_native_app_version_ngx__WEBPACK_IMPORTED_MODULE_5__["AppVersion"] },
+    { type: _ionic_storage__WEBPACK_IMPORTED_MODULE_6__["Storage"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"] },
+    { type: _core_services_rest_service__WEBPACK_IMPORTED_MODULE_7__["RestService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavController"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_8__["Router"] }
 ];
 AppComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-root',
+        selector: "app-root",
         template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./app.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html")).default,
         styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./app.component.scss */ "./src/app/app.component.scss")).default]
     })
@@ -617,6 +682,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var _ionic_native_http_ngx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic-native/http/ngx */ "./node_modules/@ionic-native/http/__ivy_ngcc__/ngx/index.js");
 /* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/__ivy_ngcc__/fesm2015/ionic-storage.js");
+/* harmony import */ var _ionic_native_push_ngx__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ionic-native/push/ngx */ "./node_modules/@ionic-native/push/__ivy_ngcc__/ngx/index.js");
+/* harmony import */ var _ionic_native_app_version_ngx__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ionic-native/app-version/ngx */ "./node_modules/@ionic-native/app-version/__ivy_ngcc__/ngx/index.js");
+
+
 
 
 
@@ -647,12 +716,97 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         providers: [
             _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"],
             _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_5__["SplashScreen"],
+            _ionic_native_push_ngx__WEBPACK_IMPORTED_MODULE_13__["Push"],
             _ionic_native_http_ngx__WEBPACK_IMPORTED_MODULE_11__["HTTP"],
+            _ionic_native_app_version_ngx__WEBPACK_IMPORTED_MODULE_14__["AppVersion"],
             { provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] },
         ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]],
     })
 ], AppModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/core/services/rest.service.ts":
+/*!***********************************************!*\
+  !*** ./src/app/core/services/rest.service.ts ***!
+  \***********************************************/
+/*! exports provided: RestService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestService", function() { return RestService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/__ivy_ngcc__/fesm2015/http.js");
+
+
+
+
+let RestService = class RestService {
+    constructor(http) {
+        this.http = http;
+        this.apiUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].api_url;
+    }
+    queryPostRegular(route, body) {
+        let repos = this.http.post(this.apiUrl.concat(route), body);
+        return repos;
+    }
+    queryDeleteRegular(route) {
+        let repos = this.http.delete(this.apiUrl.concat(route));
+        return repos;
+    }
+    queryGet(route, token) {
+        let headers = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["Headers"]({
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+        });
+        let options = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["RequestOptions"]({ headers: headers });
+        let repos = this.http.get(this.apiUrl.concat(route), options);
+        return repos;
+    }
+    queryPost(route, body, token) {
+        let headers = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["Headers"]({
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+        });
+        let options = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["RequestOptions"]({ headers: headers });
+        let repos = this.http.post(this.apiUrl.concat(route), body, options);
+        return repos;
+    }
+    queryPut(route, body, token) {
+        let headers = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["Headers"]({
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+        });
+        let options = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["RequestOptions"]({ headers: headers });
+        let repos = this.http.put(this.apiUrl.concat(route), body, options);
+        return repos;
+    }
+    queryDelete(route) {
+        let token = localStorage.getItem("token");
+        let headers = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["Headers"]({ Authorization: token });
+        let options = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["RequestOptions"]({ headers: headers });
+        let repos = this.http.delete(this.apiUrl.concat(route), options);
+        return repos;
+    }
+    queryExternalApi(route) {
+        let repos = this.http.get(this.apiUrl.concat(route));
+        return repos;
+    }
+};
+RestService.ctorParameters = () => [
+    { type: _angular_http__WEBPACK_IMPORTED_MODULE_3__["Http"] }
+];
+RestService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: "root",
+    })
+], RestService);
 
 
 
@@ -678,7 +832,7 @@ const environment = {
 };
 /*
  * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ * to ignore zone related error stac k frames such as `zone.run`, `zoneDelegate.invokeTask`.
  *
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.

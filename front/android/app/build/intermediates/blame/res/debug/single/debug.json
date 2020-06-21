@@ -100,16 +100,16 @@
         "source": "C:\\Users\\ingdm\\projects\\otoro\\front\\android\\app\\src\\main\\res\\drawable-port-xxhdpi\\splash.png"
     },
     {
+        "merged": "C:\\Users\\ingdm\\projects\\otoro\\front\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-xhdpi_screen.png.flat",
+        "source": "C:\\Users\\ingdm\\projects\\otoro\\front\\android\\app\\src\\main\\res\\drawable-land-xhdpi\\screen.png"
+    },
+    {
         "merged": "C:\\Users\\ingdm\\projects\\otoro\\front\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "C:\\Users\\ingdm\\projects\\otoro\\front\\android\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
         "merged": "C:\\Users\\ingdm\\projects\\otoro\\front\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-hdpi_splash.png.flat",
         "source": "C:\\Users\\ingdm\\projects\\otoro\\front\\android\\app\\src\\main\\res\\drawable-port-hdpi\\splash.png"
-    },
-    {
-        "merged": "C:\\Users\\ingdm\\projects\\otoro\\front\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-xhdpi_splash.png.flat",
-        "source": "C:\\Users\\ingdm\\projects\\otoro\\front\\android\\app\\src\\main\\res\\drawable-land-xhdpi\\splash.png"
     },
     {
         "merged": "C:\\Users\\ingdm\\projects\\otoro\\front\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi_splash.png.flat",

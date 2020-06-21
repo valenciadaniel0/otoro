@@ -2,6 +2,14 @@
   cordova.define('cordova/plugin_list', function(require, exports, module) {
     module.exports = [
       {
+          "id": "cordova-plugin-app-version.AppVersionPlugin",
+          "file": "plugins/cordova-plugin-app-version/www/AppVersionPlugin.js",
+          "pluginId": "cordova-plugin-app-version",
+        "clobbers": [
+          "cordova.getAppVersion"
+        ]
+        },
+      {
           "id": "cordova-plugin-advanced-http.http",
           "file": "plugins/cordova-plugin-advanced-http/www/advanced-http.js",
           "pluginId": "cordova-plugin-advanced-http",
@@ -260,6 +268,7 @@
     // TOP OF METADATA
     {
       "cordova-plugin-advanced-http": "2.5.1",
+      "cordova-plugin-app-version": "0.1.9",
       "cordova-plugin-file": "6.0.2",
       "cordova-plugin-telerik-imagepicker": "2.3.3"
     };

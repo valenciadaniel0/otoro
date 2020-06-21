@@ -135,7 +135,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>{{ folder }}</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-fab\n    vertical=\"bottom\"\n    horizontal=\"end\"\n    slot=\"fixed\"\n    (click)=\"goToPostCreation()\"\n  >\n    <ion-fab-button>\n      <ion-icon name=\"add\"></ion-icon>\n    </ion-fab-button>\n  </ion-fab>\n  <h4 class=\"centered-text\">Todas las publicaciones</h4>\n  <form [formGroup]=\"searchForm\">\n    <ion-item>\n      <input\n        name=\"query\"\n        type=\"text\"\n        class=\"form-control\"\n        placeholder=\"Busca una ciudad\"\n        formControlName=\"queryControl\"\n        (keyup)=\"search()\"\n      />\n    </ion-item>\n  </form>\n  <ion-row class=\"top-tab-container\">\n    <ion-col (click)=\"changeActiveTab(1)\"><span>Envios</span></ion-col>\n    <ion-col (click)=\"changeActiveTab(2)\"><span>Ventas</span></ion-col>\n  </ion-row>\n  <div class=\"posts-list\" *ngIf=\"shippings.length > 0 && activeTab === 1\">\n    <app-post-card\n      *ngFor=\"let shipping of shippings\"\n      imageSrc=\"https://construyored.com/assets/img/logo.png\"\n      [title]=\"shipping.title\"\n      [date]=\"shipping.date\"\n      type=\"1\"\n    ></app-post-card>\n  </div>\n  <div class=\"posts-list\" *ngIf=\"sells.length > 0 && activeTab === 2\">\n    <app-post-card\n      *ngFor=\"let sell of sells\"\n      imageSrc=\"https://construyored.com/assets/img/logo.png\"\n      [title]=\"sell.title\"\n      [price]=\"sell.price\"\n      type=\"2\"\n    ></app-post-card>\n  </div>\n</ion-content>";
+    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ folder }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-fab\r\n    vertical=\"bottom\"\r\n    horizontal=\"end\"\r\n    slot=\"fixed\"\r\n    (click)=\"goToPostCreation()\"\r\n  >\r\n    <ion-fab-button>\r\n      <ion-icon name=\"add\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n  <h4 class=\"centered-text\">Todas las publicaciones</h4>\r\n  <form [formGroup]=\"searchForm\">\r\n    <ion-item>\r\n      <input\r\n        name=\"query\"\r\n        type=\"text\"\r\n        class=\"form-control\"\r\n        placeholder=\"Busca una ciudad\"\r\n        formControlName=\"queryControl\"\r\n        (keyup)=\"search()\"\r\n      />\r\n    </ion-item>\r\n  </form>\r\n  <ion-row class=\"top-tab-container\">\r\n    <ion-col (click)=\"changeActiveTab(1)\"><span>Envios</span></ion-col>\r\n    <ion-col (click)=\"changeActiveTab(2)\"><span>Ventas</span></ion-col>\r\n  </ion-row>\r\n  <div class=\"posts-list\" *ngIf=\"shippings.length > 0 && activeTab === 1\">\r\n    <app-post-card\r\n      *ngFor=\"let shipping of shippings\"\r\n      imageSrc=\"https://construyored.com/assets/img/logo.png\"\r\n      [title]=\"shipping.title\"\r\n      [date]=\"shipping.date\"\r\n      type=\"1\"\r\n    ></app-post-card>\r\n  </div>\r\n  <div class=\"posts-list\" *ngIf=\"sells.length > 0 && activeTab === 2\">\r\n    <app-post-card\r\n      *ngFor=\"let sell of sells\"\r\n      imageSrc=\"https://construyored.com/assets/img/logo.png\"\r\n      [title]=\"sell.title\"\r\n      [price]=\"sell.price\"\r\n      type=\"2\"\r\n    ></app-post-card>\r\n  </div>\r\n</ion-content>";
     /***/
   },
 
@@ -155,7 +155,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>{{ folder }}</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-fab\n    vertical=\"bottom\"\n    horizontal=\"end\"\n    slot=\"fixed\"\n    (click)=\"goToPostCreation()\"\n  >\n    <ion-fab-button>\n      <ion-icon name=\"add\"></ion-icon>\n    </ion-fab-button>\n  </ion-fab>\n  <h4 class=\"centered-text\">{{title}}</h4>\n  <ion-row class=\"top-tab-container\">\n    <ion-col (click)=\"changeActiveTab(1)\"><span>Envios</span></ion-col>\n    <ion-col (click)=\"changeActiveTab(2)\"><span>Ventas</span></ion-col>\n  </ion-row>\n  <div class=\"posts-list\" *ngIf=\"shippings.length > 0 && activeTab === 1\">\n    <app-post-card\n      *ngFor=\"let shipping of shippings\"\n      imageSrc=\"https://construyored.com/assets/img/logo.png\"\n      [title]=\"shipping.title\"\n      [date]=\"shipping.date\"\n      type=\"1\"\n    ></app-post-card>\n  </div>\n  <div class=\"posts-list\" *ngIf=\"sells.length > 0 && activeTab === 2\">\n    <app-post-card\n      *ngFor=\"let sell of sells\"\n      imageSrc=\"https://construyored.com/assets/img/logo.png\"\n      [title]=\"sell.title\"\n      [price]=\"sell.price\"\n      type=\"2\"\n    ></app-post-card>\n  </div>\n</ion-content>\n";
+    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ folder }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-fab\r\n    vertical=\"bottom\"\r\n    horizontal=\"end\"\r\n    slot=\"fixed\"\r\n    (click)=\"goToPostCreation()\"\r\n  >\r\n    <ion-fab-button>\r\n      <ion-icon name=\"add\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n  <h4 class=\"centered-text\">{{title}}</h4>\r\n  <ion-row class=\"top-tab-container\">\r\n    <ion-col (click)=\"changeActiveTab(1)\"><span>Envios</span></ion-col>\r\n    <ion-col (click)=\"changeActiveTab(2)\"><span>Ventas</span></ion-col>\r\n  </ion-row>\r\n  <div class=\"posts-list\" *ngIf=\"shippings.length > 0 && activeTab === 1\">\r\n    <app-post-card\r\n      *ngFor=\"let shipping of shippings\"\r\n      imageSrc=\"https://construyored.com/assets/img/logo.png\"\r\n      [title]=\"shipping.title\"\r\n      [date]=\"shipping.date\"\r\n      type=\"1\"\r\n    ></app-post-card>\r\n  </div>\r\n  <div class=\"posts-list\" *ngIf=\"sells.length > 0 && activeTab === 2\">\r\n    <app-post-card\r\n      *ngFor=\"let sell of sells\"\r\n      imageSrc=\"https://construyored.com/assets/img/logo.png\"\r\n      [title]=\"sell.title\"\r\n      [price]=\"sell.price\"\r\n      type=\"2\"\r\n    ></app-post-card>\r\n  </div>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -196,6 +196,86 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
     __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ folder }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div id=\"container\">\r\n    <h4 class=\"centered-text\">Que quieres publicar?</h4>\r\n    <ion-row>\r\n      <ion-col text-center>\r\n        <ion-button (click)=\"getImages()\">Choose Images</ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col>\r\n        <!-- More Pinterest floating gallery style -->\r\n        <div class=\"images\">\r\n          <div class=\"one-image\" *ngFor=\"let img of imageResponse\">\r\n            <img src=\"{{img}}\" alt=\"\" srcset=\"\" />\r\n          </div>\r\n        </div>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row id=\"form-container\">\r\n      <ion-col col-12>\r\n        <form [formGroup]=\"shippingForm\">\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">T&iacute;tulo</label>\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control width-100\"\r\n              formControlName=\"title\"\r\n            />\r\n            <span *ngIf=\"controlHasError('title', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Descripci&oacute;n</label>\r\n            <textarea\r\n              class=\"form-control width-100\"\r\n              formControlName=\"description\"\r\n            ></textarea>\r\n            <span *ngIf=\"controlHasError('description', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <ion-item>\r\n              <ion-label class=\"bold\">Selecciona fecha</ion-label>\r\n              <ion-datetime\r\n                id=\"dynamicDisabled\"\r\n                displayFormat=\"MMMM DD YYYY\"\r\n                value=\"1994-12-15\"\r\n                formControlName=\"date\"\r\n              ></ion-datetime>\r\n            </ion-item>\r\n            <span *ngIf=\"controlHasError('date', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Origen del envio</label>\r\n            <ion-item (click)=\"openOriginModal()\">\r\n              <span *ngIf=\"!origin\">Selecciona un origen</span>\r\n              <span *ngIf=\"origin\">{{origin.name}}</span>\r\n            </ion-item>\r\n            <input\r\n              type=\"text\"\r\n              class=\"display-none\"\r\n              formControlName=\"origin\"             \r\n            />\r\n            <span *ngIf=\"controlHasError('origin', 'required')\">\r\n              <strong class=\"error\">Selecciona una ciudad</strong>\r\n            </span>\r\n          </div>\r\n\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Origen del destino</label>\r\n            <ion-item (click)=\"openDestinationModal()\">\r\n              <span *ngIf=\"!destination\">Selecciona un destino</span>\r\n              <span *ngIf=\"destination\">{{destination.name}}</span>\r\n            </ion-item>\r\n            <input\r\n              type=\"text\"\r\n              class=\"display-none\"\r\n              formControlName=\"destination\"\r\n              display=\"none\"\r\n            />\r\n            <span *ngIf=\"controlHasError('destination', 'required')\">\r\n              <strong class=\"error\">Selecciona una ciudad</strong>\r\n            </span>\r\n          </div>\r\n        </form>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button color=\"primary\" (click)=\"saveShipping()\" class=\"width-100\">\r\n          Guardar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button\r\n          color=\"danger\"\r\n          (click)=\"goBackToDashboard()\"\r\n          class=\"width-100\"\r\n        >\r\n          Cancelar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </div>\r\n  <ion-grid id=\"tabs-container\">\r\n    <ion-row>\r\n      <ion-col col-6 class=\"centered-text\">\r\n        <ion-icon name=\"send\"></ion-icon>\r\n        <ion-label>Envio</ion-label>\r\n      </ion-col>\r\n      <ion-col (click)=\"goToSellForm()\" col-6 class=\"centered-text\">\r\n        <ion-icon name=\"pricetag\"></ion-icon>\r\n        <ion-label>Venta</ion-label>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>\r\n";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/shared/card/card.component.html":
+  /*!***************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/shared/card/card.component.html ***!
+    \***************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppSharedCardCardComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<ion-card (click)=\"action()\">\r\n  <ion-card-header>\r\n    <ion-card-subtitle class=\"centered-text black-text\">{{text}}</ion-card-subtitle>\r\n  </ion-card-header>\r\n</ion-card>\r\n";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/shared/image/image.component.html":
+  /*!*****************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/shared/image/image.component.html ***!
+    \*****************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppSharedImageImageComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<img [src]=\"url\" [className]=\"class\"  />";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/shared/post-card/post-card.component.html":
+  /*!*************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/shared/post-card/post-card.component.html ***!
+    \*************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppSharedPostCardPostCardComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<div class=\"post-card\">\r\n  <ion-grid>\r\n    <ion-row>\r\n      <ion-col size=\"4\">\r\n        <app-image [url]=\"imageSrc\" class=\"post-image\"></app-image>\r\n      </ion-col>\r\n      <ion-col size=\"8\">\r\n        <h4 class=\"post-title\">{{ title }}</h4>\r\n        <div class=\"post-details\" *ngIf=\"type === 1\">\r\n          <span><ion-icon name=\"calendar\"></ion-icon>{{ date }}</span>\r\n        </div>\r\n        <div class=\"post-details\" *ngIf=\"type === 2\">\r\n          <span><ion-icon name=\"pricetag\"></ion-icon>{{ price }}</span>\r\n        </div>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</div>\r\n";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/shared/select-city/select-city.component.html":
+  /*!*****************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/shared/select-city/select-city.component.html ***!
+    \*****************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppSharedSelectCitySelectCityComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>Modal Header</ion-title>\r\n    <ion-buttons slot=\"primary\">\r\n      <ion-button (click)=\"dismiss()\">\r\n        <ion-icon slot=\"icon-only\" name=\"close\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content class=\"ion-padding\">\r\n  <form [formGroup]=\"searchForm\">\r\n    <ion-item>\r\n      <input\r\n        name=\"query\"\r\n        type=\"text\"\r\n        class=\"form-control\"\r\n        placeholder=\"Busca una ciudad\"\r\n        formControlName=\"queryControl\"\r\n        (keyup)=\"search()\"\r\n      />\r\n    </ion-item>\r\n  </form>\r\n  <div class=\"city-list\" *ngIf=\"cities.length > 0\">\r\n    <div\r\n      class=\"select-city\"\r\n      *ngFor=\"let city of cities\"\r\n      (click)=\"dismiss(city)\"\r\n    >\r\n      {{ city.name }}\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -2034,6 +2114,557 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       /*! ./shipping-form.page.scss */
       "./src/app/posts/shipping-form/shipping-form.page.scss"))["default"]]
     })], ShippingFormPage);
+    /***/
+  },
+
+  /***/
+  "./src/app/shared/card/card.component.scss":
+  /*!*************************************************!*\
+    !*** ./src/app/shared/card/card.component.scss ***!
+    \*************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppSharedCardCardComponentScss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9jYXJkL2NhcmQuY29tcG9uZW50LnNjc3MifQ== */";
+    /***/
+  },
+
+  /***/
+  "./src/app/shared/card/card.component.ts":
+  /*!***********************************************!*\
+    !*** ./src/app/shared/card/card.component.ts ***!
+    \***********************************************/
+
+  /*! exports provided: CardComponent */
+
+  /***/
+  function srcAppSharedCardCardComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "CardComponent", function () {
+      return CardComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+    var CardComponent = /*#__PURE__*/function () {
+      function CardComponent() {
+        _classCallCheck(this, CardComponent);
+      }
+
+      _createClass(CardComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {}
+      }]);
+
+      return CardComponent;
+    }();
+
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], CardComponent.prototype, "text", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], CardComponent.prototype, "action", void 0);
+    CardComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: "app-card",
+      template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+      /*! raw-loader!./card.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/shared/card/card.component.html"))["default"],
+      styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+      /*! ./card.component.scss */
+      "./src/app/shared/card/card.component.scss"))["default"]]
+    })], CardComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/shared/image/image.component.scss":
+  /*!***************************************************!*\
+    !*** ./src/app/shared/image/image.component.scss ***!
+    \***************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppSharedImageImageComponentScss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9pbWFnZS9pbWFnZS5jb21wb25lbnQuc2NzcyJ9 */";
+    /***/
+  },
+
+  /***/
+  "./src/app/shared/image/image.component.ts":
+  /*!*************************************************!*\
+    !*** ./src/app/shared/image/image.component.ts ***!
+    \*************************************************/
+
+  /*! exports provided: ImageComponent */
+
+  /***/
+  function srcAppSharedImageImageComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ImageComponent", function () {
+      return ImageComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+    var ImageComponent = /*#__PURE__*/function () {
+      function ImageComponent() {
+        _classCallCheck(this, ImageComponent);
+      }
+
+      _createClass(ImageComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {}
+      }]);
+
+      return ImageComponent;
+    }();
+
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], ImageComponent.prototype, "url", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], ImageComponent.prototype, "id", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], ImageComponent.prototype, "class", void 0);
+    ImageComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: "app-image",
+      template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+      /*! raw-loader!./image.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/shared/image/image.component.html"))["default"],
+      styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+      /*! ./image.component.scss */
+      "./src/app/shared/image/image.component.scss"))["default"]]
+    })], ImageComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/shared/post-card/post-card.component.scss":
+  /*!***********************************************************!*\
+    !*** ./src/app/shared/post-card/post-card.component.scss ***!
+    \***********************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppSharedPostCardPostCardComponentScss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9wb3N0LWNhcmQvcG9zdC1jYXJkLmNvbXBvbmVudC5zY3NzIn0= */";
+    /***/
+  },
+
+  /***/
+  "./src/app/shared/post-card/post-card.component.ts":
+  /*!*********************************************************!*\
+    !*** ./src/app/shared/post-card/post-card.component.ts ***!
+    \*********************************************************/
+
+  /*! exports provided: PostCardComponent */
+
+  /***/
+  function srcAppSharedPostCardPostCardComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "PostCardComponent", function () {
+      return PostCardComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+    var PostCardComponent = /*#__PURE__*/function () {
+      function PostCardComponent() {
+        _classCallCheck(this, PostCardComponent);
+      }
+
+      _createClass(PostCardComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {}
+      }]);
+
+      return PostCardComponent;
+    }();
+
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], PostCardComponent.prototype, "date", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], PostCardComponent.prototype, "imageSrc", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], PostCardComponent.prototype, "price", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], PostCardComponent.prototype, "title", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], PostCardComponent.prototype, "type", void 0);
+    PostCardComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: "app-post-card",
+      template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+      /*! raw-loader!./post-card.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/shared/post-card/post-card.component.html"))["default"],
+      styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+      /*! ./post-card.component.scss */
+      "./src/app/shared/post-card/post-card.component.scss"))["default"]]
+    })], PostCardComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/shared/select-city/city.service.ts":
+  /*!****************************************************!*\
+    !*** ./src/app/shared/select-city/city.service.ts ***!
+    \****************************************************/
+
+  /*! exports provided: CityService */
+
+  /***/
+  function srcAppSharedSelectCityCityServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "CityService", function () {
+      return CityService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var src_app_core_services_rest_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! src/app/core/services/rest.service */
+    "./src/app/core/services/rest.service.ts");
+
+    var CityService = /*#__PURE__*/function () {
+      function CityService(restService) {
+        _classCallCheck(this, CityService);
+
+        this.restService = restService;
+      }
+
+      _createClass(CityService, [{
+        key: "getAll",
+        value: function getAll(query, token) {
+          var url = "cities".concat(undefined != query && null != query && "" != query ? "?query=".concat(query) : "");
+          return this.restService.queryGet(url, token);
+        }
+      }]);
+
+      return CityService;
+    }();
+
+    CityService.ctorParameters = function () {
+      return [{
+        type: src_app_core_services_rest_service__WEBPACK_IMPORTED_MODULE_2__["RestService"]
+      }];
+    };
+
+    CityService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+      providedIn: "root"
+    })], CityService);
+    /***/
+  },
+
+  /***/
+  "./src/app/shared/select-city/select-city.component.scss":
+  /*!***************************************************************!*\
+    !*** ./src/app/shared/select-city/select-city.component.scss ***!
+    \***************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppSharedSelectCitySelectCityComponentScss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9zZWxlY3QtY2l0eS9zZWxlY3QtY2l0eS5jb21wb25lbnQuc2NzcyJ9 */";
+    /***/
+  },
+
+  /***/
+  "./src/app/shared/select-city/select-city.component.ts":
+  /*!*************************************************************!*\
+    !*** ./src/app/shared/select-city/select-city.component.ts ***!
+    \*************************************************************/
+
+  /*! exports provided: SelectCityComponent */
+
+  /***/
+  function srcAppSharedSelectCitySelectCityComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "SelectCityComponent", function () {
+      return SelectCityComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @ionic/angular */
+    "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+    /* harmony import */
+
+
+    var _ionic_storage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @ionic/storage */
+    "./node_modules/@ionic/storage/__ivy_ngcc__/fesm2015/ionic-storage.js");
+    /* harmony import */
+
+
+    var _city_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ./city.service */
+    "./src/app/shared/select-city/city.service.ts");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+
+    var SelectCityComponent = /*#__PURE__*/function () {
+      function SelectCityComponent(modalController, cityService, storage) {
+        _classCallCheck(this, SelectCityComponent);
+
+        this.modalController = modalController;
+        this.cityService = cityService;
+        this.storage = storage;
+        this.auth = "";
+        this.cities = [];
+        this.query = "";
+      }
+
+      _createClass(SelectCityComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          var _this14 = this;
+
+          this.storage.get("auth").then(function (auth) {
+            _this14.auth = auth;
+          });
+          this.searchForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
+            queryControl: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("queryControl", [])
+          });
+          this.searchForm.controls["queryControl"].setValue(null);
+        }
+      }, {
+        key: "dismiss",
+        value: function dismiss() {
+          var city = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
+          this.modalController.dismiss({
+            dismissed: true,
+            city: city
+          });
+        }
+      }, {
+        key: "search",
+        value: function search() {
+          var controls = this.searchForm.controls;
+          this.query = controls["queryControl"].value;
+
+          if (this.query && this.query.length > 3) {
+            this.getCities();
+          } else {
+            this.cities = [];
+          }
+        }
+      }, {
+        key: "getCities",
+        value: function getCities() {
+          var _this15 = this;
+
+          this.cityService.getAll(this.query, this.auth.token).toPromise().then(function (res) {
+            var result = res.json();
+            _this15.cities = result;
+          }, function (err) {
+            var error = JSON.parse(err._body);
+            console.log(error);
+          });
+        }
+      }]);
+
+      return SelectCityComponent;
+    }();
+
+    SelectCityComponent.ctorParameters = function () {
+      return [{
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"]
+      }, {
+        type: _city_service__WEBPACK_IMPORTED_MODULE_4__["CityService"]
+      }, {
+        type: _ionic_storage__WEBPACK_IMPORTED_MODULE_3__["Storage"]
+      }];
+    };
+
+    SelectCityComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: "app-select-city",
+      template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+      /*! raw-loader!./select-city.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/shared/select-city/select-city.component.html"))["default"],
+      styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+      /*! ./select-city.component.scss */
+      "./src/app/shared/select-city/select-city.component.scss"))["default"]]
+    })], SelectCityComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/shared/shared.module.ts":
+  /*!*****************************************!*\
+    !*** ./src/app/shared/shared.module.ts ***!
+    \*****************************************/
+
+  /*! exports provided: SharedModule */
+
+  /***/
+  function srcAppSharedSharedModuleTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "SharedModule", function () {
+      return SharedModule;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    /* harmony import */
+
+
+    var _image_image_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ./image/image.component */
+    "./src/app/shared/image/image.component.ts");
+    /* harmony import */
+
+
+    var _card_card_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ./card/card.component */
+    "./src/app/shared/card/card.component.ts");
+    /* harmony import */
+
+
+    var _post_card_post_card_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ./post-card/post-card.component */
+    "./src/app/shared/post-card/post-card.component.ts");
+    /* harmony import */
+
+
+    var _select_city_select_city_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! ./select-city/select-city.component */
+    "./src/app/shared/select-city/select-city.component.ts");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+
+    var SharedModule = function SharedModule() {
+      _classCallCheck(this, SharedModule);
+    };
+
+    SharedModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+      declarations: [_card_card_component__WEBPACK_IMPORTED_MODULE_4__["CardComponent"], _post_card_post_card_component__WEBPACK_IMPORTED_MODULE_5__["PostCardComponent"], _image_image_component__WEBPACK_IMPORTED_MODULE_3__["ImageComponent"], _select_city_select_city_component__WEBPACK_IMPORTED_MODULE_6__["SelectCityComponent"]],
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ReactiveFormsModule"]],
+      exports: [_card_card_component__WEBPACK_IMPORTED_MODULE_4__["CardComponent"], _post_card_post_card_component__WEBPACK_IMPORTED_MODULE_5__["PostCardComponent"], _image_image_component__WEBPACK_IMPORTED_MODULE_3__["ImageComponent"], _select_city_select_city_component__WEBPACK_IMPORTED_MODULE_6__["SelectCityComponent"]]
+    })], SharedModule);
     /***/
   }
 }]);

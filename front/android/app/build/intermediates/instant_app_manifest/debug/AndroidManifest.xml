@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="io.ionic.starter"
+    package="co.app.otoro"
     android:targetSandboxVersion="2"
     android:versionCode="1"
     android:versionName="1.0" >
@@ -48,7 +48,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
         <activity
-            android:name="io.ionic.starter.MainActivity"
+            android:name="co.app.otoro.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
             android:label="@string/title_activity_main"
             android:launchMode="singleTask"
@@ -70,7 +70,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="io.ionic.starter.fileprovider"
+            android:authorities="co.app.otoro.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -141,7 +141,7 @@
 
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="io.ionic.starter.firebaseinitprovider"
+            android:authorities="co.app.otoro.firebaseinitprovider"
             android:exported="false"
             android:initOrder="100" />
 

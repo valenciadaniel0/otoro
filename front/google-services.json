@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "330919916594",
+    "firebase_url": "https://otoro-1ec66.firebaseio.com",
+    "project_id": "otoro-1ec66",
+    "storage_bucket": "otoro-1ec66.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:330919916594:android:284df3e963e27c457c782b",
+        "android_client_info": {
+          "package_name": "co.app.otoro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "330919916594-jkmf5c3ris2dkahb6cifvi853iokb5tc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBE1Ha0PslZ9TT0ZYD_YvFLanefyb4OoD4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "330919916594-jkmf5c3ris2dkahb6cifvi853iokb5tc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

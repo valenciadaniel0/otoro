@@ -15,9 +15,11 @@ import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Entity(name = "users")
+@DynamicUpdate
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -48,7 +50,7 @@ public class UserEntity {
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
-    private List<RoleEntity> roles;    
+    private List<RoleEntity> roles;
 
     public Long getId() {
         return this.id;
@@ -123,6 +125,8 @@ public class UserEntity {
     }
 
     public void encryptPassword(PasswordEncoder bcryptEncoder) {
-        this.setPassword(bcryptEncoder.encode(this.getPassword()));
+        if (this.getPassword() != null) {
+            this.setPassword(bcryptEncoder.encode(this.getPassword()));
+        }
     }
 }

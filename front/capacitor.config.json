@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "otoro",
+  "appId": "co.app.otoro",
+  "appName": "Otoro",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

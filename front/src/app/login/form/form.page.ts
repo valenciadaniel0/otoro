@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { Storage } from "@ionic/storage";
 import { LoginService } from "./login.service";
+import { UsersService } from "src/app/users/users.service";
 
 @Component({
   selector: "app-form",
@@ -16,7 +17,8 @@ export class FormPage implements OnInit {
   constructor(
     private loginService: LoginService,
     private router: Router,
-    public storage: Storage
+    public storage: Storage,
+    private usersService: UsersService
   ) {}
 
   ngOnInit() {
@@ -61,9 +63,34 @@ export class FormPage implements OnInit {
       .run(body)
       .toPromise()
       .then(
-        (res) => {
-          const result = res.json();
+        async (res) => {
+          let result = res.json();
+          let deviceToken = await this.storage.get("deviceToken");
           this.storage.set("auth", result);
+          let user = {
+            active: result.active,
+            deviceToken: deviceToken,
+            email: result.email,
+            id: result.id,
+            name: result.name,
+            roles: result.roles,
+          };
+          this.updateUser(user, result.token);
+        },
+        (err) => {
+          console.log(err);
+          let error = JSON.parse(err._body);
+          console.log(error);
+        }
+      );
+  }
+
+  updateUser(body: any, token: string) {
+    this.usersService
+      .update(body, token)
+      .toPromise()
+      .then(
+        async (res) => {
           this.router.navigate(["/dashboard"]);
         },
         (err) => {
@@ -72,5 +99,9 @@ export class FormPage implements OnInit {
           console.log(error);
         }
       );
+  }
+
+  goToRecoverPassword() {
+    this.router.navigate(["/users/recover-password"]);
   }
 }

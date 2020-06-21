@@ -3,6 +3,8 @@ package com.back.framework.config;
 import java.io.Serializable;
 import java.util.List;
 
+import com.back.domain.model.Role;
+
 public class JwtResponse implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -12,10 +14,10 @@ public class JwtResponse implements Serializable {
     private final String email;
     private final int active;
     private final String deviceToken;
-    private final List<String> roles;
+    private final List<Role> roles;
 
     public JwtResponse(String jwttoken, Long id, String name, String email, int active, String deviceToken,
-            List<String> roles) {
+            List<Role> roles) {
         this.jwttoken = jwttoken;
         this.id = id;
         this.name = name;
@@ -49,7 +51,7 @@ public class JwtResponse implements Serializable {
         return this.deviceToken;
     }
 
-    public List<String> getRoles() {
+    public List<Role> getRoles() {
         return this.roles;
     }
 }

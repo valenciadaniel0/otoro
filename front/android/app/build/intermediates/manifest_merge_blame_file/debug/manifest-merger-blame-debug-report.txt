@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="io.ionic.starter"
+3    package="co.app.otoro"
 4    android:versionCode="1"
 5    android:versionName="1.0" >
 6
@@ -86,8 +86,8 @@
 48-->C:\Users\ingdm\projects\otoro\front\android\app\src\main\AndroidManifest.xml:12:9-44
 49        <activity
 49-->C:\Users\ingdm\projects\otoro\front\android\app\src\main\AndroidManifest.xml:14:9-33:20
-50            android:name="io.ionic.starter.MainActivity"
-50-->C:\Users\ingdm\projects\otoro\front\android\app\src\main\AndroidManifest.xml:16:13-57
+50            android:name="co.app.otoro.MainActivity"
+50-->C:\Users\ingdm\projects\otoro\front\android\app\src\main\AndroidManifest.xml:16:13-53
 51            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
 51-->C:\Users\ingdm\projects\otoro\front\android\app\src\main\AndroidManifest.xml:15:13-129
 52            android:label="@string/title_activity_main"
@@ -128,7 +128,7 @@
 70        <provider
 71            android:name="androidx.core.content.FileProvider"
 71-->C:\Users\ingdm\projects\otoro\front\android\app\src\main\AndroidManifest.xml:36:13-62
-72            android:authorities="io.ionic.starter.fileprovider"
+72            android:authorities="co.app.otoro.fileprovider"
 72-->C:\Users\ingdm\projects\otoro\front\android\app\src\main\AndroidManifest.xml:37:13-64
 73            android:exported="false"
 73-->C:\Users\ingdm\projects\otoro\front\android\app\src\main\AndroidManifest.xml:38:13-37
@@ -256,7 +256,7 @@
 141-->[com.google.firebase:firebase-common:19.3.0] C:\Users\ingdm\.gradle\caches\transforms-2\files-2.1\1b23a58bb1c539c2a19df1b0920c32b5\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
 142            android:name="com.google.firebase.provider.FirebaseInitProvider"
 142-->[com.google.firebase:firebase-common:19.3.0] C:\Users\ingdm\.gradle\caches\transforms-2\files-2.1\1b23a58bb1c539c2a19df1b0920c32b5\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
-143            android:authorities="io.ionic.starter.firebaseinitprovider"
+143            android:authorities="co.app.otoro.firebaseinitprovider"
 143-->[com.google.firebase:firebase-common:19.3.0] C:\Users\ingdm\.gradle\caches\transforms-2\files-2.1\1b23a58bb1c539c2a19df1b0920c32b5\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
 144            android:exported="false"
 144-->[com.google.firebase:firebase-common:19.3.0] C:\Users\ingdm\.gradle\caches\transforms-2\files-2.1\1b23a58bb1c539c2a19df1b0920c32b5\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37

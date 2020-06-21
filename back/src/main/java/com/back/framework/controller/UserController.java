@@ -1,16 +1,16 @@
 package com.back.framework.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.back.application.handler.command.UserCommand;
 import com.back.application.handler.users.CreateUserHandler;
 import com.back.application.handler.users.GetUserByEmailHandler;
+import com.back.application.handler.users.UpdatePasswordHandler;
+import com.back.application.handler.users.UpdateUserHandler;
+import com.back.application.handler.users.command.EmailCommand;
+import com.back.application.handler.users.command.UserCommand;
+
 import org.springframework.security.core.context.SecurityContextHolder;
-import com.back.domain.model.Role;
 import com.back.domain.model.User;
 import com.back.framework.adapter.UserRepositoryImplementation;
 import com.back.framework.config.JwtResponse;
@@ -28,6 +28,7 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,6 +39,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
     private CreateUserHandler createUserHandler;
     private GetUserByEmailHandler getUserByEmailHandler;
+    private UpdateUserHandler updateUserHandler;
+    private UpdatePasswordHandler updatePasswordHandler;
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -48,9 +51,12 @@ public class UserController {
     @Autowired
     private UserRepositoryImplementation userRepositoryImplementation;
 
-    public UserController(CreateUserHandler createUserHandler, GetUserByEmailHandler getUserByEmailHandler) {
+    public UserController(CreateUserHandler createUserHandler, GetUserByEmailHandler getUserByEmailHandler,
+            UpdateUserHandler updateUserHandler, UpdatePasswordHandler updatePasswordHandler) {
         this.createUserHandler = createUserHandler;
         this.getUserByEmailHandler = getUserByEmailHandler;
+        this.updateUserHandler = updateUserHandler;
+        this.updatePasswordHandler = updatePasswordHandler;
     }
 
     @PostMapping(value = "/authenticate")
@@ -59,13 +65,9 @@ public class UserController {
         final UserDetails userDetails = userRepositoryImplementation.loadUserByUsername(userCommand.getEmail());
         User user = this.getUserByEmailHandler.run(userCommand.getEmail());
         final String token = jwtTokenUtil.generateToken(userDetails);
-        List<String> roles = new ArrayList<>();
-        for (Role role : user.getRoles()) {
-            roles.add(role.getName());
-        }
 
         return ResponseEntity.ok(new JwtResponse(token, user.getId(), user.getName(), user.getEmail(), user.getActive(),
-                user.getDeviceToken(), roles));
+                user.getDeviceToken(), user.getRoles()));
     }
 
     @PostMapping(value = "/register")
@@ -73,12 +75,23 @@ public class UserController {
         this.createUserHandler.run(userCommand);
     }
 
+    @PostMapping(value = "/recover-password")
+    public void updatePassword(@RequestBody UserCommand userCommand) {        
+        User user = this.getUserByEmailHandler.run(userCommand.getEmail());        
+        this.updatePasswordHandler.run(user);
+    }
+
+    @PutMapping(value = "")
+    public void update(@RequestBody UserCommand userCommand) {
+        this.updateUserHandler.run(userCommand);
+    }
+
     @GetMapping("/get-by-email")
     public User getUserByEmail(@RequestBody UserCommand userCommand) {
         return this.getUserByEmailHandler.run(userCommand.getEmail());
     }
 
-    @GetMapping(value = "/logout")
+    @PostMapping(value = "/logout")
     public void logout(HttpServletRequest request, HttpServletResponse response) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth != null) {

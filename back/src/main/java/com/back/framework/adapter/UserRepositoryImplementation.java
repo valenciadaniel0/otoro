@@ -25,6 +25,7 @@ public class UserRepositoryImplementation implements UserRepository, UserDetails
     private UserDBRepository userDBRepository;
     private ModelMapper modelMapper;
     private PasswordEncoder bcryptEncoder;
+    private final String USER_WITH_EMAIL_NOT_FOUND = "No se encontró un usuario con el email: ";
 
     public UserRepositoryImplementation(UserDBRepository userDBRepository) {
         this.userDBRepository = userDBRepository;
@@ -40,7 +41,15 @@ public class UserRepositoryImplementation implements UserRepository, UserDetails
     }
 
     @Override
+    public void update(User user) {
+        UserEntity userEntity = UserMapper.modelToEntity(user);
+        this.userDBRepository.update(userEntity.getId(), userEntity.getActive(), userEntity.getDeviceToken(),
+                userEntity.getEmail(), userEntity.getName());
+    }
+
+    @Override
     public User findByEmail(String email) {
+        System.out.println(email);
         return this.modelMapper.map(this.userDBRepository.findByEmail(email), User.class);
     }
 
@@ -48,7 +57,7 @@ public class UserRepositoryImplementation implements UserRepository, UserDetails
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserEntity user = this.userDBRepository.findByUsername(username);
         if (user == null) {
-            throw new UsernameNotFoundException("User not found with username: " + username);
+            throw new UsernameNotFoundException(this.USER_WITH_EMAIL_NOT_FOUND + username);
         }
 
         List<GrantedAuthority> authorities = new ArrayList<>();
@@ -61,4 +70,17 @@ public class UserRepositoryImplementation implements UserRepository, UserDetails
                 authorities);
     }
 
+    @Override
+    public void updatePassword(User user, String newPassword) {
+        if (user == null) {
+            throw new UsernameNotFoundException(this.USER_WITH_EMAIL_NOT_FOUND + user.getEmail());
+        }
+
+        UserEntity userEntity = this.userDBRepository.findByUsername(user.getEmail());
+        System.out.println(newPassword);
+        userEntity.setPassword(newPassword);
+        userEntity.encryptPassword(bcryptEncoder);
+
+        this.userDBRepository.updatePassword(userEntity.getId(), userEntity.getPassword());
+    }
 }

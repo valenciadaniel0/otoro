@@ -42,6 +42,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 /* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/__ivy_ngcc__/fesm2015/ionic-storage.js");
 /* harmony import */ var _login_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./login.service */ "./src/app/login/form/login.service.ts");
+/* harmony import */ var src_app_users_users_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/users/users.service */ "./src/app/users/users.service.ts");
+
 
 
 
@@ -49,10 +51,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let FormPage = class FormPage {
-    constructor(loginService, router, storage) {
+    constructor(loginService, router, storage, usersService) {
         this.loginService = loginService;
         this.router = router;
         this.storage = storage;
+        this.usersService = usersService;
     }
     ngOnInit() {
         this.imageUrl = "../../assets/logo/otoro-logo.png";
@@ -85,11 +88,32 @@ let FormPage = class FormPage {
         this.loginService
             .run(body)
             .toPromise()
-            .then((res) => {
-            const result = res.json();
+            .then((res) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            let result = res.json();
+            let deviceToken = yield this.storage.get("deviceToken");
             this.storage.set("auth", result);
+            let user = {
+                active: result.active,
+                deviceToken: deviceToken,
+                email: result.email,
+                id: result.id,
+                name: result.name,
+                roles: result.roles,
+            };
+            this.updateUser(user, result.token);
+        }), (err) => {
+            console.log(err);
+            let error = JSON.parse(err._body);
+            console.log(error);
+        });
+    }
+    updateUser(body, token) {
+        this.usersService
+            .update(body, token)
+            .toPromise()
+            .then((res) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             this.router.navigate(["/dashboard"]);
-        }, (err) => {
+        }), (err) => {
             console.log(err);
             let error = JSON.parse(err._body);
             console.log(error);
@@ -99,7 +123,8 @@ let FormPage = class FormPage {
 FormPage.ctorParameters = () => [
     { type: _login_service__WEBPACK_IMPORTED_MODULE_5__["LoginService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
-    { type: _ionic_storage__WEBPACK_IMPORTED_MODULE_4__["Storage"] }
+    { type: _ionic_storage__WEBPACK_IMPORTED_MODULE_4__["Storage"] },
+    { type: src_app_users_users_service__WEBPACK_IMPORTED_MODULE_6__["UsersService"] }
 ];
 FormPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({

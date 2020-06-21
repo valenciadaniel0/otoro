@@ -100,14 +100,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _login_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ./login.service */
     "./src/app/login/form/login.service.ts");
+    /* harmony import */
+
+
+    var src_app_users_users_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! src/app/users/users.service */
+    "./src/app/users/users.service.ts");
 
     var FormPage = /*#__PURE__*/function () {
-      function FormPage(loginService, router, storage) {
+      function FormPage(loginService, router, storage, usersService) {
         _classCallCheck(this, FormPage);
 
         this.loginService = loginService;
         this.router = router;
         this.storage = storage;
+        this.usersService = usersService;
       }
 
       _createClass(FormPage, [{
@@ -153,11 +160,62 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             password: controls["password"].value
           };
           this.loginService.run(body).toPromise().then(function (res) {
-            var result = res.json();
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+              var result, deviceToken, user;
+              return regeneratorRuntime.wrap(function _callee$(_context) {
+                while (1) {
+                  switch (_context.prev = _context.next) {
+                    case 0:
+                      result = res.json();
+                      _context.next = 3;
+                      return this.storage.get("deviceToken");
 
-            _this.storage.set("auth", result);
+                    case 3:
+                      deviceToken = _context.sent;
+                      this.storage.set("auth", result);
+                      user = {
+                        active: result.active,
+                        deviceToken: deviceToken,
+                        email: result.email,
+                        id: result.id,
+                        name: result.name,
+                        roles: result.roles
+                      };
+                      this.updateUser(user, result.token);
 
-            _this.router.navigate(["/dashboard"]);
+                    case 7:
+                    case "end":
+                      return _context.stop();
+                  }
+                }
+              }, _callee, this);
+            }));
+          }, function (err) {
+            console.log(err);
+            var error = JSON.parse(err._body);
+            console.log(error);
+          });
+        }
+      }, {
+        key: "updateUser",
+        value: function updateUser(body, token) {
+          var _this2 = this;
+
+          this.usersService.update(body, token).toPromise().then(function (res) {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this2, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+              return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                while (1) {
+                  switch (_context2.prev = _context2.next) {
+                    case 0:
+                      this.router.navigate(["/dashboard"]);
+
+                    case 1:
+                    case "end":
+                      return _context2.stop();
+                  }
+                }
+              }, _callee2, this);
+            }));
           }, function (err) {
             console.log(err);
             var error = JSON.parse(err._body);
@@ -176,6 +234,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]
       }, {
         type: _ionic_storage__WEBPACK_IMPORTED_MODULE_4__["Storage"]
+      }, {
+        type: src_app_users_users_service__WEBPACK_IMPORTED_MODULE_6__["UsersService"]
       }];
     };
 

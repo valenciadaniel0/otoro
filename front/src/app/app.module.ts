@@ -11,7 +11,9 @@ import { AppRoutingModule } from "./app-routing.module";
 import { HttpModule } from "@angular/http";
 import { HttpClientModule } from "@angular/common/http";
 import { HTTP } from "@ionic-native/http/ngx";
-import { IonicStorageModule } from '@ionic/storage';
+import { IonicStorageModule } from "@ionic/storage";
+import { Push } from "@ionic-native/push/ngx";
+import { AppVersion } from '@ionic-native/app-version/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,12 +24,14 @@ import { IonicStorageModule } from '@ionic/storage';
     BrowserModule,
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
-    AppRoutingModule,    
+    AppRoutingModule,
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Push,
     HTTP,
+    AppVersion,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent],
