@@ -12,7 +12,9 @@ public class Post {
 
     private Long id;
     private int type;
-    private String image;
+    private String image1;
+    private String image2;
+    private String image3;
     private String title;
     private String description;
     private Double price;
@@ -25,8 +27,8 @@ public class Post {
 
     }
 
-    public Post(Long id, int type, String image, String title, String description, Double price, Date date, User user,
-            City origin, City destination) {
+    public Post(Long id, int type, String image1, String image2, String image3, String title, String description,
+            Double price, Date date, User user, City origin, City destination) {
         DataValidator.validateNull(title, THE_TITLE_IS_REQUIRED);
         DataValidator.validateNull(description, THE_DESCRIPTION_IS_REQUIRED);
         if (type == 1) {
@@ -40,7 +42,9 @@ public class Post {
         }
         this.id = id;
         this.type = type;
-        this.image = image;
+        this.image1 = image1;
+        this.image2 = image2;
+        this.image3 = image3;
         this.title = title;
         this.description = description;
         this.price = price;
@@ -66,12 +70,28 @@ public class Post {
         this.type = type;
     }
 
-    public String getImage() {
-        return image;
+    public String getImage1() {
+        return image1;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImage1(String image1) {
+        this.image1 = image1;
+    }
+
+    public String getImage2() {
+        return image2;
+    }
+
+    public void setImage2(String image2) {
+        this.image2 = image2;
+    }
+
+    public String getImage3() {
+        return image3;
+    }
+
+    public void setImage3(String image3) {
+        this.image3 = image3;
     }
 
     public String getTitle() {

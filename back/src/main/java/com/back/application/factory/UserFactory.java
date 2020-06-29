@@ -9,7 +9,9 @@ public class UserFactory {
     }
 
     public static User create(UserCommand commandUser) {
-        return new User(commandUser.getId(),commandUser.getUsername(),commandUser.getEmail(), commandUser.getPassword(), commandUser.getDeviceToken(),
-                commandUser.getName(), commandUser.getActive(),commandUser.getRecoverCode(), commandUser.getCity(), commandUser.getRoles());
+        return new User(commandUser.getId(), commandUser.getUsername(), commandUser.getEmail(),
+                commandUser.getPassword(), commandUser.getDeviceToken(), commandUser.getName(), commandUser.getPhone(),
+                commandUser.getServiceDescription(), commandUser.getActive(), commandUser.getRecoverCode(),
+                commandUser.getProfilePicture(), commandUser.getCity(), commandUser.getRoles());
     }
 }

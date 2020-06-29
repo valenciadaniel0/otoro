@@ -40,12 +40,21 @@
 .display-none {
   display: none;
 }
+.font-bold {
+  font-weight: bold;
+}
 .margin-center {
   margin: 0 auto;
 }
 .no-margin-bottom {
   margin-bottom: 0;
 }
+
+.separator {
+  width: 100%;
+  border-bottom: 1px solid #ced4da;
+}
+
 .width-100 {
   width: 100%;
 }

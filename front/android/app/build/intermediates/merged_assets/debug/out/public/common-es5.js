@@ -1,8 +1,8 @@
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -541,6 +541,356 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
 
   /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/dashboard/dashboard.page.html":
+  /*!*************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dashboard/dashboard.page.html ***!
+    \*************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppDashboardDashboardPageHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ folder }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-fab\r\n    vertical=\"bottom\"\r\n    horizontal=\"end\"\r\n    slot=\"fixed\"\r\n    (click)=\"goToPostCreation()\"\r\n  >\r\n    <ion-fab-button>\r\n      <ion-icon name=\"add\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n  <h4 class=\"centered-text\">Hola! Que quieres hacer hoy?</h4>  \r\n  <app-card text=\"Ver mis publicaciones\" [action]=\"goToMyPosts\"></app-card>\r\n  <app-card\r\n    text=\"Ver todas las publicaciones\"\r\n    [action]=\"goToAllPosts\"\r\n  ></app-card>\r\n  <app-card\r\n    text=\"Buscar transportadores\"\r\n    [action]=\"goToTransporters\"\r\n  ></app-card>\r\n</ion-content>\r\n";
+    /***/
+  },
+
+  /***/
+  "./src/app/dashboard/dashboard-routing.module.ts":
+  /*!*******************************************************!*\
+    !*** ./src/app/dashboard/dashboard-routing.module.ts ***!
+    \*******************************************************/
+
+  /*! exports provided: DashboardPageRoutingModule */
+
+  /***/
+  function srcAppDashboardDashboardRoutingModuleTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "DashboardPageRoutingModule", function () {
+      return DashboardPageRoutingModule;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    /* harmony import */
+
+
+    var _dashboard_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ./dashboard.page */
+    "./src/app/dashboard/dashboard.page.ts");
+
+    var routes = [{
+      path: '',
+      component: _dashboard_page__WEBPACK_IMPORTED_MODULE_3__["DashboardPage"]
+    }];
+
+    var DashboardPageRoutingModule = function DashboardPageRoutingModule() {
+      _classCallCheck(this, DashboardPageRoutingModule);
+    };
+
+    DashboardPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+      imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+      exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+    })], DashboardPageRoutingModule);
+    /***/
+  },
+
+  /***/
+  "./src/app/dashboard/dashboard.module.ts":
+  /*!***********************************************!*\
+    !*** ./src/app/dashboard/dashboard.module.ts ***!
+    \***********************************************/
+
+  /*! exports provided: DashboardPageModule */
+
+  /***/
+  function srcAppDashboardDashboardModuleTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "DashboardPageModule", function () {
+      return DashboardPageModule;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @ionic/angular */
+    "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+    /* harmony import */
+
+
+    var _dashboard_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ./dashboard-routing.module */
+    "./src/app/dashboard/dashboard-routing.module.ts");
+    /* harmony import */
+
+
+    var _dashboard_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! ./dashboard.page */
+    "./src/app/dashboard/dashboard.page.ts");
+    /* harmony import */
+
+
+    var _shared_shared_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! ../shared/shared.module */
+    "./src/app/shared/shared.module.ts");
+
+    var DashboardPageModule = function DashboardPageModule() {
+      _classCallCheck(this, DashboardPageModule);
+    };
+
+    DashboardPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+      imports: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"], _dashboard_routing_module__WEBPACK_IMPORTED_MODULE_5__["DashboardPageRoutingModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_7__["SharedModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"], _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]],
+      declarations: [_dashboard_page__WEBPACK_IMPORTED_MODULE_6__["DashboardPage"]]
+    })], DashboardPageModule);
+    /***/
+  },
+
+  /***/
+  "./src/app/dashboard/dashboard.page.scss":
+  /*!***********************************************!*\
+    !*** ./src/app/dashboard/dashboard.page.scss ***!
+    \***********************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppDashboardDashboardPageScss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Rhc2hib2FyZC9kYXNoYm9hcmQucGFnZS5zY3NzIn0= */";
+    /***/
+  },
+
+  /***/
+  "./src/app/dashboard/dashboard.page.ts":
+  /*!*********************************************!*\
+    !*** ./src/app/dashboard/dashboard.page.ts ***!
+    \*********************************************/
+
+  /*! exports provided: DashboardPage */
+
+  /***/
+  function srcAppDashboardDashboardPageTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "DashboardPage", function () {
+      return DashboardPage;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    /* harmony import */
+
+
+    var _ionic_storage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @ionic/storage */
+    "./node_modules/@ionic/storage/__ivy_ngcc__/fesm2015/ionic-storage.js");
+
+    var DashboardPage = /*#__PURE__*/function () {
+      function DashboardPage(router, storage) {
+        _classCallCheck(this, DashboardPage);
+
+        this.router = router;
+        this.storage = storage;
+      }
+
+      _createClass(DashboardPage, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          var _this = this;
+
+          this.storage.get("auth").then(function (auth) {
+            _this.auth = auth;
+          });
+
+          this.goToMyPosts = function () {
+            _this.router.navigate(["posts/list/".concat(_this.auth.id)]);
+          };
+
+          this.goToAllPosts = function () {
+            _this.router.navigate(["posts/posts-list-general"]);
+          };
+
+          this.goToTransporters = function () {
+            console.log("Transporters");
+          };
+        }
+      }, {
+        key: "goToPostCreation",
+        value: function goToPostCreation() {
+          this.router.navigate(["posts/create-shipping"]);
+        }
+      }]);
+
+      return DashboardPage;
+    }();
+
+    DashboardPage.ctorParameters = function () {
+      return [{
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
+      }, {
+        type: _ionic_storage__WEBPACK_IMPORTED_MODULE_3__["Storage"]
+      }];
+    };
+
+    DashboardPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: "app-dashboard",
+      template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+      /*! raw-loader!./dashboard.page.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/dashboard/dashboard.page.html"))["default"],
+      styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+      /*! ./dashboard.page.scss */
+      "./src/app/dashboard/dashboard.page.scss"))["default"]]
+    })], DashboardPage);
+    /***/
+  },
+
+  /***/
+  "./src/app/login/form/login.service.ts":
+  /*!*********************************************!*\
+    !*** ./src/app/login/form/login.service.ts ***!
+    \*********************************************/
+
+  /*! exports provided: LoginService */
+
+  /***/
+  function srcAppLoginFormLoginServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "LoginService", function () {
+      return LoginService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var src_app_core_services_rest_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! src/app/core/services/rest.service */
+    "./src/app/core/services/rest.service.ts");
+
+    var LoginService = /*#__PURE__*/function () {
+      function LoginService(service) {
+        _classCallCheck(this, LoginService);
+
+        this.service = service;
+      }
+
+      _createClass(LoginService, [{
+        key: "run",
+        value: function run(body) {
+          var url = "users/authenticate";
+          return this.service.queryPostRegular(url, body);
+        }
+      }]);
+
+      return LoginService;
+    }();
+
+    LoginService.ctorParameters = function () {
+      return [{
+        type: src_app_core_services_rest_service__WEBPACK_IMPORTED_MODULE_2__["RestService"]
+      }];
+    };
+
+    LoginService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+      providedIn: "root"
+    })], LoginService);
+    /***/
+  },
+
+  /***/
   "./src/app/users/users.service.ts":
   /*!****************************************!*\
     !*** ./src/app/users/users.service.ts ***!
@@ -586,10 +936,28 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       _createClass(UsersService, [{
+        key: "recoverPassword",
+        value: function recoverPassword(body) {
+          var url = "users/recover-password";
+          return this.service.queryPostRegular(url, body);
+        }
+      }, {
+        key: "register",
+        value: function register(body) {
+          var url = "users/register";
+          return this.service.queryPostRegular(url, body);
+        }
+      }, {
         key: "update",
         value: function update(body, token) {
           var url = "users";
           return this.service.queryPut(url, body, token);
+        }
+      }, {
+        key: "updateRecoverCode",
+        value: function updateRecoverCode(body) {
+          var url = "users/set-recover-code";
+          return this.service.queryPostRegular(url, body);
         }
       }]);
 
@@ -603,7 +971,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
 
     UsersService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-      providedIn: 'root'
+      providedIn: "root"
     })], UsersService);
     /***/
   }

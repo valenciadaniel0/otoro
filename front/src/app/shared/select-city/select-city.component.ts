@@ -9,8 +9,7 @@ import { FormGroup, FormControl } from "@angular/forms";
   templateUrl: "./select-city.component.html",
   styleUrls: ["./select-city.component.scss"],
 })
-export class SelectCityComponent implements OnInit {
-  private auth: any = "";
+export class SelectCityComponent implements OnInit {  
   private cities: any[] = [];
   private query: string = "";
   public searchForm: FormGroup;
@@ -20,11 +19,7 @@ export class SelectCityComponent implements OnInit {
     private storage: Storage
   ) {}
 
-  ngOnInit() {
-    this.storage.get("auth").then((auth) => {
-      this.auth = auth;
-    });
-
+  ngOnInit() {    
     this.searchForm = new FormGroup({
       queryControl: new FormControl("queryControl", []),
     });
@@ -50,7 +45,7 @@ export class SelectCityComponent implements OnInit {
 
   getCities() {
     this.cityService
-      .getAll(this.query, this.auth.token)
+      .getAll(this.query)
       .toPromise()
       .then(
         (res) => {

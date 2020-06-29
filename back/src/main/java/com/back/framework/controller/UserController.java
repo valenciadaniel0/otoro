@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.back.application.handler.users.CreateUserHandler;
 import com.back.application.handler.users.GetUserByEmailHandler;
 import com.back.application.handler.users.RecoverPasswordHandler;
-import com.back.application.handler.users.UpdatePasswordHandler;
 import com.back.application.handler.users.UpdateRecoverCodeHandler;
 import com.back.application.handler.users.UpdateUserHandler;
 import com.back.application.handler.users.command.UserCommand;
@@ -14,6 +13,7 @@ import com.back.application.handler.users.command.UserCommand;
 import org.springframework.security.core.context.SecurityContextHolder;
 import com.back.domain.model.User;
 import com.back.framework.adapter.UserRepositoryImplementation;
+import com.back.framework.config.FileStorageService;
 import com.back.framework.config.JwtResponse;
 import com.back.framework.config.JwtTokenUtil;
 
@@ -32,7 +32,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/api/users")
@@ -41,9 +43,11 @@ public class UserController {
     private CreateUserHandler createUserHandler;
     private GetUserByEmailHandler getUserByEmailHandler;
     private UpdateUserHandler updateUserHandler;
-    private UpdatePasswordHandler updatePasswordHandler;
     private UpdateRecoverCodeHandler updateRecoverCodeHandler;
     private RecoverPasswordHandler recoverPasswordHandler;
+
+    @Autowired
+    private FileStorageService fileStorageService;
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -55,12 +59,11 @@ public class UserController {
     private UserRepositoryImplementation userRepositoryImplementation;
 
     public UserController(CreateUserHandler createUserHandler, GetUserByEmailHandler getUserByEmailHandler,
-            UpdateUserHandler updateUserHandler, UpdatePasswordHandler updatePasswordHandler,
-            UpdateRecoverCodeHandler updateRecoverCodeHandler, RecoverPasswordHandler recoverPasswordHandler) {
+            UpdateUserHandler updateUserHandler, UpdateRecoverCodeHandler updateRecoverCodeHandler,
+            RecoverPasswordHandler recoverPasswordHandler) {
         this.createUserHandler = createUserHandler;
         this.getUserByEmailHandler = getUserByEmailHandler;
         this.updateUserHandler = updateUserHandler;
-        this.updatePasswordHandler = updatePasswordHandler;
         this.updateRecoverCodeHandler = updateRecoverCodeHandler;
         this.recoverPasswordHandler = recoverPasswordHandler;
     }
@@ -77,14 +80,19 @@ public class UserController {
     }
 
     @PostMapping(value = "/register")
-    public void create(@RequestBody UserCommand userCommand) {
+    public void create(@RequestPart(required = true) UserCommand userCommand,
+            @RequestPart(required = false) MultipartFile image) {
+
+        String pictureName = this.fileStorageService.storeFile(image,1);
+        userCommand.setProfilePicture(pictureName);
+
         this.createUserHandler.run(userCommand);
     }
 
     @PostMapping(value = "/recover-password")
     public void updatePassword(@RequestBody UserCommand userCommand) {
         User user = this.getUserByEmailHandler.run(userCommand.getEmail());
-        this.recoverPasswordHandler.run(user,userCommand.getRecoverCode());
+        this.recoverPasswordHandler.run(user, userCommand.getRecoverCode());
     }
 
     @PostMapping(value = "/set-recover-code")

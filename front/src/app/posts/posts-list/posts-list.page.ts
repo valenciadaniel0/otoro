@@ -2,6 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { PostService } from "../post.service";
 import { Storage } from "@ionic/storage";
+import { PostDetailsComponent } from "src/app/shared/post-details/post-details.component";
+import { CommentsComponent } from "src/app/shared/comments/comments.component";
+import { ModalController } from "@ionic/angular";
 
 @Component({
   selector: "app-posts-list",
@@ -9,6 +12,9 @@ import { Storage } from "@ionic/storage";
   styleUrls: ["./posts-list.page.scss"],
 })
 export class PostsListPage implements OnInit {
+  private openCommentsModal: (postId: number) => void;
+  private openDetailsModal: (post: any) => void;
+
   private activeTab: number = 1;
   private auth: any;
   private sells: any[] = [];
@@ -20,7 +26,8 @@ export class PostsListPage implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private postService: PostService,
-    private storage: Storage
+    private storage: Storage,
+    private modalController: ModalController
   ) {}
 
   async ngOnInit() {
@@ -35,6 +42,38 @@ export class PostsListPage implements OnInit {
         this.getShippings();
       });
     });
+
+    this.openCommentsModal = (postId: number) => {
+      this.openCommentsModalImplementation(postId);
+    };
+
+    this.openDetailsModal = (post: any) => {
+      this.openDetailsModalImplementation(post);
+    };
+  }
+
+  async openCommentsModalImplementation(postId: number) {
+    const modal = await this.modalController.create({
+      component: CommentsComponent,
+      componentProps: {
+        postId: postId,
+      },
+      cssClass: "my-custom-class",
+    });
+
+    return await modal.present().then(() => {});
+  }
+
+  async openDetailsModalImplementation(post: any) {
+    const modal = await this.modalController.create({
+      component: PostDetailsComponent,
+      componentProps: {
+        post: post,
+      },
+      cssClass: "my-custom-class",
+    });
+
+    return await modal.present().then(() => {});
   }
 
   changeActiveTab(tabNumber: number) {

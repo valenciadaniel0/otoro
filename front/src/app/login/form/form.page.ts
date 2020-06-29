@@ -104,4 +104,8 @@ export class FormPage implements OnInit {
   goToRecoverPassword() {
     this.router.navigate(["/users/recover-password"]);
   }
+
+  goToRegistration() {
+    this.router.navigate(["/users/register"]);
+  }
 }

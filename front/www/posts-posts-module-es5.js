@@ -6,120 +6,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["posts-posts-module"], {
   /***/
-  "./node_modules/@ionic-native/image-picker/__ivy_ngcc__/ngx/index.js":
-  /*!***************************************************************************!*\
-    !*** ./node_modules/@ionic-native/image-picker/__ivy_ngcc__/ngx/index.js ***!
-    \***************************************************************************/
-
-  /*! exports provided: OutputType, ImagePicker */
-
-  /***/
-  function node_modulesIonicNativeImagePicker__ivy_ngcc__NgxIndexJs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "OutputType", function () {
-      return OutputType;
-    });
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "ImagePicker", function () {
-      return ImagePicker;
-    });
-    /* harmony import */
-
-
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-    /* harmony import */
-
-
-    var _ionic_native_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! @ionic-native/core */
-    "./node_modules/@ionic-native/core/__ivy_ngcc__/index.js");
-
-    var OutputType;
-
-    (function (OutputType) {
-      OutputType[OutputType["FILE_URL"] = 0] = "FILE_URL";
-      OutputType[OutputType["DATA_URL"] = 1] = "DATA_URL";
-    })(OutputType || (OutputType = {}));
-
-    var ImagePicker =
-    /** @class */
-    function (_super) {
-      Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"])(ImagePicker, _super);
-
-      function ImagePicker() {
-        return _super !== null && _super.apply(this, arguments) || this;
-      }
-
-      ImagePicker.prototype.getPictures = function (options) {
-        return Object(_ionic_native_core__WEBPACK_IMPORTED_MODULE_2__["cordova"])(this, "getPictures", {
-          "callbackOrder": "reverse"
-        }, arguments);
-      };
-
-      ImagePicker.prototype.hasReadPermission = function () {
-        return Object(_ionic_native_core__WEBPACK_IMPORTED_MODULE_2__["cordova"])(this, "hasReadPermission", {
-          "platforms": ["Android"]
-        }, arguments);
-      };
-
-      ImagePicker.prototype.requestReadPermission = function () {
-        return Object(_ionic_native_core__WEBPACK_IMPORTED_MODULE_2__["cordova"])(this, "requestReadPermission", {
-          "platforms": ["Android"]
-        }, arguments);
-      };
-
-      ImagePicker.pluginName = "ImagePicker";
-      ImagePicker.plugin = "cordova-plugin-telerik-imagepicker";
-      ImagePicker.pluginRef = "window.imagePicker";
-      ImagePicker.repo = "https://github.com/Telerik-Verified-Plugins/ImagePicker";
-      ImagePicker.install = "ionic cordova plugin add cordova-plugin-telerik-imagepicker --variable PHOTO_LIBRARY_USAGE_DESCRIPTION=\"your usage message\"";
-      ImagePicker.installVariables = ["PHOTO_LIBRARY_USAGE_DESCRIPTION"];
-      ImagePicker.platforms = ["Android", "iOS"];
-
-      ImagePicker.ɵfac = function ImagePicker_Factory(t) {
-        return ɵImagePicker_BaseFactory(t || ImagePicker);
-      };
-
-      ImagePicker.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
-        token: ImagePicker,
-        factory: function factory(t) {
-          return ImagePicker.ɵfac(t);
-        }
-      });
-
-      var ɵImagePicker_BaseFactory = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetInheritedFactory"](ImagePicker);
-      /*@__PURE__*/
-
-
-      (function () {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](ImagePicker, [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"]
-        }], null, null);
-      })();
-
-      return ImagePicker;
-    }(_ionic_native_core__WEBPACK_IMPORTED_MODULE_2__["IonicNativePlugin"]); //# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3NyYy9AaW9uaWMtbmF0aXZlL3BsdWdpbnMvaW1hZ2UtcGlja2VyL25neC9pbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsT0FBTyxFQUFFLFVBQVUsRUFBRSxNQUFNLGVBQWUsQ0FBQztBQUMzQyxPQUFPLDhCQUFzQyxNQUFNLG9CQUFvQixDQUFDOztBQW9EeEUsTUFBTSxDQUFOLElBQVksVUFHWDtBQUhELFdBQVksVUFBVTtBQUNyQixJQUFDLG1EQUFZLENBQUE7QUFBQyxJQUNiLG1EQUFRLENBQUE7QUFDVixDQUFDLEVBSFcsVUFBVSxLQUFWLFVBQVUsUUFHckI7QUFDRDtBQUlVLElBbUN1QiwrQkFBaUI7QUFBQztBQUU5QjtBQUVMO0FBQU0sSUFNcEIsaUNBQVcsYUFBQyxPQUEyQjtBQUtLLElBTTVDLHVDQUFpQjtBQU1BLElBS2pCLDJDQUFxQjtBQUlnRDtBQUE0QztBQUErRDtBQUFrRDtBQUFrRjtBQUEySjtBQUF3RTtJQXBDNWdCLFdBQVcsd0JBRHZCLFVBQVUsRUFBRSxRQUNBLFdBQVc7Ozs7OzBCQUFFO0FBQUMsc0JBaEczQjtBQUFFLEVBZ0crQixpQkFBaUI7QUFDakQsU0FEWSxXQUFXO0FBQUkiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBJbmplY3RhYmxlIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBDb3Jkb3ZhLCBJb25pY05hdGl2ZVBsdWdpbiwgUGx1Z2luIH0gZnJvbSAnQGlvbmljLW5hdGl2ZS9jb3JlJztcblxuZXhwb3J0IGludGVyZmFjZSBJbWFnZVBpY2tlck9wdGlvbnMge1xuICAvKipcbiAgICogbWF4IGltYWdlcyB0byBiZSBzZWxlY3RlZCwgZGVmYXVsdHMgdG8gMTUuIElmIHRoaXMgaXMgc2V0IHRvIDEsIHVwb24gc2VsZWN0aW9uIG9mIGEgc2luZ2xlIGltYWdlLCB0aGUgcGx1Z2luIHdpbGwgcmV0dXJuIGl0LiAoQW5kcm9pZCBvbmx5KVxuICAgKi9cbiAgbWF4aW11bUltYWdlc0NvdW50PzogbnVtYmVyO1xuXG4gIC8qKlxuICAgKiBNYXggd2lkdGggdG8gYWxsb3cgaW1hZ2VzIHRvIGJlXG4gICAqL1xuICB3aWR0aD86IG51bWJlcjtcblxuICAvKipcbiAgICogTWF4IGhlaWdodCB0byBhbGxvdyBpbWFnZXMgdG8gYmVcbiAgICovXG4gIGhlaWdodD86IG51bWJlcjtcblxuICAvKipcbiAgICogUXVhbGl0eSBvZiBpbWFnZXMsIGRlZmF1bHRzIHRvIDEwMFxuICAgKi9cbiAgcXVhbGl0eT86IG51bWJlcjtcblxuICAvKipcbiAgICogVmlkZW9zIGFsbG93ZWQ/XG4gICAqL1xuICBhbGxvd192aWRlbz86IGJvb2xlYW47XG5cbiAgLyoqXG4gICAqIHRoZSBkZWZhdWx0IGlzIHRoZSBtZXNzYWdlIG9mIHRoZSBvbGQgcGx1Z2luIGltcGxcbiAgICovXG4gIHRpdGxlPzogc3RyaW5nO1xuXG4gIC8qKlxuICAgKiB0aGUgb2xkIHBsdWdpbiBpbXBsIGRpZG4ndCBoYXZlIGl0LCBzbyBwYXNzaW5nIG51bGwgYnkgZGVmYXVsdFxuICAgKi9cbiAgbWVzc2FnZT86IHN0cmluZztcblxuICAvKipcbiAgICogQ2hvb3NlIHRoZSBmb3JtYXQgb2YgdGhlIHJldHVybiB2YWx1ZS5cbiAgICogRGVmaW5lZCBpbiBJbWFnZVBpY2tlci5PdXRwdXRUeXBlLiBEZWZhdWx0IGlzIEZJTEVfVVJJLlxuICAgKiAgICAgIEZJTEVfVVJJIDogMCwgICBSZXR1cm4gaW1hZ2UgZmlsZSBVUkksXG4gICAqICAgICAgREFUQV9VUkwgOiAxLCAgIFJldHVybiBpbWFnZSBhcyBiYXNlNjQtZW5jb2RlZCBzdHJpbmdcbiAgICovXG4gIG91dHB1dFR5cGU/OiBudW1iZXI7XG5cbiAgLyoqXG4gICAqIERpc2FibGUgdGhlIGlPUyBwb3BvdmVyIGFzIHNlZW4gb24gaVBhZFxuICAgKi9cbiAgZGlzYWJsZV9wb3BvdmVyPzogYm9vbGVhbjtcbn1cblxuZXhwb3J0IGVudW0gT3V0cHV0VHlwZSB7XG4gIEZJTEVfVVJMID0gMCxcbiAgREFUQV9VUkwsXG59XG5cbi8qKlxuICogQG5hbWUgSW1hZ2UgUGlja2VyXG4gKiBAZGVzY3JpcHRpb25cbiAqIENvcmRvdmEgUGx1Z2luIEZvciBNdWx0aXBsZSBJbWFnZSBTZWxlY3Rpb25cbiAqXG4gKiBSZXF1aXJlcyBDb3Jkb3ZhIHBsdWdpbjogYGNvcmRvdmEtcGx1Z2luLWltYWdlLXBpY2tlcmAuXG4gKiBGb3IgbW9yZSBpbmZvLCBwbGVhc2Ugc2VlIHRoZSBodHRwczovL2dpdGh1Yi5jb20vVGVsZXJpay1WZXJpZmllZC1QbHVnaW5zL0ltYWdlUGlja2VyXG4gKlxuICogQHVzYWdlXG4gKiBgYGB0eXBlc2NyaXB0XG4gKiBpbXBvcnQgeyBJbWFnZVBpY2tlciB9IGZyb20gJ0Bpb25pYy1uYXRpdmUvaW1hZ2UtcGlja2VyL25neCc7XG4gKlxuICpcbiAqIGNvbnN0cnVjdG9yKHByaXZhdGUgaW1hZ2VQaWNrZXI6IEltYWdlUGlja2VyKSB7IH1cbiAqXG4gKiAuLi5cbiAqXG4gKiB0aGlzLmltYWdlUGlja2VyLmdldFBpY3R1cmVzKG9wdGlvbnMpLnRoZW4oKHJlc3VsdHMpID0+IHtcbiAqICAgZm9yICh2YXIgaSA9IDA7IGkgPCByZXN1bHRzLmxlbmd0aDsgaSsrKSB7XG4gKiAgICAgICBjb25zb2xlLmxvZygnSW1hZ2UgVVJJOiAnICsgcmVzdWx0c1tpXSk7XG4gKiAgIH1cbiAqIH0sIChlcnIpID0+IHsgfSk7XG4gKlxuICogYGBgXG4gKiBAaW50ZXJmYWNlc1xuICogSW1hZ2VQaWNrZXJPcHRpb25zXG4gKi9cbkBQbHVnaW4oe1xuICBwbHVnaW5OYW1lOiAnSW1hZ2VQaWNrZXInLFxuICBwbHVnaW46ICdjb3Jkb3ZhLXBsdWdpbi10ZWxlcmlrLWltYWdlcGlja2VyJyxcbiAgcGx1Z2luUmVmOiAnd2luZG93LmltYWdlUGlja2VyJyxcbiAgcmVwbzogJ2h0dHBzOi8vZ2l0aHViLmNvbS9UZWxlcmlrLVZlcmlmaWVkLVBsdWdpbnMvSW1hZ2VQaWNrZXInLFxuICBpbnN0YWxsOlxuICAgICdpb25pYyBjb3Jkb3ZhIHBsdWdpbiBhZGQgY29yZG92YS1wbHVnaW4tdGVsZXJpay1pbWFnZXBpY2tlciAtLXZhcmlhYmxlIFBIT1RPX0xJQlJBUllfVVNBR0VfREVTQ1JJUFRJT049XCJ5b3VyIHVzYWdlIG1lc3NhZ2VcIicsXG4gIGluc3RhbGxWYXJpYWJsZXM6IFsnUEhPVE9fTElCUkFSWV9VU0FHRV9ERVNDUklQVElPTiddLFxuICBwbGF0Zm9ybXM6IFsnQW5kcm9pZCcsICdpT1MnXSxcbn0pXG5ASW5qZWN0YWJsZSgpXG5leHBvcnQgY2xhc3MgSW1hZ2VQaWNrZXIgZXh0ZW5kcyBJb25pY05hdGl2ZVBsdWdpbiB7XG4gIC8qKlxuICAgKiBQaWNrIHBpY3R1cmVzIGZyb20gdGhlIGxpYnJhcnkuXG4gICAqIEBwYXJhbSB7SW1hZ2VQaWNrZXJPcHRpb25zfSBvcHRpb25zXG4gICAqIEByZXR1cm5zIHtQcm9taXNlPGFueT59IFJldHVybnMgYSBQcm9taXNlIHRoYXQgcmVzb2x2ZXMgdGhlIGltYWdlIGZpbGUgVVJJXG4gICAqIG90aGVyd2lzZSByZWplY3RzIHdpdGggYW4gZXJyb3IuXG4gICAqL1xuICBAQ29yZG92YSh7XG4gICAgY2FsbGJhY2tPcmRlcjogJ3JldmVyc2UnLFxuICB9KVxuICBnZXRQaWN0dXJlcyhvcHRpb25zOiBJbWFnZVBpY2tlck9wdGlvbnMpOiBQcm9taXNlPGFueT4ge1xuICAgIHJldHVybjtcbiAgfVxuXG4gIC8qKlxuICAgKiBDaGVjayBpZiB3ZSBoYXZlIHBlcm1pc3Npb24gdG8gcmVhZCBpbWFnZXNcbiAgICogQHJldHVybnMge1Byb21pc2U8Ym9vbGVhbj59IFJldHVybnMgYSBwcm9taXNlIHRoYXQgcmVzb2x2ZXMgd2l0aCBhIGJvb2xlYW4gdGhhdCBpbmRpY2F0ZXMgd2hldGhlciB3ZSBoYXZlIHBlcm1pc3Npb25cbiAgICovXG4gIEBDb3Jkb3ZhKHtcbiAgICBwbGF0Zm9ybXM6IFsnQW5kcm9pZCddLFxuICB9KVxuICBoYXNSZWFkUGVybWlzc2lvbigpOiBQcm9taXNlPGJvb2xlYW4+IHtcbiAgICByZXR1cm47XG4gIH1cblxuICAvKipcbiAgICogUmVxdWVzdCBwZXJtaXNzaW9uIHRvIHJlYWQgaW1hZ2VzXG4gICAqIEByZXR1cm5zIHtQcm9taXNlPGFueT59XG4gICAqL1xuICBAQ29yZG92YSh7XG4gICAgcGxhdGZvcm1zOiBbJ0FuZHJvaWQnXSxcbiAgfSlcbiAgcmVxdWVzdFJlYWRQZXJtaXNzaW9uKCk6IFByb21pc2U8YW55PiB7XG4gICAgcmV0dXJuO1xuICB9XG59XG4iXX0=
-
-    /***/
-
-  },
-
-  /***/
   "./node_modules/raw-loader/dist/cjs.js!./src/app/posts/posts-list-general/posts-list-general.page.html":
   /*!*************************************************************************************************************!*\
     !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/posts/posts-list-general/posts-list-general.page.html ***!
@@ -135,7 +21,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ folder }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-fab\r\n    vertical=\"bottom\"\r\n    horizontal=\"end\"\r\n    slot=\"fixed\"\r\n    (click)=\"goToPostCreation()\"\r\n  >\r\n    <ion-fab-button>\r\n      <ion-icon name=\"add\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n  <h4 class=\"centered-text\">Todas las publicaciones</h4>\r\n  <form [formGroup]=\"searchForm\">\r\n    <ion-item>\r\n      <input\r\n        name=\"query\"\r\n        type=\"text\"\r\n        class=\"form-control\"\r\n        placeholder=\"Busca una ciudad\"\r\n        formControlName=\"queryControl\"\r\n        (keyup)=\"search()\"\r\n      />\r\n    </ion-item>\r\n  </form>\r\n  <ion-row class=\"top-tab-container\">\r\n    <ion-col (click)=\"changeActiveTab(1)\"><span>Envios</span></ion-col>\r\n    <ion-col (click)=\"changeActiveTab(2)\"><span>Ventas</span></ion-col>\r\n  </ion-row>\r\n  <div class=\"posts-list\" *ngIf=\"shippings.length > 0 && activeTab === 1\">\r\n    <app-post-card\r\n      *ngFor=\"let shipping of shippings\"\r\n      imageSrc=\"https://construyored.com/assets/img/logo.png\"\r\n      [title]=\"shipping.title\"\r\n      [date]=\"shipping.date\"\r\n      type=\"1\"\r\n    ></app-post-card>\r\n  </div>\r\n  <div class=\"posts-list\" *ngIf=\"sells.length > 0 && activeTab === 2\">\r\n    <app-post-card\r\n      *ngFor=\"let sell of sells\"\r\n      imageSrc=\"https://construyored.com/assets/img/logo.png\"\r\n      [title]=\"sell.title\"\r\n      [price]=\"sell.price\"\r\n      type=\"2\"\r\n    ></app-post-card>\r\n  </div>\r\n</ion-content>";
+    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ folder }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-fab\r\n    vertical=\"bottom\"\r\n    horizontal=\"end\"\r\n    slot=\"fixed\"\r\n    (click)=\"goToPostCreation()\"\r\n  >\r\n    <ion-fab-button>\r\n      <ion-icon name=\"add\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n  <h4 class=\"centered-text\">Todas las publicaciones</h4>\r\n  <form [formGroup]=\"searchForm\">\r\n    <ion-item>\r\n      <input\r\n        name=\"query\"\r\n        type=\"text\"\r\n        class=\"form-control\"\r\n        placeholder=\"Busca una ciudad\"\r\n        formControlName=\"queryControl\"\r\n        (keyup)=\"search()\"\r\n      />\r\n    </ion-item>\r\n  </form>\r\n  <ion-row class=\"top-tab-container\">\r\n    <ion-col (click)=\"changeActiveTab(1)\"><span>Envios</span></ion-col>\r\n    <ion-col (click)=\"changeActiveTab(2)\"><span>Ventas</span></ion-col>\r\n  </ion-row>\r\n  <div class=\"posts-list\" *ngIf=\"shippings.length > 0 && activeTab === 1\">\r\n    <app-post-card\r\n      *ngFor=\"let shipping of shippings\"\r\n      imageSrc=\"http://cinnco.co/dist/img/apple-iphone.png\"\r\n      [title]=\"shipping.title\"\r\n      [date]=\"shipping.date\"\r\n      [description]=\"shipping.description\"\r\n      [origin]=\"shipping.origin\"\r\n      [user]=\"shipping.user\"\r\n      [openCommentsModal]=\"openCommentsModal\"\r\n      [openDetailsModal]=\"openDetailsModal\"\r\n      [id]=\"shipping.id\"\r\n      [destination]=\"shipping.destination\"\r\n      [post]=\"shipping\"\r\n      type=\"1\"\r\n    ></app-post-card>\r\n  </div>\r\n  <div class=\"posts-list\" *ngIf=\"sells.length > 0 && activeTab === 2\">\r\n    <app-post-card\r\n      *ngFor=\"let sell of sells\"\r\n      imageSrc=\"http://cinnco.co/dist/img/apple-iphone.png\"\r\n      [title]=\"sell.title\"\r\n      [price]=\"sell.price\"\r\n      [user]=\"sell.user\"\r\n      [description]=\"sell.description\"\r\n      [openCommentsModal]=\"openCommentsModal\"\r\n      [openDetailsModal]=\"openDetailsModal\"\r\n      [origin]=\"sell.origin\"\r\n      [post]=\"sell\"\r\n      [id]=\"sell.id\"\r\n      type=\"2\"\r\n    ></app-post-card>\r\n  </div>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -155,7 +41,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ folder }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-fab\r\n    vertical=\"bottom\"\r\n    horizontal=\"end\"\r\n    slot=\"fixed\"\r\n    (click)=\"goToPostCreation()\"\r\n  >\r\n    <ion-fab-button>\r\n      <ion-icon name=\"add\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n  <h4 class=\"centered-text\">{{title}}</h4>\r\n  <ion-row class=\"top-tab-container\">\r\n    <ion-col (click)=\"changeActiveTab(1)\"><span>Envios</span></ion-col>\r\n    <ion-col (click)=\"changeActiveTab(2)\"><span>Ventas</span></ion-col>\r\n  </ion-row>\r\n  <div class=\"posts-list\" *ngIf=\"shippings.length > 0 && activeTab === 1\">\r\n    <app-post-card\r\n      *ngFor=\"let shipping of shippings\"\r\n      imageSrc=\"https://construyored.com/assets/img/logo.png\"\r\n      [title]=\"shipping.title\"\r\n      [date]=\"shipping.date\"\r\n      type=\"1\"\r\n    ></app-post-card>\r\n  </div>\r\n  <div class=\"posts-list\" *ngIf=\"sells.length > 0 && activeTab === 2\">\r\n    <app-post-card\r\n      *ngFor=\"let sell of sells\"\r\n      imageSrc=\"https://construyored.com/assets/img/logo.png\"\r\n      [title]=\"sell.title\"\r\n      [price]=\"sell.price\"\r\n      type=\"2\"\r\n    ></app-post-card>\r\n  </div>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ folder }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-fab\r\n    vertical=\"bottom\"\r\n    horizontal=\"end\"\r\n    slot=\"fixed\"\r\n    (click)=\"goToPostCreation()\"\r\n  >\r\n    <ion-fab-button>\r\n      <ion-icon name=\"add\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n  <h4 class=\"centered-text\">{{title}}</h4>\r\n  <ion-row class=\"top-tab-container\">\r\n    <ion-col (click)=\"changeActiveTab(1)\"><span>Envios</span></ion-col>\r\n    <ion-col (click)=\"changeActiveTab(2)\"><span>Ventas</span></ion-col>\r\n  </ion-row>\r\n  <div class=\"posts-list\" *ngIf=\"shippings.length > 0 && activeTab === 1\">\r\n    <app-post-card\r\n      *ngFor=\"let shipping of shippings\"\r\n      imageSrc=\"http://cinnco.co/dist/img/apple-iphone.png\"\r\n      [title]=\"shipping.title\"\r\n      [date]=\"shipping.date\"\r\n      [description]=\"shipping.description\"\r\n      [origin]=\"shipping.origin\"\r\n      [user]=\"shipping.user\"\r\n      [openCommentsModal]=\"openCommentsModal\"\r\n      [openDetailsModal]=\"openDetailsModal\"\r\n      [id]=\"shipping.id\"\r\n      [destination]=\"shipping.destination\"\r\n      [post]=\"shipping\"\r\n      type=\"1\"\r\n    ></app-post-card>\r\n  </div>\r\n  <div class=\"posts-list\" *ngIf=\"sells.length > 0 && activeTab === 2\">\r\n    <app-post-card\r\n      *ngFor=\"let sell of sells\"\r\n      imageSrc=\"http://cinnco.co/dist/img/apple-iphone.png\"\r\n      [title]=\"sell.title\"\r\n      [price]=\"sell.price\"\r\n      [user]=\"sell.user\"\r\n      [description]=\"sell.description\"\r\n      [openCommentsModal]=\"openCommentsModal\"\r\n      [openDetailsModal]=\"openDetailsModal\"\r\n      [origin]=\"sell.origin\"\r\n      [post]=\"sell\"\r\n      [id]=\"sell.id\"\r\n      type=\"2\"\r\n    ></app-post-card>\r\n  </div>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -175,7 +61,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ folder }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div id=\"container\">\r\n    <h4 class=\"centered-text\">Que quieres publicar?</h4>    \r\n    <ion-row>\r\n      <ion-col text-center>\r\n        <ion-button (click)=\"getImages()\">Choose Images</ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col>\r\n        <!-- More Pinterest floating gallery style -->\r\n        <div class=\"images\">\r\n          <div class=\"one-image\" *ngFor=\"let img of imageResponse\">\r\n            <img src=\"{{img}}\" alt=\"\" srcset=\"\" />\r\n          </div>\r\n        </div>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row id=\"form-container\">\r\n      <ion-col col-12>\r\n        <form [formGroup]=\"sellForm\">\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">T&iacute;tulo</label>\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control width-100\"\r\n              formControlName=\"title\"\r\n            />\r\n            <span *ngIf=\"controlHasError('title', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Descripci&oacute;n</label>\r\n            <textarea\r\n              class=\"form-control width-100\"\r\n              formControlName=\"description\"\r\n            ></textarea>\r\n            <span *ngIf=\"controlHasError('description', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Precio</label>\r\n            <input\r\n              class=\"form-control width-100\"\r\n              formControlName=\"price\"\r\n              type=\"number\"\r\n            />\r\n            <span *ngIf=\"controlHasError('price', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Ubicaci&oacute;n</label>\r\n            <ion-item (click)=\"openOriginModal()\">\r\n              <span *ngIf=\"!origin\">Selecciona una ubicaci&oacute;n</span>\r\n              <span *ngIf=\"origin\">{{origin.name}}</span>\r\n            </ion-item>\r\n            <input type=\"text\" class=\"display-none\" formControlName=\"origin\" />\r\n            <span *ngIf=\"controlHasError('origin', 'required')\">\r\n              <strong class=\"error\">Selecciona una ciudad</strong>\r\n            </span>\r\n          </div>\r\n        </form>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button color=\"primary\" (click)=\"saveSell()\" class=\"width-100\">\r\n          Guardar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button\r\n          color=\"danger\"\r\n          (click)=\"goBackToDashboard()\"\r\n          class=\"width-100\"\r\n        >\r\n          Cancelar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </div>\r\n  <ion-grid id=\"tabs-container\">\r\n    <ion-row>\r\n      <ion-col (click)=\"goToShippingForm()\" col-6 class=\"centered-text\">\r\n        <ion-icon name=\"send\"></ion-icon>\r\n        <ion-label>Envio</ion-label>\r\n      </ion-col>\r\n      <ion-col col-6 class=\"centered-text\">\r\n        <ion-icon name=\"pricetag\"></ion-icon>\r\n        <ion-label>Venta</ion-label>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ folder }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div id=\"container\">\r\n    <h4 class=\"centered-text\">Que quieres publicar?</h4>\r\n    <ion-row id=\"form-container\">\r\n      <ion-slides>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo1\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(1)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(1)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo2\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(2)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(2)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo3\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(3)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(3)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n      </ion-slides>\r\n      <ion-col col-12>\r\n        <form [formGroup]=\"sellForm\">\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">T&iacute;tulo</label>\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control width-100\"\r\n              formControlName=\"title\"\r\n            />\r\n            <span *ngIf=\"controlHasError('title', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Descripci&oacute;n</label>\r\n            <textarea\r\n              class=\"form-control width-100\"\r\n              formControlName=\"description\"\r\n            ></textarea>\r\n            <span *ngIf=\"controlHasError('description', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Precio</label>\r\n            <input\r\n              class=\"form-control width-100\"\r\n              formControlName=\"price\"\r\n              type=\"number\"\r\n            />\r\n            <span *ngIf=\"controlHasError('price', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Ubicaci&oacute;n</label>\r\n            <ion-item (click)=\"openOriginModal()\">\r\n              <span *ngIf=\"!origin\">Selecciona una ubicaci&oacute;n</span>\r\n              <span *ngIf=\"origin\">{{origin.name}}</span>\r\n            </ion-item>\r\n            <input type=\"text\" class=\"display-none\" formControlName=\"origin\" />\r\n            <span *ngIf=\"controlHasError('origin', 'required')\">\r\n              <strong class=\"error\">Selecciona una ciudad</strong>\r\n            </span>\r\n          </div>\r\n        </form>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button color=\"primary\" (click)=\"saveSell()\" class=\"width-100\">\r\n          Guardar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button\r\n          color=\"danger\"\r\n          (click)=\"goBackToDashboard()\"\r\n          class=\"width-100\"\r\n        >\r\n          Cancelar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </div>\r\n  <ion-grid id=\"tabs-container\">\r\n    <ion-row>\r\n      <ion-col (click)=\"goToShippingForm()\" col-6 class=\"centered-text\">\r\n        <ion-icon name=\"send\"></ion-icon>\r\n        <ion-label>Envio</ion-label>\r\n      </ion-col>\r\n      <ion-col col-6 class=\"centered-text\">\r\n        <ion-icon name=\"pricetag\"></ion-icon>\r\n        <ion-label>Venta</ion-label>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -195,87 +81,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ folder }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div id=\"container\">\r\n    <h4 class=\"centered-text\">Que quieres publicar?</h4>\r\n    <ion-row>\r\n      <ion-col text-center>\r\n        <ion-button (click)=\"getImages()\">Choose Images</ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col>\r\n        <!-- More Pinterest floating gallery style -->\r\n        <div class=\"images\">\r\n          <div class=\"one-image\" *ngFor=\"let img of imageResponse\">\r\n            <img src=\"{{img}}\" alt=\"\" srcset=\"\" />\r\n          </div>\r\n        </div>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row id=\"form-container\">\r\n      <ion-col col-12>\r\n        <form [formGroup]=\"shippingForm\">\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">T&iacute;tulo</label>\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control width-100\"\r\n              formControlName=\"title\"\r\n            />\r\n            <span *ngIf=\"controlHasError('title', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Descripci&oacute;n</label>\r\n            <textarea\r\n              class=\"form-control width-100\"\r\n              formControlName=\"description\"\r\n            ></textarea>\r\n            <span *ngIf=\"controlHasError('description', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <ion-item>\r\n              <ion-label class=\"bold\">Selecciona fecha</ion-label>\r\n              <ion-datetime\r\n                id=\"dynamicDisabled\"\r\n                displayFormat=\"MMMM DD YYYY\"\r\n                value=\"1994-12-15\"\r\n                formControlName=\"date\"\r\n              ></ion-datetime>\r\n            </ion-item>\r\n            <span *ngIf=\"controlHasError('date', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Origen del envio</label>\r\n            <ion-item (click)=\"openOriginModal()\">\r\n              <span *ngIf=\"!origin\">Selecciona un origen</span>\r\n              <span *ngIf=\"origin\">{{origin.name}}</span>\r\n            </ion-item>\r\n            <input\r\n              type=\"text\"\r\n              class=\"display-none\"\r\n              formControlName=\"origin\"             \r\n            />\r\n            <span *ngIf=\"controlHasError('origin', 'required')\">\r\n              <strong class=\"error\">Selecciona una ciudad</strong>\r\n            </span>\r\n          </div>\r\n\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Origen del destino</label>\r\n            <ion-item (click)=\"openDestinationModal()\">\r\n              <span *ngIf=\"!destination\">Selecciona un destino</span>\r\n              <span *ngIf=\"destination\">{{destination.name}}</span>\r\n            </ion-item>\r\n            <input\r\n              type=\"text\"\r\n              class=\"display-none\"\r\n              formControlName=\"destination\"\r\n              display=\"none\"\r\n            />\r\n            <span *ngIf=\"controlHasError('destination', 'required')\">\r\n              <strong class=\"error\">Selecciona una ciudad</strong>\r\n            </span>\r\n          </div>\r\n        </form>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button color=\"primary\" (click)=\"saveShipping()\" class=\"width-100\">\r\n          Guardar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button\r\n          color=\"danger\"\r\n          (click)=\"goBackToDashboard()\"\r\n          class=\"width-100\"\r\n        >\r\n          Cancelar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </div>\r\n  <ion-grid id=\"tabs-container\">\r\n    <ion-row>\r\n      <ion-col col-6 class=\"centered-text\">\r\n        <ion-icon name=\"send\"></ion-icon>\r\n        <ion-label>Envio</ion-label>\r\n      </ion-col>\r\n      <ion-col (click)=\"goToSellForm()\" col-6 class=\"centered-text\">\r\n        <ion-icon name=\"pricetag\"></ion-icon>\r\n        <ion-label>Venta</ion-label>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>\r\n";
-    /***/
-  },
-
-  /***/
-  "./node_modules/raw-loader/dist/cjs.js!./src/app/shared/card/card.component.html":
-  /*!***************************************************************************************!*\
-    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/shared/card/card.component.html ***!
-    \***************************************************************************************/
-
-  /*! exports provided: default */
-
-  /***/
-  function node_modulesRawLoaderDistCjsJsSrcAppSharedCardCardComponentHtml(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony default export */
-
-
-    __webpack_exports__["default"] = "<ion-card (click)=\"action()\">\r\n  <ion-card-header>\r\n    <ion-card-subtitle class=\"centered-text black-text\">{{text}}</ion-card-subtitle>\r\n  </ion-card-header>\r\n</ion-card>\r\n";
-    /***/
-  },
-
-  /***/
-  "./node_modules/raw-loader/dist/cjs.js!./src/app/shared/image/image.component.html":
-  /*!*****************************************************************************************!*\
-    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/shared/image/image.component.html ***!
-    \*****************************************************************************************/
-
-  /*! exports provided: default */
-
-  /***/
-  function node_modulesRawLoaderDistCjsJsSrcAppSharedImageImageComponentHtml(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony default export */
-
-
-    __webpack_exports__["default"] = "<img [src]=\"url\" [className]=\"class\"  />";
-    /***/
-  },
-
-  /***/
-  "./node_modules/raw-loader/dist/cjs.js!./src/app/shared/post-card/post-card.component.html":
-  /*!*************************************************************************************************!*\
-    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/shared/post-card/post-card.component.html ***!
-    \*************************************************************************************************/
-
-  /*! exports provided: default */
-
-  /***/
-  function node_modulesRawLoaderDistCjsJsSrcAppSharedPostCardPostCardComponentHtml(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony default export */
-
-
-    __webpack_exports__["default"] = "<div class=\"post-card\">\r\n  <ion-grid>\r\n    <ion-row>\r\n      <ion-col size=\"4\">\r\n        <app-image [url]=\"imageSrc\" class=\"post-image\"></app-image>\r\n      </ion-col>\r\n      <ion-col size=\"8\">\r\n        <h4 class=\"post-title\">{{ title }}</h4>\r\n        <div class=\"post-details\" *ngIf=\"type === 1\">\r\n          <span><ion-icon name=\"calendar\"></ion-icon>{{ date }}</span>\r\n        </div>\r\n        <div class=\"post-details\" *ngIf=\"type === 2\">\r\n          <span><ion-icon name=\"pricetag\"></ion-icon>{{ price }}</span>\r\n        </div>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</div>\r\n";
-    /***/
-  },
-
-  /***/
-  "./node_modules/raw-loader/dist/cjs.js!./src/app/shared/select-city/select-city.component.html":
-  /*!*****************************************************************************************************!*\
-    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/shared/select-city/select-city.component.html ***!
-    \*****************************************************************************************************/
-
-  /*! exports provided: default */
-
-  /***/
-  function node_modulesRawLoaderDistCjsJsSrcAppSharedSelectCitySelectCityComponentHtml(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony default export */
-
-
-    __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>Modal Header</ion-title>\r\n    <ion-buttons slot=\"primary\">\r\n      <ion-button (click)=\"dismiss()\">\r\n        <ion-icon slot=\"icon-only\" name=\"close\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content class=\"ion-padding\">\r\n  <form [formGroup]=\"searchForm\">\r\n    <ion-item>\r\n      <input\r\n        name=\"query\"\r\n        type=\"text\"\r\n        class=\"form-control\"\r\n        placeholder=\"Busca una ciudad\"\r\n        formControlName=\"queryControl\"\r\n        (keyup)=\"search()\"\r\n      />\r\n    </ion-item>\r\n  </form>\r\n  <div class=\"city-list\" *ngIf=\"cities.length > 0\">\r\n    <div\r\n      class=\"select-city\"\r\n      *ngFor=\"let city of cities\"\r\n      (click)=\"dismiss(city)\"\r\n    >\r\n      {{ city.name }}\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ folder }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div id=\"container\">\r\n    <h4 class=\"centered-text\">Que quieres publicar?</h4>\r\n    <ion-row id=\"form-container\">\r\n      <ion-slides>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo1\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(1)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(1)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo2\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(2)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(2)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo3\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(3)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(3)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n      </ion-slides>\r\n      <ion-col col-12>\r\n        <form [formGroup]=\"shippingForm\">\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">T&iacute;tulo</label>\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control width-100\"\r\n              formControlName=\"title\"\r\n            />\r\n            <span *ngIf=\"controlHasError('title', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Descripci&oacute;n</label>\r\n            <textarea\r\n              class=\"form-control width-100\"\r\n              formControlName=\"description\"\r\n            ></textarea>\r\n            <span *ngIf=\"controlHasError('description', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <ion-item>\r\n              <ion-label class=\"bold\">Selecciona fecha</ion-label>\r\n              <ion-datetime\r\n                id=\"dynamicDisabled\"\r\n                displayFormat=\"MMMM DD YYYY\"\r\n                value=\"1994-12-15\"\r\n                formControlName=\"date\"\r\n              ></ion-datetime>\r\n            </ion-item>\r\n            <span *ngIf=\"controlHasError('date', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Origen del envio</label>\r\n            <ion-item (click)=\"openOriginModal()\">\r\n              <span *ngIf=\"!origin\">Selecciona un origen</span>\r\n              <span *ngIf=\"origin\">{{origin.name}}</span>\r\n            </ion-item>\r\n            <input type=\"text\" class=\"display-none\" formControlName=\"origin\" />\r\n            <span *ngIf=\"controlHasError('origin', 'required')\">\r\n              <strong class=\"error\">Selecciona una ciudad</strong>\r\n            </span>\r\n          </div>\r\n\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Origen del destino</label>\r\n            <ion-item (click)=\"openDestinationModal()\">\r\n              <span *ngIf=\"!destination\">Selecciona un destino</span>\r\n              <span *ngIf=\"destination\">{{destination.name}}</span>\r\n            </ion-item>\r\n            <input\r\n              type=\"text\"\r\n              class=\"display-none\"\r\n              formControlName=\"destination\"\r\n              display=\"none\"\r\n            />\r\n            <span *ngIf=\"controlHasError('destination', 'required')\">\r\n              <strong class=\"error\">Selecciona una ciudad</strong>\r\n            </span>\r\n          </div>\r\n        </form>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button color=\"primary\" (click)=\"saveShipping()\" class=\"width-100\">\r\n          Guardar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button\r\n          color=\"danger\"\r\n          (click)=\"goBackToDashboard()\"\r\n          class=\"width-100\"\r\n        >\r\n          Cancelar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </div>\r\n  <ion-grid id=\"tabs-container\">\r\n    <ion-row>\r\n      <ion-col col-6 class=\"centered-text\">\r\n        <ion-icon name=\"send\"></ion-icon>\r\n        <ion-label>Envio</ion-label>\r\n      </ion-col>\r\n      <ion-col (click)=\"goToSellForm()\" col-6 class=\"centered-text\">\r\n        <ion-icon name=\"pricetag\"></ion-icon>\r\n        <ion-label>Venta</ion-label>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -573,14 +379,33 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @angular/forms */
     "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! @ionic/angular */
+    "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+    /* harmony import */
+
+
+    var src_app_shared_comments_comments_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! src/app/shared/comments/comments.component */
+    "./src/app/shared/comments/comments.component.ts");
+    /* harmony import */
+
+
+    var src_app_shared_post_details_post_details_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! src/app/shared/post-details/post-details.component */
+    "./src/app/shared/post-details/post-details.component.ts");
 
     var PostsListGeneralPage = /*#__PURE__*/function () {
-      function PostsListGeneralPage(route, postService, storage) {
+      function PostsListGeneralPage(route, postService, storage, modalController) {
         _classCallCheck(this, PostsListGeneralPage);
 
         this.route = route;
         this.postService = postService;
         this.storage = storage;
+        this.modalController = modalController;
         this.activeTab = 1;
         this.sells = [];
         this.shippings = [];
@@ -600,6 +425,82 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             queryControl: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("queryControl", [])
           });
           this.searchForm.controls["queryControl"].setValue(null);
+
+          this.openCommentsModal = function (postId) {
+            _this.openCommentsModalImplementation(postId);
+          };
+
+          this.openDetailsModal = function (post) {
+            _this.openDetailsModalImplementation(post);
+          };
+        }
+      }, {
+        key: "openCommentsModalImplementation",
+        value: function openCommentsModalImplementation(postId) {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            var modal;
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    _context.next = 2;
+                    return this.modalController.create({
+                      component: src_app_shared_comments_comments_component__WEBPACK_IMPORTED_MODULE_7__["CommentsComponent"],
+                      componentProps: {
+                        postId: postId
+                      },
+                      cssClass: "my-custom-class"
+                    });
+
+                  case 2:
+                    modal = _context.sent;
+                    _context.next = 5;
+                    return modal.present().then(function () {});
+
+                  case 5:
+                    return _context.abrupt("return", _context.sent);
+
+                  case 6:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee, this);
+          }));
+        }
+      }, {
+        key: "openDetailsModalImplementation",
+        value: function openDetailsModalImplementation(post) {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+            var modal;
+            return regeneratorRuntime.wrap(function _callee2$(_context2) {
+              while (1) {
+                switch (_context2.prev = _context2.next) {
+                  case 0:
+                    _context2.next = 2;
+                    return this.modalController.create({
+                      component: src_app_shared_post_details_post_details_component__WEBPACK_IMPORTED_MODULE_8__["PostDetailsComponent"],
+                      componentProps: {
+                        post: post
+                      },
+                      cssClass: "my-custom-class"
+                    });
+
+                  case 2:
+                    modal = _context2.sent;
+                    _context2.next = 5;
+                    return modal.present().then(function () {});
+
+                  case 5:
+                    return _context2.abrupt("return", _context2.sent);
+
+                  case 6:
+                  case "end":
+                    return _context2.stop();
+                }
+              }
+            }, _callee2, this);
+          }));
         }
       }, {
         key: "changeActiveTab",
@@ -680,6 +581,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         type: _post_service__WEBPACK_IMPORTED_MODULE_4__["PostService"]
       }, {
         type: _ionic_storage__WEBPACK_IMPORTED_MODULE_3__["Storage"]
+      }, {
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ModalController"]
       }];
     };
 
@@ -903,14 +806,33 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _ionic_storage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @ionic/storage */
     "./node_modules/@ionic/storage/__ivy_ngcc__/fesm2015/ionic-storage.js");
+    /* harmony import */
+
+
+    var src_app_shared_post_details_post_details_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! src/app/shared/post-details/post-details.component */
+    "./src/app/shared/post-details/post-details.component.ts");
+    /* harmony import */
+
+
+    var src_app_shared_comments_comments_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! src/app/shared/comments/comments.component */
+    "./src/app/shared/comments/comments.component.ts");
+    /* harmony import */
+
+
+    var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! @ionic/angular */
+    "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
 
     var PostsListPage = /*#__PURE__*/function () {
-      function PostsListPage(route, postService, storage) {
+      function PostsListPage(route, postService, storage, modalController) {
         _classCallCheck(this, PostsListPage);
 
         this.route = route;
         this.postService = postService;
         this.storage = storage;
+        this.modalController = modalController;
         this.activeTab = 1;
         this.sells = [];
         this.shippings = [];
@@ -921,12 +843,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(PostsListPage, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
             var _this4 = this;
 
-            return regeneratorRuntime.wrap(function _callee$(_context) {
+            return regeneratorRuntime.wrap(function _callee3$(_context3) {
               while (1) {
-                switch (_context.prev = _context.next) {
+                switch (_context3.prev = _context3.next) {
                   case 0:
                     this.sub = this.route.params.subscribe(function (params) {
                       _this4.userId = params["user-id"];
@@ -942,12 +864,88 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                       });
                     });
 
-                  case 1:
+                    this.openCommentsModal = function (postId) {
+                      _this4.openCommentsModalImplementation(postId);
+                    };
+
+                    this.openDetailsModal = function (post) {
+                      _this4.openDetailsModalImplementation(post);
+                    };
+
+                  case 3:
                   case "end":
-                    return _context.stop();
+                    return _context3.stop();
                 }
               }
-            }, _callee, this);
+            }, _callee3, this);
+          }));
+        }
+      }, {
+        key: "openCommentsModalImplementation",
+        value: function openCommentsModalImplementation(postId) {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+            var modal;
+            return regeneratorRuntime.wrap(function _callee4$(_context4) {
+              while (1) {
+                switch (_context4.prev = _context4.next) {
+                  case 0:
+                    _context4.next = 2;
+                    return this.modalController.create({
+                      component: src_app_shared_comments_comments_component__WEBPACK_IMPORTED_MODULE_6__["CommentsComponent"],
+                      componentProps: {
+                        postId: postId
+                      },
+                      cssClass: "my-custom-class"
+                    });
+
+                  case 2:
+                    modal = _context4.sent;
+                    _context4.next = 5;
+                    return modal.present().then(function () {});
+
+                  case 5:
+                    return _context4.abrupt("return", _context4.sent);
+
+                  case 6:
+                  case "end":
+                    return _context4.stop();
+                }
+              }
+            }, _callee4, this);
+          }));
+        }
+      }, {
+        key: "openDetailsModalImplementation",
+        value: function openDetailsModalImplementation(post) {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
+            var modal;
+            return regeneratorRuntime.wrap(function _callee5$(_context5) {
+              while (1) {
+                switch (_context5.prev = _context5.next) {
+                  case 0:
+                    _context5.next = 2;
+                    return this.modalController.create({
+                      component: src_app_shared_post_details_post_details_component__WEBPACK_IMPORTED_MODULE_5__["PostDetailsComponent"],
+                      componentProps: {
+                        post: post
+                      },
+                      cssClass: "my-custom-class"
+                    });
+
+                  case 2:
+                    modal = _context5.sent;
+                    _context5.next = 5;
+                    return modal.present().then(function () {});
+
+                  case 5:
+                    return _context5.abrupt("return", _context5.sent);
+
+                  case 6:
+                  case "end":
+                    return _context5.stop();
+                }
+              }
+            }, _callee5, this);
           }));
         }
       }, {
@@ -1004,6 +1002,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         type: _post_service__WEBPACK_IMPORTED_MODULE_3__["PostService"]
       }, {
         type: _ionic_storage__WEBPACK_IMPORTED_MODULE_4__["Storage"]
+      }, {
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__["ModalController"]
       }];
     };
 
@@ -1194,19 +1194,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
-    /*! @ionic-native/image-picker/ngx */
-    "./node_modules/@ionic-native/image-picker/__ivy_ngcc__/ngx/index.js");
-    /* harmony import */
-
-
-    var _posts_list_posts_list_module__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+    var _posts_list_posts_list_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
     /*! ./posts-list/posts-list.module */
     "./src/app/posts/posts-list/posts-list.module.ts");
     /* harmony import */
 
 
-    var _posts_list_general_posts_list_general_module__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+    var _posts_list_general_posts_list_general_module__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
     /*! ./posts-list-general/posts-list-general.module */
     "./src/app/posts/posts-list-general/posts-list-general.module.ts");
 
@@ -1216,8 +1210,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     PostsModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: [],
-      imports: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _posts_routing_module__WEBPACK_IMPORTED_MODULE_5__["PostsRoutingModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["IonicModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"], _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_7__["SharedModule"], _shipping_form_shipping_form_module__WEBPACK_IMPORTED_MODULE_9__["ShippingFormPageModule"], _sell_form_sell_form_module__WEBPACK_IMPORTED_MODULE_8__["SellFormPageModule"], _posts_list_posts_list_module__WEBPACK_IMPORTED_MODULE_12__["PostsListPageModule"], _posts_list_general_posts_list_general_module__WEBPACK_IMPORTED_MODULE_13__["PostsListGeneralPageModule"]],
-      providers: [_ionic_native_http_ngx__WEBPACK_IMPORTED_MODULE_10__["HTTP"], _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_11__["ImagePicker"]],
+      imports: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _posts_routing_module__WEBPACK_IMPORTED_MODULE_5__["PostsRoutingModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["IonicModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"], _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_7__["SharedModule"], _shipping_form_shipping_form_module__WEBPACK_IMPORTED_MODULE_9__["ShippingFormPageModule"], _sell_form_sell_form_module__WEBPACK_IMPORTED_MODULE_8__["SellFormPageModule"], _posts_list_posts_list_module__WEBPACK_IMPORTED_MODULE_11__["PostsListPageModule"], _posts_list_general_posts_list_general_module__WEBPACK_IMPORTED_MODULE_12__["PostsListGeneralPageModule"]],
+      providers: [_ionic_native_http_ngx__WEBPACK_IMPORTED_MODULE_10__["HTTP"]],
       exports: []
     })], PostsModule);
     /***/
@@ -1434,31 +1428,38 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-    /*! @ionic-native/image-picker/ngx */
-    "./node_modules/@ionic-native/image-picker/__ivy_ngcc__/ngx/index.js");
-    /* harmony import */
-
-
-    var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! @ionic/angular */
     "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
     /* harmony import */
 
 
-    var src_app_shared_select_city_select_city_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    var src_app_shared_select_city_select_city_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! src/app/shared/select-city/select-city.component */
     "./src/app/shared/select-city/select-city.component.ts");
+    /* harmony import */
+
+
+    var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! @angular/platform-browser */
+    "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/platform-browser.js");
+    /* harmony import */
+
+
+    var _capacitor_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    /*! @capacitor/core */
+    "./node_modules/@capacitor/core/dist/esm/index.js");
 
     var SellFormPage = /*#__PURE__*/function () {
-      function SellFormPage(router, postService, imagePicker, storage, modalController) {
+      function SellFormPage(router, postService, storage, modalController, sanitizer, loadingController) {
         _classCallCheck(this, SellFormPage);
 
         this.router = router;
         this.postService = postService;
-        this.imagePicker = imagePicker;
         this.storage = storage;
         this.modalController = modalController;
+        this.sanitizer = sanitizer;
+        this.loadingController = loadingController;
       }
 
       _createClass(SellFormPage, [{
@@ -1466,6 +1467,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function ngOnInit() {
           var _this7 = this;
 
+          this.formData = new FormData();
           this.activeTab = 2;
           this.storage.get("auth").then(function (auth) {
             _this7.auth = auth;
@@ -1482,25 +1484,161 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.sellForm.controls["origin"].setValue(null);
         }
       }, {
+        key: "selectPhoto",
+        value: function selectPhoto(slide) {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee6() {
+            var ab;
+            return regeneratorRuntime.wrap(function _callee6$(_context6) {
+              while (1) {
+                switch (_context6.prev = _context6.next) {
+                  case 0:
+                    _context6.next = 2;
+                    return this.getPhoto(_capacitor_core__WEBPACK_IMPORTED_MODULE_9__["CameraSource"].Photos, slide);
+
+                  case 2:
+                    ab = _context6.sent;
+                    _context6.next = 5;
+                    return this.uploadImage(ab, slide);
+
+                  case 5:
+                  case "end":
+                    return _context6.stop();
+                }
+              }
+            }, _callee6, this);
+          }));
+        }
+      }, {
+        key: "takePicture",
+        value: function takePicture(slide) {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
+            var ab;
+            return regeneratorRuntime.wrap(function _callee7$(_context7) {
+              while (1) {
+                switch (_context7.prev = _context7.next) {
+                  case 0:
+                    _context7.next = 2;
+                    return this.getPhoto(_capacitor_core__WEBPACK_IMPORTED_MODULE_9__["CameraSource"].Camera, slide);
+
+                  case 2:
+                    ab = _context7.sent;
+                    _context7.next = 5;
+                    return this.uploadImage(ab, slide);
+
+                  case 5:
+                  case "end":
+                    return _context7.stop();
+                }
+              }
+            }, _callee7, this);
+          }));
+        }
+      }, {
+        key: "getPhoto",
+        value: function getPhoto(source, slide) {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee8() {
+            var image, photo;
+            return regeneratorRuntime.wrap(function _callee8$(_context8) {
+              while (1) {
+                switch (_context8.prev = _context8.next) {
+                  case 0:
+                    _context8.next = 2;
+                    return _capacitor_core__WEBPACK_IMPORTED_MODULE_9__["Plugins"].Camera.getPhoto({
+                      quality: 90,
+                      allowEditing: false,
+                      resultType: _capacitor_core__WEBPACK_IMPORTED_MODULE_9__["CameraResultType"].Uri,
+                      source: source
+                    });
+
+                  case 2:
+                    image = _context8.sent;
+                    photo = this.sanitizer.bypassSecurityTrustResourceUrl(image && image.webPath);
+
+                    if (slide === 1) {
+                      this.photo1 = photo;
+                    } else if (slide === 2) {
+                      this.photo2 = photo;
+                    } else {
+                      this.photo3 = photo;
+                    }
+
+                    return _context8.abrupt("return", image.webPath);
+
+                  case 6:
+                  case "end":
+                    return _context8.stop();
+                }
+              }
+            }, _callee8, this);
+          }));
+        }
+      }, {
+        key: "uploadImage",
+        value: function uploadImage(webPath, slide) {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee9() {
+            var blob;
+            return regeneratorRuntime.wrap(function _callee9$(_context9) {
+              while (1) {
+                switch (_context9.prev = _context9.next) {
+                  case 0:
+                    _context9.next = 2;
+                    return this.loadingController.create({
+                      message: "Cargando..."
+                    });
+
+                  case 2:
+                    this.loading = _context9.sent;
+                    _context9.next = 5;
+                    return this.loading.present();
+
+                  case 5:
+                    _context9.next = 7;
+                    return fetch(webPath).then(function (r) {
+                      return r.blob();
+                    });
+
+                  case 7:
+                    blob = _context9.sent;
+
+                    if (slide === 1) {
+                      this.formData.append("image1", blob, "profile-picture1.jpg");
+                    } else if (slide === 2) {
+                      this.formData.append("image2", blob, "profile-picture2.jpg");
+                    } else {
+                      this.formData.append("image3", blob, "profile-picture3.jpg");
+                    }
+
+                    _context9.next = 11;
+                    return this.loading.dismiss();
+
+                  case 11:
+                  case "end":
+                    return _context9.stop();
+                }
+              }
+            }, _callee9, this);
+          }));
+        }
+      }, {
         key: "openOriginModal",
         value: function openOriginModal() {
-          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee10() {
             var _this8 = this;
 
             var modal;
-            return regeneratorRuntime.wrap(function _callee2$(_context2) {
+            return regeneratorRuntime.wrap(function _callee10$(_context10) {
               while (1) {
-                switch (_context2.prev = _context2.next) {
+                switch (_context10.prev = _context10.next) {
                   case 0:
-                    _context2.next = 2;
+                    _context10.next = 2;
                     return this.modalController.create({
-                      component: src_app_shared_select_city_select_city_component__WEBPACK_IMPORTED_MODULE_8__["SelectCityComponent"],
+                      component: src_app_shared_select_city_select_city_component__WEBPACK_IMPORTED_MODULE_7__["SelectCityComponent"],
                       cssClass: "my-custom-class"
                     });
 
                   case 2:
-                    modal = _context2.sent;
-                    _context2.next = 5;
+                    modal = _context10.sent;
+                    _context10.next = 5;
                     return modal.present().then(function () {
                       modal.onWillDismiss().then(function (response) {
                         _this8.origin = response.data.city;
@@ -1514,14 +1652,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                     });
 
                   case 5:
-                    return _context2.abrupt("return", _context2.sent);
+                    return _context10.abrupt("return", _context10.sent);
 
                   case 6:
                   case "end":
-                    return _context2.stop();
+                    return _context10.stop();
                 }
               }
-            }, _callee2, this);
+            }, _callee10, this);
           }));
         }
       }, {
@@ -1547,45 +1685,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               id: this.auth.id
             }
           };
-          this.postService.save(body, this.auth.token).toPromise().then(function (res) {
+          this.formData.append("postCommand", new Blob([JSON.stringify(body)], {
+            type: "application/json"
+          }));
+          this.postService.save(this.formData, this.auth.token).toPromise().then(function (res) {
             //const result = res.json();
             console.log(res);
           }, function (err) {
             var error = JSON.parse(err._body);
             console.log(error);
-          });
-        }
-      }, {
-        key: "getImages",
-        value: function getImages() {
-          var _this9 = this;
-
-          this.options = {
-            // Android only. Max images to be selected, defaults to 15. If this is set to 1, upon
-            // selection of a single image, the plugin will return it.
-            //maximumImagesCount: 3,
-            // max width and height to allow the images to be.  Will keep aspect
-            // ratio no matter what.  So if both are 800, the returned image
-            // will be at most 800 pixels wide and 800 pixels tall.  If the width is
-            // 800 and height 0 the image will be 800 pixels wide if the source
-            // is at least that wide.
-            width: 200,
-            //height: 200,
-            // quality of resized image, defaults to 100
-            quality: 25,
-            // output type, defaults to FILE_URIs.
-            // available options are
-            // window.imagePicker.OutputType.FILE_URI (0) or
-            // window.imagePicker.OutputType.BASE64_STRING (1)
-            outputType: 1
-          };
-          this.imageResponse = [];
-          this.imagePicker.getPictures(this.options).then(function (results) {
-            for (var i = 0; i < results.length; i++) {
-              _this9.imageResponse.push("data:image/jpeg;base64," + results[i]);
-            }
-          }, function (err) {
-            alert(err);
           });
         }
       }, {
@@ -1623,11 +1731,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         type: _post_service__WEBPACK_IMPORTED_MODULE_4__["PostService"]
       }, {
-        type: _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_6__["ImagePicker"]
-      }, {
         type: _ionic_storage__WEBPACK_IMPORTED_MODULE_5__["Storage"]
       }, {
-        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__["ModalController"]
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ModalController"]
+      }, {
+        type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["DomSanitizer"]
+      }, {
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["LoadingController"]
       }];
     };
 
@@ -1764,12 +1874,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _shipping_form_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! ./shipping-form.page */
     "./src/app/posts/shipping-form/shipping-form.page.ts");
-    /* harmony import */
-
-
-    var _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-    /*! @ionic-native/image-picker/ngx */
-    "./node_modules/@ionic-native/image-picker/__ivy_ngcc__/ngx/index.js");
 
     var ShippingFormPageModule = function ShippingFormPageModule() {
       _classCallCheck(this, ShippingFormPageModule);
@@ -1778,7 +1882,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     ShippingFormPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"], _shipping_form_routing_module__WEBPACK_IMPORTED_MODULE_5__["ShippingFormPageRoutingModule"]],
       declarations: [_shipping_form_page__WEBPACK_IMPORTED_MODULE_6__["ShippingFormPage"]],
-      providers: [_ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_7__["ImagePicker"]],
+      providers: [],
       exports: []
     })], ShippingFormPageModule);
     /***/
@@ -1856,47 +1960,55 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-    /*! @ionic-native/image-picker/ngx */
-    "./node_modules/@ionic-native/image-picker/__ivy_ngcc__/ngx/index.js");
-    /* harmony import */
-
-
-    var _ionic_storage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _ionic_storage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @ionic/storage */
     "./node_modules/@ionic/storage/__ivy_ngcc__/fesm2015/ionic-storage.js");
     /* harmony import */
 
 
-    var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! @ionic/angular */
     "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
     /* harmony import */
 
 
-    var src_app_shared_select_city_select_city_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    var src_app_shared_select_city_select_city_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! src/app/shared/select-city/select-city.component */
     "./src/app/shared/select-city/select-city.component.ts");
+    /* harmony import */
+
+
+    var _capacitor_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! @capacitor/core */
+    "./node_modules/@capacitor/core/dist/esm/index.js");
+    /* harmony import */
+
+
+    var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    /*! @angular/platform-browser */
+    "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/platform-browser.js");
 
     var ShippingFormPage = /*#__PURE__*/function () {
-      function ShippingFormPage(postService, router, imagePicker, storage, modalController) {
+      function ShippingFormPage(postService, router, storage, modalController, sanitizer, loadingController) {
         _classCallCheck(this, ShippingFormPage);
 
         this.postService = postService;
         this.router = router;
-        this.imagePicker = imagePicker;
         this.storage = storage;
         this.modalController = modalController;
+        this.sanitizer = sanitizer;
+        this.loadingController = loadingController;
       }
 
       _createClass(ShippingFormPage, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this10 = this;
+          var _this9 = this;
 
+          this.formData = new FormData();
           this.activeTab = 1;
           this.storage.get("auth").then(function (auth) {
-            _this10.auth = auth;
+            _this9.auth = auth;
           });
           this.shippingForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
             title: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]("title", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]),
@@ -1912,89 +2024,225 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.shippingForm.controls["destination"].setValue(null);
         }
       }, {
+        key: "selectPhoto",
+        value: function selectPhoto(slide) {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee11() {
+            var ab;
+            return regeneratorRuntime.wrap(function _callee11$(_context11) {
+              while (1) {
+                switch (_context11.prev = _context11.next) {
+                  case 0:
+                    _context11.next = 2;
+                    return this.getPhoto(_capacitor_core__WEBPACK_IMPORTED_MODULE_8__["CameraSource"].Photos, slide);
+
+                  case 2:
+                    ab = _context11.sent;
+                    _context11.next = 5;
+                    return this.uploadImage(ab, slide);
+
+                  case 5:
+                  case "end":
+                    return _context11.stop();
+                }
+              }
+            }, _callee11, this);
+          }));
+        }
+      }, {
+        key: "takePicture",
+        value: function takePicture(slide) {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee12() {
+            var ab;
+            return regeneratorRuntime.wrap(function _callee12$(_context12) {
+              while (1) {
+                switch (_context12.prev = _context12.next) {
+                  case 0:
+                    _context12.next = 2;
+                    return this.getPhoto(_capacitor_core__WEBPACK_IMPORTED_MODULE_8__["CameraSource"].Camera, slide);
+
+                  case 2:
+                    ab = _context12.sent;
+                    _context12.next = 5;
+                    return this.uploadImage(ab, slide);
+
+                  case 5:
+                  case "end":
+                    return _context12.stop();
+                }
+              }
+            }, _callee12, this);
+          }));
+        }
+      }, {
+        key: "getPhoto",
+        value: function getPhoto(source, slide) {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee13() {
+            var image, photo;
+            return regeneratorRuntime.wrap(function _callee13$(_context13) {
+              while (1) {
+                switch (_context13.prev = _context13.next) {
+                  case 0:
+                    _context13.next = 2;
+                    return _capacitor_core__WEBPACK_IMPORTED_MODULE_8__["Plugins"].Camera.getPhoto({
+                      quality: 90,
+                      allowEditing: false,
+                      resultType: _capacitor_core__WEBPACK_IMPORTED_MODULE_8__["CameraResultType"].Uri,
+                      source: source
+                    });
+
+                  case 2:
+                    image = _context13.sent;
+                    photo = this.sanitizer.bypassSecurityTrustResourceUrl(image && image.webPath);
+
+                    if (slide === 1) {
+                      this.photo1 = photo;
+                    } else if (slide === 2) {
+                      this.photo2 = photo;
+                    } else {
+                      this.photo3 = photo;
+                    }
+
+                    return _context13.abrupt("return", image.webPath);
+
+                  case 6:
+                  case "end":
+                    return _context13.stop();
+                }
+              }
+            }, _callee13, this);
+          }));
+        }
+      }, {
+        key: "uploadImage",
+        value: function uploadImage(webPath, slide) {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee14() {
+            var blob;
+            return regeneratorRuntime.wrap(function _callee14$(_context14) {
+              while (1) {
+                switch (_context14.prev = _context14.next) {
+                  case 0:
+                    _context14.next = 2;
+                    return this.loadingController.create({
+                      message: "Cargando..."
+                    });
+
+                  case 2:
+                    this.loading = _context14.sent;
+                    _context14.next = 5;
+                    return this.loading.present();
+
+                  case 5:
+                    _context14.next = 7;
+                    return fetch(webPath).then(function (r) {
+                      return r.blob();
+                    });
+
+                  case 7:
+                    blob = _context14.sent;
+
+                    if (slide === 1) {
+                      this.formData.append("image1", blob, "profile-picture1.jpg");
+                    } else if (slide === 2) {
+                      this.formData.append("image2", blob, "profile-picture2.jpg");
+                    } else {
+                      this.formData.append("image3", blob, "profile-picture3.jpg");
+                    }
+
+                    _context14.next = 11;
+                    return this.loading.dismiss();
+
+                  case 11:
+                  case "end":
+                    return _context14.stop();
+                }
+              }
+            }, _callee14, this);
+          }));
+        }
+      }, {
         key: "openOriginModal",
         value: function openOriginModal() {
-          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
-            var _this11 = this;
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee15() {
+            var _this10 = this;
 
             var modal;
-            return regeneratorRuntime.wrap(function _callee3$(_context3) {
+            return regeneratorRuntime.wrap(function _callee15$(_context15) {
               while (1) {
-                switch (_context3.prev = _context3.next) {
+                switch (_context15.prev = _context15.next) {
                   case 0:
-                    _context3.next = 2;
+                    _context15.next = 2;
                     return this.modalController.create({
-                      component: src_app_shared_select_city_select_city_component__WEBPACK_IMPORTED_MODULE_8__["SelectCityComponent"],
+                      component: src_app_shared_select_city_select_city_component__WEBPACK_IMPORTED_MODULE_7__["SelectCityComponent"],
                       cssClass: "my-custom-class"
                     });
 
                   case 2:
-                    modal = _context3.sent;
-                    _context3.next = 5;
+                    modal = _context15.sent;
+                    _context15.next = 5;
                     return modal.present().then(function () {
                       modal.onWillDismiss().then(function (response) {
-                        _this11.origin = response.data.city;
+                        _this10.origin = response.data.city;
 
-                        if (_this11.origin) {
-                          _this11.shippingForm.controls["origin"].setValue(_this11.origin.name);
+                        if (_this10.origin) {
+                          _this10.shippingForm.controls["origin"].setValue(_this10.origin.name);
                         } else {
-                          _this11.shippingForm.controls["origin"].setValue(null);
+                          _this10.shippingForm.controls["origin"].setValue(null);
                         }
                       });
                     });
 
                   case 5:
-                    return _context3.abrupt("return", _context3.sent);
+                    return _context15.abrupt("return", _context15.sent);
 
                   case 6:
                   case "end":
-                    return _context3.stop();
+                    return _context15.stop();
                 }
               }
-            }, _callee3, this);
+            }, _callee15, this);
           }));
         }
       }, {
         key: "openDestinationModal",
         value: function openDestinationModal() {
-          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
-            var _this12 = this;
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee16() {
+            var _this11 = this;
 
             var modal;
-            return regeneratorRuntime.wrap(function _callee4$(_context4) {
+            return regeneratorRuntime.wrap(function _callee16$(_context16) {
               while (1) {
-                switch (_context4.prev = _context4.next) {
+                switch (_context16.prev = _context16.next) {
                   case 0:
-                    _context4.next = 2;
+                    _context16.next = 2;
                     return this.modalController.create({
-                      component: src_app_shared_select_city_select_city_component__WEBPACK_IMPORTED_MODULE_8__["SelectCityComponent"],
+                      component: src_app_shared_select_city_select_city_component__WEBPACK_IMPORTED_MODULE_7__["SelectCityComponent"],
                       cssClass: "my-custom-class"
                     });
 
                   case 2:
-                    modal = _context4.sent;
-                    _context4.next = 5;
+                    modal = _context16.sent;
+                    _context16.next = 5;
                     return modal.present().then(function () {
                       modal.onWillDismiss().then(function (response) {
-                        _this12.destination = response.data.city;
+                        _this11.destination = response.data.city;
 
-                        if (_this12.destination) {
-                          _this12.shippingForm.controls["destination"].setValue(_this12.destination.name);
+                        if (_this11.destination) {
+                          _this11.shippingForm.controls["destination"].setValue(_this11.destination.name);
                         } else {
-                          _this12.shippingForm.controls["destination"].setValue(null);
+                          _this11.shippingForm.controls["destination"].setValue(null);
                         }
                       });
                     });
 
                   case 5:
-                    return _context4.abrupt("return", _context4.sent);
+                    return _context16.abrupt("return", _context16.sent);
 
                   case 6:
                   case "end":
-                    return _context4.stop();
+                    return _context16.stop();
                 }
               }
-            }, _callee4, this);
+            }, _callee16, this);
           }));
         }
       }, {
@@ -2011,7 +2259,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           var body = {
             type: 1,
-            image: "",
             title: controls["title"].value,
             description: controls["description"].value,
             date: controls["date"].value,
@@ -2021,45 +2268,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               id: this.auth.id
             }
           };
-          this.postService.save(body, this.auth.token).toPromise().then(function (res) {
+          this.formData.append("postCommand", new Blob([JSON.stringify(body)], {
+            type: "application/json"
+          }));
+          this.postService.save(this.formData, this.auth.token).toPromise().then(function (res) {
             //const result = res.json();
             console.log(res);
           }, function (err) {
             var error = JSON.parse(err._body);
             console.log(error);
-          });
-        }
-      }, {
-        key: "getImages",
-        value: function getImages() {
-          var _this13 = this;
-
-          this.options = {
-            // Android only. Max images to be selected, defaults to 15. If this is set to 1, upon
-            // selection of a single image, the plugin will return it.
-            //maximumImagesCount: 3,
-            // max width and height to allow the images to be.  Will keep aspect
-            // ratio no matter what.  So if both are 800, the returned image
-            // will be at most 800 pixels wide and 800 pixels tall.  If the width is
-            // 800 and height 0 the image will be 800 pixels wide if the source
-            // is at least that wide.
-            width: 200,
-            //height: 200,
-            // quality of resized image, defaults to 100
-            quality: 25,
-            // output type, defaults to FILE_URIs.
-            // available options are
-            // window.imagePicker.OutputType.FILE_URI (0) or
-            // window.imagePicker.OutputType.BASE64_STRING (1)
-            outputType: 1
-          };
-          this.imageResponse = [];
-          this.imagePicker.getPictures(this.options).then(function (results) {
-            for (var i = 0; i < results.length; i++) {
-              _this13.imageResponse.push("data:image/jpeg;base64," + results[i]);
-            }
-          }, function (err) {
-            alert(err);
           });
         }
       }, {
@@ -2097,11 +2314,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]
       }, {
-        type: _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_5__["ImagePicker"]
+        type: _ionic_storage__WEBPACK_IMPORTED_MODULE_5__["Storage"]
       }, {
-        type: _ionic_storage__WEBPACK_IMPORTED_MODULE_6__["Storage"]
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ModalController"]
       }, {
-        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__["ModalController"]
+        type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["DomSanitizer"]
+      }, {
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["LoadingController"]
       }];
     };
 
@@ -2114,557 +2333,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       /*! ./shipping-form.page.scss */
       "./src/app/posts/shipping-form/shipping-form.page.scss"))["default"]]
     })], ShippingFormPage);
-    /***/
-  },
-
-  /***/
-  "./src/app/shared/card/card.component.scss":
-  /*!*************************************************!*\
-    !*** ./src/app/shared/card/card.component.scss ***!
-    \*************************************************/
-
-  /*! exports provided: default */
-
-  /***/
-  function srcAppSharedCardCardComponentScss(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony default export */
-
-
-    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9jYXJkL2NhcmQuY29tcG9uZW50LnNjc3MifQ== */";
-    /***/
-  },
-
-  /***/
-  "./src/app/shared/card/card.component.ts":
-  /*!***********************************************!*\
-    !*** ./src/app/shared/card/card.component.ts ***!
-    \***********************************************/
-
-  /*! exports provided: CardComponent */
-
-  /***/
-  function srcAppSharedCardCardComponentTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "CardComponent", function () {
-      return CardComponent;
-    });
-    /* harmony import */
-
-
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-
-    var CardComponent = /*#__PURE__*/function () {
-      function CardComponent() {
-        _classCallCheck(this, CardComponent);
-      }
-
-      _createClass(CardComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {}
-      }]);
-
-      return CardComponent;
-    }();
-
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], CardComponent.prototype, "text", void 0);
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], CardComponent.prototype, "action", void 0);
-    CardComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-      selector: "app-card",
-      template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
-      /*! raw-loader!./card.component.html */
-      "./node_modules/raw-loader/dist/cjs.js!./src/app/shared/card/card.component.html"))["default"],
-      styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
-      /*! ./card.component.scss */
-      "./src/app/shared/card/card.component.scss"))["default"]]
-    })], CardComponent);
-    /***/
-  },
-
-  /***/
-  "./src/app/shared/image/image.component.scss":
-  /*!***************************************************!*\
-    !*** ./src/app/shared/image/image.component.scss ***!
-    \***************************************************/
-
-  /*! exports provided: default */
-
-  /***/
-  function srcAppSharedImageImageComponentScss(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony default export */
-
-
-    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9pbWFnZS9pbWFnZS5jb21wb25lbnQuc2NzcyJ9 */";
-    /***/
-  },
-
-  /***/
-  "./src/app/shared/image/image.component.ts":
-  /*!*************************************************!*\
-    !*** ./src/app/shared/image/image.component.ts ***!
-    \*************************************************/
-
-  /*! exports provided: ImageComponent */
-
-  /***/
-  function srcAppSharedImageImageComponentTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "ImageComponent", function () {
-      return ImageComponent;
-    });
-    /* harmony import */
-
-
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-
-    var ImageComponent = /*#__PURE__*/function () {
-      function ImageComponent() {
-        _classCallCheck(this, ImageComponent);
-      }
-
-      _createClass(ImageComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {}
-      }]);
-
-      return ImageComponent;
-    }();
-
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], ImageComponent.prototype, "url", void 0);
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], ImageComponent.prototype, "id", void 0);
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], ImageComponent.prototype, "class", void 0);
-    ImageComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-      selector: "app-image",
-      template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
-      /*! raw-loader!./image.component.html */
-      "./node_modules/raw-loader/dist/cjs.js!./src/app/shared/image/image.component.html"))["default"],
-      styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
-      /*! ./image.component.scss */
-      "./src/app/shared/image/image.component.scss"))["default"]]
-    })], ImageComponent);
-    /***/
-  },
-
-  /***/
-  "./src/app/shared/post-card/post-card.component.scss":
-  /*!***********************************************************!*\
-    !*** ./src/app/shared/post-card/post-card.component.scss ***!
-    \***********************************************************/
-
-  /*! exports provided: default */
-
-  /***/
-  function srcAppSharedPostCardPostCardComponentScss(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony default export */
-
-
-    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9wb3N0LWNhcmQvcG9zdC1jYXJkLmNvbXBvbmVudC5zY3NzIn0= */";
-    /***/
-  },
-
-  /***/
-  "./src/app/shared/post-card/post-card.component.ts":
-  /*!*********************************************************!*\
-    !*** ./src/app/shared/post-card/post-card.component.ts ***!
-    \*********************************************************/
-
-  /*! exports provided: PostCardComponent */
-
-  /***/
-  function srcAppSharedPostCardPostCardComponentTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "PostCardComponent", function () {
-      return PostCardComponent;
-    });
-    /* harmony import */
-
-
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-
-    var PostCardComponent = /*#__PURE__*/function () {
-      function PostCardComponent() {
-        _classCallCheck(this, PostCardComponent);
-      }
-
-      _createClass(PostCardComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {}
-      }]);
-
-      return PostCardComponent;
-    }();
-
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], PostCardComponent.prototype, "date", void 0);
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], PostCardComponent.prototype, "imageSrc", void 0);
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], PostCardComponent.prototype, "price", void 0);
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], PostCardComponent.prototype, "title", void 0);
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], PostCardComponent.prototype, "type", void 0);
-    PostCardComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-      selector: "app-post-card",
-      template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
-      /*! raw-loader!./post-card.component.html */
-      "./node_modules/raw-loader/dist/cjs.js!./src/app/shared/post-card/post-card.component.html"))["default"],
-      styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
-      /*! ./post-card.component.scss */
-      "./src/app/shared/post-card/post-card.component.scss"))["default"]]
-    })], PostCardComponent);
-    /***/
-  },
-
-  /***/
-  "./src/app/shared/select-city/city.service.ts":
-  /*!****************************************************!*\
-    !*** ./src/app/shared/select-city/city.service.ts ***!
-    \****************************************************/
-
-  /*! exports provided: CityService */
-
-  /***/
-  function srcAppSharedSelectCityCityServiceTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "CityService", function () {
-      return CityService;
-    });
-    /* harmony import */
-
-
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-    /* harmony import */
-
-
-    var src_app_core_services_rest_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! src/app/core/services/rest.service */
-    "./src/app/core/services/rest.service.ts");
-
-    var CityService = /*#__PURE__*/function () {
-      function CityService(restService) {
-        _classCallCheck(this, CityService);
-
-        this.restService = restService;
-      }
-
-      _createClass(CityService, [{
-        key: "getAll",
-        value: function getAll(query, token) {
-          var url = "cities".concat(undefined != query && null != query && "" != query ? "?query=".concat(query) : "");
-          return this.restService.queryGet(url, token);
-        }
-      }]);
-
-      return CityService;
-    }();
-
-    CityService.ctorParameters = function () {
-      return [{
-        type: src_app_core_services_rest_service__WEBPACK_IMPORTED_MODULE_2__["RestService"]
-      }];
-    };
-
-    CityService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-      providedIn: "root"
-    })], CityService);
-    /***/
-  },
-
-  /***/
-  "./src/app/shared/select-city/select-city.component.scss":
-  /*!***************************************************************!*\
-    !*** ./src/app/shared/select-city/select-city.component.scss ***!
-    \***************************************************************/
-
-  /*! exports provided: default */
-
-  /***/
-  function srcAppSharedSelectCitySelectCityComponentScss(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony default export */
-
-
-    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9zZWxlY3QtY2l0eS9zZWxlY3QtY2l0eS5jb21wb25lbnQuc2NzcyJ9 */";
-    /***/
-  },
-
-  /***/
-  "./src/app/shared/select-city/select-city.component.ts":
-  /*!*************************************************************!*\
-    !*** ./src/app/shared/select-city/select-city.component.ts ***!
-    \*************************************************************/
-
-  /*! exports provided: SelectCityComponent */
-
-  /***/
-  function srcAppSharedSelectCitySelectCityComponentTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "SelectCityComponent", function () {
-      return SelectCityComponent;
-    });
-    /* harmony import */
-
-
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-    /* harmony import */
-
-
-    var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! @ionic/angular */
-    "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
-    /* harmony import */
-
-
-    var _ionic_storage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! @ionic/storage */
-    "./node_modules/@ionic/storage/__ivy_ngcc__/fesm2015/ionic-storage.js");
-    /* harmony import */
-
-
-    var _city_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! ./city.service */
-    "./src/app/shared/select-city/city.service.ts");
-    /* harmony import */
-
-
-    var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-    /*! @angular/forms */
-    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
-
-    var SelectCityComponent = /*#__PURE__*/function () {
-      function SelectCityComponent(modalController, cityService, storage) {
-        _classCallCheck(this, SelectCityComponent);
-
-        this.modalController = modalController;
-        this.cityService = cityService;
-        this.storage = storage;
-        this.auth = "";
-        this.cities = [];
-        this.query = "";
-      }
-
-      _createClass(SelectCityComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {
-          var _this14 = this;
-
-          this.storage.get("auth").then(function (auth) {
-            _this14.auth = auth;
-          });
-          this.searchForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
-            queryControl: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("queryControl", [])
-          });
-          this.searchForm.controls["queryControl"].setValue(null);
-        }
-      }, {
-        key: "dismiss",
-        value: function dismiss() {
-          var city = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
-          this.modalController.dismiss({
-            dismissed: true,
-            city: city
-          });
-        }
-      }, {
-        key: "search",
-        value: function search() {
-          var controls = this.searchForm.controls;
-          this.query = controls["queryControl"].value;
-
-          if (this.query && this.query.length > 3) {
-            this.getCities();
-          } else {
-            this.cities = [];
-          }
-        }
-      }, {
-        key: "getCities",
-        value: function getCities() {
-          var _this15 = this;
-
-          this.cityService.getAll(this.query, this.auth.token).toPromise().then(function (res) {
-            var result = res.json();
-            _this15.cities = result;
-          }, function (err) {
-            var error = JSON.parse(err._body);
-            console.log(error);
-          });
-        }
-      }]);
-
-      return SelectCityComponent;
-    }();
-
-    SelectCityComponent.ctorParameters = function () {
-      return [{
-        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"]
-      }, {
-        type: _city_service__WEBPACK_IMPORTED_MODULE_4__["CityService"]
-      }, {
-        type: _ionic_storage__WEBPACK_IMPORTED_MODULE_3__["Storage"]
-      }];
-    };
-
-    SelectCityComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-      selector: "app-select-city",
-      template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
-      /*! raw-loader!./select-city.component.html */
-      "./node_modules/raw-loader/dist/cjs.js!./src/app/shared/select-city/select-city.component.html"))["default"],
-      styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
-      /*! ./select-city.component.scss */
-      "./src/app/shared/select-city/select-city.component.scss"))["default"]]
-    })], SelectCityComponent);
-    /***/
-  },
-
-  /***/
-  "./src/app/shared/shared.module.ts":
-  /*!*****************************************!*\
-    !*** ./src/app/shared/shared.module.ts ***!
-    \*****************************************/
-
-  /*! exports provided: SharedModule */
-
-  /***/
-  function srcAppSharedSharedModuleTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "SharedModule", function () {
-      return SharedModule;
-    });
-    /* harmony import */
-
-
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-    /* harmony import */
-
-
-    var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! @angular/common */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
-    /* harmony import */
-
-
-    var _image_image_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ./image/image.component */
-    "./src/app/shared/image/image.component.ts");
-    /* harmony import */
-
-
-    var _card_card_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! ./card/card.component */
-    "./src/app/shared/card/card.component.ts");
-    /* harmony import */
-
-
-    var _post_card_post_card_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-    /*! ./post-card/post-card.component */
-    "./src/app/shared/post-card/post-card.component.ts");
-    /* harmony import */
-
-
-    var _select_city_select_city_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-    /*! ./select-city/select-city.component */
-    "./src/app/shared/select-city/select-city.component.ts");
-    /* harmony import */
-
-
-    var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-    /*! @angular/forms */
-    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
-
-    var SharedModule = function SharedModule() {
-      _classCallCheck(this, SharedModule);
-    };
-
-    SharedModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-      declarations: [_card_card_component__WEBPACK_IMPORTED_MODULE_4__["CardComponent"], _post_card_post_card_component__WEBPACK_IMPORTED_MODULE_5__["PostCardComponent"], _image_image_component__WEBPACK_IMPORTED_MODULE_3__["ImageComponent"], _select_city_select_city_component__WEBPACK_IMPORTED_MODULE_6__["SelectCityComponent"]],
-      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ReactiveFormsModule"]],
-      exports: [_card_card_component__WEBPACK_IMPORTED_MODULE_4__["CardComponent"], _post_card_post_card_component__WEBPACK_IMPORTED_MODULE_5__["PostCardComponent"], _image_image_component__WEBPACK_IMPORTED_MODULE_3__["ImageComponent"], _select_city_select_city_component__WEBPACK_IMPORTED_MODULE_6__["SelectCityComponent"]]
-    })], SharedModule);
     /***/
   }
 }]);

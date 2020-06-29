@@ -1,0 +1,149 @@
+<ion-content>
+  <div id="container">
+    <h4 class="centered-text" *ngIf="step === 1">Registrarme</h4>
+    <h4 class="centered-text" *ngIf="step !== 1">Casi terminamos</h4>
+    <ion-row *ngIf="step !== 1">
+      <ion-col>
+        <img [src]="photo" />
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="step !== 1">
+      <ion-col>
+        <ion-button color="primary" (click)="takePicture()" class="width-100">
+          <ion-icon name="camera"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="primary" (click)="selectPhoto()" class="width-100">
+          <ion-icon name="image-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="step !== 1">
+      <ion-col size="12" class="centered-text"
+        >Sube una imagen de perfil</ion-col
+      >
+      <div class="separator"></div>
+    </ion-row>
+
+    <ion-row id="form-container">
+      <ion-col col-12>
+        <form [formGroup]="myForm">
+          <div class="form-group" *ngIf="step === 1">
+            <label class="bold">Nombres y apellidos</label>
+            <input
+              type="text"
+              class="form-control width-100"
+              formControlName="name"
+            />
+            <span *ngIf="controlHasError('name', 'required')">
+              <strong class="error">Campo requerido</strong>
+            </span>
+          </div>
+          <div class="form-group" *ngIf="step === 1">
+            <label class="bold">Correo electr&oacute;nico</label>
+            <input
+              type="email"
+              class="form-control width-100"
+              formControlName="email"
+            />
+            <span *ngIf="controlHasError('email', 'required')">
+              <strong class="error">Campo requerido</strong>
+            </span>
+          </div>
+          <div class="form-group" *ngIf="step === 1">
+            <label class="bold">Ciudad</label>
+            <ion-item (click)="openCityModal()">
+              <span *ngIf="!city">Selecciona una ciudad</span>
+              <span *ngIf="city">{{city.name}}</span>
+            </ion-item>
+            <input type="text" class="display-none" formControlName="city" />
+            <span *ngIf="controlHasError('city', 'required') && step === 1">
+              <strong class="error">Selecciona una ciudad</strong>
+            </span>
+          </div>
+          <div class="form-group" *ngIf="step === 1">
+            <label class="bold">Tel&eacute;fono(Opcional)</label>
+            <input
+              type="text"
+              class="form-control width-100"
+              formControlName="phone"
+            />
+          </div>
+          <div class="form-group" *ngIf="step === 1">
+            <label class="bold">Contrase&ntilde;a</label>
+            <input
+              type="password"
+              class="form-control width-100"
+              formControlName="password"
+            />
+            <span *ngIf="controlHasError('password', 'required')">
+              <strong class="error">Campo requerido</strong>
+            </span>
+          </div>
+          <div class="form-group" *ngIf="step === 1">
+            <label class="bold">Confirmar Contrase&ntilde;a</label>
+            <input
+              type="password"
+              class="form-control width-100"
+              formControlName="confirmPassword"
+            />
+            <span *ngIf="controlHasError('confirmPassword', 'required')">
+              <strong class="error">Campo requerido</strong>
+            </span>
+          </div>
+          <div class="form-group" *ngIf="step !== 1">
+            <label class="bold">Descripci&oacute;n de tus servicios</label>
+            <textarea
+              class="form-control width-100"
+              formControlName="serviceDescription"
+            ></textarea>
+            <span *ngIf="controlHasError('serviceDescription', 'required')">
+              <strong class="error">Campo requerido</strong>
+            </span>
+          </div>
+        </form>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <ion-button
+          color="primary"
+          (click)="continueToSecondStep()"
+          class="width-100"
+          *ngIf="step === 1"
+        >
+          Continuar
+        </ion-button>
+        <ion-button
+          color="primary"
+          (click)="register()"
+          class="width-100"
+          *ngIf="step !== 1"
+        >
+          Guardar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <ion-button
+          color="danger"
+          (click)="cancel()"
+          class="width-100"
+          *ngIf="step === 1"
+        >
+          Cancelar
+        </ion-button>
+        <ion-button
+          color="danger"
+          (click)="goBackToFirstStep()"
+          class="width-100"
+          *ngIf="step !== 1"
+        >
+          Volver
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

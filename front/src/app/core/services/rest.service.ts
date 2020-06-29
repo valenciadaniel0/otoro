@@ -9,8 +9,13 @@ export class RestService {
   public apiUrl: string = environment.api_url;
   constructor(private http: Http) {}
 
-  queryPostRegular(route: string, body: any) {
+  queryPostRegular(route: string, body: any) {   
     let repos = this.http.post(this.apiUrl.concat(route), body);
+    return repos;
+  }
+
+  queryGetRegular(route: string) {
+    let repos = this.http.get(this.apiUrl.concat(route));
     return repos;
   }
 
@@ -30,8 +35,7 @@ export class RestService {
   }
 
   queryPost(route: string, body: any, token: string) {
-    let headers = new Headers({
-      "Content-Type": "application/json",
+    let headers = new Headers({      
       Authorization: `Bearer ${token}`,
     });
     let options = new RequestOptions({ headers: headers });

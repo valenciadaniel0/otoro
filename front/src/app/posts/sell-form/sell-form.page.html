@@ -9,23 +9,91 @@
 
 <ion-content>
   <div id="container">
-    <h4 class="centered-text">Que quieres publicar?</h4>    
-    <ion-row>
-      <ion-col text-center>
-        <ion-button (click)="getImages()">Choose Images</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <!-- More Pinterest floating gallery style -->
-        <div class="images">
-          <div class="one-image" *ngFor="let img of imageResponse">
-            <img src="{{img}}" alt="" srcset="" />
-          </div>
-        </div>
-      </ion-col>
-    </ion-row>
+    <h4 class="centered-text">Que quieres publicar?</h4>
     <ion-row id="form-container">
+      <ion-slides>
+        <ion-slide>
+          <ion-row>
+            <ion-col>
+              <img [src]="photo1" />
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button
+                color="primary"
+                (click)="takePicture(1)"
+                class="width-100"
+              >
+                <ion-icon name="camera"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button
+                color="primary"
+                (click)="selectPhoto(1)"
+                class="width-100"
+              >
+                <ion-icon name="image-outline"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+        <ion-slide>
+          <ion-row>
+            <ion-col>
+              <img [src]="photo2" />
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button
+                color="primary"
+                (click)="takePicture(2)"
+                class="width-100"
+              >
+                <ion-icon name="camera"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button
+                color="primary"
+                (click)="selectPhoto(2)"
+                class="width-100"
+              >
+                <ion-icon name="image-outline"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+        <ion-slide>
+          <ion-row>
+            <ion-col>
+              <img [src]="photo3" />
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button
+                color="primary"
+                (click)="takePicture(3)"
+                class="width-100"
+              >
+                <ion-icon name="camera"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button
+                color="primary"
+                (click)="selectPhoto(3)"
+                class="width-100"
+              >
+                <ion-icon name="image-outline"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+      </ion-slides>
       <ion-col col-12>
         <form [formGroup]="sellForm">
           <div class="form-group">

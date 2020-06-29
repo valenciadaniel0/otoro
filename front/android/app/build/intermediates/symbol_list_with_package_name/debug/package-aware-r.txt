@@ -27,7 +27,6 @@ anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
-anim image_pop_in
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
@@ -1331,17 +1330,12 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
-drawable grid_background
-drawable ic_action_discard_dark
-drawable ic_action_discard_light
-drawable ic_action_done_dark
-drawable ic_action_done_light
+drawable hdpi
 drawable ic_calendar_black_24dp
 drawable ic_clear_black_24dp
 drawable ic_edit_black_24dp
 drawable ic_keyboard_arrow_left_black_24dp
 drawable ic_keyboard_arrow_right_black_24dp
-drawable ic_launcher
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_menu_arrow_down_black_24dp
@@ -1351,8 +1345,6 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_transparent
-drawable image_bg
-drawable loading_icon
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
 drawable mtrl_ic_arrow_drop_down
@@ -1375,7 +1367,6 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
-drawable screen
 drawable splash
 drawable test_custom_background
 drawable tooltip_frame_dark
@@ -1440,10 +1431,6 @@ id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
 id action_text
-id actionbar_discard
-id actionbar_discard_textview
-id actionbar_done
-id actionbar_done_textview
 id actions
 id activity_chooser_view_content
 id add
@@ -1514,7 +1501,6 @@ id fixed
 id forever
 id ghost_view
 id ghost_view_holder
-id gridview
 id group_divider
 id hideable
 id home
@@ -1738,9 +1724,6 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout actionbar_custom_view_done_discard
-layout actionbar_discard_button
-layout actionbar_done_button
 layout activity_main
 layout bridge_layout_main
 layout browser_actions_context_menu_page
@@ -1790,7 +1773,6 @@ layout mtrl_picker_header_title_text
 layout mtrl_picker_header_toggle
 layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
-layout multiselectorgrid
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
@@ -1874,9 +1856,6 @@ string common_signin_button_text_long
 string copy_toast_msg
 string custom_url_scheme
 string default_web_client_id
-string discard
-string done
-string error_database
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
@@ -1886,7 +1865,6 @@ string fallback_menu_item_open_in_browser
 string fallback_menu_item_share_link
 string fcm_fallback_notification_channel_label
 string firebase_database_url
-string free_version_label
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id
@@ -1928,9 +1906,6 @@ string mtrl_picker_toggle_to_calendar_input_mode
 string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
-string multi_app_name
-string multi_image_picker_processing_images_message
-string multi_image_picker_processing_images_title
 string ok
 string package_name
 string password_toggle_content_description
@@ -1941,7 +1916,6 @@ string path_password_strike_through
 string picture
 string project_id
 string request_permission
-string requesting_thumbnails
 string search_menu_title
 string status_bar_notification_info_overflow
 string title_activity_main
@@ -2178,7 +2152,6 @@ style MaterialAlertDialog_MaterialComponents_Title_Panel
 style MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked
 style MaterialAlertDialog_MaterialComponents_Title_Text
 style MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked
-style MyTheme
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents

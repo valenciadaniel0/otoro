@@ -12,6 +12,11 @@ export class UsersService {
     return this.service.queryPostRegular(url, body);
   }
 
+  register(body: any) {
+    let url = `users/register`;
+    return this.service.queryPostRegular(url, body);
+  }
+
   update(body: any, token: string) {
     let url = `users`;
     return this.service.queryPut(url, body, token);

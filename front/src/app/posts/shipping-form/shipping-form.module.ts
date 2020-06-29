@@ -7,7 +7,6 @@ import { IonicModule } from "@ionic/angular";
 import { ShippingFormPageRoutingModule } from "./shipping-form-routing.module";
 
 import { ShippingFormPage } from "./shipping-form.page";
-import { ImagePicker } from "@ionic-native/image-picker/ngx";
 
 @NgModule({
   imports: [
@@ -18,7 +17,7 @@ import { ImagePicker } from "@ionic-native/image-picker/ngx";
     ShippingFormPageRoutingModule,
   ],
   declarations: [ShippingFormPage],
-  providers: [ImagePicker],
+  providers: [],
   exports: [],
 })
 export class ShippingFormPageModule {}

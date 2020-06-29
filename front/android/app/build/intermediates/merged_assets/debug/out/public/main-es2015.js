@@ -464,15 +464,15 @@ const routes = [
     },
     {
         path: "login",
-        loadChildren: () => Promise.all(/*! import() | login-login-module */[__webpack_require__.e("default~dashboard-dashboard-module~login-login-module"), __webpack_require__.e("common"), __webpack_require__.e("login-login-module")]).then(__webpack_require__.bind(null, /*! ./login/login.module */ "./src/app/login/login.module.ts")).then((m) => m.LoginModule),
+        loadChildren: () => Promise.all(/*! import() | login-login-module */[__webpack_require__.e("default~dashboard-dashboard-module~login-login-module~posts-posts-module"), __webpack_require__.e("common"), __webpack_require__.e("login-login-module")]).then(__webpack_require__.bind(null, /*! ./login/login.module */ "./src/app/login/login.module.ts")).then((m) => m.LoginModule),
     },
     {
         path: "dashboard",
-        loadChildren: () => __webpack_require__.e(/*! import() | dashboard-dashboard-module */ "default~dashboard-dashboard-module~login-login-module").then(__webpack_require__.bind(null, /*! ./dashboard/dashboard.module */ "./src/app/dashboard/dashboard.module.ts")).then((m) => m.DashboardPageModule),
+        loadChildren: () => Promise.all(/*! import() | dashboard-dashboard-module */[__webpack_require__.e("default~dashboard-dashboard-module~login-login-module~posts-posts-module"), __webpack_require__.e("common")]).then(__webpack_require__.bind(null, /*! ./dashboard/dashboard.module */ "./src/app/dashboard/dashboard.module.ts")).then((m) => m.DashboardPageModule),
     },
     {
         path: "posts",
-        loadChildren: () => __webpack_require__.e(/*! import() | posts-posts-module */ "posts-posts-module").then(__webpack_require__.bind(null, /*! ./posts/posts.module */ "./src/app/posts/posts.module.ts")).then((m) => m.PostsModule),
+        loadChildren: () => Promise.all(/*! import() | posts-posts-module */[__webpack_require__.e("default~dashboard-dashboard-module~login-login-module~posts-posts-module"), __webpack_require__.e("posts-posts-module")]).then(__webpack_require__.bind(null, /*! ./posts/posts.module */ "./src/app/posts/posts.module.ts")).then((m) => m.PostsModule),
     },
     {
         path: 'users',
@@ -682,9 +682,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var _ionic_native_http_ngx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic-native/http/ngx */ "./node_modules/@ionic-native/http/__ivy_ngcc__/ngx/index.js");
 /* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/__ivy_ngcc__/fesm2015/ionic-storage.js");
-/* harmony import */ var _ionic_native_push_ngx__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ionic-native/push/ngx */ "./node_modules/@ionic-native/push/__ivy_ngcc__/ngx/index.js");
-/* harmony import */ var _ionic_native_app_version_ngx__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ionic-native/app-version/ngx */ "./node_modules/@ionic-native/app-version/__ivy_ngcc__/ngx/index.js");
-
+/* harmony import */ var _ionic_native_app_version_ngx__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ionic-native/app-version/ngx */ "./node_modules/@ionic-native/app-version/__ivy_ngcc__/ngx/index.js");
 
 
 
@@ -716,9 +714,8 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         providers: [
             _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"],
             _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_5__["SplashScreen"],
-            _ionic_native_push_ngx__WEBPACK_IMPORTED_MODULE_13__["Push"],
             _ionic_native_http_ngx__WEBPACK_IMPORTED_MODULE_11__["HTTP"],
-            _ionic_native_app_version_ngx__WEBPACK_IMPORTED_MODULE_14__["AppVersion"],
+            _ionic_native_app_version_ngx__WEBPACK_IMPORTED_MODULE_13__["AppVersion"],
             { provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] },
         ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]],
@@ -756,6 +753,10 @@ let RestService = class RestService {
         let repos = this.http.post(this.apiUrl.concat(route), body);
         return repos;
     }
+    queryGetRegular(route) {
+        let repos = this.http.get(this.apiUrl.concat(route));
+        return repos;
+    }
     queryDeleteRegular(route) {
         let repos = this.http.delete(this.apiUrl.concat(route));
         return repos;
@@ -771,7 +772,6 @@ let RestService = class RestService {
     }
     queryPost(route, body, token) {
         let headers = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["Headers"]({
-            "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
         });
         let options = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["RequestOptions"]({ headers: headers });
@@ -828,7 +828,7 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: false,
     //api_url: 'http://localhost:8081/api/'
-    api_url: 'http://192.168.0.11:8081/api/'
+    api_url: 'http://192.168.0.15:8081/api/'
 };
 /*
  * For easier debugging in development mode, you can import the following file

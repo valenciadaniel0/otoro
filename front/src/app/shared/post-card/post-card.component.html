@@ -1,17 +1,49 @@
 <div class="post-card">
   <ion-grid>
-    <ion-row>
-      <ion-col size="4">
+    <ion-row class="title-container">
+      <p class="font-bold">
+        {{ title | slice: 0:30 }}<span *ngIf="title.length > 30">...</span>
+      </p>
+    </ion-row>
+    <ion-row (click)="openDetailsModal(post)">
+      <ion-col size="4" class="post-image">
         <app-image [url]="imageSrc" class="post-image"></app-image>
       </ion-col>
-      <ion-col size="8">
-        <h4 class="post-title">{{ title }}</h4>
-        <div class="post-details" *ngIf="type === 1">
-          <span><ion-icon name="calendar"></ion-icon>{{ date }}</span>
+      <ion-col size="8" class="post-details">
+        <div class="details" *ngIf="type === '1'">
+          <p>
+            <ion-icon name="person-outline" class="font-bold"></ion-icon>
+            {{ user.name }}
+          </p>
+          <p>
+            <ion-icon name="calendar" class="font-bold"></ion-icon> {{ date }}
+          </p>
+          <p><span class="font-bold">Origen:</span> {{ originName }}</p>
+          <p><span class="font-bold">Destino:</span> {{ destinationName }}</p>
         </div>
-        <div class="post-details" *ngIf="type === 2">
-          <span><ion-icon name="pricetag"></ion-icon>{{ price }}</span>
+        <div class="details" *ngIf="type === '2'">
+          <p>
+            <ion-icon name="person-outline" class="font-bold"></ion-icon>
+            {{ user.name }}
+          </p>
+          <p>
+            <span><ion-icon name="pricetag"></ion-icon> {{ price }}</span>
+          </p>
+          <p><ion-icon name="location-outline"></ion-icon> {{ originName }}</p>
         </div>
+        <div class="description">
+          {{ description | slice: 0:60
+          }}<span *ngIf="description.length > 60">...</span>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="comments-container" (click)="openCommentsModal(id)">
+      <div class="separator"></div>
+      <ion-col size="10">
+        Comentarios
+      </ion-col>
+      <ion-col size="2">
+        <span class="badge badge-pill badge-primary">20</span>
       </ion-col>
     </ion-row>
   </ion-grid>

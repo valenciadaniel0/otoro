@@ -25,14 +25,6 @@ INJECTED from C:\Users\ingdm\projects\otoro\front\android\capacitor-cordova-andr
 		ADDED from C:\Users\ingdm\projects\otoro\front\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:3:1-59
 application
 ADDED from C:\Users\ingdm\projects\otoro\front\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:1-7:15
-activity#com.synconset.MultiImageChooserActivity
-ADDED from C:\Users\ingdm\projects\otoro\front\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:1-151
-	android:label
-		ADDED from C:\Users\ingdm\projects\otoro\front\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:11-49
-	android:theme
-		ADDED from C:\Users\ingdm\projects\otoro\front\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:105-149
-	android:name
-		ADDED from C:\Users\ingdm\projects\otoro\front\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:50-104
 uses-permission#android.permission.INTERNET
 ADDED from C:\Users\ingdm\projects\otoro\front\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:8:1-62
 	android:name

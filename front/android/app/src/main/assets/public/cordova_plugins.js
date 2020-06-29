@@ -18,14 +18,6 @@
         ]
         },
       {
-          "id": "cordova-plugin-telerik-imagepicker.ImagePicker",
-          "file": "plugins/cordova-plugin-telerik-imagepicker/www/imagepicker.js",
-          "pluginId": "cordova-plugin-telerik-imagepicker",
-        "clobbers": [
-          "plugins.imagePicker"
-        ]
-        },
-      {
           "id": "cordova-plugin-file.DirectoryEntry",
           "file": "plugins/cordova-plugin-file/www/DirectoryEntry.js",
           "pluginId": "cordova-plugin-file",
@@ -269,8 +261,7 @@
     {
       "cordova-plugin-advanced-http": "2.5.1",
       "cordova-plugin-app-version": "0.1.9",
-      "cordova-plugin-file": "6.0.2",
-      "cordova-plugin-telerik-imagepicker": "2.3.3"
+      "cordova-plugin-file": "6.0.2"
     };
     // BOTTOM OF METADATA
     });

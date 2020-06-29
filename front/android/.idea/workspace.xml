@@ -7,18 +7,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eaa0f7e4-a19d-4b32-b3c3-d87a4bcc0d08" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/domain/port/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/domain/port/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/adapter/UserRepositoryImplementation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/adapter/UserRepositoryImplementation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/config/JwtResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/config/JwtResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/application/factory/PostFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/application/factory/PostFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/application/factory/UserFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/application/factory/UserFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/application/handler/command/PostCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/application/handler/command/PostCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/application/handler/users/command/UserCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/application/handler/users/command/UserCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/domain/model/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/domain/model/Post.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/domain/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/domain/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/config/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/controller/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/controller/PostController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/dbRepository/UserDBRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/dbRepository/UserDBRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/entity/PostEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/entity/PostEntity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/entity/UserEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/entity/UserEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/domain/port/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/domain/port/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/adapter/UserRepositoryImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/adapter/UserRepositoryImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/config/JwtResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/config/JwtResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/application/factory/PostFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/application/factory/PostFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/application/factory/UserFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/application/factory/UserFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/application/handler/command/PostCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/application/handler/command/PostCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/application/handler/users/command/UserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/application/handler/users/command/UserCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/domain/model/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/domain/model/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/domain/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/domain/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/controller/PostController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/dbRepository/UserDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/dbRepository/UserDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/entity/PostEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/entity/PostEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/entity/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,13 +152,33 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1592681880505">
+    <state x="402" y="9" key="#app" timestamp="1593343127838">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592681880505" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1592686125473">
+    <state x="402" y="9" key="#app/0.0.1366.728@0.0.1366.728" timestamp="1593343127838" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1592961263717">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1592686125473" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592961263717" />
+    <state width="661" height="178" key="GridCell.Tab.0.bottom" timestamp="1593265798082">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="661" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593265798082" />
+    <state width="661" height="178" key="GridCell.Tab.0.center" timestamp="1593265798082">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="661" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593265798082" />
+    <state width="661" height="178" key="GridCell.Tab.0.left" timestamp="1593265798082">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="661" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593265798082" />
+    <state width="661" height="178" key="GridCell.Tab.0.right" timestamp="1593265798082">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="661" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593265798082" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1593457019680">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1593457019680" />
   </component>
 </project>

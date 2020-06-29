@@ -217,7 +217,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | login-login-module */
-        [__webpack_require__.e("default~dashboard-dashboard-module~login-login-module"), __webpack_require__.e("common"), __webpack_require__.e("login-login-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~dashboard-dashboard-module~login-login-module~posts-posts-module"), __webpack_require__.e("common"), __webpack_require__.e("login-login-module")]).then(__webpack_require__.bind(null,
         /*! ./login/login.module */
         "./src/app/login/login.module.ts")).then(function (m) {
           return m.LoginModule;
@@ -226,9 +226,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: "dashboard",
       loadChildren: function loadChildren() {
-        return __webpack_require__.e(
+        return Promise.all(
         /*! import() | dashboard-dashboard-module */
-        "default~dashboard-dashboard-module~login-login-module").then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~dashboard-dashboard-module~login-login-module~posts-posts-module"), __webpack_require__.e("common")]).then(__webpack_require__.bind(null,
         /*! ./dashboard/dashboard.module */
         "./src/app/dashboard/dashboard.module.ts")).then(function (m) {
           return m.DashboardPageModule;
@@ -237,9 +237,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: "posts",
       loadChildren: function loadChildren() {
-        return __webpack_require__.e(
+        return Promise.all(
         /*! import() | posts-posts-module */
-        "posts-posts-module").then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~dashboard-dashboard-module~login-login-module~posts-posts-module"), __webpack_require__.e("posts-posts-module")]).then(__webpack_require__.bind(null,
         /*! ./posts/posts.module */
         "./src/app/posts/posts.module.ts")).then(function (m) {
           return m.PostsModule;
@@ -639,13 +639,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _ionic_native_push_ngx__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
-    /*! @ionic-native/push/ngx */
-    "./node_modules/@ionic-native/push/__ivy_ngcc__/ngx/index.js");
-    /* harmony import */
-
-
-    var _ionic_native_app_version_ngx__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+    var _ionic_native_app_version_ngx__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
     /*! @ionic-native/app-version/ngx */
     "./node_modules/@ionic-native/app-version/__ivy_ngcc__/ngx/index.js");
 
@@ -657,7 +651,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]],
       entryComponents: [],
       imports: [_angular_http__WEBPACK_IMPORTED_MODULE_9__["HttpModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(), _ionic_storage__WEBPACK_IMPORTED_MODULE_12__["IonicStorageModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"]],
-      providers: [_ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"], _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_5__["SplashScreen"], _ionic_native_push_ngx__WEBPACK_IMPORTED_MODULE_13__["Push"], _ionic_native_http_ngx__WEBPACK_IMPORTED_MODULE_11__["HTTP"], _ionic_native_app_version_ngx__WEBPACK_IMPORTED_MODULE_14__["AppVersion"], {
+      providers: [_ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"], _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_5__["SplashScreen"], _ionic_native_http_ngx__WEBPACK_IMPORTED_MODULE_11__["HTTP"], _ionic_native_app_version_ngx__WEBPACK_IMPORTED_MODULE_13__["AppVersion"], {
         provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"],
         useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"]
       }],
@@ -725,6 +719,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return repos;
         }
       }, {
+        key: "queryGetRegular",
+        value: function queryGetRegular(route) {
+          var repos = this.http.get(this.apiUrl.concat(route));
+          return repos;
+        }
+      }, {
         key: "queryDeleteRegular",
         value: function queryDeleteRegular(route) {
           var repos = this.http["delete"](this.apiUrl.concat(route));
@@ -747,7 +747,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "queryPost",
         value: function queryPost(route, body, token) {
           var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["Headers"]({
-            "Content-Type": "application/json",
             Authorization: "Bearer ".concat(token)
           });
           var options = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["RequestOptions"]({
@@ -831,7 +830,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var environment = {
       production: false,
       //api_url: 'http://localhost:8081/api/'
-      api_url: 'http://192.168.0.11:8081/api/'
+      api_url: 'http://192.168.0.15:8081/api/'
     };
     /*
      * For easier debugging in development mode, you can import the following file

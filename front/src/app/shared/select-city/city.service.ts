@@ -7,12 +7,12 @@ import { RestService } from "src/app/core/services/rest.service";
 export class CityService {
   constructor(private restService: RestService) {}
 
-  getAll(query: string, token: string) {
+  getAll(query: string) {
     let url = `cities${
       undefined != query && null != query && "" != query
         ? `?query=${query}`
         : ``
     }`;
-    return this.restService.queryGet(url, token);
+    return this.restService.queryGetRegular(url);
   }
 }

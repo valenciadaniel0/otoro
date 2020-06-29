@@ -12,8 +12,7 @@ import { HttpModule } from "@angular/http";
 import { HttpClientModule } from "@angular/common/http";
 import { HTTP } from "@ionic-native/http/ngx";
 import { IonicStorageModule } from "@ionic/storage";
-import { Push } from "@ionic-native/push/ngx";
-import { AppVersion } from '@ionic-native/app-version/ngx';
+import { AppVersion } from "@ionic-native/app-version/ngx";
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,7 +28,6 @@ import { AppVersion } from '@ionic-native/app-version/ngx';
   providers: [
     StatusBar,
     SplashScreen,
-    Push,
     HTTP,
     AppVersion,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalles</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <div id="container">
+    <h4 class="centered-text">{{ post.title }}</h4>
+    <p>
+      <ion-icon name="person-outline" class="font-bold"></ion-icon>
+      {{ post.user.name }}
+    </p>
+    <div *ngIf="post.type === 1">
+      <p>
+        <ion-icon name="calendar" class="font-bold"></ion-icon> {{ post.date }}
+      </p>
+      <p><span class="font-bold">Origen:</span> {{ post.origin.name }}</p>
+      <p><span class="font-bold">Destino:</span> {{ post.destination.name }}</p>
+    </div>
+    <div *ngIf="post.type === 2">
+      <p>
+        <span><ion-icon name="pricetag"></ion-icon> {{ post.price }}</span>
+      </p>
+      <p>
+        <ion-icon name="location-outline"></ion-icon> {{ post.origin.name }}
+      </p>
+    </div>
+    <p>{{ post.description }}</p>
+  </div>
+</ion-content>

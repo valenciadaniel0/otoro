@@ -7,15 +7,17 @@ import com.back.application.handler.posts.CreatePostHandler;
 import com.back.application.handler.posts.query.GetPostsByTypeHandler;
 import com.back.application.handler.posts.query.SearchPostsHandler;
 import com.back.domain.model.Post;
+import com.back.framework.config.FileStorageService;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("api/posts")
@@ -23,6 +25,9 @@ public class PostController {
     private CreatePostHandler createPostHandler;
     private GetPostsByTypeHandler getPostsByTypeHandler;
     private SearchPostsHandler searchPostsHandler;
+
+    @Autowired
+    private FileStorageService fileStorageService;
 
     public PostController(CreatePostHandler createPostHandler, GetPostsByTypeHandler getPostsByTypeHandler,
             SearchPostsHandler searchPostsHandler) {
@@ -32,7 +37,22 @@ public class PostController {
     }
 
     @PostMapping(value = "")
-    public void create(@RequestBody PostCommand postCommand) {
+    public void create(@RequestPart(required = true) PostCommand postCommand,
+            @RequestPart(required = false) MultipartFile image1, @RequestPart(required = false) MultipartFile image2,
+            @RequestPart(required = false) MultipartFile image3) {
+
+        if (image1 != null) {
+            String fileName = this.fileStorageService.storeFile(image1, 2);
+            postCommand.setImage1(fileName);
+        }
+        if (image2 != null) {
+            String fileName = this.fileStorageService.storeFile(image2, 2);
+            postCommand.setImage2(fileName);
+        }
+        if (image3 != null) {
+            String fileName = this.fileStorageService.storeFile(image3, 2);
+            postCommand.setImage3(fileName);
+        }
         this.createPostHandler.run(postCommand);
     }
 

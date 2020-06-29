@@ -1,0 +1,19 @@
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <img [src]="photo" />
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-button color="primary" (click)="takePicture()" class="width-100">
+        <ion-icon name="camera"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button color="primary" (click)="selectPhoto()" class="width-100">
+        <ion-icon name="image-outline"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

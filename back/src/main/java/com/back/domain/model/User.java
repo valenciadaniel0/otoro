@@ -9,24 +9,30 @@ public class User {
     private String password;
     private String deviceToken;
     private String name;
+    private String phone;
+    private String serviceDescription;
     private Integer active;
     private String recoverCode;
+    private String profilePicture;
     private City city;
     private List<Role> roles;
 
     public User() {
     }
 
-    public User(Long id, String username, String email, String password, String deviceToken, String name,
-            Integer active, String recoverCode, City city, List<Role> roles) {
+    public User(Long id, String username, String email, String password, String deviceToken, String name, String phone,String serviceDescription,
+            Integer active, String recoverCode,String profilePicture, City city, List<Role> roles) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
         this.deviceToken = deviceToken;
         this.name = name;
+        this.phone = phone;
+        this.serviceDescription = serviceDescription;
         this.active = active;
         this.recoverCode = recoverCode;
+        this.profilePicture = profilePicture;
         this.city = city;
         this.roles = roles;
     }
@@ -79,6 +85,22 @@ public class User {
         this.name = name;
     }
 
+    public String getPhone() {
+        return this.phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getServiceDescription() {
+        return this.serviceDescription;
+    }
+
+    public void setServiceDescription(String serviceDescription) {
+        this.serviceDescription = serviceDescription;
+    }
+
     public Integer getActive() {
         return this.active;
     }
@@ -95,6 +117,13 @@ public class User {
         this.recoverCode = recoverCode;
     }
 
+    public String getProfilePicture() {
+        return this.profilePicture;
+    }
+
+    public void setProfilePicture(String profilePicture) {
+        this.profilePicture = profilePicture;
+    }
 
     public City getCity() {
         return this.city;

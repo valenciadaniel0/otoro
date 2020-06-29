@@ -2,10 +2,11 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { PostService } from "../post.service";
 import { Router } from "@angular/router";
-import { ImagePicker } from "@ionic-native/image-picker/ngx";
 import { Storage } from "@ionic/storage";
-import { ModalController } from "@ionic/angular";
+import { ModalController, LoadingController } from "@ionic/angular";
 import { SelectCityComponent } from "src/app/shared/select-city/select-city.component";
+import { CameraSource, Plugins, CameraResultType } from "@capacitor/core";
+import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 
 @Component({
   selector: "app-shipping-form",
@@ -17,19 +18,26 @@ export class ShippingFormPage implements OnInit {
   private auth: any;
   private destination: any;
   private imageResponse: any;
+  private formData: FormData;
+  private loading: any;
   private options: any;
   private origin: any;
+  private photo1: SafeResourceUrl;
+  private photo2: SafeResourceUrl;
+  private photo3: SafeResourceUrl;
   private shippingForm: FormGroup;
 
   constructor(
     private postService: PostService,
     private router: Router,
-    private imagePicker: ImagePicker,
     private storage: Storage,
-    private modalController: ModalController
+    private modalController: ModalController,
+    private sanitizer: DomSanitizer,
+    private loadingController: LoadingController
   ) {}
 
   ngOnInit() {
+    this.formData = new FormData();
     this.activeTab = 1;
     this.storage.get("auth").then((auth) => {
       this.auth = auth;
@@ -48,6 +56,56 @@ export class ShippingFormPage implements OnInit {
     this.shippingForm.controls["date"].setValue(null);
     this.shippingForm.controls["origin"].setValue(null);
     this.shippingForm.controls["destination"].setValue(null);
+  }
+
+  async selectPhoto(slide: number) {
+    const ab = await this.getPhoto(CameraSource.Photos, slide);
+    await this.uploadImage(ab, slide);
+  }
+
+  async takePicture(slide: number) {
+    const ab = await this.getPhoto(CameraSource.Camera, slide);
+    await this.uploadImage(ab, slide);
+  }
+
+  private async getPhoto(source: CameraSource, slide: number) {
+    const image = await Plugins.Camera.getPhoto({
+      quality: 90,
+      allowEditing: false,
+      resultType: CameraResultType.Uri,
+      source,
+    });
+
+    let photo = this.sanitizer.bypassSecurityTrustResourceUrl(
+      image && image.webPath
+    );
+
+    if (slide === 1) {
+      this.photo1 = photo;
+    } else if (slide === 2) {
+      this.photo2 = photo;
+    } else {
+      this.photo3 = photo;
+    }
+
+    return image.webPath;
+  }
+
+  private async uploadImage(webPath: string, slide: number) {
+    this.loading = await this.loadingController.create({
+      message: "Cargando...",
+    });
+    await this.loading.present();
+
+    const blob = await fetch(webPath).then((r) => r.blob());
+    if (slide === 1) {
+      this.formData.append("image1", blob, `profile-picture1.jpg`);
+    } else if (slide === 2) {
+      this.formData.append("image2", blob, `profile-picture2.jpg`);
+    } else {
+      this.formData.append("image3", blob, `profile-picture3.jpg`);
+    }
+    await this.loading.dismiss();
   }
 
   async openOriginModal() {
@@ -99,7 +157,6 @@ export class ShippingFormPage implements OnInit {
 
     const body = {
       type: 1,
-      image: "",
       title: controls["title"].value,
       description: controls["description"].value,
       date: controls["date"].value,
@@ -108,8 +165,15 @@ export class ShippingFormPage implements OnInit {
       user: { id: this.auth.id },
     };
 
+    this.formData.append(
+      "postCommand",
+      new Blob([JSON.stringify(body)], {
+        type: "application/json",
+      })
+    );
+
     this.postService
-      .save(body, this.auth.token)
+      .save(this.formData, this.auth.token)
       .toPromise()
       .then(
         (res) => {
@@ -121,42 +185,6 @@ export class ShippingFormPage implements OnInit {
           console.log(error);
         }
       );
-  }
-
-  getImages() {
-    this.options = {
-      // Android only. Max images to be selected, defaults to 15. If this is set to 1, upon
-      // selection of a single image, the plugin will return it.
-      //maximumImagesCount: 3,
-
-      // max width and height to allow the images to be.  Will keep aspect
-      // ratio no matter what.  So if both are 800, the returned image
-      // will be at most 800 pixels wide and 800 pixels tall.  If the width is
-      // 800 and height 0 the image will be 800 pixels wide if the source
-      // is at least that wide.
-      width: 200,
-      //height: 200,
-
-      // quality of resized image, defaults to 100
-      quality: 25,
-
-      // output type, defaults to FILE_URIs.
-      // available options are
-      // window.imagePicker.OutputType.FILE_URI (0) or
-      // window.imagePicker.OutputType.BASE64_STRING (1)
-      outputType: 1,
-    };
-    this.imageResponse = [];
-    this.imagePicker.getPictures(this.options).then(
-      (results) => {
-        for (var i = 0; i < results.length; i++) {
-          this.imageResponse.push("data:image/jpeg;base64," + results[i]);
-        }
-      },
-      (err) => {
-        alert(err);
-      }
-    );
   }
 
   goBackToDashboard() {

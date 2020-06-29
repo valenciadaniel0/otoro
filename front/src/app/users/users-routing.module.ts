@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'recover-password',
     loadChildren: () => import('./recover-password/recover-password.module').then( m => m.RecoverPasswordPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./register-form/register-form.module').then( m => m.RegisterFormPageModule)
   }
 ];
 

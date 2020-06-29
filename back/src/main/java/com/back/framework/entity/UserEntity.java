@@ -40,11 +40,20 @@ public class UserEntity {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @Column(name = "phone", nullable = true)
+    private String phone;
+
+    @Column(name = "service_description", nullable = true)
+    private String serviceDescription;
+
     @Column(name = "active", nullable = false)
     private Integer active;
 
     @Column(name = "recover_code", nullable = true)
     private String recoverCode;
+
+    @Column(name = "profile_picture", nullable = true)
+    private String profilePicture;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "city_id")
@@ -52,7 +61,7 @@ public class UserEntity {
     private CityEntity city;
 
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
     private List<RoleEntity> roles;
 
     public Long getId() {
@@ -103,6 +112,22 @@ public class UserEntity {
         this.name = name;
     }
 
+    public String getPhone() {
+        return this.phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getServiceDescription() {
+        return this.serviceDescription;
+    }
+
+    public void setServiceDescription(String serviceDescription) {
+        this.serviceDescription = serviceDescription;
+    }
+
     public Integer getActive() {
         return this.active;
     }
@@ -117,6 +142,14 @@ public class UserEntity {
 
     public void setRecoverCode(String recoverCode) {
         this.recoverCode = recoverCode;
+    }
+
+    public String getProfilePicture() {
+        return this.profilePicture;
+    }
+
+    public void setProfilePicture(String profilePicture) {
+        this.profilePicture = profilePicture;
     }
 
     public CityEntity getCity() {

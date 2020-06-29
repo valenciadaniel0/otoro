@@ -3,6 +3,9 @@ import { ActivatedRoute } from "@angular/router";
 import { Storage } from "@ionic/storage";
 import { PostService } from "../post.service";
 import { FormGroup, FormControl } from "@angular/forms";
+import { ModalController } from "@ionic/angular";
+import { CommentsComponent } from "src/app/shared/comments/comments.component";
+import { PostDetailsComponent } from 'src/app/shared/post-details/post-details.component';
 
 @Component({
   selector: "app-posts-list-general",
@@ -12,16 +15,19 @@ import { FormGroup, FormControl } from "@angular/forms";
 export class PostsListGeneralPage implements OnInit {
   private activeTab: number = 1;
   private auth: any;
+  private openCommentsModal: (postId: number) => void;
+  private openDetailsModal: (post: any) => void;
   private query: string;
-  public searchForm: FormGroup;
   private sells: any[] = [];
   private shippings: any[] = [];
   private sub: any;
+  public searchForm: FormGroup;
 
   constructor(
     private route: ActivatedRoute,
     private postService: PostService,
-    private storage: Storage
+    private storage: Storage,
+    private modalController: ModalController
   ) {}
 
   ngOnInit() {
@@ -34,6 +40,40 @@ export class PostsListGeneralPage implements OnInit {
       queryControl: new FormControl("queryControl", []),
     });
     this.searchForm.controls["queryControl"].setValue(null);
+
+    this.openCommentsModal = (postId: number) => {
+      this.openCommentsModalImplementation(postId);
+    };
+
+    this.openDetailsModal = (post:any)=>{
+      this.openDetailsModalImplementation(post);
+    };
+  }
+
+  async openCommentsModalImplementation(postId: number) {
+    const modal = await this.modalController.create({
+      component: CommentsComponent,
+      componentProps: {
+        postId: postId,
+      },
+      cssClass: "my-custom-class",
+    });
+
+    return await modal.present().then(() => {      
+    });
+  }
+
+  async openDetailsModalImplementation(post: any) {
+    const modal = await this.modalController.create({
+      component: PostDetailsComponent,
+      componentProps: {
+        post: post,
+      },
+      cssClass: "my-custom-class",
+    });
+
+    return await modal.present().then(() => {      
+    });
   }
 
   changeActiveTab(tabNumber: number) {
@@ -74,7 +114,7 @@ export class PostsListGeneralPage implements OnInit {
       .then(
         (res) => {
           const result = res.json();
-          this.shippings = result;
+          this.shippings = result;          
         },
         (err) => {
           let error = JSON.parse(err._body);
@@ -90,7 +130,7 @@ export class PostsListGeneralPage implements OnInit {
       .then(
         (res) => {
           const result = res.json();
-          this.sells = result;
+          this.sells = result;          
         },
         (err) => {
           let error = JSON.parse(err._body);
