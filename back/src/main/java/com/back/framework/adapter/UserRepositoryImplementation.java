@@ -44,7 +44,8 @@ public class UserRepositoryImplementation implements UserRepository, UserDetails
     public void update(User user) {
         UserEntity userEntity = UserMapper.modelToEntity(user);
         this.userDBRepository.update(userEntity.getId(), userEntity.getActive(), userEntity.getDeviceToken(),
-                userEntity.getEmail(), userEntity.getName());
+                userEntity.getEmail(), userEntity.getName(), userEntity.getCity().getId(), userEntity.getPhone(),
+                userEntity.getServiceDescription(), userEntity.getProfilePicture());
     }
 
     @Override

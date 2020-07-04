@@ -8,4 +8,6 @@ public interface PostDao {
     List<Post> getByType(int type, int userId);
 
     List<Post> search(int type, String query);
+
+    Post findById(Long id);
 }

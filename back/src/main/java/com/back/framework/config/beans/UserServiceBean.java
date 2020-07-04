@@ -7,6 +7,7 @@ import com.back.domain.service.users.GetUserByEmailService;
 import com.back.domain.service.users.RecoverPasswordService;
 import com.back.domain.service.users.UpdatePasswordService;
 import com.back.domain.service.users.UpdateRecoverCodeService;
+import com.back.domain.service.users.UpdateService;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -36,5 +37,10 @@ public class UserServiceBean {
     @Bean
     public UpdateRecoverCodeService updateRecoverCodeService(UserRepository userRepository) {
         return new UpdateRecoverCodeService(userRepository);
+    }
+
+    @Bean
+    public UpdateService updateService(UserRepository userRepository) {
+        return new UpdateService(userRepository);
     }
 }

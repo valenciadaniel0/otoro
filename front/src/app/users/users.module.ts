@@ -11,6 +11,7 @@ import { UsersService } from "./users.service";
 import { IonicStorageModule } from "@ionic/storage";
 import { RecoverPasswordPage } from "./recover-password/recover-password.page";
 import { RegisterFormPage } from "./register-form/register-form.page";
+import { ProfilePage } from './profile/profile.page';
 
 @NgModule({
   imports: [
@@ -21,7 +22,7 @@ import { RegisterFormPage } from "./register-form/register-form.page";
     UsersPageRoutingModule,
     IonicStorageModule.forRoot(),
   ],
-  declarations: [UsersPage, RecoverPasswordPage, RegisterFormPage],
+  declarations: [UsersPage, RecoverPasswordPage, RegisterFormPage,ProfilePage],
   providers: [UsersService],
 })
 export class UsersPageModule {}

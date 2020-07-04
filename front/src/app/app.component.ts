@@ -1,6 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 
-import { Platform, AlertController, NavController } from "@ionic/angular";
+import {
+  Platform,
+  AlertController,
+  NavController,
+  MenuController,
+} from "@ionic/angular";
 import {
   Plugins,
   PushNotification,
@@ -21,9 +26,10 @@ import { Router } from "@angular/router";
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
+    { title: "Inicio", url: "/dashboard", icon: "home" },
     {
       title: "Perfil",
-      url: "/login",
+      url: "users/profile",
       icon: "person",
     },
     {
@@ -32,7 +38,6 @@ export class AppComponent implements OnInit {
       icon: "notifications",
     },
   ];
-  public labels = ["Family", "Friends", "Notes", "Work", "Travel", "Reminders"];
 
   constructor(
     private platform: Platform,
@@ -42,7 +47,8 @@ export class AppComponent implements OnInit {
     public alertController: AlertController,
     public restService: RestService,
     public navController: NavController,
-    public router: Router
+    public router: Router,
+    public menuController: MenuController
   ) {
     this.initializeApp();
   }
@@ -58,7 +64,7 @@ export class AppComponent implements OnInit {
       }
 
       // Hide the splash (you should do this on app launch)
-      SplashScreen.hide();      
+      SplashScreen.hide();
 
       // Show the splash for two seconds and then auto hide:
       SplashScreen.show({
@@ -87,7 +93,6 @@ export class AppComponent implements OnInit {
     PushNotifications.addListener(
       "registration",
       (token: PushNotificationToken) => {
-        alert("Push registration success, token: " + token.value);
         this.storage.set("deviceToken", token.value);
       }
     );
@@ -115,16 +120,19 @@ export class AppComponent implements OnInit {
   }
 
   async logout() {
+    this.selectedIndex = 3;
     let body = new FormData();
     let auth: any = await this.storage.get("auth");
     this.restService
       .queryPost("users/logout", body, auth.token)
       .subscribe((response) => {
         this.storage.remove("auth");
+        this.menuController.enable(false);
         this.router.navigate(["/login"]);
         (err) => {
           if (err["status"] == 401) {
             this.storage.remove("auth");
+            this.menuController.enable(false);
             this.router.navigate(["/login"]);
           }
         };

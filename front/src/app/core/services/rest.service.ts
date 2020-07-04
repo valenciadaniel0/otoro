@@ -44,8 +44,7 @@ export class RestService {
   }
 
   queryPut(route: string, body: any, token: string) {
-    let headers = new Headers({
-      "Content-Type": "application/json",
+    let headers = new Headers({      
       Authorization: `Bearer ${token}`,
     });
     let options = new RequestOptions({ headers: headers });
@@ -53,9 +52,8 @@ export class RestService {
     return repos;
   }
 
-  queryDelete(route: string) {
-    let token = localStorage.getItem("token");
-    let headers = new Headers({ Authorization: token });
+  queryDelete(route: string,token:string) {    
+    let headers = new Headers({ Authorization: `Bearer ${token}` });
     let options = new RequestOptions({ headers: headers });
     let repos = this.http.delete(this.apiUrl.concat(route), options);
     return repos;

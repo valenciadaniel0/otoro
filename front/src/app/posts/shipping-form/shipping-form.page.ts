@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { PostService } from "../post.service";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 import { Storage } from "@ionic/storage";
 import { ModalController, LoadingController } from "@ionic/angular";
 import { SelectCityComponent } from "src/app/shared/select-city/select-city.component";
@@ -17,19 +17,23 @@ export class ShippingFormPage implements OnInit {
   private activeTab: number;
   private auth: any;
   private destination: any;
-  private imageResponse: any;
   private formData: FormData;
+  private imageResponse: any;
   private loading: any;
   private options: any;
   private origin: any;
   private photo1: SafeResourceUrl;
   private photo2: SafeResourceUrl;
   private photo3: SafeResourceUrl;
+  private shippingId: string;
   private shippingForm: FormGroup;
+  private sub: any;
+  private title: string;
 
   constructor(
     private postService: PostService,
     private router: Router,
+    private route: ActivatedRoute,
     private storage: Storage,
     private modalController: ModalController,
     private sanitizer: DomSanitizer,
@@ -37,11 +41,23 @@ export class ShippingFormPage implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.title = "Que quieres publicar?";
+    this.sub = this.route.params.subscribe((params) => {
+      this.shippingId = params["id"];
+      if (this.shippingId !== "0") {
+        this.title = "Editar envio";
+      }
+
+      this.storage.get("auth").then((auth) => {
+        this.auth = auth;
+        if (this.shippingId !== "0") {
+          this.getPost();
+        }
+      });
+    });
+
     this.formData = new FormData();
     this.activeTab = 1;
-    this.storage.get("auth").then((auth) => {
-      this.auth = auth;
-    });
 
     this.shippingForm = new FormGroup({
       title: new FormControl("title", [Validators.required]),
@@ -146,6 +162,32 @@ export class ShippingFormPage implements OnInit {
     });
   }
 
+  getPost() {
+    this.postService
+      .getById(this.auth, this.shippingId)
+      .toPromise()
+      .then(
+        (res) => {
+          const result = res.json();
+          this.shippingForm.controls["title"].setValue(result.title);
+          this.shippingForm.controls["description"].setValue(
+            result.description
+          );
+          this.shippingForm.controls["date"].setValue(result.date);
+          this.shippingForm.controls["origin"].setValue(result.origin.name);
+          this.shippingForm.controls["destination"].setValue(
+            result.destination.name
+          );
+          this.origin = result.origin;
+          this.destination = result.destination;
+        },
+        (err) => {
+          let error = JSON.parse(err._body);
+          console.log(error);
+        }
+      );
+  }
+
   saveShipping() {
     let controls = this.shippingForm.controls;
     if (this.shippingForm.invalid) {
@@ -155,7 +197,7 @@ export class ShippingFormPage implements OnInit {
       return;
     }
 
-    const body = {
+    let body: any = {
       type: 1,
       title: controls["title"].value,
       description: controls["description"].value,
@@ -164,6 +206,9 @@ export class ShippingFormPage implements OnInit {
       destination: this.destination,
       user: { id: this.auth.id },
     };
+    if (this.shippingId !== "0") {
+      body = { ...body, id: this.shippingId };
+    }
 
     this.formData.append(
       "postCommand",
@@ -172,19 +217,20 @@ export class ShippingFormPage implements OnInit {
       })
     );
 
-    this.postService
-      .save(this.formData, this.auth.token)
-      .toPromise()
-      .then(
-        (res) => {
-          //const result = res.json();
-          console.log(res);
-        },
-        (err) => {
-          let error = JSON.parse(err._body);
-          console.log(error);
-        }
-      );
+    let action: any = this.postService.save(this.formData, this.auth.token);
+    if (body.id) {
+      action = this.postService.update(this.formData, this.auth.token);
+    }
+    action.toPromise().then(
+      (res) => {
+        //const result = res.json();
+        console.log(res);
+      },
+      (err) => {
+        let error = JSON.parse(err._body);
+        console.log(error);
+      }
+    );
   }
 
   goBackToDashboard() {
@@ -193,7 +239,7 @@ export class ShippingFormPage implements OnInit {
 
   goToSellForm() {
     if (this.activeTab !== 2) {
-      this.router.navigate(["posts/create-sell"]);
+      this.router.navigate(["posts/create-sell/0"]);
     }
   }
 

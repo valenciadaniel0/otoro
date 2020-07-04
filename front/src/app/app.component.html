@@ -3,8 +3,8 @@
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
         <ion-list id="inbox-list">
-          <ion-list-header>Inbox</ion-list-header>
-          <ion-note>hi@ionicframework.com</ion-note>
+          <ion-list-header>Daniel Valencia</ion-list-header>
+          <ion-note>valenciadaniel0@gmail.com</ion-note>
 
           <ion-menu-toggle
             auto-hide="false"
@@ -27,23 +27,17 @@
             </ion-item>
           </ion-menu-toggle>
           <ion-menu-toggle auto-hide="false">
-            <ion-item (click)="logout()" lines="none" detail="false">
-              <ion-icon name="log-out"></ion-icon>
+            <ion-item
+              (click)="logout()"
+              routerDirection="root"
+              lines="none"
+              detail="false"
+              [class.selected]="selectedIndex == 3"
+            >
+              <ion-icon slot="start" name="log-out"></ion-icon>
               <ion-label>Cerrar Sesi&oacute;n</ion-label>
             </ion-item>
           </ion-menu-toggle>
-        </ion-list>
-
-        <ion-list id="labels-list">
-          <ion-list-header>Labels</ion-list-header>
-          <ion-item *ngFor="let label of labels" lines="none">
-            <ion-icon
-              slot="start"
-              ios="bookmark-outline"
-              md="bookmark-sharp"
-            ></ion-icon>
-            <ion-label>{{ label }}</ion-label>
-          </ion-item>
         </ion-list>
       </ion-content>
     </ion-menu>

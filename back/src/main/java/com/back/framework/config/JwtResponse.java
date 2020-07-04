@@ -3,6 +3,7 @@ package com.back.framework.config;
 import java.io.Serializable;
 import java.util.List;
 
+import com.back.domain.model.City;
 import com.back.domain.model.Role;
 
 public class JwtResponse implements Serializable {
@@ -15,9 +16,12 @@ public class JwtResponse implements Serializable {
     private final int active;
     private final String deviceToken;
     private final List<Role> roles;
+    private final City city;
+    private final String phone;
+    private final String serviceDescription;
 
     public JwtResponse(String jwttoken, Long id, String name, String email, int active, String deviceToken,
-            List<Role> roles) {
+            List<Role> roles, City city, String phone, String serviceDescription) {
         this.jwttoken = jwttoken;
         this.id = id;
         this.name = name;
@@ -25,6 +29,9 @@ public class JwtResponse implements Serializable {
         this.active = active;
         this.deviceToken = deviceToken;
         this.roles = roles;
+        this.city = city;
+        this.phone = phone;
+        this.serviceDescription = serviceDescription;
     }
 
     public String getToken() {
@@ -53,5 +60,17 @@ public class JwtResponse implements Serializable {
 
     public List<Role> getRoles() {
         return this.roles;
+    }
+
+    public City getCity() {
+        return this.city;
+    }
+
+    public String getPhone() {
+        return this.phone;
+    }
+
+    public String getServiceDescription() {
+        return this.serviceDescription;
     }
 }

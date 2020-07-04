@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { PostService } from "../post.service";
 import { Storage } from "@ionic/storage";
 import { PostDetailsComponent } from "src/app/shared/post-details/post-details.component";
@@ -27,7 +27,8 @@ export class PostsListPage implements OnInit {
     private route: ActivatedRoute,
     private postService: PostService,
     private storage: Storage,
-    private modalController: ModalController
+    private modalController: ModalController,
+    private router: Router
   ) {}
 
   async ngOnInit() {
@@ -73,7 +74,41 @@ export class PostsListPage implements OnInit {
       cssClass: "my-custom-class",
     });
 
-    return await modal.present().then(() => {});
+    return await modal.present().then(() => {
+      modal.onWillDismiss().then((response: any) => {
+        let postId = response.data.postId;
+        let postType = response.data.postType;
+        let deletePost = response.data.delete;
+        if (postId && postType) {
+          if (postType === 1) {
+            this.router.navigate([`posts/create-shipping/${postId}`]);
+          } else {
+            this.router.navigate([`posts/create-sell/${postId}`]);
+          }
+        } else if (postId && deletePost) {
+          this.deletePost(postId);
+        }
+      });
+    });
+  }
+
+  deletePost(postId: number) {
+    this.postService
+      .delete(postId, this.auth.token)
+      .toPromise()
+      .then(
+        (res) => {
+          if (this.activeTab === 1) {
+            this.getShippings();
+          } else {
+            this.getSells();
+          }
+        },
+        (err) => {
+          let error = JSON.parse(err._body);
+          console.log(error);
+        }
+      );
   }
 
   changeActiveTab(tabNumber: number) {
@@ -118,6 +153,8 @@ export class PostsListPage implements OnInit {
   }
 
   ngOnDestroy() {
-    this.sub.unsubscribe();
+    if (this.sub) {
+      this.sub.unsubscribe();
+    }
   }
 }

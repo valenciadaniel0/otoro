@@ -12,6 +12,21 @@ export class PostService {
     return this.service.queryPost(url, body, token);
   }
 
+  update(body: any, token: string) {
+    let url = `posts`;
+    return this.service.queryPut(url, body, token);
+  }
+
+  delete(id:number,token: string) {
+    let url = `posts/${id}`;
+    return this.service.queryDelete(url, token);
+  }
+
+  getById(auth: any, id: string) {
+    let url = `posts/${id}`;    
+    return this.service.queryGet(url, auth.token);
+  }
+
   getByType(auth: any, type: number) {
     let url = `posts/get-by-type/${type}/${auth.id}`;    
     return this.service.queryGet(url, auth.token);

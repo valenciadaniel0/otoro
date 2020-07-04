@@ -1,11 +1,11 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { Storage } from "@ionic/storage";
 import { PostService } from "../post.service";
 import { FormGroup, FormControl } from "@angular/forms";
 import { ModalController } from "@ionic/angular";
 import { CommentsComponent } from "src/app/shared/comments/comments.component";
-import { PostDetailsComponent } from 'src/app/shared/post-details/post-details.component';
+import { PostDetailsComponent } from "src/app/shared/post-details/post-details.component";
 
 @Component({
   selector: "app-posts-list-general",
@@ -25,6 +25,7 @@ export class PostsListGeneralPage implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private postService: PostService,
     private storage: Storage,
     private modalController: ModalController
@@ -45,7 +46,7 @@ export class PostsListGeneralPage implements OnInit {
       this.openCommentsModalImplementation(postId);
     };
 
-    this.openDetailsModal = (post:any)=>{
+    this.openDetailsModal = (post: any) => {
       this.openDetailsModalImplementation(post);
     };
   }
@@ -59,7 +60,18 @@ export class PostsListGeneralPage implements OnInit {
       cssClass: "my-custom-class",
     });
 
-    return await modal.present().then(() => {      
+    return await modal.present().then(() => {
+      modal.onWillDismiss().then((response: any) => {
+        let postId = response.data.postId;
+        let postType = response.data.postType;
+        if (postId && postType) {
+          if (postType === 1) {
+            this.router.navigate([`posts/create-shipping/${postId}`]);
+          } else {
+            this.router.navigate([`posts/create-sell/${postId}`]);
+          }
+        }
+      });
     });
   }
 
@@ -72,7 +84,21 @@ export class PostsListGeneralPage implements OnInit {
       cssClass: "my-custom-class",
     });
 
-    return await modal.present().then(() => {      
+    return await modal.present().then(() => {
+      modal.onWillDismiss().then((response: any) => {
+        let postId = response.data.postId;
+        let postType = response.data.postType;
+        let deletePost = response.data.delete;
+        if (postId && postType) {
+          if (postType === 1) {
+            this.router.navigate([`posts/create-shipping/${postId}`]);
+          } else {
+            this.router.navigate([`posts/create-sell/${postId}`]);
+          }
+        } else if (postId && deletePost) {
+          this.deletePost(postId);
+        }
+      });
     });
   }
 
@@ -114,7 +140,7 @@ export class PostsListGeneralPage implements OnInit {
       .then(
         (res) => {
           const result = res.json();
-          this.shippings = result;          
+          this.shippings = result;
         },
         (err) => {
           let error = JSON.parse(err._body);
@@ -130,7 +156,26 @@ export class PostsListGeneralPage implements OnInit {
       .then(
         (res) => {
           const result = res.json();
-          this.sells = result;          
+          this.sells = result;
+        },
+        (err) => {
+          let error = JSON.parse(err._body);
+          console.log(error);
+        }
+      );
+  }
+
+  deletePost(postId: number) {
+    this.postService
+      .delete(postId, this.auth.token)
+      .toPromise()
+      .then(
+        (res) => {
+          if (this.activeTab === 1) {
+            this.getShippings();
+          } else {
+            this.getSells();
+          }
         },
         (err) => {
           let error = JSON.parse(err._body);
@@ -140,6 +185,8 @@ export class PostsListGeneralPage implements OnInit {
   }
 
   ngOnDestroy() {
-    this.sub.unsubscribe();
+    if (this.sub) {
+      this.sub.unsubscribe();
+    }
   }
 }

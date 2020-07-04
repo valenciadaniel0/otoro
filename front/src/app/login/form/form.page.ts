@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { Storage } from "@ionic/storage";
 import { LoginService } from "./login.service";
 import { UsersService } from "src/app/users/users.service";
+import { MenuController } from "@ionic/angular";
 
 @Component({
   selector: "app-form",
@@ -18,7 +19,8 @@ export class FormPage implements OnInit {
     private loginService: LoginService,
     private router: Router,
     public storage: Storage,
-    private usersService: UsersService
+    private usersService: UsersService,
+    private menuController: MenuController
   ) {}
 
   ngOnInit() {
@@ -31,6 +33,10 @@ export class FormPage implements OnInit {
 
     this.myForm.controls["email"].setValue(null);
     this.myForm.controls["password"].setValue(null);
+  }
+
+  ionViewWillEnter() {
+    this.menuController.enable(false);
   }
 
   public controlHasError(controlName: string, validationType: string): boolean {
@@ -74,6 +80,10 @@ export class FormPage implements OnInit {
             id: result.id,
             name: result.name,
             roles: result.roles,
+            city:result.city,
+            phone:result.phone,
+            serviceDescription:result.serviceDescription,
+            profilePicture:result.profilePicture
           };
           this.updateUser(user, result.token);
         },
@@ -91,6 +101,7 @@ export class FormPage implements OnInit {
       .toPromise()
       .then(
         async (res) => {
+          this.menuController.enable(true);
           this.router.navigate(["/dashboard"]);
         },
         (err) => {

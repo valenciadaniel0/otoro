@@ -1,0 +1,117 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ folder }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="container">
+    <h4 class="centered-text">Perfil</h4>
+    <ion-row>
+      <ion-col>
+        <img [src]="photo" />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button color="primary" (click)="takePicture()" class="width-100">
+          <ion-icon name="camera"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="primary" (click)="selectPhoto()" class="width-100">
+          <ion-icon name="image-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="centered-text"
+        >Sube una imagen de perfil</ion-col
+      >
+      <div class="separator"></div>
+    </ion-row>
+    <ion-row id="form-container">
+      <ion-col col-12>
+        <form [formGroup]="myForm">
+          <div class="form-group">
+            <label class="bold">Nombres y apellidos</label>
+            <input
+              type="text"
+              class="form-control width-100"
+              formControlName="name"
+            />
+            <span *ngIf="controlHasError('name', 'required')">
+              <strong class="error">Campo requerido</strong>
+            </span>
+          </div>
+          <div class="form-group">
+            <label class="bold">Correo electr&oacute;nico</label>
+            <input
+              type="email"
+              class="form-control width-100"
+              formControlName="email"
+            />
+            <span *ngIf="controlHasError('email', 'required')">
+              <strong class="error">Campo requerido</strong>
+            </span>
+          </div>
+          <div class="form-group">
+            <label class="bold">Ciudad</label>
+            <ion-item (click)="openCityModal()">
+              <span *ngIf="!city">Selecciona una ciudad</span>
+              <span *ngIf="city">{{city.name}}</span>
+            </ion-item>
+            <input type="text" class="display-none" formControlName="city" />
+            <span *ngIf="controlHasError('city', 'required')">
+              <strong class="error">Selecciona una ciudad</strong>
+            </span>
+          </div>
+          <div class="form-group">
+            <label class="bold">Tel&eacute;fono(Opcional)</label>
+            <input
+              type="text"
+              class="form-control width-100"
+              formControlName="phone"
+            />
+          </div>
+          <div class="form-group">
+            <label class="bold">Descripci&oacute;n de tus servicios</label>
+            <textarea
+              class="form-control width-100"
+              formControlName="serviceDescription"
+            ></textarea>
+            <span *ngIf="controlHasError('serviceDescription', 'required')">
+              <strong class="error">Campo requerido</strong>
+            </span>
+          </div>
+          <div class="form-group">
+            <label class="bold">Contrase&ntilde;a</label>
+            <input
+              type="password"
+              class="form-control width-100"
+              formControlName="password"
+            />
+          </div>
+          <div class="form-group">
+            <label class="bold">Confirmar Contrase&ntilde;a</label>
+            <input
+              type="password"
+              class="form-control width-100"
+              formControlName="confirmPassword"
+            />
+          </div>
+        </form>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <ion-button color="primary" (click)="updateUser()" class="width-100">
+          Actualizar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

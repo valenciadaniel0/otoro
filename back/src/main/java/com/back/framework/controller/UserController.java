@@ -76,14 +76,14 @@ public class UserController {
         final String token = jwtTokenUtil.generateToken(userDetails);
 
         return ResponseEntity.ok(new JwtResponse(token, user.getId(), user.getName(), user.getEmail(), user.getActive(),
-                user.getDeviceToken(), user.getRoles()));
+                user.getDeviceToken(), user.getRoles(), user.getCity(), user.getPhone(),user.getServiceDescription()));
     }
 
     @PostMapping(value = "/register")
     public void create(@RequestPart(required = true) UserCommand userCommand,
             @RequestPart(required = false) MultipartFile image) {
 
-        String pictureName = this.fileStorageService.storeFile(image,1);
+        String pictureName = this.fileStorageService.storeFile(image, 1);
         userCommand.setProfilePicture(pictureName);
 
         this.createUserHandler.run(userCommand);

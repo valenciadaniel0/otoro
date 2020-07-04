@@ -15,16 +15,17 @@ public interface UserDBRepository extends JpaRepository<UserEntity, Long> {
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE users SET active = ?2,device_token=?3,email=?4,name=?5 WHERE id=?1", nativeQuery = true)
-    void update(Long id, int active, String deviceToken, String email, String name);
+    @Query(value = "UPDATE users SET active = ?2,device_token=?3,email=?4,name=?5,city_id=?6,phone=?7,service_description=?8,profile_picture=?9 WHERE id=?1", nativeQuery = true)
+    void update(Long id, int active, String deviceToken, String email, String name, Long cityId, String phone,
+            String serviceDescription, String profilePicture);
 
     @Modifying
     @Transactional
     @Query(value = "UPDATE users SET password = ?2 WHERE id=?1", nativeQuery = true)
-    void updatePassword(Long id,String newPassword);
+    void updatePassword(Long id, String newPassword);
 
     @Modifying
     @Transactional
     @Query(value = "UPDATE users SET recover_code = ?2 WHERE id=?1", nativeQuery = true)
-    void updateRecoverCode(Long id,String newCode);
+    void updateRecoverCode(Long id, String newCode);
 }

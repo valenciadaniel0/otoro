@@ -3,14 +3,14 @@ import { NgModule } from "@angular/core";
 
 const routes: Routes = [
   {
-    path: "create-shipping",
+    path: "create-shipping/:id",
     loadChildren: () =>
       import("./shipping-form/shipping-form.module").then(
         (m) => m.ShippingFormPageModule
       ),
   },
   {
-    path: "create-sell",
+    path: "create-sell/:id",
     loadChildren: () =>
       import("./sell-form/sell-form.module").then((m) => m.SellFormPageModule),
   },

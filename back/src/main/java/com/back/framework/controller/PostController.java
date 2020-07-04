@@ -4,15 +4,21 @@ import java.util.List;
 
 import com.back.application.handler.command.PostCommand;
 import com.back.application.handler.posts.CreatePostHandler;
+import com.back.application.handler.posts.DeleteHandler;
+import com.back.application.handler.posts.UpdateHandler;
+import com.back.application.handler.posts.query.GetByIdHandler;
 import com.back.application.handler.posts.query.GetPostsByTypeHandler;
 import com.back.application.handler.posts.query.SearchPostsHandler;
 import com.back.domain.model.Post;
 import com.back.framework.config.FileStorageService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
@@ -25,15 +31,22 @@ public class PostController {
     private CreatePostHandler createPostHandler;
     private GetPostsByTypeHandler getPostsByTypeHandler;
     private SearchPostsHandler searchPostsHandler;
+    private GetByIdHandler getByIdHandler;
+    private UpdateHandler updateHandler;
+    private DeleteHandler deleteHandler;
 
     @Autowired
     private FileStorageService fileStorageService;
 
     public PostController(CreatePostHandler createPostHandler, GetPostsByTypeHandler getPostsByTypeHandler,
-            SearchPostsHandler searchPostsHandler) {
+            SearchPostsHandler searchPostsHandler, GetByIdHandler getByIdHandler, UpdateHandler updateHandler,
+            DeleteHandler deleteHandler) {
         this.createPostHandler = createPostHandler;
         this.getPostsByTypeHandler = getPostsByTypeHandler;
         this.searchPostsHandler = searchPostsHandler;
+        this.getByIdHandler = getByIdHandler;
+        this.updateHandler = updateHandler;
+        this.deleteHandler = deleteHandler;
     }
 
     @PostMapping(value = "")
@@ -54,6 +67,23 @@ public class PostController {
             postCommand.setImage3(fileName);
         }
         this.createPostHandler.run(postCommand);
+    }
+
+    @PutMapping(value = "")
+    public void update(@RequestPart(required = true) PostCommand postCommand,
+            @RequestPart(required = false) MultipartFile image1, @RequestPart(required = false) MultipartFile image2,
+            @RequestPart(required = false) MultipartFile image3) {
+        this.updateHandler.run(postCommand);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public void delete(@PathVariable(value = "id") Long id) {
+        this.deleteHandler.run(id);
+    }
+
+    @GetMapping(value = "/{id}")
+    public Post findById(@PathVariable(value = "id") Long id) {
+        return this.getByIdHandler.run(id);
     }
 
     @GetMapping(value = "/get-by-type/{type}/{userId}")

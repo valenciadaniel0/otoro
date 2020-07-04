@@ -40,7 +40,7 @@ public class PostEntity {
     @Column(name = "price")
     private double price;
 
-    @Column(name = "date")
+    @Column(name = "date", nullable = true)
     private Date date;
 
     @ManyToOne(fetch = FetchType.EAGER)

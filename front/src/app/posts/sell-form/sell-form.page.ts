@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { PostService } from "../post.service";
 import { Storage } from "@ionic/storage";
@@ -23,18 +23,37 @@ export class SellFormPage implements OnInit {
   private photo1: SafeResourceUrl;
   private photo2: SafeResourceUrl;
   private photo3: SafeResourceUrl;
+  private sellId: string;
   private sellForm: FormGroup;
+  private subscription: any;
+  private title: string;
   public activeTab: number;
   constructor(
     private router: Router,
     private postService: PostService,
     private storage: Storage,
+    private route: ActivatedRoute,
     private modalController: ModalController,
     private sanitizer: DomSanitizer,
     private loadingController: LoadingController
   ) {}
 
   ngOnInit() {
+    this.title = "Que quieres publicar?";
+    this.subscription = this.route.params.subscribe((params) => {
+      this.sellId = params["id"];
+      if (this.sellId !== "0") {
+        this.title = "Editar venta";
+      }
+
+      this.storage.get("auth").then((auth) => {
+        this.auth = auth;
+        if (this.sellId !== "0") {
+          this.getPost();
+        }
+      });
+    });
+
     this.formData = new FormData();
     this.activeTab = 2;
     this.storage.get("auth").then((auth) => {
@@ -104,6 +123,26 @@ export class SellFormPage implements OnInit {
     await this.loading.dismiss();
   }
 
+  getPost() {
+    this.postService
+      .getById(this.auth, this.sellId)
+      .toPromise()
+      .then(
+        (res) => {
+          const result = res.json();
+          this.sellForm.controls["title"].setValue(result.title);
+          this.sellForm.controls["description"].setValue(result.description);
+          this.sellForm.controls["price"].setValue(result.price);
+          this.sellForm.controls["origin"].setValue(result.origin.name);
+          this.origin = result.origin;
+        },
+        (err) => {
+          let error = JSON.parse(err._body);
+          console.log(error);
+        }
+      );
+  }
+
   async openOriginModal() {
     const modal = await this.modalController.create({
       component: SelectCityComponent,
@@ -131,7 +170,7 @@ export class SellFormPage implements OnInit {
       return;
     }
 
-    const body = {
+    let body: any = {
       type: 2,
       image: "",
       title: controls["title"].value,
@@ -141,26 +180,30 @@ export class SellFormPage implements OnInit {
       user: { id: this.auth.id },
     };
 
+    if (this.sellId !== "0") {
+      body = { ...body, id: this.sellId };
+    }
+
     this.formData.append(
       "postCommand",
       new Blob([JSON.stringify(body)], {
         type: "application/json",
       })
     );
-
-    this.postService
-      .save(this.formData, this.auth.token)
-      .toPromise()
-      .then(
-        (res) => {
-          //const result = res.json();
-          console.log(res);
-        },
-        (err) => {
-          let error = JSON.parse(err._body);
-          console.log(error);
-        }
-      );
+    let action: any = this.postService.save(this.formData, this.auth.token);
+    if (body.id) {
+      action = this.postService.update(this.formData, this.auth.token);
+    }
+    action.toPromise().then(
+      (res) => {
+        //const result = res.json();
+        console.log(res);
+      },
+      (err) => {
+        let error = JSON.parse(err._body);
+        console.log(error);
+      }
+    );
   }
 
   goBackToDashboard() {
@@ -169,7 +212,7 @@ export class SellFormPage implements OnInit {
 
   goToShippingForm() {
     if (this.activeTab !== 1) {
-      this.router.navigate(["posts/create-shipping"]);
+      this.router.navigate(["posts/create-shipping/0"]);
     }
   }
 
@@ -183,5 +226,11 @@ export class SellFormPage implements OnInit {
       control.hasError(validationType) && (control.dirty || control.touched);
 
     return result;
+  }
+
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }

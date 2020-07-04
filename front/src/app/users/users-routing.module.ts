@@ -15,6 +15,10 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () => import('./register-form/register-form.module').then( m => m.RegisterFormPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   }
 ];
 

@@ -31,5 +31,21 @@
       </p>
     </div>
     <p>{{ post.description }}</p>
+    <ion-button
+      *ngIf="auth && auth.id === post.user.id"
+      color="secondary"
+      (click)="goToEdit()"
+      class="width-100"
+    >
+      Editar
+    </ion-button>
+    <ion-button
+      *ngIf="auth && auth.id === post.user.id"
+      color="danger"
+      (click)="confirmDeletion()"
+      class="width-100"
+    >
+      Eliminar
+    </ion-button>
   </div>
 </ion-content>
