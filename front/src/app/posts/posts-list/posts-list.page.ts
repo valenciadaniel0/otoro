@@ -4,7 +4,7 @@ import { PostService } from "../post.service";
 import { Storage } from "@ionic/storage";
 import { PostDetailsComponent } from "src/app/shared/post-details/post-details.component";
 import { CommentsComponent } from "src/app/shared/comments/comments.component";
-import { ModalController } from "@ionic/angular";
+import { ModalController, LoadingController } from "@ionic/angular";
 
 @Component({
   selector: "app-posts-list",
@@ -17,6 +17,7 @@ export class PostsListPage implements OnInit {
 
   private activeTab: number = 1;
   private auth: any;
+  private loading: any;
   private sells: any[] = [];
   private shippings: any[] = [];
   private sub: any;
@@ -28,7 +29,8 @@ export class PostsListPage implements OnInit {
     private postService: PostService,
     private storage: Storage,
     private modalController: ModalController,
-    private router: Router
+    private router: Router,
+    private loadingController: LoadingController
   ) {}
 
   async ngOnInit() {
@@ -92,19 +94,25 @@ export class PostsListPage implements OnInit {
     });
   }
 
-  deletePost(postId: number) {
+  async deletePost(postId: number) {
+    this.loading = await this.loadingController.create({
+      message: "Cargando...",
+    });
+    await this.loading.present();
     this.postService
       .delete(postId, this.auth.token)
       .toPromise()
       .then(
-        (res) => {
+        async (res) => {
+          await this.loading.dismiss();
           if (this.activeTab === 1) {
             this.getShippings();
           } else {
             this.getSells();
           }
         },
-        (err) => {
+        async (err) => {
+          await this.loading.dismiss();
           let error = JSON.parse(err._body);
           console.log(error);
         }

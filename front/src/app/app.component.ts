@@ -5,6 +5,7 @@ import {
   AlertController,
   NavController,
   MenuController,
+  LoadingController,
 } from "@ionic/angular";
 import {
   Plugins,
@@ -24,6 +25,7 @@ import { Router } from "@angular/router";
   styleUrls: ["app.component.scss"],
 })
 export class AppComponent implements OnInit {
+  private loading: any;
   public selectedIndex = 0;
   public appPages = [
     { title: "Inicio", url: "/dashboard", icon: "home" },
@@ -40,6 +42,7 @@ export class AppComponent implements OnInit {
   ];
 
   constructor(
+    private loadingController: LoadingController,
     private platform: Platform,
     private statusBar: StatusBar,
     public appVersion: AppVersion,
@@ -120,16 +123,22 @@ export class AppComponent implements OnInit {
   }
 
   async logout() {
+    this.loading = await this.loadingController.create({
+      message: "Cargando...",
+    });
+    await this.loading.present();
     this.selectedIndex = 3;
     let body = new FormData();
     let auth: any = await this.storage.get("auth");
     this.restService
       .queryPost("users/logout", body, auth.token)
-      .subscribe((response) => {
+      .subscribe(async (response) => {
+        await this.loading.dismiss();
         this.storage.remove("auth");
         this.menuController.enable(false);
         this.router.navigate(["/login"]);
-        (err) => {
+        async (err) => {
+          await this.loading.dismiss();
           if (err["status"] == 401) {
             this.storage.remove("auth");
             this.menuController.enable(false);

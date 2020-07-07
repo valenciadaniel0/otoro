@@ -795,7 +795,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, {
         key: "goToPostCreation",
         value: function goToPostCreation() {
-          this.router.navigate(["posts/create-shipping"]);
+          this.router.navigate(["posts/create-shipping/0"]);
         }
       }]);
 

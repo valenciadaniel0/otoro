@@ -58,14 +58,17 @@ public class PostController {
             String fileName = this.fileStorageService.storeFile(image1, 2);
             postCommand.setImage1(fileName);
         }
+
         if (image2 != null) {
             String fileName = this.fileStorageService.storeFile(image2, 2);
             postCommand.setImage2(fileName);
         }
+
         if (image3 != null) {
             String fileName = this.fileStorageService.storeFile(image3, 2);
             postCommand.setImage3(fileName);
         }
+
         this.createPostHandler.run(postCommand);
     }
 
@@ -73,11 +76,55 @@ public class PostController {
     public void update(@RequestPart(required = true) PostCommand postCommand,
             @RequestPart(required = false) MultipartFile image1, @RequestPart(required = false) MultipartFile image2,
             @RequestPart(required = false) MultipartFile image3) {
+
+        Post post = this.getByIdHandler.run(postCommand.getId());
+        if (image1 != null) {
+            String fileName = this.fileStorageService.storeFile(image1, 2);
+            postCommand.setImage1(fileName);
+
+            if (post != null && post.getImage1() != null && post.getImage1() != "") {
+                this.fileStorageService.deleteFile(post.getImage1() + ".jpg", 2);
+            }
+
+        }
+
+        if (image2 != null) {
+            String fileName = this.fileStorageService.storeFile(image2, 2);
+            postCommand.setImage2(fileName);
+
+            if (post != null && post.getImage2() != null && post.getImage2() != "") {
+                this.fileStorageService.deleteFile(post.getImage2() + ".jpg", 2);
+            }
+
+        }
+
+        if (image3 != null) {
+            String fileName = this.fileStorageService.storeFile(image3, 2);
+            postCommand.setImage3(fileName);
+
+            if (post != null && post.getImage3() != null && post.getImage3() != "") {
+                this.fileStorageService.deleteFile(post.getImage3() + ".jpg", 2);
+            }
+
+        }
+
         this.updateHandler.run(postCommand);
     }
 
     @DeleteMapping(value = "/{id}")
     public void delete(@PathVariable(value = "id") Long id) {
+        Post post = this.getByIdHandler.run(id);
+
+        if (post != null && post.getImage1() != null && post.getImage1() != "") {
+            this.fileStorageService.deleteFile(post.getImage1() + ".jpg", 2);
+        }
+        if (post != null && post.getImage2() != null && post.getImage2() != "") {
+            this.fileStorageService.deleteFile(post.getImage2() + ".jpg", 2);
+        }
+        if (post != null && post.getImage3() != null && post.getImage3() != "") {
+            this.fileStorageService.deleteFile(post.getImage3() + ".jpg", 2);
+        }
+
         this.deleteHandler.run(id);
     }
 

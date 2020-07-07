@@ -7,12 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eaa0f7e4-a19d-4b32-b3c3-d87a4bcc0d08" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../back/bin/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/config/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../back/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../back/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../back/static/pictures/profile-pictures/wwpkIVucUN_9698503356.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/config/FileStorageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/config/FileStorageService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/controller/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/controller/PostController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/config/FileStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/config/FileStorageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/controller/PostController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,9 +156,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="661" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593265798082" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1593457019680">
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1594077282793">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1593457019680" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1594077282793" />
   </component>
 </project>

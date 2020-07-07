@@ -166,7 +166,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\">\r\n      <ion-content>\r\n        <ion-list id=\"inbox-list\">\r\n          <ion-list-header>Inbox</ion-list-header>\r\n          <ion-note>hi@ionicframework.com</ion-note>\r\n\r\n          <ion-menu-toggle\r\n            auto-hide=\"false\"\r\n            *ngFor=\"let p of appPages; let i = index\"\r\n          >\r\n            <ion-item\r\n              (click)=\"selectedIndex = i\"\r\n              routerDirection=\"root\"\r\n              [routerLink]=\"[p.url]\"\r\n              lines=\"none\"\r\n              detail=\"false\"\r\n              [class.selected]=\"selectedIndex == i\"\r\n            >\r\n              <ion-icon\r\n                slot=\"start\"\r\n                [ios]=\"p.icon + '-outline'\"\r\n                [md]=\"p.icon + '-sharp'\"\r\n              ></ion-icon>\r\n              <ion-label>{{ p.title }}</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item (click)=\"logout()\" lines=\"none\" detail=\"false\">\r\n              <ion-icon name=\"log-out\"></ion-icon>\r\n              <ion-label>Cerrar Sesi&oacute;n</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n\r\n        <ion-list id=\"labels-list\">\r\n          <ion-list-header>Labels</ion-list-header>\r\n          <ion-item *ngFor=\"let label of labels\" lines=\"none\">\r\n            <ion-icon\r\n              slot=\"start\"\r\n              ios=\"bookmark-outline\"\r\n              md=\"bookmark-sharp\"\r\n            ></ion-icon>\r\n            <ion-label>{{ label }}</ion-label>\r\n          </ion-item>\r\n        </ion-list>\r\n      </ion-content>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n";
+    __webpack_exports__["default"] = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\">\r\n      <ion-content>\r\n        <ion-list id=\"inbox-list\">\r\n          <ion-list-header>Daniel Valencia</ion-list-header>\r\n          <ion-note>valenciadaniel0@gmail.com</ion-note>\r\n\r\n          <ion-menu-toggle\r\n            auto-hide=\"false\"\r\n            *ngFor=\"let p of appPages; let i = index\"\r\n          >\r\n            <ion-item\r\n              (click)=\"selectedIndex = i\"\r\n              routerDirection=\"root\"\r\n              [routerLink]=\"[p.url]\"\r\n              lines=\"none\"\r\n              detail=\"false\"\r\n              [class.selected]=\"selectedIndex == i\"\r\n            >\r\n              <ion-icon\r\n                slot=\"start\"\r\n                [ios]=\"p.icon + '-outline'\"\r\n                [md]=\"p.icon + '-sharp'\"\r\n              ></ion-icon>\r\n              <ion-label>{{ p.title }}</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item\r\n              (click)=\"logout()\"\r\n              routerDirection=\"root\"\r\n              lines=\"none\"\r\n              detail=\"false\"\r\n              [class.selected]=\"selectedIndex == 3\"\r\n            >\r\n              <ion-icon slot=\"start\" name=\"log-out\"></ion-icon>\r\n              <ion-label>Cerrar Sesi&oacute;n</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n      </ion-content>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n";
     /***/
   },
 
@@ -366,9 +366,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 
     var AppComponent = /*#__PURE__*/function () {
-      function AppComponent(platform, statusBar, appVersion, storage, alertController, restService, navController, router) {
+      function AppComponent(loadingController, platform, statusBar, appVersion, storage, alertController, restService, navController, router, menuController) {
         _classCallCheck(this, AppComponent);
 
+        this.loadingController = loadingController;
         this.platform = platform;
         this.statusBar = statusBar;
         this.appVersion = appVersion;
@@ -377,17 +378,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.restService = restService;
         this.navController = navController;
         this.router = router;
+        this.menuController = menuController;
         this.selectedIndex = 0;
         this.appPages = [{
+          title: "Inicio",
+          url: "/dashboard",
+          icon: "home"
+        }, {
           title: "Perfil",
-          url: "/login",
+          url: "users/profile",
           icon: "person"
         }, {
           title: "Notificaciones",
           url: "/folder/Outbox",
           icon: "notifications"
         }];
-        this.labels = ["Family", "Friends", "Notes", "Work", "Travel", "Reminders"];
         this.initializeApp();
       }
 
@@ -435,8 +440,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
           });
           PushNotifications.addListener("registration", function (token) {
-            alert("Push registration success, token: " + token.value);
-
             _this2.storage.set("deviceToken", token.value);
           }); // Some issue with our setup and push will not work
 
@@ -455,40 +458,88 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "logout",
         value: function logout() {
-          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
             var _this3 = this;
 
             var body, auth;
-            return regeneratorRuntime.wrap(function _callee$(_context) {
+            return regeneratorRuntime.wrap(function _callee3$(_context3) {
               while (1) {
-                switch (_context.prev = _context.next) {
+                switch (_context3.prev = _context3.next) {
                   case 0:
-                    body = new FormData();
-                    _context.next = 3;
-                    return this.storage.get("auth");
-
-                  case 3:
-                    auth = _context.sent;
-                    this.restService.queryPost("users/logout", body, auth.token).subscribe(function (response) {
-                      _this3.storage.remove("auth");
-
-                      _this3.router.navigate(["/login"]);
-
-                      (function (err) {
-                        if (err["status"] == 401) {
-                          _this3.storage.remove("auth");
-
-                          _this3.router.navigate(["/login"]);
-                        }
-                      });
+                    _context3.next = 2;
+                    return this.loadingController.create({
+                      message: "Cargando..."
                     });
 
+                  case 2:
+                    this.loading = _context3.sent;
+                    _context3.next = 5;
+                    return this.loading.present();
+
                   case 5:
+                    this.selectedIndex = 3;
+                    body = new FormData();
+                    _context3.next = 9;
+                    return this.storage.get("auth");
+
+                  case 9:
+                    auth = _context3.sent;
+                    this.restService.queryPost("users/logout", body, auth.token).subscribe(function (response) {
+                      return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this3, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+                        var _this4 = this;
+
+                        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                          while (1) {
+                            switch (_context2.prev = _context2.next) {
+                              case 0:
+                                _context2.next = 2;
+                                return this.loading.dismiss();
+
+                              case 2:
+                                this.storage.remove("auth");
+                                this.menuController.enable(false);
+                                this.router.navigate(["/login"]);
+
+                                (function (err) {
+                                  return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this4, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+                                    return regeneratorRuntime.wrap(function _callee$(_context) {
+                                      while (1) {
+                                        switch (_context.prev = _context.next) {
+                                          case 0:
+                                            _context.next = 2;
+                                            return this.loading.dismiss();
+
+                                          case 2:
+                                            if (err["status"] == 401) {
+                                              this.storage.remove("auth");
+                                              this.menuController.enable(false);
+                                              this.router.navigate(["/login"]);
+                                            }
+
+                                          case 3:
+                                          case "end":
+                                            return _context.stop();
+                                        }
+                                      }
+                                    }, _callee, this);
+                                  }));
+                                });
+
+                              case 6:
+                              case "end":
+                                return _context2.stop();
+                            }
+                          }
+                        }, _callee2, this);
+                      }));
+                    });
+
+                  case 11:
                   case "end":
-                    return _context.stop();
+                    return _context3.stop();
                 }
               }
-            }, _callee, this);
+            }, _callee3, this);
           }));
         }
       }, {
@@ -509,6 +560,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     AppComponent.ctorParameters = function () {
       return [{
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["LoadingController"]
+      }, {
         type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Platform"]
       }, {
         type: _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__["StatusBar"]
@@ -524,6 +577,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavController"]
       }, {
         type: _angular_router__WEBPACK_IMPORTED_MODULE_8__["Router"]
+      }, {
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["MenuController"]
       }];
     };
 
@@ -759,7 +814,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "queryPut",
         value: function queryPut(route, body, token) {
           var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["Headers"]({
-            "Content-Type": "application/json",
             Authorization: "Bearer ".concat(token)
           });
           var options = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["RequestOptions"]({
@@ -770,10 +824,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       }, {
         key: "queryDelete",
-        value: function queryDelete(route) {
-          var token = localStorage.getItem("token");
+        value: function queryDelete(route, token) {
           var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["Headers"]({
-            Authorization: token
+            Authorization: "Bearer ".concat(token)
           });
           var options = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["RequestOptions"]({
             headers: headers

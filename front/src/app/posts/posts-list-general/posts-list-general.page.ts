@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { Storage } from "@ionic/storage";
 import { PostService } from "../post.service";
 import { FormGroup, FormControl } from "@angular/forms";
-import { ModalController } from "@ionic/angular";
+import { ModalController, LoadingController } from "@ionic/angular";
 import { CommentsComponent } from "src/app/shared/comments/comments.component";
 import { PostDetailsComponent } from "src/app/shared/post-details/post-details.component";
 
@@ -15,6 +15,7 @@ import { PostDetailsComponent } from "src/app/shared/post-details/post-details.c
 export class PostsListGeneralPage implements OnInit {
   private activeTab: number = 1;
   private auth: any;
+  private loading: any;
   private openCommentsModal: (postId: number) => void;
   private openDetailsModal: (post: any) => void;
   private query: string;
@@ -28,7 +29,8 @@ export class PostsListGeneralPage implements OnInit {
     private router: Router,
     private postService: PostService,
     private storage: Storage,
-    private modalController: ModalController
+    private modalController: ModalController,
+    private loadingController: LoadingController
   ) {}
 
   ngOnInit() {
@@ -165,19 +167,25 @@ export class PostsListGeneralPage implements OnInit {
       );
   }
 
-  deletePost(postId: number) {
+  async deletePost(postId: number) {
+    this.loading = await this.loadingController.create({
+      message: "Cargando...",
+    });
+    await this.loading.present();
     this.postService
       .delete(postId, this.auth.token)
       .toPromise()
       .then(
-        (res) => {
+        async (res) => {
+          await this.loading.present();
           if (this.activeTab === 1) {
             this.getShippings();
           } else {
             this.getSells();
           }
         },
-        (err) => {
+        async (err) => {
+          await this.loading.present();
           let error = JSON.parse(err._body);
           console.log(error);
         }

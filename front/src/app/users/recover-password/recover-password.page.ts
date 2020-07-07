@@ -4,6 +4,7 @@ import { Storage } from "@ionic/storage";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { UsersService } from "../users.service";
 import { LoginService } from "src/app/login/form/login.service";
+import { LoadingController } from "@ionic/angular";
 
 @Component({
   selector: "app-recover-password",
@@ -11,17 +12,19 @@ import { LoginService } from "src/app/login/form/login.service";
   styleUrls: ["./recover-password.page.scss"],
 })
 export class RecoverPasswordPage implements OnInit {
-  public userEmail: string;
+  private loading: any;
   public imageId: string;
   public imageUrl: string;
   public myCodeForm: FormGroup;
   public myForm: FormGroup;
   public showCodeForm: boolean;
+  public userEmail: string;
   constructor(
     private router: Router,
     public storage: Storage,
     private usersService: UsersService,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private loadingController: LoadingController
   ) {}
 
   ngOnInit() {
@@ -43,7 +46,7 @@ export class RecoverPasswordPage implements OnInit {
     this.router.navigate(["/login"]);
   }
 
-  updateRecoverCode() {
+  async updateRecoverCode() {
     let controls = this.myForm.controls;
     if (this.myForm.invalid) {
       Object.keys(controls).forEach((controlName) =>
@@ -58,21 +61,27 @@ export class RecoverPasswordPage implements OnInit {
 
     this.userEmail = controls["email"].value;
 
+    this.loading = await this.loadingController.create({
+      message: "Cargando...",
+    });
+    await this.loading.present();
     this.usersService
       .updateRecoverCode(body)
       .toPromise()
       .then(
         async (res) => {
           this.showCodeForm = true;
+          await this.loading.dismiss();
         },
-        (err) => {
+        async (err) => {
           let error = JSON.parse(err._body);
           console.log(error);
+          await this.loading.dismiss();
         }
       );
   }
 
-  recoverPassword() {
+  async recoverPassword() {
     let controls = this.myCodeForm.controls;
     if (this.myCodeForm.invalid) {
       Object.keys(controls).forEach((controlName) =>
@@ -86,6 +95,11 @@ export class RecoverPasswordPage implements OnInit {
       recoverCode: controls["code"].value,
     };
 
+    this.loading = await this.loadingController.create({
+      message: "Cargando...",
+    });
+    await this.loading.present();
+
     this.usersService
       .recoverPassword(body)
       .toPromise()
@@ -93,9 +107,10 @@ export class RecoverPasswordPage implements OnInit {
         async (res) => {
           this.login();
         },
-        (err) => {
+        async (err) => {
           let error = JSON.parse(err._body);
           console.log(error);
+          await this.loading.dismiss();
         }
       );
   }
@@ -121,18 +136,25 @@ export class RecoverPasswordPage implements OnInit {
           let deviceToken = await this.storage.get("deviceToken");
           this.storage.set("auth", result);
           let user = {
-            active: result.active,
-            deviceToken: deviceToken,
-            email: result.email,
             id: result.id,
+            deviceToken: deviceToken,
+            active: result.active,
+            email: result.email,
             name: result.name,
+            phone: result.phone,
+            serviceDescription: result.serviceDescription,
+            password: "",
+            username: result.email,
+            city: result.city,
             roles: result.roles,
           };
+
           this.updateUser(user, result.token);
         },
-        (err) => {
+        async (err) => {
           let error = JSON.parse(err._body);
           console.log(error);
+          await this.loading.dismiss();
         }
       );
   }
@@ -143,9 +165,11 @@ export class RecoverPasswordPage implements OnInit {
       .toPromise()
       .then(
         async (res) => {
+          await this.loading.dismiss();
           this.router.navigate(["/dashboard"]);
         },
-        (err) => {
+        async (err) => {
+          await this.loading.dismiss();
           let error = JSON.parse(err._body);
           console.log(error);
         }

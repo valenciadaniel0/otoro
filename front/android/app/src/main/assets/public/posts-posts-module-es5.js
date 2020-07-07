@@ -61,7 +61,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ folder }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div id=\"container\">\r\n    <h4 class=\"centered-text\">Que quieres publicar?</h4>\r\n    <ion-row id=\"form-container\">\r\n      <ion-slides>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo1\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(1)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(1)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo2\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(2)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(2)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo3\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(3)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(3)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n      </ion-slides>\r\n      <ion-col col-12>\r\n        <form [formGroup]=\"sellForm\">\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">T&iacute;tulo</label>\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control width-100\"\r\n              formControlName=\"title\"\r\n            />\r\n            <span *ngIf=\"controlHasError('title', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Descripci&oacute;n</label>\r\n            <textarea\r\n              class=\"form-control width-100\"\r\n              formControlName=\"description\"\r\n            ></textarea>\r\n            <span *ngIf=\"controlHasError('description', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Precio</label>\r\n            <input\r\n              class=\"form-control width-100\"\r\n              formControlName=\"price\"\r\n              type=\"number\"\r\n            />\r\n            <span *ngIf=\"controlHasError('price', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Ubicaci&oacute;n</label>\r\n            <ion-item (click)=\"openOriginModal()\">\r\n              <span *ngIf=\"!origin\">Selecciona una ubicaci&oacute;n</span>\r\n              <span *ngIf=\"origin\">{{origin.name}}</span>\r\n            </ion-item>\r\n            <input type=\"text\" class=\"display-none\" formControlName=\"origin\" />\r\n            <span *ngIf=\"controlHasError('origin', 'required')\">\r\n              <strong class=\"error\">Selecciona una ciudad</strong>\r\n            </span>\r\n          </div>\r\n        </form>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button color=\"primary\" (click)=\"saveSell()\" class=\"width-100\">\r\n          Guardar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button\r\n          color=\"danger\"\r\n          (click)=\"goBackToDashboard()\"\r\n          class=\"width-100\"\r\n        >\r\n          Cancelar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </div>\r\n  <ion-grid id=\"tabs-container\">\r\n    <ion-row>\r\n      <ion-col (click)=\"goToShippingForm()\" col-6 class=\"centered-text\">\r\n        <ion-icon name=\"send\"></ion-icon>\r\n        <ion-label>Envio</ion-label>\r\n      </ion-col>\r\n      <ion-col col-6 class=\"centered-text\">\r\n        <ion-icon name=\"pricetag\"></ion-icon>\r\n        <ion-label>Venta</ion-label>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ folder }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div id=\"container\">\r\n    <h4 class=\"centered-text\">{{title}}</h4>\r\n    <ion-row id=\"form-container\">\r\n      <ion-slides>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo1\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(1)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(1)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo2\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(2)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(2)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo3\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(3)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(3)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n      </ion-slides>\r\n      <ion-col col-12>\r\n        <form [formGroup]=\"sellForm\">\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">T&iacute;tulo</label>\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control width-100\"\r\n              formControlName=\"title\"\r\n            />\r\n            <span *ngIf=\"controlHasError('title', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Descripci&oacute;n</label>\r\n            <textarea\r\n              class=\"form-control width-100\"\r\n              formControlName=\"description\"\r\n            ></textarea>\r\n            <span *ngIf=\"controlHasError('description', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Precio</label>\r\n            <input\r\n              class=\"form-control width-100\"\r\n              formControlName=\"price\"\r\n              type=\"number\"\r\n            />\r\n            <span *ngIf=\"controlHasError('price', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Ubicaci&oacute;n</label>\r\n            <ion-item (click)=\"openOriginModal()\">\r\n              <span *ngIf=\"!origin\">Selecciona una ubicaci&oacute;n</span>\r\n              <span *ngIf=\"origin\">{{origin.name}}</span>\r\n            </ion-item>\r\n            <input type=\"text\" class=\"display-none\" formControlName=\"origin\" />\r\n            <span *ngIf=\"controlHasError('origin', 'required')\">\r\n              <strong class=\"error\">Selecciona una ciudad</strong>\r\n            </span>\r\n          </div>\r\n        </form>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button color=\"primary\" (click)=\"saveSell()\" class=\"width-100\">\r\n          Guardar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button\r\n          color=\"danger\"\r\n          (click)=\"goBackToDashboard()\"\r\n          class=\"width-100\"\r\n        >\r\n          Cancelar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </div>\r\n  <ion-grid id=\"tabs-container\">\r\n    <ion-row>\r\n      <ion-col (click)=\"goToShippingForm()\" col-6 class=\"centered-text\">\r\n        <ion-icon name=\"send\"></ion-icon>\r\n        <ion-label>Envio</ion-label>\r\n      </ion-col>\r\n      <ion-col col-6 class=\"centered-text\">\r\n        <ion-icon name=\"pricetag\"></ion-icon>\r\n        <ion-label>Venta</ion-label>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -81,7 +81,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ folder }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div id=\"container\">\r\n    <h4 class=\"centered-text\">Que quieres publicar?</h4>\r\n    <ion-row id=\"form-container\">\r\n      <ion-slides>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo1\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(1)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(1)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo2\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(2)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(2)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo3\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(3)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(3)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n      </ion-slides>\r\n      <ion-col col-12>\r\n        <form [formGroup]=\"shippingForm\">\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">T&iacute;tulo</label>\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control width-100\"\r\n              formControlName=\"title\"\r\n            />\r\n            <span *ngIf=\"controlHasError('title', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Descripci&oacute;n</label>\r\n            <textarea\r\n              class=\"form-control width-100\"\r\n              formControlName=\"description\"\r\n            ></textarea>\r\n            <span *ngIf=\"controlHasError('description', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <ion-item>\r\n              <ion-label class=\"bold\">Selecciona fecha</ion-label>\r\n              <ion-datetime\r\n                id=\"dynamicDisabled\"\r\n                displayFormat=\"MMMM DD YYYY\"\r\n                value=\"1994-12-15\"\r\n                formControlName=\"date\"\r\n              ></ion-datetime>\r\n            </ion-item>\r\n            <span *ngIf=\"controlHasError('date', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Origen del envio</label>\r\n            <ion-item (click)=\"openOriginModal()\">\r\n              <span *ngIf=\"!origin\">Selecciona un origen</span>\r\n              <span *ngIf=\"origin\">{{origin.name}}</span>\r\n            </ion-item>\r\n            <input type=\"text\" class=\"display-none\" formControlName=\"origin\" />\r\n            <span *ngIf=\"controlHasError('origin', 'required')\">\r\n              <strong class=\"error\">Selecciona una ciudad</strong>\r\n            </span>\r\n          </div>\r\n\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Origen del destino</label>\r\n            <ion-item (click)=\"openDestinationModal()\">\r\n              <span *ngIf=\"!destination\">Selecciona un destino</span>\r\n              <span *ngIf=\"destination\">{{destination.name}}</span>\r\n            </ion-item>\r\n            <input\r\n              type=\"text\"\r\n              class=\"display-none\"\r\n              formControlName=\"destination\"\r\n              display=\"none\"\r\n            />\r\n            <span *ngIf=\"controlHasError('destination', 'required')\">\r\n              <strong class=\"error\">Selecciona una ciudad</strong>\r\n            </span>\r\n          </div>\r\n        </form>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button color=\"primary\" (click)=\"saveShipping()\" class=\"width-100\">\r\n          Guardar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button\r\n          color=\"danger\"\r\n          (click)=\"goBackToDashboard()\"\r\n          class=\"width-100\"\r\n        >\r\n          Cancelar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </div>\r\n  <ion-grid id=\"tabs-container\">\r\n    <ion-row>\r\n      <ion-col col-6 class=\"centered-text\">\r\n        <ion-icon name=\"send\"></ion-icon>\r\n        <ion-label>Envio</ion-label>\r\n      </ion-col>\r\n      <ion-col (click)=\"goToSellForm()\" col-6 class=\"centered-text\">\r\n        <ion-icon name=\"pricetag\"></ion-icon>\r\n        <ion-label>Venta</ion-label>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ folder }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div id=\"container\">\r\n    <h4 class=\"centered-text\">{{title}}</h4>\r\n    <ion-row id=\"form-container\">\r\n      <ion-slides>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo1\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(1)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(1)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo2\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(2)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(2)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo3\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(3)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(3)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n      </ion-slides>\r\n      <ion-col col-12>\r\n        <form [formGroup]=\"shippingForm\">\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">T&iacute;tulo</label>\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control width-100\"\r\n              formControlName=\"title\"\r\n            />\r\n            <span *ngIf=\"controlHasError('title', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Descripci&oacute;n</label>\r\n            <textarea\r\n              class=\"form-control width-100\"\r\n              formControlName=\"description\"\r\n            ></textarea>\r\n            <span *ngIf=\"controlHasError('description', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <ion-item>\r\n              <ion-label class=\"bold\">Selecciona fecha</ion-label>\r\n              <ion-datetime\r\n                id=\"dynamicDisabled\"\r\n                displayFormat=\"MMMM DD YYYY\"\r\n                value=\"1994-12-15\"\r\n                formControlName=\"date\"\r\n              ></ion-datetime>\r\n            </ion-item>\r\n            <span *ngIf=\"controlHasError('date', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Origen del envio</label>\r\n            <ion-item (click)=\"openOriginModal()\">\r\n              <span *ngIf=\"!origin\">Selecciona un origen</span>\r\n              <span *ngIf=\"origin\">{{origin.name}}</span>\r\n            </ion-item>\r\n            <input type=\"text\" class=\"display-none\" formControlName=\"origin\" />\r\n            <span *ngIf=\"controlHasError('origin', 'required')\">\r\n              <strong class=\"error\">Selecciona una ciudad</strong>\r\n            </span>\r\n          </div>\r\n\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Origen del destino</label>\r\n            <ion-item (click)=\"openDestinationModal()\">\r\n              <span *ngIf=\"!destination\">Selecciona un destino</span>\r\n              <span *ngIf=\"destination\">{{destination.name}}</span>\r\n            </ion-item>\r\n            <input\r\n              type=\"text\"\r\n              class=\"display-none\"\r\n              formControlName=\"destination\"\r\n              display=\"none\"\r\n            />\r\n            <span *ngIf=\"controlHasError('destination', 'required')\">\r\n              <strong class=\"error\">Selecciona una ciudad</strong>\r\n            </span>\r\n          </div>\r\n        </form>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button color=\"primary\" (click)=\"saveShipping()\" class=\"width-100\">\r\n          Guardar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button\r\n          color=\"danger\"\r\n          (click)=\"goBackToDashboard()\"\r\n          class=\"width-100\"\r\n        >\r\n          Cancelar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </div>\r\n  <ion-grid id=\"tabs-container\">\r\n    <ion-row>\r\n      <ion-col col-6 class=\"centered-text\">\r\n        <ion-icon name=\"send\"></ion-icon>\r\n        <ion-label>Envio</ion-label>\r\n      </ion-col>\r\n      <ion-col (click)=\"goToSellForm()\" col-6 class=\"centered-text\">\r\n        <ion-icon name=\"pricetag\"></ion-icon>\r\n        <ion-label>Venta</ion-label>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -135,6 +135,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function save(body, token) {
           var url = "posts";
           return this.service.queryPost(url, body, token);
+        }
+      }, {
+        key: "update",
+        value: function update(body, token) {
+          var url = "posts";
+          return this.service.queryPut(url, body, token);
+        }
+      }, {
+        key: "delete",
+        value: function _delete(id, token) {
+          var url = "posts/".concat(id);
+          return this.service.queryDelete(url, token);
+        }
+      }, {
+        key: "getById",
+        value: function getById(auth, id) {
+          var url = "posts/".concat(id);
+          return this.service.queryGet(url, auth.token);
         }
       }, {
         key: "getByType",
@@ -399,13 +417,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     "./src/app/shared/post-details/post-details.component.ts");
 
     var PostsListGeneralPage = /*#__PURE__*/function () {
-      function PostsListGeneralPage(route, postService, storage, modalController) {
+      function PostsListGeneralPage(route, router, postService, storage, modalController, loadingController) {
         _classCallCheck(this, PostsListGeneralPage);
 
         this.route = route;
+        this.router = router;
         this.postService = postService;
         this.storage = storage;
         this.modalController = modalController;
+        this.loadingController = loadingController;
         this.activeTab = 1;
         this.sells = [];
         this.shippings = [];
@@ -438,6 +458,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "openCommentsModalImplementation",
         value: function openCommentsModalImplementation(postId) {
           return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            var _this2 = this;
+
             var modal;
             return regeneratorRuntime.wrap(function _callee$(_context) {
               while (1) {
@@ -455,7 +477,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                   case 2:
                     modal = _context.sent;
                     _context.next = 5;
-                    return modal.present().then(function () {});
+                    return modal.present().then(function () {
+                      modal.onWillDismiss().then(function (response) {
+                        var postId = response.data.postId;
+                        var postType = response.data.postType;
+
+                        if (postId && postType) {
+                          if (postType === 1) {
+                            _this2.router.navigate(["posts/create-shipping/".concat(postId)]);
+                          } else {
+                            _this2.router.navigate(["posts/create-sell/".concat(postId)]);
+                          }
+                        }
+                      });
+                    });
 
                   case 5:
                     return _context.abrupt("return", _context.sent);
@@ -472,6 +507,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "openDetailsModalImplementation",
         value: function openDetailsModalImplementation(post) {
           return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+            var _this3 = this;
+
             var modal;
             return regeneratorRuntime.wrap(function _callee2$(_context2) {
               while (1) {
@@ -489,7 +526,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                   case 2:
                     modal = _context2.sent;
                     _context2.next = 5;
-                    return modal.present().then(function () {});
+                    return modal.present().then(function () {
+                      modal.onWillDismiss().then(function (response) {
+                        var postId = response.data.postId;
+                        var postType = response.data.postType;
+                        var deletePost = response.data["delete"];
+
+                        if (postId && postType) {
+                          if (postType === 1) {
+                            _this3.router.navigate(["posts/create-shipping/".concat(postId)]);
+                          } else {
+                            _this3.router.navigate(["posts/create-sell/".concat(postId)]);
+                          }
+                        } else if (postId && deletePost) {
+                          _this3.deletePost(postId);
+                        }
+                      });
+                    });
 
                   case 5:
                     return _context2.abrupt("return", _context2.sent);
@@ -541,11 +594,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getShippings",
         value: function getShippings() {
-          var _this2 = this;
+          var _this4 = this;
 
           this.postService.search(this.auth, this.query, 1).toPromise().then(function (res) {
             var result = res.json();
-            _this2.shippings = result;
+            _this4.shippings = result;
           }, function (err) {
             var error = JSON.parse(err._body);
             console.log(error);
@@ -554,20 +607,97 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getSells",
         value: function getSells() {
-          var _this3 = this;
+          var _this5 = this;
 
           this.postService.search(this.auth, this.query, 2).toPromise().then(function (res) {
             var result = res.json();
-            _this3.sells = result;
+            _this5.sells = result;
           }, function (err) {
             var error = JSON.parse(err._body);
             console.log(error);
           });
         }
       }, {
+        key: "deletePost",
+        value: function deletePost(postId) {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
+            var _this6 = this;
+
+            return regeneratorRuntime.wrap(function _callee5$(_context5) {
+              while (1) {
+                switch (_context5.prev = _context5.next) {
+                  case 0:
+                    _context5.next = 2;
+                    return this.loadingController.create({
+                      message: "Cargando..."
+                    });
+
+                  case 2:
+                    this.loading = _context5.sent;
+                    _context5.next = 5;
+                    return this.loading.present();
+
+                  case 5:
+                    this.postService["delete"](postId, this.auth.token).toPromise().then(function (res) {
+                      return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this6, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+                        return regeneratorRuntime.wrap(function _callee3$(_context3) {
+                          while (1) {
+                            switch (_context3.prev = _context3.next) {
+                              case 0:
+                                _context3.next = 2;
+                                return this.loading.present();
+
+                              case 2:
+                                if (this.activeTab === 1) {
+                                  this.getShippings();
+                                } else {
+                                  this.getSells();
+                                }
+
+                              case 3:
+                              case "end":
+                                return _context3.stop();
+                            }
+                          }
+                        }, _callee3, this);
+                      }));
+                    }, function (err) {
+                      return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this6, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+                        var error;
+                        return regeneratorRuntime.wrap(function _callee4$(_context4) {
+                          while (1) {
+                            switch (_context4.prev = _context4.next) {
+                              case 0:
+                                _context4.next = 2;
+                                return this.loading.present();
+
+                              case 2:
+                                error = JSON.parse(err._body);
+                                console.log(error);
+
+                              case 4:
+                              case "end":
+                                return _context4.stop();
+                            }
+                          }
+                        }, _callee4, this);
+                      }));
+                    });
+
+                  case 6:
+                  case "end":
+                    return _context5.stop();
+                }
+              }
+            }, _callee5, this);
+          }));
+        }
+      }, {
         key: "ngOnDestroy",
         value: function ngOnDestroy() {
-          this.sub.unsubscribe();
+          if (this.sub) {
+            this.sub.unsubscribe();
+          }
         }
       }]);
 
@@ -578,11 +708,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       return [{
         type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]
       }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
+      }, {
         type: _post_service__WEBPACK_IMPORTED_MODULE_4__["PostService"]
       }, {
         type: _ionic_storage__WEBPACK_IMPORTED_MODULE_3__["Storage"]
       }, {
         type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ModalController"]
+      }, {
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["LoadingController"]
       }];
     };
 
@@ -826,13 +960,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
 
     var PostsListPage = /*#__PURE__*/function () {
-      function PostsListPage(route, postService, storage, modalController) {
+      function PostsListPage(route, postService, storage, modalController, router, loadingController) {
         _classCallCheck(this, PostsListPage);
 
         this.route = route;
         this.postService = postService;
         this.storage = storage;
         this.modalController = modalController;
+        this.router = router;
+        this.loadingController = loadingController;
         this.activeTab = 1;
         this.sells = [];
         this.shippings = [];
@@ -843,53 +979,53 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(PostsListPage, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
-            var _this4 = this;
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee6() {
+            var _this7 = this;
 
-            return regeneratorRuntime.wrap(function _callee3$(_context3) {
+            return regeneratorRuntime.wrap(function _callee6$(_context6) {
               while (1) {
-                switch (_context3.prev = _context3.next) {
+                switch (_context6.prev = _context6.next) {
                   case 0:
                     this.sub = this.route.params.subscribe(function (params) {
-                      _this4.userId = params["user-id"];
+                      _this7.userId = params["user-id"];
 
-                      if (_this4.userId !== 0) {
-                        _this4.title = "Aquí esta lo que has publicado";
+                      if (_this7.userId !== 0) {
+                        _this7.title = "Aquí esta lo que has publicado";
                       }
 
-                      _this4.storage.get("auth").then(function (auth) {
-                        _this4.auth = auth;
+                      _this7.storage.get("auth").then(function (auth) {
+                        _this7.auth = auth;
 
-                        _this4.getShippings();
+                        _this7.getShippings();
                       });
                     });
 
                     this.openCommentsModal = function (postId) {
-                      _this4.openCommentsModalImplementation(postId);
+                      _this7.openCommentsModalImplementation(postId);
                     };
 
                     this.openDetailsModal = function (post) {
-                      _this4.openDetailsModalImplementation(post);
+                      _this7.openDetailsModalImplementation(post);
                     };
 
                   case 3:
                   case "end":
-                    return _context3.stop();
+                    return _context6.stop();
                 }
               }
-            }, _callee3, this);
+            }, _callee6, this);
           }));
         }
       }, {
         key: "openCommentsModalImplementation",
         value: function openCommentsModalImplementation(postId) {
-          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
             var modal;
-            return regeneratorRuntime.wrap(function _callee4$(_context4) {
+            return regeneratorRuntime.wrap(function _callee7$(_context7) {
               while (1) {
-                switch (_context4.prev = _context4.next) {
+                switch (_context7.prev = _context7.next) {
                   case 0:
-                    _context4.next = 2;
+                    _context7.next = 2;
                     return this.modalController.create({
                       component: src_app_shared_comments_comments_component__WEBPACK_IMPORTED_MODULE_6__["CommentsComponent"],
                       componentProps: {
@@ -899,31 +1035,33 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                     });
 
                   case 2:
-                    modal = _context4.sent;
-                    _context4.next = 5;
+                    modal = _context7.sent;
+                    _context7.next = 5;
                     return modal.present().then(function () {});
 
                   case 5:
-                    return _context4.abrupt("return", _context4.sent);
+                    return _context7.abrupt("return", _context7.sent);
 
                   case 6:
                   case "end":
-                    return _context4.stop();
+                    return _context7.stop();
                 }
               }
-            }, _callee4, this);
+            }, _callee7, this);
           }));
         }
       }, {
         key: "openDetailsModalImplementation",
         value: function openDetailsModalImplementation(post) {
-          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee8() {
+            var _this8 = this;
+
             var modal;
-            return regeneratorRuntime.wrap(function _callee5$(_context5) {
+            return regeneratorRuntime.wrap(function _callee8$(_context8) {
               while (1) {
-                switch (_context5.prev = _context5.next) {
+                switch (_context8.prev = _context8.next) {
                   case 0:
-                    _context5.next = 2;
+                    _context8.next = 2;
                     return this.modalController.create({
                       component: src_app_shared_post_details_post_details_component__WEBPACK_IMPORTED_MODULE_5__["PostDetailsComponent"],
                       componentProps: {
@@ -933,19 +1071,110 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                     });
 
                   case 2:
-                    modal = _context5.sent;
-                    _context5.next = 5;
-                    return modal.present().then(function () {});
+                    modal = _context8.sent;
+                    _context8.next = 5;
+                    return modal.present().then(function () {
+                      modal.onWillDismiss().then(function (response) {
+                        var postId = response.data.postId;
+                        var postType = response.data.postType;
+                        var deletePost = response.data["delete"];
+
+                        if (postId && postType) {
+                          if (postType === 1) {
+                            _this8.router.navigate(["posts/create-shipping/".concat(postId)]);
+                          } else {
+                            _this8.router.navigate(["posts/create-sell/".concat(postId)]);
+                          }
+                        } else if (postId && deletePost) {
+                          _this8.deletePost(postId);
+                        }
+                      });
+                    });
 
                   case 5:
-                    return _context5.abrupt("return", _context5.sent);
+                    return _context8.abrupt("return", _context8.sent);
 
                   case 6:
                   case "end":
-                    return _context5.stop();
+                    return _context8.stop();
                 }
               }
-            }, _callee5, this);
+            }, _callee8, this);
+          }));
+        }
+      }, {
+        key: "deletePost",
+        value: function deletePost(postId) {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee11() {
+            var _this9 = this;
+
+            return regeneratorRuntime.wrap(function _callee11$(_context11) {
+              while (1) {
+                switch (_context11.prev = _context11.next) {
+                  case 0:
+                    _context11.next = 2;
+                    return this.loadingController.create({
+                      message: "Cargando..."
+                    });
+
+                  case 2:
+                    this.loading = _context11.sent;
+                    _context11.next = 5;
+                    return this.loading.present();
+
+                  case 5:
+                    this.postService["delete"](postId, this.auth.token).toPromise().then(function (res) {
+                      return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this9, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee9() {
+                        return regeneratorRuntime.wrap(function _callee9$(_context9) {
+                          while (1) {
+                            switch (_context9.prev = _context9.next) {
+                              case 0:
+                                _context9.next = 2;
+                                return this.loading.dismiss();
+
+                              case 2:
+                                if (this.activeTab === 1) {
+                                  this.getShippings();
+                                } else {
+                                  this.getSells();
+                                }
+
+                              case 3:
+                              case "end":
+                                return _context9.stop();
+                            }
+                          }
+                        }, _callee9, this);
+                      }));
+                    }, function (err) {
+                      return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this9, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee10() {
+                        var error;
+                        return regeneratorRuntime.wrap(function _callee10$(_context10) {
+                          while (1) {
+                            switch (_context10.prev = _context10.next) {
+                              case 0:
+                                _context10.next = 2;
+                                return this.loading.dismiss();
+
+                              case 2:
+                                error = JSON.parse(err._body);
+                                console.log(error);
+
+                              case 4:
+                              case "end":
+                                return _context10.stop();
+                            }
+                          }
+                        }, _callee10, this);
+                      }));
+                    });
+
+                  case 6:
+                  case "end":
+                    return _context11.stop();
+                }
+              }
+            }, _callee11, this);
           }));
         }
       }, {
@@ -962,11 +1191,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getShippings",
         value: function getShippings() {
-          var _this5 = this;
+          var _this10 = this;
 
           this.postService.getByType(this.auth, 1).toPromise().then(function (res) {
             var result = res.json();
-            _this5.shippings = result;
+            _this10.shippings = result;
           }, function (err) {
             var error = JSON.parse(err._body);
             console.log(error);
@@ -975,11 +1204,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getSells",
         value: function getSells() {
-          var _this6 = this;
+          var _this11 = this;
 
           this.postService.getByType(this.auth, 2).toPromise().then(function (res) {
             var result = res.json();
-            _this6.sells = result;
+            _this11.sells = result;
           }, function (err) {
             var error = JSON.parse(err._body);
             console.log(error);
@@ -988,7 +1217,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "ngOnDestroy",
         value: function ngOnDestroy() {
-          this.sub.unsubscribe();
+          if (this.sub) {
+            this.sub.unsubscribe();
+          }
         }
       }]);
 
@@ -1004,6 +1235,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         type: _ionic_storage__WEBPACK_IMPORTED_MODULE_4__["Storage"]
       }, {
         type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__["ModalController"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
+      }, {
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__["LoadingController"]
       }];
     };
 
@@ -1058,7 +1293,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 
     var routes = [{
-      path: "create-shipping",
+      path: "create-shipping/:id",
       loadChildren: function loadChildren() {
         return Promise.resolve().then(__webpack_require__.bind(null,
         /*! ./shipping-form/shipping-form.module */
@@ -1067,7 +1302,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         });
       }
     }, {
-      path: "create-sell",
+      path: "create-sell/:id",
       loadChildren: function loadChildren() {
         return Promise.resolve().then(__webpack_require__.bind(null,
         /*! ./sell-form/sell-form.module */
@@ -1451,26 +1686,44 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     "./node_modules/@capacitor/core/dist/esm/index.js");
 
     var SellFormPage = /*#__PURE__*/function () {
-      function SellFormPage(router, postService, storage, modalController, sanitizer, loadingController) {
+      function SellFormPage(alertController, loadingController, modalController, postService, route, router, sanitizer, storage) {
         _classCallCheck(this, SellFormPage);
 
-        this.router = router;
-        this.postService = postService;
-        this.storage = storage;
-        this.modalController = modalController;
-        this.sanitizer = sanitizer;
+        this.alertController = alertController;
         this.loadingController = loadingController;
+        this.modalController = modalController;
+        this.postService = postService;
+        this.route = route;
+        this.router = router;
+        this.sanitizer = sanitizer;
+        this.storage = storage;
       }
 
       _createClass(SellFormPage, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this7 = this;
+          var _this12 = this;
 
+          this.title = "Que quieres publicar?";
+          this.subscription = this.route.params.subscribe(function (params) {
+            _this12.sellId = params["id"];
+
+            if (_this12.sellId !== "0") {
+              _this12.title = "Editar venta";
+            }
+
+            _this12.storage.get("auth").then(function (auth) {
+              _this12.auth = auth;
+
+              if (_this12.sellId !== "0") {
+                _this12.getPost();
+              }
+            });
+          });
           this.formData = new FormData();
           this.activeTab = 2;
           this.storage.get("auth").then(function (auth) {
-            _this7.auth = auth;
+            _this12.auth = auth;
           });
           this.sellForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormGroup"]({
             title: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]("title", [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]),
@@ -1478,71 +1731,77 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             price: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]("price", [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]),
             origin: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]("origin", [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required])
           });
+          this.initializeSellFormControls();
+        }
+      }, {
+        key: "initializeSellFormControls",
+        value: function initializeSellFormControls() {
           this.sellForm.controls["title"].setValue(null);
           this.sellForm.controls["description"].setValue(null);
           this.sellForm.controls["price"].setValue(null);
           this.sellForm.controls["origin"].setValue(null);
+          this.origin = null;
         }
       }, {
         key: "selectPhoto",
         value: function selectPhoto(slide) {
-          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee6() {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee12() {
             var ab;
-            return regeneratorRuntime.wrap(function _callee6$(_context6) {
+            return regeneratorRuntime.wrap(function _callee12$(_context12) {
               while (1) {
-                switch (_context6.prev = _context6.next) {
+                switch (_context12.prev = _context12.next) {
                   case 0:
-                    _context6.next = 2;
+                    _context12.next = 2;
                     return this.getPhoto(_capacitor_core__WEBPACK_IMPORTED_MODULE_9__["CameraSource"].Photos, slide);
 
                   case 2:
-                    ab = _context6.sent;
-                    _context6.next = 5;
+                    ab = _context12.sent;
+                    _context12.next = 5;
                     return this.uploadImage(ab, slide);
 
                   case 5:
                   case "end":
-                    return _context6.stop();
+                    return _context12.stop();
                 }
               }
-            }, _callee6, this);
+            }, _callee12, this);
           }));
         }
       }, {
         key: "takePicture",
         value: function takePicture(slide) {
-          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee13() {
             var ab;
-            return regeneratorRuntime.wrap(function _callee7$(_context7) {
+            return regeneratorRuntime.wrap(function _callee13$(_context13) {
               while (1) {
-                switch (_context7.prev = _context7.next) {
+                switch (_context13.prev = _context13.next) {
                   case 0:
-                    _context7.next = 2;
+                    _context13.next = 2;
                     return this.getPhoto(_capacitor_core__WEBPACK_IMPORTED_MODULE_9__["CameraSource"].Camera, slide);
 
                   case 2:
-                    ab = _context7.sent;
-                    _context7.next = 5;
+                    ab = _context13.sent;
+                    _context13.next = 5;
                     return this.uploadImage(ab, slide);
 
                   case 5:
                   case "end":
-                    return _context7.stop();
+                    return _context13.stop();
                 }
               }
-            }, _callee7, this);
+            }, _callee13, this);
           }));
         }
       }, {
         key: "getPhoto",
         value: function getPhoto(source, slide) {
-          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee8() {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee14() {
             var image, photo;
-            return regeneratorRuntime.wrap(function _callee8$(_context8) {
+            return regeneratorRuntime.wrap(function _callee14$(_context14) {
               while (1) {
-                switch (_context8.prev = _context8.next) {
+                switch (_context14.prev = _context14.next) {
                   case 0:
-                    _context8.next = 2;
+                    _context14.next = 2;
                     return _capacitor_core__WEBPACK_IMPORTED_MODULE_9__["Plugins"].Camera.getPhoto({
                       quality: 90,
                       allowEditing: false,
@@ -1551,7 +1810,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                     });
 
                   case 2:
-                    image = _context8.sent;
+                    image = _context14.sent;
                     photo = this.sanitizer.bypassSecurityTrustResourceUrl(image && image.webPath);
 
                     if (slide === 1) {
@@ -1562,43 +1821,43 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                       this.photo3 = photo;
                     }
 
-                    return _context8.abrupt("return", image.webPath);
+                    return _context14.abrupt("return", image.webPath);
 
                   case 6:
                   case "end":
-                    return _context8.stop();
+                    return _context14.stop();
                 }
               }
-            }, _callee8, this);
+            }, _callee14, this);
           }));
         }
       }, {
         key: "uploadImage",
         value: function uploadImage(webPath, slide) {
-          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee9() {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee15() {
             var blob;
-            return regeneratorRuntime.wrap(function _callee9$(_context9) {
+            return regeneratorRuntime.wrap(function _callee15$(_context15) {
               while (1) {
-                switch (_context9.prev = _context9.next) {
+                switch (_context15.prev = _context15.next) {
                   case 0:
-                    _context9.next = 2;
+                    _context15.next = 2;
                     return this.loadingController.create({
                       message: "Cargando..."
                     });
 
                   case 2:
-                    this.loading = _context9.sent;
-                    _context9.next = 5;
+                    this.loading = _context15.sent;
+                    _context15.next = 5;
                     return this.loading.present();
 
                   case 5:
-                    _context9.next = 7;
+                    _context15.next = 7;
                     return fetch(webPath).then(function (r) {
                       return r.blob();
                     });
 
                   case 7:
-                    blob = _context9.sent;
+                    blob = _context15.sent;
 
                     if (slide === 1) {
                       this.formData.append("image1", blob, "profile-picture1.jpg");
@@ -1608,93 +1867,210 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                       this.formData.append("image3", blob, "profile-picture3.jpg");
                     }
 
-                    _context9.next = 11;
+                    _context15.next = 11;
                     return this.loading.dismiss();
 
                   case 11:
                   case "end":
-                    return _context9.stop();
+                    return _context15.stop();
                 }
               }
-            }, _callee9, this);
+            }, _callee15, this);
           }));
+        }
+      }, {
+        key: "getPost",
+        value: function getPost() {
+          var _this13 = this;
+
+          this.postService.getById(this.auth, this.sellId).toPromise().then(function (res) {
+            var result = res.json();
+
+            _this13.sellForm.controls["title"].setValue(result.title);
+
+            _this13.sellForm.controls["description"].setValue(result.description);
+
+            _this13.sellForm.controls["price"].setValue(result.price);
+
+            _this13.sellForm.controls["origin"].setValue(result.origin.name);
+
+            _this13.origin = result.origin;
+          }, function (err) {
+            var error = JSON.parse(err._body);
+            console.log(error);
+          });
         }
       }, {
         key: "openOriginModal",
         value: function openOriginModal() {
-          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee10() {
-            var _this8 = this;
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee16() {
+            var _this14 = this;
 
             var modal;
-            return regeneratorRuntime.wrap(function _callee10$(_context10) {
+            return regeneratorRuntime.wrap(function _callee16$(_context16) {
               while (1) {
-                switch (_context10.prev = _context10.next) {
+                switch (_context16.prev = _context16.next) {
                   case 0:
-                    _context10.next = 2;
+                    _context16.next = 2;
                     return this.modalController.create({
                       component: src_app_shared_select_city_select_city_component__WEBPACK_IMPORTED_MODULE_7__["SelectCityComponent"],
                       cssClass: "my-custom-class"
                     });
 
                   case 2:
-                    modal = _context10.sent;
-                    _context10.next = 5;
+                    modal = _context16.sent;
+                    _context16.next = 5;
                     return modal.present().then(function () {
                       modal.onWillDismiss().then(function (response) {
-                        _this8.origin = response.data.city;
+                        _this14.origin = response.data.city;
 
-                        if (_this8.origin) {
-                          _this8.sellForm.controls["origin"].setValue(_this8.origin.name);
+                        if (_this14.origin) {
+                          _this14.sellForm.controls["origin"].setValue(_this14.origin.name);
                         } else {
-                          _this8.sellForm.controls["origin"].setValue(null);
+                          _this14.sellForm.controls["origin"].setValue(null);
                         }
                       });
                     });
 
                   case 5:
-                    return _context10.abrupt("return", _context10.sent);
+                    return _context16.abrupt("return", _context16.sent);
 
                   case 6:
                   case "end":
-                    return _context10.stop();
+                    return _context16.stop();
                 }
               }
-            }, _callee10, this);
+            }, _callee16, this);
           }));
         }
       }, {
         key: "saveSell",
         value: function saveSell() {
-          var controls = this.sellForm.controls;
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee19() {
+            var _this15 = this;
 
-          if (this.sellForm.invalid) {
-            Object.keys(controls).forEach(function (controlName) {
-              return controls[controlName].markAsTouched();
-            });
-            return;
-          }
+            var controls, body, action;
+            return regeneratorRuntime.wrap(function _callee19$(_context19) {
+              while (1) {
+                switch (_context19.prev = _context19.next) {
+                  case 0:
+                    controls = this.sellForm.controls;
 
-          var body = {
-            type: 2,
-            image: "",
-            title: controls["title"].value,
-            description: controls["description"].value,
-            price: controls["price"].value,
-            origin: this.origin,
-            user: {
-              id: this.auth.id
-            }
-          };
-          this.formData.append("postCommand", new Blob([JSON.stringify(body)], {
-            type: "application/json"
+                    if (!this.sellForm.invalid) {
+                      _context19.next = 4;
+                      break;
+                    }
+
+                    Object.keys(controls).forEach(function (controlName) {
+                      return controls[controlName].markAsTouched();
+                    });
+                    return _context19.abrupt("return");
+
+                  case 4:
+                    body = {
+                      type: 2,
+                      image: "",
+                      title: controls["title"].value,
+                      description: controls["description"].value,
+                      price: controls["price"].value,
+                      origin: this.origin,
+                      user: {
+                        id: this.auth.id
+                      }
+                    };
+
+                    if (this.sellId !== "0") {
+                      body = Object.assign(Object.assign({}, body), {
+                        id: this.sellId
+                      });
+                    }
+
+                    this.formData.append("postCommand", new Blob([JSON.stringify(body)], {
+                      type: "application/json"
+                    }));
+                    action = this.postService.save(this.formData, this.auth.token);
+
+                    if (body.id) {
+                      action = this.postService.update(this.formData, this.auth.token);
+                    }
+
+                    _context19.next = 11;
+                    return this.loadingController.create({
+                      message: "Cargando..."
+                    });
+
+                  case 11:
+                    this.loading = _context19.sent;
+                    _context19.next = 14;
+                    return this.loading.present();
+
+                  case 14:
+                    action.toPromise().then(function (res) {
+                      return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this15, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee17() {
+                        var alert;
+                        return regeneratorRuntime.wrap(function _callee17$(_context17) {
+                          while (1) {
+                            switch (_context17.prev = _context17.next) {
+                              case 0:
+                                this.initializeSellFormControls();
+                                _context17.next = 3;
+                                return this.loading.dismiss();
+
+                              case 3:
+                                _context17.next = 5;
+                                return this.alertController.create({
+                                  header: "Guardado exitoso",
+                                  message: "Tu publicación se ha guardado correctamente",
+                                  buttons: [{
+                                    text: "Aceptar",
+                                    role: "cancel",
+                                    handler: function handler() {
+                                      return false;
+                                    }
+                                  }]
+                                });
+
+                              case 5:
+                                alert = _context17.sent;
+                                alert.present();
+
+                              case 7:
+                              case "end":
+                                return _context17.stop();
+                            }
+                          }
+                        }, _callee17, this);
+                      }));
+                    }, function (err) {
+                      return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this15, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee18() {
+                        var error;
+                        return regeneratorRuntime.wrap(function _callee18$(_context18) {
+                          while (1) {
+                            switch (_context18.prev = _context18.next) {
+                              case 0:
+                                _context18.next = 2;
+                                return this.loading.dismiss();
+
+                              case 2:
+                                error = JSON.parse(err._body);
+                                console.log(error);
+
+                              case 4:
+                              case "end":
+                                return _context18.stop();
+                            }
+                          }
+                        }, _callee18, this);
+                      }));
+                    });
+
+                  case 15:
+                  case "end":
+                    return _context19.stop();
+                }
+              }
+            }, _callee19, this);
           }));
-          this.postService.save(this.formData, this.auth.token).toPromise().then(function (res) {
-            //const result = res.json();
-            console.log(res);
-          }, function (err) {
-            var error = JSON.parse(err._body);
-            console.log(error);
-          });
         }
       }, {
         key: "goBackToDashboard",
@@ -1705,7 +2081,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "goToShippingForm",
         value: function goToShippingForm() {
           if (this.activeTab !== 1) {
-            this.router.navigate(["posts/create-shipping"]);
+            this.router.navigate(["posts/create-shipping/0"]);
           }
         }
       }, {
@@ -1720,6 +2096,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var result = control.hasError(validationType) && (control.dirty || control.touched);
           return result;
         }
+      }, {
+        key: "ngOnDestroy",
+        value: function ngOnDestroy() {
+          if (this.subscription) {
+            this.subscription.unsubscribe();
+          }
+        }
       }]);
 
       return SellFormPage;
@@ -1727,17 +2110,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     SellFormPage.ctorParameters = function () {
       return [{
-        type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["AlertController"]
       }, {
-        type: _post_service__WEBPACK_IMPORTED_MODULE_4__["PostService"]
-      }, {
-        type: _ionic_storage__WEBPACK_IMPORTED_MODULE_5__["Storage"]
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["LoadingController"]
       }, {
         type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ModalController"]
       }, {
+        type: _post_service__WEBPACK_IMPORTED_MODULE_4__["PostService"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
+      }, {
         type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["DomSanitizer"]
       }, {
-        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["LoadingController"]
+        type: _ionic_storage__WEBPACK_IMPORTED_MODULE_5__["Storage"]
       }];
     };
 
@@ -1989,27 +2376,42 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/platform-browser.js");
 
     var ShippingFormPage = /*#__PURE__*/function () {
-      function ShippingFormPage(postService, router, storage, modalController, sanitizer, loadingController) {
+      function ShippingFormPage(alertController, loadingController, modalController, postService, route, router, sanitizer, storage) {
         _classCallCheck(this, ShippingFormPage);
 
-        this.postService = postService;
-        this.router = router;
-        this.storage = storage;
-        this.modalController = modalController;
-        this.sanitizer = sanitizer;
+        this.alertController = alertController;
         this.loadingController = loadingController;
+        this.modalController = modalController;
+        this.postService = postService;
+        this.route = route;
+        this.router = router;
+        this.sanitizer = sanitizer;
+        this.storage = storage;
       }
 
       _createClass(ShippingFormPage, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this9 = this;
+          var _this16 = this;
 
+          this.title = "Que quieres publicar?";
+          this.sub = this.route.params.subscribe(function (params) {
+            _this16.shippingId = params["id"];
+
+            if (_this16.shippingId !== "0") {
+              _this16.title = "Editar envio";
+            }
+
+            _this16.storage.get("auth").then(function (auth) {
+              _this16.auth = auth;
+
+              if (_this16.shippingId !== "0") {
+                _this16.getPost();
+              }
+            });
+          });
           this.formData = new FormData();
           this.activeTab = 1;
-          this.storage.get("auth").then(function (auth) {
-            _this9.auth = auth;
-          });
           this.shippingForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
             title: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]("title", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]),
             description: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]("description", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]),
@@ -2017,72 +2419,79 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             origin: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]("origin", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]),
             destination: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]("destination", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])
           });
+          this.initializeShippingFormControls();
+        }
+      }, {
+        key: "initializeShippingFormControls",
+        value: function initializeShippingFormControls() {
           this.shippingForm.controls["title"].setValue(null);
           this.shippingForm.controls["description"].setValue(null);
           this.shippingForm.controls["date"].setValue(null);
           this.shippingForm.controls["origin"].setValue(null);
           this.shippingForm.controls["destination"].setValue(null);
+          this.origin = null;
+          this.destination = null;
         }
       }, {
         key: "selectPhoto",
         value: function selectPhoto(slide) {
-          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee11() {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee20() {
             var ab;
-            return regeneratorRuntime.wrap(function _callee11$(_context11) {
+            return regeneratorRuntime.wrap(function _callee20$(_context20) {
               while (1) {
-                switch (_context11.prev = _context11.next) {
+                switch (_context20.prev = _context20.next) {
                   case 0:
-                    _context11.next = 2;
+                    _context20.next = 2;
                     return this.getPhoto(_capacitor_core__WEBPACK_IMPORTED_MODULE_8__["CameraSource"].Photos, slide);
 
                   case 2:
-                    ab = _context11.sent;
-                    _context11.next = 5;
+                    ab = _context20.sent;
+                    _context20.next = 5;
                     return this.uploadImage(ab, slide);
 
                   case 5:
                   case "end":
-                    return _context11.stop();
+                    return _context20.stop();
                 }
               }
-            }, _callee11, this);
+            }, _callee20, this);
           }));
         }
       }, {
         key: "takePicture",
         value: function takePicture(slide) {
-          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee12() {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee21() {
             var ab;
-            return regeneratorRuntime.wrap(function _callee12$(_context12) {
+            return regeneratorRuntime.wrap(function _callee21$(_context21) {
               while (1) {
-                switch (_context12.prev = _context12.next) {
+                switch (_context21.prev = _context21.next) {
                   case 0:
-                    _context12.next = 2;
+                    _context21.next = 2;
                     return this.getPhoto(_capacitor_core__WEBPACK_IMPORTED_MODULE_8__["CameraSource"].Camera, slide);
 
                   case 2:
-                    ab = _context12.sent;
-                    _context12.next = 5;
+                    ab = _context21.sent;
+                    _context21.next = 5;
                     return this.uploadImage(ab, slide);
 
                   case 5:
                   case "end":
-                    return _context12.stop();
+                    return _context21.stop();
                 }
               }
-            }, _callee12, this);
+            }, _callee21, this);
           }));
         }
       }, {
         key: "getPhoto",
         value: function getPhoto(source, slide) {
-          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee13() {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee22() {
             var image, photo;
-            return regeneratorRuntime.wrap(function _callee13$(_context13) {
+            return regeneratorRuntime.wrap(function _callee22$(_context22) {
               while (1) {
-                switch (_context13.prev = _context13.next) {
+                switch (_context22.prev = _context22.next) {
                   case 0:
-                    _context13.next = 2;
+                    _context22.next = 2;
                     return _capacitor_core__WEBPACK_IMPORTED_MODULE_8__["Plugins"].Camera.getPhoto({
                       quality: 90,
                       allowEditing: false,
@@ -2091,7 +2500,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                     });
 
                   case 2:
-                    image = _context13.sent;
+                    image = _context22.sent;
                     photo = this.sanitizer.bypassSecurityTrustResourceUrl(image && image.webPath);
 
                     if (slide === 1) {
@@ -2102,43 +2511,43 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                       this.photo3 = photo;
                     }
 
-                    return _context13.abrupt("return", image.webPath);
+                    return _context22.abrupt("return", image.webPath);
 
                   case 6:
                   case "end":
-                    return _context13.stop();
+                    return _context22.stop();
                 }
               }
-            }, _callee13, this);
+            }, _callee22, this);
           }));
         }
       }, {
         key: "uploadImage",
         value: function uploadImage(webPath, slide) {
-          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee14() {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee23() {
             var blob;
-            return regeneratorRuntime.wrap(function _callee14$(_context14) {
+            return regeneratorRuntime.wrap(function _callee23$(_context23) {
               while (1) {
-                switch (_context14.prev = _context14.next) {
+                switch (_context23.prev = _context23.next) {
                   case 0:
-                    _context14.next = 2;
+                    _context23.next = 2;
                     return this.loadingController.create({
                       message: "Cargando..."
                     });
 
                   case 2:
-                    this.loading = _context14.sent;
-                    _context14.next = 5;
+                    this.loading = _context23.sent;
+                    _context23.next = 5;
                     return this.loading.present();
 
                   case 5:
-                    _context14.next = 7;
+                    _context23.next = 7;
                     return fetch(webPath).then(function (r) {
                       return r.blob();
                     });
 
                   case 7:
-                    blob = _context14.sent;
+                    blob = _context23.sent;
 
                     if (slide === 1) {
                       this.formData.append("image1", blob, "profile-picture1.jpg");
@@ -2148,136 +2557,256 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                       this.formData.append("image3", blob, "profile-picture3.jpg");
                     }
 
-                    _context14.next = 11;
+                    _context23.next = 11;
                     return this.loading.dismiss();
 
                   case 11:
                   case "end":
-                    return _context14.stop();
+                    return _context23.stop();
                 }
               }
-            }, _callee14, this);
+            }, _callee23, this);
           }));
         }
       }, {
         key: "openOriginModal",
         value: function openOriginModal() {
-          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee15() {
-            var _this10 = this;
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee24() {
+            var _this17 = this;
 
             var modal;
-            return regeneratorRuntime.wrap(function _callee15$(_context15) {
+            return regeneratorRuntime.wrap(function _callee24$(_context24) {
               while (1) {
-                switch (_context15.prev = _context15.next) {
+                switch (_context24.prev = _context24.next) {
                   case 0:
-                    _context15.next = 2;
+                    _context24.next = 2;
                     return this.modalController.create({
                       component: src_app_shared_select_city_select_city_component__WEBPACK_IMPORTED_MODULE_7__["SelectCityComponent"],
                       cssClass: "my-custom-class"
                     });
 
                   case 2:
-                    modal = _context15.sent;
-                    _context15.next = 5;
+                    modal = _context24.sent;
+                    _context24.next = 5;
                     return modal.present().then(function () {
                       modal.onWillDismiss().then(function (response) {
-                        _this10.origin = response.data.city;
+                        _this17.origin = response.data.city;
 
-                        if (_this10.origin) {
-                          _this10.shippingForm.controls["origin"].setValue(_this10.origin.name);
+                        if (_this17.origin) {
+                          _this17.shippingForm.controls["origin"].setValue(_this17.origin.name);
                         } else {
-                          _this10.shippingForm.controls["origin"].setValue(null);
+                          _this17.shippingForm.controls["origin"].setValue(null);
                         }
                       });
                     });
 
                   case 5:
-                    return _context15.abrupt("return", _context15.sent);
+                    return _context24.abrupt("return", _context24.sent);
 
                   case 6:
                   case "end":
-                    return _context15.stop();
+                    return _context24.stop();
                 }
               }
-            }, _callee15, this);
+            }, _callee24, this);
           }));
         }
       }, {
         key: "openDestinationModal",
         value: function openDestinationModal() {
-          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee16() {
-            var _this11 = this;
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee25() {
+            var _this18 = this;
 
             var modal;
-            return regeneratorRuntime.wrap(function _callee16$(_context16) {
+            return regeneratorRuntime.wrap(function _callee25$(_context25) {
               while (1) {
-                switch (_context16.prev = _context16.next) {
+                switch (_context25.prev = _context25.next) {
                   case 0:
-                    _context16.next = 2;
+                    _context25.next = 2;
                     return this.modalController.create({
                       component: src_app_shared_select_city_select_city_component__WEBPACK_IMPORTED_MODULE_7__["SelectCityComponent"],
                       cssClass: "my-custom-class"
                     });
 
                   case 2:
-                    modal = _context16.sent;
-                    _context16.next = 5;
+                    modal = _context25.sent;
+                    _context25.next = 5;
                     return modal.present().then(function () {
                       modal.onWillDismiss().then(function (response) {
-                        _this11.destination = response.data.city;
+                        _this18.destination = response.data.city;
 
-                        if (_this11.destination) {
-                          _this11.shippingForm.controls["destination"].setValue(_this11.destination.name);
+                        if (_this18.destination) {
+                          _this18.shippingForm.controls["destination"].setValue(_this18.destination.name);
                         } else {
-                          _this11.shippingForm.controls["destination"].setValue(null);
+                          _this18.shippingForm.controls["destination"].setValue(null);
                         }
                       });
                     });
 
                   case 5:
-                    return _context16.abrupt("return", _context16.sent);
+                    return _context25.abrupt("return", _context25.sent);
 
                   case 6:
                   case "end":
-                    return _context16.stop();
+                    return _context25.stop();
                 }
               }
-            }, _callee16, this);
+            }, _callee25, this);
           }));
         }
       }, {
-        key: "saveShipping",
-        value: function saveShipping() {
-          var controls = this.shippingForm.controls;
+        key: "getPost",
+        value: function getPost() {
+          var _this19 = this;
 
-          if (this.shippingForm.invalid) {
-            Object.keys(controls).forEach(function (controlName) {
-              return controls[controlName].markAsTouched();
-            });
-            return;
-          }
+          this.postService.getById(this.auth, this.shippingId).toPromise().then(function (res) {
+            var result = res.json();
 
-          var body = {
-            type: 1,
-            title: controls["title"].value,
-            description: controls["description"].value,
-            date: controls["date"].value,
-            origin: this.origin,
-            destination: this.destination,
-            user: {
-              id: this.auth.id
-            }
-          };
-          this.formData.append("postCommand", new Blob([JSON.stringify(body)], {
-            type: "application/json"
-          }));
-          this.postService.save(this.formData, this.auth.token).toPromise().then(function (res) {
-            //const result = res.json();
-            console.log(res);
+            _this19.shippingForm.controls["title"].setValue(result.title);
+
+            _this19.shippingForm.controls["description"].setValue(result.description);
+
+            _this19.shippingForm.controls["date"].setValue(result.date);
+
+            _this19.shippingForm.controls["origin"].setValue(result.origin.name);
+
+            _this19.shippingForm.controls["destination"].setValue(result.destination.name);
+
+            _this19.origin = result.origin;
+            _this19.destination = result.destination;
           }, function (err) {
             var error = JSON.parse(err._body);
             console.log(error);
           });
+        }
+      }, {
+        key: "saveShipping",
+        value: function saveShipping() {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee28() {
+            var _this20 = this;
+
+            var controls, body, action;
+            return regeneratorRuntime.wrap(function _callee28$(_context28) {
+              while (1) {
+                switch (_context28.prev = _context28.next) {
+                  case 0:
+                    controls = this.shippingForm.controls;
+
+                    if (!this.shippingForm.invalid) {
+                      _context28.next = 4;
+                      break;
+                    }
+
+                    Object.keys(controls).forEach(function (controlName) {
+                      return controls[controlName].markAsTouched();
+                    });
+                    return _context28.abrupt("return");
+
+                  case 4:
+                    body = {
+                      type: 1,
+                      title: controls["title"].value,
+                      description: controls["description"].value,
+                      date: controls["date"].value,
+                      origin: this.origin,
+                      destination: this.destination,
+                      user: {
+                        id: this.auth.id
+                      }
+                    };
+
+                    if (this.shippingId !== "0") {
+                      body = Object.assign(Object.assign({}, body), {
+                        id: this.shippingId
+                      });
+                    }
+
+                    this.formData.append("postCommand", new Blob([JSON.stringify(body)], {
+                      type: "application/json"
+                    }));
+                    action = this.postService.save(this.formData, this.auth.token);
+
+                    if (body.id) {
+                      action = this.postService.update(this.formData, this.auth.token);
+                    }
+
+                    _context28.next = 11;
+                    return this.loadingController.create({
+                      message: "Cargando..."
+                    });
+
+                  case 11:
+                    this.loading = _context28.sent;
+                    _context28.next = 14;
+                    return this.loading.present();
+
+                  case 14:
+                    action.toPromise().then(function (res) {
+                      return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this20, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee26() {
+                        var alert;
+                        return regeneratorRuntime.wrap(function _callee26$(_context26) {
+                          while (1) {
+                            switch (_context26.prev = _context26.next) {
+                              case 0:
+                                this.initializeShippingFormControls();
+                                _context26.next = 3;
+                                return this.loading.dismiss();
+
+                              case 3:
+                                _context26.next = 5;
+                                return this.alertController.create({
+                                  header: "Guardado exitoso",
+                                  message: "Tu publicación se ha guardado correctamente",
+                                  buttons: [{
+                                    text: "Aceptar",
+                                    role: "cancel",
+                                    handler: function handler() {
+                                      return false;
+                                    }
+                                  }]
+                                });
+
+                              case 5:
+                                alert = _context26.sent;
+                                alert.present();
+
+                              case 7:
+                              case "end":
+                                return _context26.stop();
+                            }
+                          }
+                        }, _callee26, this);
+                      }));
+                    }, function (err) {
+                      return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this20, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee27() {
+                        var error;
+                        return regeneratorRuntime.wrap(function _callee27$(_context27) {
+                          while (1) {
+                            switch (_context27.prev = _context27.next) {
+                              case 0:
+                                _context27.next = 2;
+                                return this.loading.dismiss();
+
+                              case 2:
+                                error = JSON.parse(err._body);
+                                console.log(error);
+
+                              case 4:
+                              case "end":
+                                return _context27.stop();
+                            }
+                          }
+                        }, _callee27, this);
+                      }));
+                    });
+
+                  case 15:
+                  case "end":
+                    return _context28.stop();
+                }
+              }
+            }, _callee28, this);
+          }));
         }
       }, {
         key: "goBackToDashboard",
@@ -2288,7 +2817,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "goToSellForm",
         value: function goToSellForm() {
           if (this.activeTab !== 2) {
-            this.router.navigate(["posts/create-sell"]);
+            this.router.navigate(["posts/create-sell/0"]);
           }
         }
       }, {
@@ -2310,17 +2839,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     ShippingFormPage.ctorParameters = function () {
       return [{
-        type: _post_service__WEBPACK_IMPORTED_MODULE_3__["PostService"]
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["AlertController"]
       }, {
-        type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]
-      }, {
-        type: _ionic_storage__WEBPACK_IMPORTED_MODULE_5__["Storage"]
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["LoadingController"]
       }, {
         type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ModalController"]
       }, {
+        type: _post_service__WEBPACK_IMPORTED_MODULE_3__["PostService"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]
+      }, {
         type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["DomSanitizer"]
       }, {
-        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["LoadingController"]
+        type: _ionic_storage__WEBPACK_IMPORTED_MODULE_5__["Storage"]
       }];
     };
 

@@ -3,7 +3,11 @@ import { Router, ActivatedRoute } from "@angular/router";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { PostService } from "../post.service";
 import { Storage } from "@ionic/storage";
-import { ModalController, LoadingController } from "@ionic/angular";
+import {
+  ModalController,
+  LoadingController,
+  AlertController,
+} from "@ionic/angular";
 import { SelectCityComponent } from "src/app/shared/select-city/select-city.component";
 import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 import { CameraSource, Plugins, CameraResultType } from "@capacitor/core";
@@ -23,19 +27,20 @@ export class SellFormPage implements OnInit {
   private photo1: SafeResourceUrl;
   private photo2: SafeResourceUrl;
   private photo3: SafeResourceUrl;
-  private sellId: string;
   private sellForm: FormGroup;
+  private sellId: string;
   private subscription: any;
   private title: string;
   public activeTab: number;
   constructor(
-    private router: Router,
-    private postService: PostService,
-    private storage: Storage,
-    private route: ActivatedRoute,
+    private alertController: AlertController,
+    private loadingController: LoadingController,
     private modalController: ModalController,
+    private postService: PostService,
+    private route: ActivatedRoute,
+    private router: Router,
     private sanitizer: DomSanitizer,
-    private loadingController: LoadingController
+    private storage: Storage
   ) {}
 
   ngOnInit() {
@@ -67,10 +72,15 @@ export class SellFormPage implements OnInit {
       origin: new FormControl("origin", [Validators.required]),
     });
 
+    this.initializeSellFormControls();
+  }
+
+  initializeSellFormControls() {
     this.sellForm.controls["title"].setValue(null);
     this.sellForm.controls["description"].setValue(null);
     this.sellForm.controls["price"].setValue(null);
     this.sellForm.controls["origin"].setValue(null);
+    this.origin = null;
   }
 
   async selectPhoto(slide: number) {
@@ -161,7 +171,7 @@ export class SellFormPage implements OnInit {
     });
   }
 
-  saveSell() {
+  async saveSell() {
     let controls = this.sellForm.controls;
     if (this.sellForm.invalid) {
       Object.keys(controls).forEach((controlName) =>
@@ -194,12 +204,33 @@ export class SellFormPage implements OnInit {
     if (body.id) {
       action = this.postService.update(this.formData, this.auth.token);
     }
+
+    this.loading = await this.loadingController.create({
+      message: "Cargando...",
+    });
+    await this.loading.present();
+
     action.toPromise().then(
-      (res) => {
-        //const result = res.json();
-        console.log(res);
+      async (res) => {
+        this.initializeSellFormControls();
+        await this.loading.dismiss();
+        let alert = await this.alertController.create({
+          header: "Guardado exitoso",
+          message: "Tu publicación se ha guardado correctamente",
+          buttons: [
+            {
+              text: "Aceptar",
+              role: "cancel",
+              handler: () => {
+                return false;
+              },
+            },
+          ],
+        });
+        alert.present();
       },
-      (err) => {
+      async (err) => {
+        await this.loading.dismiss();
         let error = JSON.parse(err._body);
         console.log(error);
       }

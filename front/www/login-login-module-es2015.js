@@ -43,6 +43,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/__ivy_ngcc__/fesm2015/ionic-storage.js");
 /* harmony import */ var _login_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./login.service */ "./src/app/login/form/login.service.ts");
 /* harmony import */ var src_app_users_users_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/users/users.service */ "./src/app/users/users.service.ts");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+
 
 
 
@@ -51,11 +53,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let FormPage = class FormPage {
-    constructor(loginService, router, storage, usersService) {
+    constructor(loginService, router, storage, usersService, menuController, loadingController) {
         this.loginService = loginService;
         this.router = router;
         this.storage = storage;
         this.usersService = usersService;
+        this.menuController = menuController;
+        this.loadingController = loadingController;
     }
     ngOnInit() {
         this.imageUrl = "../../assets/logo/otoro-logo.png";
@@ -67,6 +71,9 @@ let FormPage = class FormPage {
         this.myForm.controls["email"].setValue(null);
         this.myForm.controls["password"].setValue(null);
     }
+    ionViewWillEnter() {
+        this.menuController.enable(false);
+    }
     controlHasError(controlName, validationType) {
         const control = this.myForm.controls[controlName];
         if (!control) {
@@ -76,35 +83,46 @@ let FormPage = class FormPage {
         return result;
     }
     login() {
-        let controls = this.myForm.controls;
-        if (this.myForm.invalid) {
-            Object.keys(controls).forEach((controlName) => controls[controlName].markAsTouched());
-            return;
-        }
-        const body = {
-            email: controls["email"].value,
-            password: controls["password"].value,
-        };
-        this.loginService
-            .run(body)
-            .toPromise()
-            .then((res) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            let result = res.json();
-            let deviceToken = yield this.storage.get("deviceToken");
-            this.storage.set("auth", result);
-            let user = {
-                active: result.active,
-                deviceToken: deviceToken,
-                email: result.email,
-                id: result.id,
-                name: result.name,
-                roles: result.roles,
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            let controls = this.myForm.controls;
+            if (this.myForm.invalid) {
+                Object.keys(controls).forEach((controlName) => controls[controlName].markAsTouched());
+                return;
+            }
+            const body = {
+                email: controls["email"].value,
+                password: controls["password"].value,
             };
-            this.updateUser(user, result.token);
-        }), (err) => {
-            console.log(err);
-            let error = JSON.parse(err._body);
-            console.log(error);
+            this.loading = yield this.loadingController.create({
+                message: "Cargando...",
+            });
+            yield this.loading.present();
+            this.loginService
+                .run(body)
+                .toPromise()
+                .then((res) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+                let result = res.json();
+                let deviceToken = yield this.storage.get("deviceToken");
+                this.storage.set("auth", result);
+                let user = {
+                    active: result.active,
+                    deviceToken: deviceToken,
+                    email: result.email,
+                    id: result.id,
+                    name: result.name,
+                    roles: result.roles,
+                    city: result.city,
+                    phone: result.phone,
+                    serviceDescription: result.serviceDescription,
+                    profilePicture: result.profilePicture,
+                };
+                this.updateUser(user, result.token);
+            }), (err) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+                console.log(err);
+                let error = JSON.parse(err._body);
+                console.log(error);
+                yield this.loading.dismiss();
+            }));
         });
     }
     updateUser(body, token) {
@@ -112,12 +130,15 @@ let FormPage = class FormPage {
             .update(body, token)
             .toPromise()
             .then((res) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            this.menuController.enable(true);
+            yield this.loading.dismiss();
             this.router.navigate(["/dashboard"]);
-        }), (err) => {
+        }), (err) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             console.log(err);
             let error = JSON.parse(err._body);
             console.log(error);
-        });
+            yield this.loading.dismiss();
+        }));
     }
     goToRecoverPassword() {
         this.router.navigate(["/users/recover-password"]);
@@ -130,7 +151,9 @@ FormPage.ctorParameters = () => [
     { type: _login_service__WEBPACK_IMPORTED_MODULE_5__["LoginService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
     { type: _ionic_storage__WEBPACK_IMPORTED_MODULE_4__["Storage"] },
-    { type: src_app_users_users_service__WEBPACK_IMPORTED_MODULE_6__["UsersService"] }
+    { type: src_app_users_users_service__WEBPACK_IMPORTED_MODULE_6__["UsersService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__["MenuController"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__["LoadingController"] }
 ];
 FormPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({

@@ -503,7 +503,7 @@ let DashboardPage = class DashboardPage {
         };
     }
     goToPostCreation() {
-        this.router.navigate(["posts/create-shipping"]);
+        this.router.navigate(["posts/create-shipping/0"]);
     }
 };
 DashboardPage.ctorParameters = () => [

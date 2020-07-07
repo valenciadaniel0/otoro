@@ -35,7 +35,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ folder }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div id=\"container\">\r\n    <h4 class=\"centered-text\">Que quieres publicar?</h4>\r\n    <ion-row id=\"form-container\">\r\n      <ion-slides>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo1\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(1)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(1)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo2\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(2)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(2)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo3\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(3)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(3)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n      </ion-slides>\r\n      <ion-col col-12>\r\n        <form [formGroup]=\"sellForm\">\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">T&iacute;tulo</label>\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control width-100\"\r\n              formControlName=\"title\"\r\n            />\r\n            <span *ngIf=\"controlHasError('title', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Descripci&oacute;n</label>\r\n            <textarea\r\n              class=\"form-control width-100\"\r\n              formControlName=\"description\"\r\n            ></textarea>\r\n            <span *ngIf=\"controlHasError('description', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Precio</label>\r\n            <input\r\n              class=\"form-control width-100\"\r\n              formControlName=\"price\"\r\n              type=\"number\"\r\n            />\r\n            <span *ngIf=\"controlHasError('price', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Ubicaci&oacute;n</label>\r\n            <ion-item (click)=\"openOriginModal()\">\r\n              <span *ngIf=\"!origin\">Selecciona una ubicaci&oacute;n</span>\r\n              <span *ngIf=\"origin\">{{origin.name}}</span>\r\n            </ion-item>\r\n            <input type=\"text\" class=\"display-none\" formControlName=\"origin\" />\r\n            <span *ngIf=\"controlHasError('origin', 'required')\">\r\n              <strong class=\"error\">Selecciona una ciudad</strong>\r\n            </span>\r\n          </div>\r\n        </form>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button color=\"primary\" (click)=\"saveSell()\" class=\"width-100\">\r\n          Guardar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button\r\n          color=\"danger\"\r\n          (click)=\"goBackToDashboard()\"\r\n          class=\"width-100\"\r\n        >\r\n          Cancelar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </div>\r\n  <ion-grid id=\"tabs-container\">\r\n    <ion-row>\r\n      <ion-col (click)=\"goToShippingForm()\" col-6 class=\"centered-text\">\r\n        <ion-icon name=\"send\"></ion-icon>\r\n        <ion-label>Envio</ion-label>\r\n      </ion-col>\r\n      <ion-col col-6 class=\"centered-text\">\r\n        <ion-icon name=\"pricetag\"></ion-icon>\r\n        <ion-label>Venta</ion-label>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ folder }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div id=\"container\">\r\n    <h4 class=\"centered-text\">{{title}}</h4>\r\n    <ion-row id=\"form-container\">\r\n      <ion-slides>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo1\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(1)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(1)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo2\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(2)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(2)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo3\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(3)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(3)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n      </ion-slides>\r\n      <ion-col col-12>\r\n        <form [formGroup]=\"sellForm\">\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">T&iacute;tulo</label>\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control width-100\"\r\n              formControlName=\"title\"\r\n            />\r\n            <span *ngIf=\"controlHasError('title', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Descripci&oacute;n</label>\r\n            <textarea\r\n              class=\"form-control width-100\"\r\n              formControlName=\"description\"\r\n            ></textarea>\r\n            <span *ngIf=\"controlHasError('description', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Precio</label>\r\n            <input\r\n              class=\"form-control width-100\"\r\n              formControlName=\"price\"\r\n              type=\"number\"\r\n            />\r\n            <span *ngIf=\"controlHasError('price', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Ubicaci&oacute;n</label>\r\n            <ion-item (click)=\"openOriginModal()\">\r\n              <span *ngIf=\"!origin\">Selecciona una ubicaci&oacute;n</span>\r\n              <span *ngIf=\"origin\">{{origin.name}}</span>\r\n            </ion-item>\r\n            <input type=\"text\" class=\"display-none\" formControlName=\"origin\" />\r\n            <span *ngIf=\"controlHasError('origin', 'required')\">\r\n              <strong class=\"error\">Selecciona una ciudad</strong>\r\n            </span>\r\n          </div>\r\n        </form>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button color=\"primary\" (click)=\"saveSell()\" class=\"width-100\">\r\n          Guardar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button\r\n          color=\"danger\"\r\n          (click)=\"goBackToDashboard()\"\r\n          class=\"width-100\"\r\n        >\r\n          Cancelar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </div>\r\n  <ion-grid id=\"tabs-container\">\r\n    <ion-row>\r\n      <ion-col (click)=\"goToShippingForm()\" col-6 class=\"centered-text\">\r\n        <ion-icon name=\"send\"></ion-icon>\r\n        <ion-label>Envio</ion-label>\r\n      </ion-col>\r\n      <ion-col col-6 class=\"centered-text\">\r\n        <ion-icon name=\"pricetag\"></ion-icon>\r\n        <ion-label>Venta</ion-label>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -48,7 +48,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ folder }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div id=\"container\">\r\n    <h4 class=\"centered-text\">Que quieres publicar?</h4>\r\n    <ion-row id=\"form-container\">\r\n      <ion-slides>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo1\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(1)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(1)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo2\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(2)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(2)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo3\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(3)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(3)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n      </ion-slides>\r\n      <ion-col col-12>\r\n        <form [formGroup]=\"shippingForm\">\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">T&iacute;tulo</label>\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control width-100\"\r\n              formControlName=\"title\"\r\n            />\r\n            <span *ngIf=\"controlHasError('title', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Descripci&oacute;n</label>\r\n            <textarea\r\n              class=\"form-control width-100\"\r\n              formControlName=\"description\"\r\n            ></textarea>\r\n            <span *ngIf=\"controlHasError('description', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <ion-item>\r\n              <ion-label class=\"bold\">Selecciona fecha</ion-label>\r\n              <ion-datetime\r\n                id=\"dynamicDisabled\"\r\n                displayFormat=\"MMMM DD YYYY\"\r\n                value=\"1994-12-15\"\r\n                formControlName=\"date\"\r\n              ></ion-datetime>\r\n            </ion-item>\r\n            <span *ngIf=\"controlHasError('date', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Origen del envio</label>\r\n            <ion-item (click)=\"openOriginModal()\">\r\n              <span *ngIf=\"!origin\">Selecciona un origen</span>\r\n              <span *ngIf=\"origin\">{{origin.name}}</span>\r\n            </ion-item>\r\n            <input type=\"text\" class=\"display-none\" formControlName=\"origin\" />\r\n            <span *ngIf=\"controlHasError('origin', 'required')\">\r\n              <strong class=\"error\">Selecciona una ciudad</strong>\r\n            </span>\r\n          </div>\r\n\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Origen del destino</label>\r\n            <ion-item (click)=\"openDestinationModal()\">\r\n              <span *ngIf=\"!destination\">Selecciona un destino</span>\r\n              <span *ngIf=\"destination\">{{destination.name}}</span>\r\n            </ion-item>\r\n            <input\r\n              type=\"text\"\r\n              class=\"display-none\"\r\n              formControlName=\"destination\"\r\n              display=\"none\"\r\n            />\r\n            <span *ngIf=\"controlHasError('destination', 'required')\">\r\n              <strong class=\"error\">Selecciona una ciudad</strong>\r\n            </span>\r\n          </div>\r\n        </form>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button color=\"primary\" (click)=\"saveShipping()\" class=\"width-100\">\r\n          Guardar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button\r\n          color=\"danger\"\r\n          (click)=\"goBackToDashboard()\"\r\n          class=\"width-100\"\r\n        >\r\n          Cancelar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </div>\r\n  <ion-grid id=\"tabs-container\">\r\n    <ion-row>\r\n      <ion-col col-6 class=\"centered-text\">\r\n        <ion-icon name=\"send\"></ion-icon>\r\n        <ion-label>Envio</ion-label>\r\n      </ion-col>\r\n      <ion-col (click)=\"goToSellForm()\" col-6 class=\"centered-text\">\r\n        <ion-icon name=\"pricetag\"></ion-icon>\r\n        <ion-label>Venta</ion-label>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ folder }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div id=\"container\">\r\n    <h4 class=\"centered-text\">{{title}}</h4>\r\n    <ion-row id=\"form-container\">\r\n      <ion-slides>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo1\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(1)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(1)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo2\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(2)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(2)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n        <ion-slide>\r\n          <ion-row>\r\n            <ion-col>\r\n              <img [src]=\"photo3\" />\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"takePicture(3)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"camera\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n            <ion-col>\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"selectPhoto(3)\"\r\n                class=\"width-100\"\r\n              >\r\n                <ion-icon name=\"image-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-slide>\r\n      </ion-slides>\r\n      <ion-col col-12>\r\n        <form [formGroup]=\"shippingForm\">\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">T&iacute;tulo</label>\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control width-100\"\r\n              formControlName=\"title\"\r\n            />\r\n            <span *ngIf=\"controlHasError('title', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Descripci&oacute;n</label>\r\n            <textarea\r\n              class=\"form-control width-100\"\r\n              formControlName=\"description\"\r\n            ></textarea>\r\n            <span *ngIf=\"controlHasError('description', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <ion-item>\r\n              <ion-label class=\"bold\">Selecciona fecha</ion-label>\r\n              <ion-datetime\r\n                id=\"dynamicDisabled\"\r\n                displayFormat=\"MMMM DD YYYY\"\r\n                value=\"1994-12-15\"\r\n                formControlName=\"date\"\r\n              ></ion-datetime>\r\n            </ion-item>\r\n            <span *ngIf=\"controlHasError('date', 'required')\">\r\n              <strong class=\"error\">Campo requerido</strong>\r\n            </span>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Origen del envio</label>\r\n            <ion-item (click)=\"openOriginModal()\">\r\n              <span *ngIf=\"!origin\">Selecciona un origen</span>\r\n              <span *ngIf=\"origin\">{{origin.name}}</span>\r\n            </ion-item>\r\n            <input type=\"text\" class=\"display-none\" formControlName=\"origin\" />\r\n            <span *ngIf=\"controlHasError('origin', 'required')\">\r\n              <strong class=\"error\">Selecciona una ciudad</strong>\r\n            </span>\r\n          </div>\r\n\r\n          <div class=\"form-group\">\r\n            <label class=\"bold\">Origen del destino</label>\r\n            <ion-item (click)=\"openDestinationModal()\">\r\n              <span *ngIf=\"!destination\">Selecciona un destino</span>\r\n              <span *ngIf=\"destination\">{{destination.name}}</span>\r\n            </ion-item>\r\n            <input\r\n              type=\"text\"\r\n              class=\"display-none\"\r\n              formControlName=\"destination\"\r\n              display=\"none\"\r\n            />\r\n            <span *ngIf=\"controlHasError('destination', 'required')\">\r\n              <strong class=\"error\">Selecciona una ciudad</strong>\r\n            </span>\r\n          </div>\r\n        </form>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button color=\"primary\" (click)=\"saveShipping()\" class=\"width-100\">\r\n          Guardar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col col-12>\r\n        <ion-button\r\n          color=\"danger\"\r\n          (click)=\"goBackToDashboard()\"\r\n          class=\"width-100\"\r\n        >\r\n          Cancelar\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </div>\r\n  <ion-grid id=\"tabs-container\">\r\n    <ion-row>\r\n      <ion-col col-6 class=\"centered-text\">\r\n        <ion-icon name=\"send\"></ion-icon>\r\n        <ion-label>Envio</ion-label>\r\n      </ion-col>\r\n      <ion-col (click)=\"goToSellForm()\" col-6 class=\"centered-text\">\r\n        <ion-icon name=\"pricetag\"></ion-icon>\r\n        <ion-label>Venta</ion-label>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -75,6 +75,18 @@ let PostService = class PostService {
     save(body, token) {
         let url = `posts`;
         return this.service.queryPost(url, body, token);
+    }
+    update(body, token) {
+        let url = `posts`;
+        return this.service.queryPut(url, body, token);
+    }
+    delete(id, token) {
+        let url = `posts/${id}`;
+        return this.service.queryDelete(url, token);
+    }
+    getById(auth, id) {
+        let url = `posts/${id}`;
+        return this.service.queryGet(url, auth.token);
     }
     getByType(auth, type) {
         let url = `posts/get-by-type/${type}/${auth.id}`;
@@ -225,11 +237,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let PostsListGeneralPage = class PostsListGeneralPage {
-    constructor(route, postService, storage, modalController) {
+    constructor(route, router, postService, storage, modalController, loadingController) {
         this.route = route;
+        this.router = router;
         this.postService = postService;
         this.storage = storage;
         this.modalController = modalController;
+        this.loadingController = loadingController;
         this.activeTab = 1;
         this.sells = [];
         this.shippings = [];
@@ -260,6 +274,18 @@ let PostsListGeneralPage = class PostsListGeneralPage {
                 cssClass: "my-custom-class",
             });
             return yield modal.present().then(() => {
+                modal.onWillDismiss().then((response) => {
+                    let postId = response.data.postId;
+                    let postType = response.data.postType;
+                    if (postId && postType) {
+                        if (postType === 1) {
+                            this.router.navigate([`posts/create-shipping/${postId}`]);
+                        }
+                        else {
+                            this.router.navigate([`posts/create-sell/${postId}`]);
+                        }
+                    }
+                });
             });
         });
     }
@@ -273,6 +299,22 @@ let PostsListGeneralPage = class PostsListGeneralPage {
                 cssClass: "my-custom-class",
             });
             return yield modal.present().then(() => {
+                modal.onWillDismiss().then((response) => {
+                    let postId = response.data.postId;
+                    let postType = response.data.postType;
+                    let deletePost = response.data.delete;
+                    if (postId && postType) {
+                        if (postType === 1) {
+                            this.router.navigate([`posts/create-shipping/${postId}`]);
+                        }
+                        else {
+                            this.router.navigate([`posts/create-sell/${postId}`]);
+                        }
+                    }
+                    else if (postId && deletePost) {
+                        this.deletePost(postId);
+                    }
+                });
             });
         });
     }
@@ -333,15 +375,43 @@ let PostsListGeneralPage = class PostsListGeneralPage {
             console.log(error);
         });
     }
+    deletePost(postId) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            this.loading = yield this.loadingController.create({
+                message: "Cargando...",
+            });
+            yield this.loading.present();
+            this.postService
+                .delete(postId, this.auth.token)
+                .toPromise()
+                .then((res) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+                yield this.loading.present();
+                if (this.activeTab === 1) {
+                    this.getShippings();
+                }
+                else {
+                    this.getSells();
+                }
+            }), (err) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+                yield this.loading.present();
+                let error = JSON.parse(err._body);
+                console.log(error);
+            }));
+        });
+    }
     ngOnDestroy() {
-        this.sub.unsubscribe();
+        if (this.sub) {
+            this.sub.unsubscribe();
+        }
     }
 };
 PostsListGeneralPage.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
     { type: _post_service__WEBPACK_IMPORTED_MODULE_4__["PostService"] },
     { type: _ionic_storage__WEBPACK_IMPORTED_MODULE_3__["Storage"] },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ModalController"] }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ModalController"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["LoadingController"] }
 ];
 PostsListGeneralPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -477,11 +547,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let PostsListPage = class PostsListPage {
-    constructor(route, postService, storage, modalController) {
+    constructor(route, postService, storage, modalController, router, loadingController) {
         this.route = route;
         this.postService = postService;
         this.storage = storage;
         this.modalController = modalController;
+        this.router = router;
+        this.loadingController = loadingController;
         this.activeTab = 1;
         this.sells = [];
         this.shippings = [];
@@ -529,7 +601,48 @@ let PostsListPage = class PostsListPage {
                 },
                 cssClass: "my-custom-class",
             });
-            return yield modal.present().then(() => { });
+            return yield modal.present().then(() => {
+                modal.onWillDismiss().then((response) => {
+                    let postId = response.data.postId;
+                    let postType = response.data.postType;
+                    let deletePost = response.data.delete;
+                    if (postId && postType) {
+                        if (postType === 1) {
+                            this.router.navigate([`posts/create-shipping/${postId}`]);
+                        }
+                        else {
+                            this.router.navigate([`posts/create-sell/${postId}`]);
+                        }
+                    }
+                    else if (postId && deletePost) {
+                        this.deletePost(postId);
+                    }
+                });
+            });
+        });
+    }
+    deletePost(postId) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            this.loading = yield this.loadingController.create({
+                message: "Cargando...",
+            });
+            yield this.loading.present();
+            this.postService
+                .delete(postId, this.auth.token)
+                .toPromise()
+                .then((res) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+                yield this.loading.dismiss();
+                if (this.activeTab === 1) {
+                    this.getShippings();
+                }
+                else {
+                    this.getSells();
+                }
+            }), (err) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+                yield this.loading.dismiss();
+                let error = JSON.parse(err._body);
+                console.log(error);
+            }));
         });
     }
     changeActiveTab(tabNumber) {
@@ -566,14 +679,18 @@ let PostsListPage = class PostsListPage {
         });
     }
     ngOnDestroy() {
-        this.sub.unsubscribe();
+        if (this.sub) {
+            this.sub.unsubscribe();
+        }
     }
 };
 PostsListPage.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
     { type: _post_service__WEBPACK_IMPORTED_MODULE_3__["PostService"] },
     { type: _ionic_storage__WEBPACK_IMPORTED_MODULE_4__["Storage"] },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__["ModalController"] }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__["ModalController"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__["LoadingController"] }
 ];
 PostsListPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -605,11 +722,11 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [
     {
-        path: "create-shipping",
+        path: "create-shipping/:id",
         loadChildren: () => Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./shipping-form/shipping-form.module */ "./src/app/posts/shipping-form/shipping-form.module.ts")).then((m) => m.ShippingFormPageModule),
     },
     {
-        path: "create-sell",
+        path: "create-sell/:id",
         loadChildren: () => Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./sell-form/sell-form.module */ "./src/app/posts/sell-form/sell-form.module.ts")).then((m) => m.SellFormPageModule),
     },
     {
@@ -821,15 +938,30 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let SellFormPage = class SellFormPage {
-    constructor(router, postService, storage, modalController, sanitizer, loadingController) {
-        this.router = router;
-        this.postService = postService;
-        this.storage = storage;
-        this.modalController = modalController;
-        this.sanitizer = sanitizer;
+    constructor(alertController, loadingController, modalController, postService, route, router, sanitizer, storage) {
+        this.alertController = alertController;
         this.loadingController = loadingController;
+        this.modalController = modalController;
+        this.postService = postService;
+        this.route = route;
+        this.router = router;
+        this.sanitizer = sanitizer;
+        this.storage = storage;
     }
     ngOnInit() {
+        this.title = "Que quieres publicar?";
+        this.subscription = this.route.params.subscribe((params) => {
+            this.sellId = params["id"];
+            if (this.sellId !== "0") {
+                this.title = "Editar venta";
+            }
+            this.storage.get("auth").then((auth) => {
+                this.auth = auth;
+                if (this.sellId !== "0") {
+                    this.getPost();
+                }
+            });
+        });
         this.formData = new FormData();
         this.activeTab = 2;
         this.storage.get("auth").then((auth) => {
@@ -841,10 +973,14 @@ let SellFormPage = class SellFormPage {
             price: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]("price", [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]),
             origin: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]("origin", [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]),
         });
+        this.initializeSellFormControls();
+    }
+    initializeSellFormControls() {
         this.sellForm.controls["title"].setValue(null);
         this.sellForm.controls["description"].setValue(null);
         this.sellForm.controls["price"].setValue(null);
         this.sellForm.controls["origin"].setValue(null);
+        this.origin = null;
     }
     selectPhoto(slide) {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
@@ -898,6 +1034,22 @@ let SellFormPage = class SellFormPage {
             yield this.loading.dismiss();
         });
     }
+    getPost() {
+        this.postService
+            .getById(this.auth, this.sellId)
+            .toPromise()
+            .then((res) => {
+            const result = res.json();
+            this.sellForm.controls["title"].setValue(result.title);
+            this.sellForm.controls["description"].setValue(result.description);
+            this.sellForm.controls["price"].setValue(result.price);
+            this.sellForm.controls["origin"].setValue(result.origin.name);
+            this.origin = result.origin;
+        }, (err) => {
+            let error = JSON.parse(err._body);
+            console.log(error);
+        });
+    }
     openOriginModal() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             const modal = yield this.modalController.create({
@@ -918,32 +1070,57 @@ let SellFormPage = class SellFormPage {
         });
     }
     saveSell() {
-        let controls = this.sellForm.controls;
-        if (this.sellForm.invalid) {
-            Object.keys(controls).forEach((controlName) => controls[controlName].markAsTouched());
-            return;
-        }
-        const body = {
-            type: 2,
-            image: "",
-            title: controls["title"].value,
-            description: controls["description"].value,
-            price: controls["price"].value,
-            origin: this.origin,
-            user: { id: this.auth.id },
-        };
-        this.formData.append("postCommand", new Blob([JSON.stringify(body)], {
-            type: "application/json",
-        }));
-        this.postService
-            .save(this.formData, this.auth.token)
-            .toPromise()
-            .then((res) => {
-            //const result = res.json();
-            console.log(res);
-        }, (err) => {
-            let error = JSON.parse(err._body);
-            console.log(error);
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            let controls = this.sellForm.controls;
+            if (this.sellForm.invalid) {
+                Object.keys(controls).forEach((controlName) => controls[controlName].markAsTouched());
+                return;
+            }
+            let body = {
+                type: 2,
+                image: "",
+                title: controls["title"].value,
+                description: controls["description"].value,
+                price: controls["price"].value,
+                origin: this.origin,
+                user: { id: this.auth.id },
+            };
+            if (this.sellId !== "0") {
+                body = Object.assign(Object.assign({}, body), { id: this.sellId });
+            }
+            this.formData.append("postCommand", new Blob([JSON.stringify(body)], {
+                type: "application/json",
+            }));
+            let action = this.postService.save(this.formData, this.auth.token);
+            if (body.id) {
+                action = this.postService.update(this.formData, this.auth.token);
+            }
+            this.loading = yield this.loadingController.create({
+                message: "Cargando...",
+            });
+            yield this.loading.present();
+            action.toPromise().then((res) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+                this.initializeSellFormControls();
+                yield this.loading.dismiss();
+                let alert = yield this.alertController.create({
+                    header: "Guardado exitoso",
+                    message: "Tu publicación se ha guardado correctamente",
+                    buttons: [
+                        {
+                            text: "Aceptar",
+                            role: "cancel",
+                            handler: () => {
+                                return false;
+                            },
+                        },
+                    ],
+                });
+                alert.present();
+            }), (err) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+                yield this.loading.dismiss();
+                let error = JSON.parse(err._body);
+                console.log(error);
+            }));
         });
     }
     goBackToDashboard() {
@@ -951,7 +1128,7 @@ let SellFormPage = class SellFormPage {
     }
     goToShippingForm() {
         if (this.activeTab !== 1) {
-            this.router.navigate(["posts/create-shipping"]);
+            this.router.navigate(["posts/create-shipping/0"]);
         }
     }
     controlHasError(controlName, validationType) {
@@ -962,14 +1139,21 @@ let SellFormPage = class SellFormPage {
         const result = control.hasError(validationType) && (control.dirty || control.touched);
         return result;
     }
+    ngOnDestroy() {
+        if (this.subscription) {
+            this.subscription.unsubscribe();
+        }
+    }
 };
 SellFormPage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
-    { type: _post_service__WEBPACK_IMPORTED_MODULE_4__["PostService"] },
-    { type: _ionic_storage__WEBPACK_IMPORTED_MODULE_5__["Storage"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["AlertController"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["LoadingController"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ModalController"] },
+    { type: _post_service__WEBPACK_IMPORTED_MODULE_4__["PostService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
     { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["DomSanitizer"] },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["LoadingController"] }
+    { type: _ionic_storage__WEBPACK_IMPORTED_MODULE_5__["Storage"] }
 ];
 SellFormPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1109,20 +1293,32 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ShippingFormPage = class ShippingFormPage {
-    constructor(postService, router, storage, modalController, sanitizer, loadingController) {
-        this.postService = postService;
-        this.router = router;
-        this.storage = storage;
-        this.modalController = modalController;
-        this.sanitizer = sanitizer;
+    constructor(alertController, loadingController, modalController, postService, route, router, sanitizer, storage) {
+        this.alertController = alertController;
         this.loadingController = loadingController;
+        this.modalController = modalController;
+        this.postService = postService;
+        this.route = route;
+        this.router = router;
+        this.sanitizer = sanitizer;
+        this.storage = storage;
     }
     ngOnInit() {
+        this.title = "Que quieres publicar?";
+        this.sub = this.route.params.subscribe((params) => {
+            this.shippingId = params["id"];
+            if (this.shippingId !== "0") {
+                this.title = "Editar envio";
+            }
+            this.storage.get("auth").then((auth) => {
+                this.auth = auth;
+                if (this.shippingId !== "0") {
+                    this.getPost();
+                }
+            });
+        });
         this.formData = new FormData();
         this.activeTab = 1;
-        this.storage.get("auth").then((auth) => {
-            this.auth = auth;
-        });
         this.shippingForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
             title: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]("title", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]),
             description: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]("description", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]),
@@ -1130,11 +1326,16 @@ let ShippingFormPage = class ShippingFormPage {
             origin: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]("origin", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]),
             destination: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]("destination", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]),
         });
+        this.initializeShippingFormControls();
+    }
+    initializeShippingFormControls() {
         this.shippingForm.controls["title"].setValue(null);
         this.shippingForm.controls["description"].setValue(null);
         this.shippingForm.controls["date"].setValue(null);
         this.shippingForm.controls["origin"].setValue(null);
         this.shippingForm.controls["destination"].setValue(null);
+        this.origin = null;
+        this.destination = null;
     }
     selectPhoto(slide) {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
@@ -1226,33 +1427,76 @@ let ShippingFormPage = class ShippingFormPage {
             });
         });
     }
-    saveShipping() {
-        let controls = this.shippingForm.controls;
-        if (this.shippingForm.invalid) {
-            Object.keys(controls).forEach((controlName) => controls[controlName].markAsTouched());
-            return;
-        }
-        const body = {
-            type: 1,
-            title: controls["title"].value,
-            description: controls["description"].value,
-            date: controls["date"].value,
-            origin: this.origin,
-            destination: this.destination,
-            user: { id: this.auth.id },
-        };
-        this.formData.append("postCommand", new Blob([JSON.stringify(body)], {
-            type: "application/json",
-        }));
+    getPost() {
         this.postService
-            .save(this.formData, this.auth.token)
+            .getById(this.auth, this.shippingId)
             .toPromise()
             .then((res) => {
-            //const result = res.json();
-            console.log(res);
+            const result = res.json();
+            this.shippingForm.controls["title"].setValue(result.title);
+            this.shippingForm.controls["description"].setValue(result.description);
+            this.shippingForm.controls["date"].setValue(result.date);
+            this.shippingForm.controls["origin"].setValue(result.origin.name);
+            this.shippingForm.controls["destination"].setValue(result.destination.name);
+            this.origin = result.origin;
+            this.destination = result.destination;
         }, (err) => {
             let error = JSON.parse(err._body);
             console.log(error);
+        });
+    }
+    saveShipping() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            let controls = this.shippingForm.controls;
+            if (this.shippingForm.invalid) {
+                Object.keys(controls).forEach((controlName) => controls[controlName].markAsTouched());
+                return;
+            }
+            let body = {
+                type: 1,
+                title: controls["title"].value,
+                description: controls["description"].value,
+                date: controls["date"].value,
+                origin: this.origin,
+                destination: this.destination,
+                user: { id: this.auth.id },
+            };
+            if (this.shippingId !== "0") {
+                body = Object.assign(Object.assign({}, body), { id: this.shippingId });
+            }
+            this.formData.append("postCommand", new Blob([JSON.stringify(body)], {
+                type: "application/json",
+            }));
+            let action = this.postService.save(this.formData, this.auth.token);
+            if (body.id) {
+                action = this.postService.update(this.formData, this.auth.token);
+            }
+            this.loading = yield this.loadingController.create({
+                message: "Cargando...",
+            });
+            yield this.loading.present();
+            action.toPromise().then((res) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+                this.initializeShippingFormControls();
+                yield this.loading.dismiss();
+                let alert = yield this.alertController.create({
+                    header: "Guardado exitoso",
+                    message: "Tu publicación se ha guardado correctamente",
+                    buttons: [
+                        {
+                            text: "Aceptar",
+                            role: "cancel",
+                            handler: () => {
+                                return false;
+                            },
+                        },
+                    ],
+                });
+                alert.present();
+            }), (err) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+                yield this.loading.dismiss();
+                let error = JSON.parse(err._body);
+                console.log(error);
+            }));
         });
     }
     goBackToDashboard() {
@@ -1260,7 +1504,7 @@ let ShippingFormPage = class ShippingFormPage {
     }
     goToSellForm() {
         if (this.activeTab !== 2) {
-            this.router.navigate(["posts/create-sell"]);
+            this.router.navigate(["posts/create-sell/0"]);
         }
     }
     controlHasError(controlName, validationType) {
@@ -1273,12 +1517,14 @@ let ShippingFormPage = class ShippingFormPage {
     }
 };
 ShippingFormPage.ctorParameters = () => [
-    { type: _post_service__WEBPACK_IMPORTED_MODULE_3__["PostService"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
-    { type: _ionic_storage__WEBPACK_IMPORTED_MODULE_5__["Storage"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["AlertController"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["LoadingController"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ModalController"] },
+    { type: _post_service__WEBPACK_IMPORTED_MODULE_3__["PostService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
     { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["DomSanitizer"] },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["LoadingController"] }
+    { type: _ionic_storage__WEBPACK_IMPORTED_MODULE_5__["Storage"] }
 ];
 ShippingFormPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({

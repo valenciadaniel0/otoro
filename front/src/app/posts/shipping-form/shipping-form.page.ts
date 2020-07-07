@@ -3,7 +3,11 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { PostService } from "../post.service";
 import { Router, ActivatedRoute } from "@angular/router";
 import { Storage } from "@ionic/storage";
-import { ModalController, LoadingController } from "@ionic/angular";
+import {
+  ModalController,
+  LoadingController,
+  AlertController,
+} from "@ionic/angular";
 import { SelectCityComponent } from "src/app/shared/select-city/select-city.component";
 import { CameraSource, Plugins, CameraResultType } from "@capacitor/core";
 import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
@@ -25,19 +29,20 @@ export class ShippingFormPage implements OnInit {
   private photo1: SafeResourceUrl;
   private photo2: SafeResourceUrl;
   private photo3: SafeResourceUrl;
-  private shippingId: string;
   private shippingForm: FormGroup;
+  private shippingId: string;
   private sub: any;
   private title: string;
 
   constructor(
-    private postService: PostService,
-    private router: Router,
-    private route: ActivatedRoute,
-    private storage: Storage,
+    private alertController: AlertController,
+    private loadingController: LoadingController,
     private modalController: ModalController,
+    private postService: PostService,
+    private route: ActivatedRoute,
+    private router: Router,
     private sanitizer: DomSanitizer,
-    private loadingController: LoadingController
+    private storage: Storage
   ) {}
 
   ngOnInit() {
@@ -67,11 +72,17 @@ export class ShippingFormPage implements OnInit {
       destination: new FormControl("destination", [Validators.required]),
     });
 
+    this.initializeShippingFormControls();
+  }
+
+  initializeShippingFormControls() {
     this.shippingForm.controls["title"].setValue(null);
     this.shippingForm.controls["description"].setValue(null);
     this.shippingForm.controls["date"].setValue(null);
     this.shippingForm.controls["origin"].setValue(null);
     this.shippingForm.controls["destination"].setValue(null);
+    this.origin = null;
+    this.destination = null;
   }
 
   async selectPhoto(slide: number) {
@@ -188,7 +199,7 @@ export class ShippingFormPage implements OnInit {
       );
   }
 
-  saveShipping() {
+  async saveShipping() {
     let controls = this.shippingForm.controls;
     if (this.shippingForm.invalid) {
       Object.keys(controls).forEach((controlName) =>
@@ -221,12 +232,32 @@ export class ShippingFormPage implements OnInit {
     if (body.id) {
       action = this.postService.update(this.formData, this.auth.token);
     }
+
+    this.loading = await this.loadingController.create({
+      message: "Cargando...",
+    });
+    await this.loading.present();
     action.toPromise().then(
-      (res) => {
-        //const result = res.json();
-        console.log(res);
+      async (res) => {
+        this.initializeShippingFormControls();
+        await this.loading.dismiss();
+        let alert = await this.alertController.create({
+          header: "Guardado exitoso",
+          message: "Tu publicación se ha guardado correctamente",
+          buttons: [
+            {
+              text: "Aceptar",
+              role: "cancel",
+              handler: () => {
+                return false;
+              },
+            },
+          ],
+        });
+        alert.present();
       },
-      (err) => {
+      async (err) => {
+        await this.loading.dismiss();
         let error = JSON.parse(err._body);
         console.log(error);
       }

@@ -106,15 +106,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var src_app_users_users_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! src/app/users/users.service */
     "./src/app/users/users.service.ts");
+    /* harmony import */
+
+
+    var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! @ionic/angular */
+    "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
 
     var FormPage = /*#__PURE__*/function () {
-      function FormPage(loginService, router, storage, usersService) {
+      function FormPage(loginService, router, storage, usersService, menuController, loadingController) {
         _classCallCheck(this, FormPage);
 
         this.loginService = loginService;
         this.router = router;
         this.storage = storage;
         this.usersService = usersService;
+        this.menuController = menuController;
+        this.loadingController = loadingController;
       }
 
       _createClass(FormPage, [{
@@ -128,6 +136,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           });
           this.myForm.controls["email"].setValue(null);
           this.myForm.controls["password"].setValue(null);
+        }
+      }, {
+        key: "ionViewWillEnter",
+        value: function ionViewWillEnter() {
+          this.menuController.enable(false);
         }
       }, {
         key: "controlHasError",
@@ -144,57 +157,106 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "login",
         value: function login() {
-          var _this = this;
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+            var _this = this;
 
-          var controls = this.myForm.controls;
+            var controls, body;
+            return regeneratorRuntime.wrap(function _callee3$(_context3) {
+              while (1) {
+                switch (_context3.prev = _context3.next) {
+                  case 0:
+                    controls = this.myForm.controls;
 
-          if (this.myForm.invalid) {
-            Object.keys(controls).forEach(function (controlName) {
-              return controls[controlName].markAsTouched();
-            });
-            return;
-          }
+                    if (!this.myForm.invalid) {
+                      _context3.next = 4;
+                      break;
+                    }
 
-          var body = {
-            email: controls["email"].value,
-            password: controls["password"].value
-          };
-          this.loginService.run(body).toPromise().then(function (res) {
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-              var result, deviceToken, user;
-              return regeneratorRuntime.wrap(function _callee$(_context) {
-                while (1) {
-                  switch (_context.prev = _context.next) {
-                    case 0:
-                      result = res.json();
-                      _context.next = 3;
-                      return this.storage.get("deviceToken");
+                    Object.keys(controls).forEach(function (controlName) {
+                      return controls[controlName].markAsTouched();
+                    });
+                    return _context3.abrupt("return");
 
-                    case 3:
-                      deviceToken = _context.sent;
-                      this.storage.set("auth", result);
-                      user = {
-                        active: result.active,
-                        deviceToken: deviceToken,
-                        email: result.email,
-                        id: result.id,
-                        name: result.name,
-                        roles: result.roles
-                      };
-                      this.updateUser(user, result.token);
+                  case 4:
+                    body = {
+                      email: controls["email"].value,
+                      password: controls["password"].value
+                    };
+                    _context3.next = 7;
+                    return this.loadingController.create({
+                      message: "Cargando..."
+                    });
 
-                    case 7:
-                    case "end":
-                      return _context.stop();
-                  }
+                  case 7:
+                    this.loading = _context3.sent;
+                    _context3.next = 10;
+                    return this.loading.present();
+
+                  case 10:
+                    this.loginService.run(body).toPromise().then(function (res) {
+                      return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+                        var result, deviceToken, user;
+                        return regeneratorRuntime.wrap(function _callee$(_context) {
+                          while (1) {
+                            switch (_context.prev = _context.next) {
+                              case 0:
+                                result = res.json();
+                                _context.next = 3;
+                                return this.storage.get("deviceToken");
+
+                              case 3:
+                                deviceToken = _context.sent;
+                                this.storage.set("auth", result);
+                                user = {
+                                  active: result.active,
+                                  deviceToken: deviceToken,
+                                  email: result.email,
+                                  id: result.id,
+                                  name: result.name,
+                                  roles: result.roles,
+                                  city: result.city,
+                                  phone: result.phone,
+                                  serviceDescription: result.serviceDescription,
+                                  profilePicture: result.profilePicture
+                                };
+                                this.updateUser(user, result.token);
+
+                              case 7:
+                              case "end":
+                                return _context.stop();
+                            }
+                          }
+                        }, _callee, this);
+                      }));
+                    }, function (err) {
+                      return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+                        var error;
+                        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                          while (1) {
+                            switch (_context2.prev = _context2.next) {
+                              case 0:
+                                console.log(err);
+                                error = JSON.parse(err._body);
+                                console.log(error);
+                                _context2.next = 5;
+                                return this.loading.dismiss();
+
+                              case 5:
+                              case "end":
+                                return _context2.stop();
+                            }
+                          }
+                        }, _callee2, this);
+                      }));
+                    });
+
+                  case 11:
+                  case "end":
+                    return _context3.stop();
                 }
-              }, _callee, this);
-            }));
-          }, function (err) {
-            console.log(err);
-            var error = JSON.parse(err._body);
-            console.log(error);
-          });
+              }
+            }, _callee3, this);
+          }));
         }
       }, {
         key: "updateUser",
@@ -202,24 +264,45 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var _this2 = this;
 
           this.usersService.update(body, token).toPromise().then(function (res) {
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this2, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-              return regeneratorRuntime.wrap(function _callee2$(_context2) {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this2, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+              return regeneratorRuntime.wrap(function _callee4$(_context4) {
                 while (1) {
-                  switch (_context2.prev = _context2.next) {
+                  switch (_context4.prev = _context4.next) {
                     case 0:
+                      this.menuController.enable(true);
+                      _context4.next = 3;
+                      return this.loading.dismiss();
+
+                    case 3:
                       this.router.navigate(["/dashboard"]);
 
-                    case 1:
+                    case 4:
                     case "end":
-                      return _context2.stop();
+                      return _context4.stop();
                   }
                 }
-              }, _callee2, this);
+              }, _callee4, this);
             }));
           }, function (err) {
-            console.log(err);
-            var error = JSON.parse(err._body);
-            console.log(error);
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this2, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
+              var error;
+              return regeneratorRuntime.wrap(function _callee5$(_context5) {
+                while (1) {
+                  switch (_context5.prev = _context5.next) {
+                    case 0:
+                      console.log(err);
+                      error = JSON.parse(err._body);
+                      console.log(error);
+                      _context5.next = 5;
+                      return this.loading.dismiss();
+
+                    case 5:
+                    case "end":
+                      return _context5.stop();
+                  }
+                }
+              }, _callee5, this);
+            }));
           });
         }
       }, {
@@ -246,6 +329,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         type: _ionic_storage__WEBPACK_IMPORTED_MODULE_4__["Storage"]
       }, {
         type: src_app_users_users_service__WEBPACK_IMPORTED_MODULE_6__["UsersService"]
+      }, {
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__["MenuController"]
+      }, {
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__["LoadingController"]
       }];
     };
 

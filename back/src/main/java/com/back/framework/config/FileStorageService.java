@@ -55,4 +55,16 @@ public class FileStorageService {
 
         return pictureName;
     }
+
+    public void deleteFile(String fileName, int type) {
+
+        try {            
+            Path targetLocation = type == 1 ? this.fileStorageLocation.resolve(fileName)
+                    : this.fileStorageLocationPosts.resolve(fileName);
+
+            Files.deleteIfExists(targetLocation);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
 }

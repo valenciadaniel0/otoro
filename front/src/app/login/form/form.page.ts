@@ -4,7 +4,7 @@ import { Router } from "@angular/router";
 import { Storage } from "@ionic/storage";
 import { LoginService } from "./login.service";
 import { UsersService } from "src/app/users/users.service";
-import { MenuController } from "@ionic/angular";
+import { MenuController, LoadingController } from "@ionic/angular";
 
 @Component({
   selector: "app-form",
@@ -12,15 +12,17 @@ import { MenuController } from "@ionic/angular";
   styleUrls: ["./form.page.scss"],
 })
 export class FormPage implements OnInit {
-  public myForm: FormGroup;
-  public imageUrl: string;
+  private loading: any;
   public imageId: string;
+  public imageUrl: string;
+  public myForm: FormGroup;
   constructor(
     private loginService: LoginService,
     private router: Router,
     public storage: Storage,
     private usersService: UsersService,
-    private menuController: MenuController
+    private menuController: MenuController,
+    private loadingController: LoadingController
   ) {}
 
   ngOnInit() {
@@ -51,7 +53,7 @@ export class FormPage implements OnInit {
     return result;
   }
 
-  login() {
+  async login() {
     let controls = this.myForm.controls;
     if (this.myForm.invalid) {
       Object.keys(controls).forEach((controlName) =>
@@ -64,6 +66,12 @@ export class FormPage implements OnInit {
       email: controls["email"].value,
       password: controls["password"].value,
     };
+
+    this.loading = await this.loadingController.create({
+      message: "Cargando...",
+    });
+
+    await this.loading.present();
 
     this.loginService
       .run(body)
@@ -80,17 +88,18 @@ export class FormPage implements OnInit {
             id: result.id,
             name: result.name,
             roles: result.roles,
-            city:result.city,
-            phone:result.phone,
-            serviceDescription:result.serviceDescription,
-            profilePicture:result.profilePicture
+            city: result.city,
+            phone: result.phone,
+            serviceDescription: result.serviceDescription,
+            profilePicture: result.profilePicture,
           };
           this.updateUser(user, result.token);
         },
-        (err) => {
+        async (err) => {
           console.log(err);
           let error = JSON.parse(err._body);
           console.log(error);
+          await this.loading.dismiss();
         }
       );
   }
@@ -102,12 +111,14 @@ export class FormPage implements OnInit {
       .then(
         async (res) => {
           this.menuController.enable(true);
+          await this.loading.dismiss();
           this.router.navigate(["/dashboard"]);
         },
-        (err) => {
+        async (err) => {
           console.log(err);
           let error = JSON.parse(err._body);
           console.log(error);
+          await this.loading.dismiss();
         }
       );
   }

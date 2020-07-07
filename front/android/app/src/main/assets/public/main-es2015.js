@@ -436,7 +436,7 @@ module.exports = webpackAsyncContext;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\">\r\n      <ion-content>\r\n        <ion-list id=\"inbox-list\">\r\n          <ion-list-header>Inbox</ion-list-header>\r\n          <ion-note>hi@ionicframework.com</ion-note>\r\n\r\n          <ion-menu-toggle\r\n            auto-hide=\"false\"\r\n            *ngFor=\"let p of appPages; let i = index\"\r\n          >\r\n            <ion-item\r\n              (click)=\"selectedIndex = i\"\r\n              routerDirection=\"root\"\r\n              [routerLink]=\"[p.url]\"\r\n              lines=\"none\"\r\n              detail=\"false\"\r\n              [class.selected]=\"selectedIndex == i\"\r\n            >\r\n              <ion-icon\r\n                slot=\"start\"\r\n                [ios]=\"p.icon + '-outline'\"\r\n                [md]=\"p.icon + '-sharp'\"\r\n              ></ion-icon>\r\n              <ion-label>{{ p.title }}</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item (click)=\"logout()\" lines=\"none\" detail=\"false\">\r\n              <ion-icon name=\"log-out\"></ion-icon>\r\n              <ion-label>Cerrar Sesi&oacute;n</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n\r\n        <ion-list id=\"labels-list\">\r\n          <ion-list-header>Labels</ion-list-header>\r\n          <ion-item *ngFor=\"let label of labels\" lines=\"none\">\r\n            <ion-icon\r\n              slot=\"start\"\r\n              ios=\"bookmark-outline\"\r\n              md=\"bookmark-sharp\"\r\n            ></ion-icon>\r\n            <ion-label>{{ label }}</ion-label>\r\n          </ion-item>\r\n        </ion-list>\r\n      </ion-content>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\">\r\n      <ion-content>\r\n        <ion-list id=\"inbox-list\">\r\n          <ion-list-header>Daniel Valencia</ion-list-header>\r\n          <ion-note>valenciadaniel0@gmail.com</ion-note>\r\n\r\n          <ion-menu-toggle\r\n            auto-hide=\"false\"\r\n            *ngFor=\"let p of appPages; let i = index\"\r\n          >\r\n            <ion-item\r\n              (click)=\"selectedIndex = i\"\r\n              routerDirection=\"root\"\r\n              [routerLink]=\"[p.url]\"\r\n              lines=\"none\"\r\n              detail=\"false\"\r\n              [class.selected]=\"selectedIndex == i\"\r\n            >\r\n              <ion-icon\r\n                slot=\"start\"\r\n                [ios]=\"p.icon + '-outline'\"\r\n                [md]=\"p.icon + '-sharp'\"\r\n              ></ion-icon>\r\n              <ion-label>{{ p.title }}</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item\r\n              (click)=\"logout()\"\r\n              routerDirection=\"root\"\r\n              lines=\"none\"\r\n              detail=\"false\"\r\n              [class.selected]=\"selectedIndex == 3\"\r\n            >\r\n              <ion-icon slot=\"start\" name=\"log-out\"></ion-icon>\r\n              <ion-label>Cerrar Sesi&oacute;n</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n      </ion-content>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n");
 
 /***/ }),
 
@@ -536,7 +536,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AppComponent = class AppComponent {
-    constructor(platform, statusBar, appVersion, storage, alertController, restService, navController, router) {
+    constructor(loadingController, platform, statusBar, appVersion, storage, alertController, restService, navController, router, menuController) {
+        this.loadingController = loadingController;
         this.platform = platform;
         this.statusBar = statusBar;
         this.appVersion = appVersion;
@@ -545,11 +546,13 @@ let AppComponent = class AppComponent {
         this.restService = restService;
         this.navController = navController;
         this.router = router;
+        this.menuController = menuController;
         this.selectedIndex = 0;
         this.appPages = [
+            { title: "Inicio", url: "/dashboard", icon: "home" },
             {
                 title: "Perfil",
-                url: "/login",
+                url: "users/profile",
                 icon: "person",
             },
             {
@@ -558,7 +561,6 @@ let AppComponent = class AppComponent {
                 icon: "notifications",
             },
         ];
-        this.labels = ["Family", "Friends", "Notes", "Work", "Travel", "Reminders"];
         this.initializeApp();
     }
     initializeApp() {
@@ -596,7 +598,6 @@ let AppComponent = class AppComponent {
             }
         });
         PushNotifications.addListener("registration", (token) => {
-            alert("Push registration success, token: " + token.value);
             this.storage.set("deviceToken", token.value);
         });
         // Some issue with our setup and push will not work
@@ -614,20 +615,29 @@ let AppComponent = class AppComponent {
     }
     logout() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            this.loading = yield this.loadingController.create({
+                message: "Cargando...",
+            });
+            yield this.loading.present();
+            this.selectedIndex = 3;
             let body = new FormData();
             let auth = yield this.storage.get("auth");
             this.restService
                 .queryPost("users/logout", body, auth.token)
-                .subscribe((response) => {
+                .subscribe((response) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+                yield this.loading.dismiss();
                 this.storage.remove("auth");
+                this.menuController.enable(false);
                 this.router.navigate(["/login"]);
-                (err) => {
+                (err) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+                    yield this.loading.dismiss();
                     if (err["status"] == 401) {
                         this.storage.remove("auth");
+                        this.menuController.enable(false);
                         this.router.navigate(["/login"]);
                     }
-                };
-            });
+                });
+            }));
         });
     }
     ngOnInit() {
@@ -638,6 +648,7 @@ let AppComponent = class AppComponent {
     }
 };
 AppComponent.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["LoadingController"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Platform"] },
     { type: _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__["StatusBar"] },
     { type: _ionic_native_app_version_ngx__WEBPACK_IMPORTED_MODULE_5__["AppVersion"] },
@@ -645,7 +656,8 @@ AppComponent.ctorParameters = () => [
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"] },
     { type: _core_services_rest_service__WEBPACK_IMPORTED_MODULE_7__["RestService"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavController"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_8__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_8__["Router"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["MenuController"] }
 ];
 AppComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -780,16 +792,14 @@ let RestService = class RestService {
     }
     queryPut(route, body, token) {
         let headers = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["Headers"]({
-            "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
         });
         let options = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["RequestOptions"]({ headers: headers });
         let repos = this.http.put(this.apiUrl.concat(route), body, options);
         return repos;
     }
-    queryDelete(route) {
-        let token = localStorage.getItem("token");
-        let headers = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["Headers"]({ Authorization: token });
+    queryDelete(route, token) {
+        let headers = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["Headers"]({ Authorization: `Bearer ${token}` });
         let options = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["RequestOptions"]({ headers: headers });
         let repos = this.http.delete(this.apiUrl.concat(route), options);
         return repos;
