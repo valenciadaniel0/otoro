@@ -70,6 +70,7 @@ let FormPage = class FormPage {
         });
         this.myForm.controls["email"].setValue(null);
         this.myForm.controls["password"].setValue(null);
+        this.formData = new FormData();
     }
     ionViewWillEnter() {
         this.menuController.enable(false);
@@ -116,7 +117,10 @@ let FormPage = class FormPage {
                     serviceDescription: result.serviceDescription,
                     profilePicture: result.profilePicture,
                 };
-                this.updateUser(user, result.token);
+                this.formData.append("userCommand", new Blob([JSON.stringify(user)], {
+                    type: "application/json",
+                }));
+                this.updateUser(result.token);
             }), (err) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
                 console.log(err);
                 let error = JSON.parse(err._body);
@@ -125,9 +129,9 @@ let FormPage = class FormPage {
             }));
         });
     }
-    updateUser(body, token) {
+    updateUser(token) {
         this.usersService
-            .update(body, token)
+            .update(this.formData, token)
             .toPromise()
             .then((res) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             this.menuController.enable(true);

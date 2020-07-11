@@ -13,6 +13,7 @@ import { LoadingController } from "@ionic/angular";
 })
 export class RecoverPasswordPage implements OnInit {
   private loading: any;
+  private formData: FormData;
   public imageId: string;
   public imageUrl: string;
   public myCodeForm: FormGroup;
@@ -28,6 +29,7 @@ export class RecoverPasswordPage implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.formData = new FormData();
     this.showCodeForm = false;
     this.imageUrl = "../../assets/logo/otoro-logo.png";
     this.imageId = "top-image";
@@ -142,14 +144,20 @@ export class RecoverPasswordPage implements OnInit {
             email: result.email,
             name: result.name,
             phone: result.phone,
+            profilePicture: result.profilePicture,
             serviceDescription: result.serviceDescription,
             password: "",
             username: result.email,
             city: result.city,
             roles: result.roles,
           };
-
-          this.updateUser(user, result.token);
+          this.formData.append(
+            "userCommand",
+            new Blob([JSON.stringify(user)], {
+              type: "application/json",
+            })
+          );
+          this.updateUser(result.token);
         },
         async (err) => {
           let error = JSON.parse(err._body);
@@ -159,9 +167,9 @@ export class RecoverPasswordPage implements OnInit {
       );
   }
 
-  updateUser(body: any, token: string) {
+  updateUser(token: string) {
     this.usersService
-      .update(body, token)
+      .update(this.formData, token)
       .toPromise()
       .then(
         async (res) => {

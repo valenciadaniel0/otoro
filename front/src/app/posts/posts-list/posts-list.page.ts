@@ -160,6 +160,10 @@ export class PostsListPage implements OnInit {
       );
   }
 
+  goToPostCreation() {
+    this.router.navigate(["posts/create-shipping/0"]);
+  }
+
   ngOnDestroy() {
     if (this.sub) {
       this.sub.unsubscribe();

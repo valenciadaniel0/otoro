@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Modal Header</ion-title>
+    <ion-title>Ciudades</ion-title>
     <ion-buttons slot="primary">
       <ion-button (click)="dismiss()">
         <ion-icon slot="icon-only" name="close"></ion-icon>
@@ -10,16 +10,14 @@
 </ion-header>
 <ion-content class="ion-padding">
   <form [formGroup]="searchForm">
-    <ion-item>
-      <input
-        name="query"
-        type="text"
-        class="form-control"
-        placeholder="Busca una ciudad"
-        formControlName="queryControl"
-        (keyup)="search()"
-      />
-    </ion-item>
+    <input
+      name="query"
+      type="text"
+      class="form-control"
+      placeholder="Busca una ciudad"
+      formControlName="queryControl"
+      (keyup)="search()"
+    />
   </form>
   <div class="city-list" *ngIf="cities.length > 0">
     <div

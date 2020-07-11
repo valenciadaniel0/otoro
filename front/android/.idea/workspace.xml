@@ -7,17 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eaa0f7e4-a19d-4b32-b3c3-d87a4bcc0d08" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/config/FileStorageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/config/FileStorageService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/controller/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/controller/PostController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/config/FileStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/config/FileStorageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="f564ea7" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="ZW322D7BQV" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -140,25 +138,25 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592961263717" />
-    <state width="661" height="178" key="GridCell.Tab.0.bottom" timestamp="1593265798082">
+    <state width="661" height="178" key="GridCell.Tab.0.bottom" timestamp="1594498840630">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="661" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593265798082" />
-    <state width="661" height="178" key="GridCell.Tab.0.center" timestamp="1593265798082">
+    <state width="661" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1594498840630" />
+    <state width="661" height="178" key="GridCell.Tab.0.center" timestamp="1594498840629">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="661" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593265798082" />
-    <state width="661" height="178" key="GridCell.Tab.0.left" timestamp="1593265798082">
+    <state width="661" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1594498840629" />
+    <state width="661" height="178" key="GridCell.Tab.0.left" timestamp="1594498840628">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="661" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593265798082" />
-    <state width="661" height="178" key="GridCell.Tab.0.right" timestamp="1593265798082">
+    <state width="661" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1594498840628" />
+    <state width="661" height="178" key="GridCell.Tab.0.right" timestamp="1594498840629">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="661" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593265798082" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1594077282793">
+    <state width="661" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1594498840629" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1594477550480">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1594077282793" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1594477550480" />
   </component>
 </project>

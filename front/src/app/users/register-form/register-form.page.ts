@@ -2,7 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { Storage } from "@ionic/storage";
-import { ModalController, LoadingController } from "@ionic/angular";
+import {
+  ModalController,
+  LoadingController,
+  MenuController,
+} from "@ionic/angular";
 import {
   Plugins,
   CameraResultType,
@@ -36,7 +40,8 @@ export class RegisterFormPage implements OnInit {
     private usersService: UsersService,
     private loginService: LoginService,
     private sanitizer: DomSanitizer,
-    private loadingController: LoadingController
+    private loadingController: LoadingController,
+    private menuController: MenuController
   ) {}
 
   ngOnInit() {
@@ -122,7 +127,10 @@ export class RegisterFormPage implements OnInit {
     this.router.navigate(["/login"]);
   }
 
-  register() {
+  async register() {
+    this.loading = await this.loadingController.create({
+      message: "Cargando...",
+    });
     let controls = this.myForm.controls;
     if (this.myForm.invalid) {
       Object.keys(controls).forEach((controlName) =>
@@ -148,7 +156,7 @@ export class RegisterFormPage implements OnInit {
         type: "application/json",
       })
     );
-
+    this.loading.present();
     this.usersService
       .register(this.formData)
       .toPromise()
@@ -157,8 +165,8 @@ export class RegisterFormPage implements OnInit {
           this.login();
         },
         (err) => {
+          this.loading.dismiss();
           let error = JSON.parse(err._body);
-          console.log(error);
         }
       );
   }
@@ -184,27 +192,42 @@ export class RegisterFormPage implements OnInit {
             deviceToken: deviceToken,
             email: result.email,
             id: result.id,
+            profilePicture: result.profilePicture,
             name: result.name,
+            serviceDescription: result.serviceDescription,
+            phone: result.phone,
             roles: result.roles,
+            city: result.city,
           };
-          this.updateUser(user, result.token);
+
+          this.formData.set(
+            "userCommand",
+            new Blob([JSON.stringify(user)], {
+              type: "application/json",
+            })
+          );
+          this.updateUser(result.token);
         },
         (err) => {
+          this.loading.dismiss();
           let error = JSON.parse(err._body);
           console.log(error);
         }
       );
   }
 
-  updateUser(body: any, token: string) {
+  updateUser(token: string) {
     this.usersService
-      .update(body, token)
+      .update(this.formData, token)
       .toPromise()
       .then(
         async (res) => {
+          this.menuController.enable(true);
+          this.loading.dismiss();
           this.router.navigate(["/dashboard"]);
         },
         (err) => {
+          this.loading.dismiss();
           let error = JSON.parse(err._body);
           console.log(error);
         }

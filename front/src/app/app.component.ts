@@ -24,7 +24,7 @@ import { Router } from "@angular/router";
   templateUrl: "app.component.html",
   styleUrls: ["app.component.scss"],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit {  
   private loading: any;
   public selectedIndex = 0;
   public appPages = [

@@ -20,9 +20,13 @@
               <input
                 type="text"
                 class="form-control width-100"
+                [class.error-input]="controlHasError('email', 'required')"
                 formControlName="email"
               />
-              <span *ngIf="controlHasError('email', 'required')">
+              <span
+                class="error-input-label"
+                *ngIf="controlHasError('email', 'required')"
+              >
                 <strong class="error">Campo requerido</strong>
               </span>
             </div>
@@ -31,9 +35,13 @@
               <input
                 type="password"
                 class="form-control width-100"
+                [class.error-input]="controlHasError('password', 'required')"
                 formControlName="password"
               />
-              <span *ngIf="controlHasError('password', 'required')">
+              <span
+                class="error-input-label"
+                *ngIf="controlHasError('password', 'required')"
+              >
                 <strong class="error">Campo requerido</strong>
               </span>
             </div>
@@ -51,7 +59,9 @@
       </ion-row>
       <ion-row>
         <ion-col col-6>
-          <small (click)="goToRecoverPassword()">Olvid&eacute; mi contrase&ntilde;a</small>
+          <small (click)="goToRecoverPassword()"
+            >Olvid&eacute; mi contrase&ntilde;a</small
+          >
         </ion-col>
         <ion-col col-6 class="align-text-right">
           <small (click)="goToRegistration()">Registrarme</small>

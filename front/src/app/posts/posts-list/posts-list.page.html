@@ -20,8 +20,12 @@
   </ion-fab>
   <h4 class="centered-text">{{title}}</h4>
   <ion-row class="top-tab-container">
-    <ion-col (click)="changeActiveTab(1)"><span>Envios</span></ion-col>
-    <ion-col (click)="changeActiveTab(2)"><span>Ventas</span></ion-col>
+    <ion-col [class.active]="activeTab===1" (click)="changeActiveTab(1)"
+      ><ion-icon name="send"></ion-icon>&nbsp;<span>Envios</span></ion-col
+    >
+    <ion-col [class.active]="activeTab===2" (click)="changeActiveTab(2)"
+      ><ion-icon name="pricetag"></ion-icon>&nbsp;<span>Ventas</span></ion-col
+    >
   </ion-row>
   <div class="posts-list" *ngIf="shippings.length > 0 && activeTab === 1">
     <app-post-card

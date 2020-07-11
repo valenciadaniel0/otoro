@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   //api_url: 'http://localhost:8081/api/'
-  api_url: 'http://192.168.0.15:8081/api/'
+  api_url: "http://192.168.0.16:8081/api/",
 };
 
 /*

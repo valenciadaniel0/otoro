@@ -34,9 +34,13 @@
             <input
               type="text"
               class="form-control width-100"
+              [class.error-input]="controlHasError('name', 'required')"
               formControlName="name"
             />
-            <span *ngIf="controlHasError('name', 'required')">
+            <span
+              class="error-input-label"
+              *ngIf="controlHasError('name', 'required')"
+            >
               <strong class="error">Campo requerido</strong>
             </span>
           </div>
@@ -45,9 +49,13 @@
             <input
               type="email"
               class="form-control width-100"
+              [class.error-input]="controlHasError('email', 'required')"
               formControlName="email"
             />
-            <span *ngIf="controlHasError('email', 'required')">
+            <span
+              class="error-input-label"
+              *ngIf="controlHasError('email', 'required')"
+            >
               <strong class="error">Campo requerido</strong>
             </span>
           </div>
@@ -58,7 +66,10 @@
               <span *ngIf="city">{{city.name}}</span>
             </ion-item>
             <input type="text" class="display-none" formControlName="city" />
-            <span *ngIf="controlHasError('city', 'required') && step === 1">
+            <span
+              class="error-input-label"
+              *ngIf="controlHasError('city', 'required') && step === 1"
+            >
               <strong class="error">Selecciona una ciudad</strong>
             </span>
           </div>
@@ -75,9 +86,13 @@
             <input
               type="password"
               class="form-control width-100"
+              [class.error-input]="controlHasError('password', 'required')"
               formControlName="password"
             />
-            <span *ngIf="controlHasError('password', 'required')">
+            <span
+              class="error-input-label"
+              *ngIf="controlHasError('password', 'required')"
+            >
               <strong class="error">Campo requerido</strong>
             </span>
           </div>
@@ -86,9 +101,13 @@
             <input
               type="password"
               class="form-control width-100"
+              [class.error-input]="controlHasError('confirmPassword', 'required')"
               formControlName="confirmPassword"
             />
-            <span *ngIf="controlHasError('confirmPassword', 'required')">
+            <span
+              class="error-input-label"
+              *ngIf="controlHasError('confirmPassword', 'required')"
+            >
               <strong class="error">Campo requerido</strong>
             </span>
           </div>
@@ -96,9 +115,13 @@
             <label class="bold">Descripci&oacute;n de tus servicios</label>
             <textarea
               class="form-control width-100"
+              [class.error-input]="controlHasError('serviceDescription', 'required')"
               formControlName="serviceDescription"
             ></textarea>
-            <span *ngIf="controlHasError('serviceDescription', 'required')">
+            <span
+              class="error-input-label"
+              *ngIf="controlHasError('serviceDescription', 'required')"
+            >
               <strong class="error">Campo requerido</strong>
             </span>
           </div>

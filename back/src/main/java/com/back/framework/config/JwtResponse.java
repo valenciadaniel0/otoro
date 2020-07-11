@@ -19,9 +19,10 @@ public class JwtResponse implements Serializable {
     private final City city;
     private final String phone;
     private final String serviceDescription;
+    private final String profilePicture;
 
     public JwtResponse(String jwttoken, Long id, String name, String email, int active, String deviceToken,
-            List<Role> roles, City city, String phone, String serviceDescription) {
+            List<Role> roles, City city, String phone, String serviceDescription,String profilePicture) {
         this.jwttoken = jwttoken;
         this.id = id;
         this.name = name;
@@ -32,6 +33,7 @@ public class JwtResponse implements Serializable {
         this.city = city;
         this.phone = phone;
         this.serviceDescription = serviceDescription;
+        this.profilePicture = profilePicture;
     }
 
     public String getToken() {
@@ -72,5 +74,9 @@ public class JwtResponse implements Serializable {
 
     public String getServiceDescription() {
         return this.serviceDescription;
+    }
+
+    public String getProfilePicture() {
+        return this.profilePicture;
     }
 }

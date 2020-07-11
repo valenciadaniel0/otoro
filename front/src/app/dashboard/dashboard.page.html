@@ -18,13 +18,14 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <h4 class="centered-text">Hola! Que quieres hacer hoy?</h4>  
+  <h4 class="centered-text">Hola! Que quieres hacer hoy?</h4>
   <app-card text="Ver mis publicaciones" [action]="goToMyPosts"></app-card>
   <app-card
     text="Ver todas las publicaciones"
     [action]="goToAllPosts"
   ></app-card>
   <app-card
+    *ngIf="false"
     text="Buscar transportadores"
     [action]="goToTransporters"
   ></app-card>

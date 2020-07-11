@@ -76,15 +76,18 @@ public class UserController {
         final String token = jwtTokenUtil.generateToken(userDetails);
 
         return ResponseEntity.ok(new JwtResponse(token, user.getId(), user.getName(), user.getEmail(), user.getActive(),
-                user.getDeviceToken(), user.getRoles(), user.getCity(), user.getPhone(),user.getServiceDescription()));
+                user.getDeviceToken(), user.getRoles(), user.getCity(), user.getPhone(), user.getServiceDescription(),
+                user.getProfilePicture()));
     }
 
     @PostMapping(value = "/register")
     public void create(@RequestPart(required = true) UserCommand userCommand,
             @RequestPart(required = false) MultipartFile image) {
 
-        String pictureName = this.fileStorageService.storeFile(image, 1);
-        userCommand.setProfilePicture(pictureName);
+        if (image != null) {
+            String pictureName = this.fileStorageService.storeFile(image, 1);
+            userCommand.setProfilePicture(pictureName);
+        }
 
         this.createUserHandler.run(userCommand);
     }
@@ -101,7 +104,19 @@ public class UserController {
     }
 
     @PutMapping(value = "")
-    public void update(@RequestBody UserCommand userCommand) {
+    public void update(@RequestPart(required = true) UserCommand userCommand,
+            @RequestPart(required = false) MultipartFile image) {
+        User user = this.getUserByEmailHandler.run(userCommand.getEmail());
+        if (image != null) {
+            String fileName = this.fileStorageService.storeFile(image, 1);
+            userCommand.setProfilePicture(fileName);
+
+            if (user != null && user.getProfilePicture() != null && user.getProfilePicture() != "") {
+                this.fileStorageService.deleteFile(user.getProfilePicture() + ".jpg", 1);
+            }
+
+        }
+
         this.updateUserHandler.run(userCommand);
     }
 

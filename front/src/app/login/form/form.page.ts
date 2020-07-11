@@ -13,6 +13,7 @@ import { MenuController, LoadingController } from "@ionic/angular";
 })
 export class FormPage implements OnInit {
   private loading: any;
+  private formData: FormData;
   public imageId: string;
   public imageUrl: string;
   public myForm: FormGroup;
@@ -35,6 +36,7 @@ export class FormPage implements OnInit {
 
     this.myForm.controls["email"].setValue(null);
     this.myForm.controls["password"].setValue(null);
+    this.formData = new FormData();
   }
 
   ionViewWillEnter() {
@@ -93,20 +95,25 @@ export class FormPage implements OnInit {
             serviceDescription: result.serviceDescription,
             profilePicture: result.profilePicture,
           };
-          this.updateUser(user, result.token);
+
+          this.formData.append(
+            "userCommand",
+            new Blob([JSON.stringify(user)], {
+              type: "application/json",
+            })
+          );
+          this.updateUser(result.token);
         },
-        async (err) => {
-          console.log(err);
-          let error = JSON.parse(err._body);
-          console.log(error);
+        async (err) => {          
+          let error = JSON.parse(err._body);          
           await this.loading.dismiss();
         }
       );
   }
 
-  updateUser(body: any, token: string) {
+  updateUser(token: string) {
     this.usersService
-      .update(body, token)
+      .update(this.formData, token)
       .toPromise()
       .then(
         async (res) => {
@@ -114,10 +121,8 @@ export class FormPage implements OnInit {
           await this.loading.dismiss();
           this.router.navigate(["/dashboard"]);
         },
-        async (err) => {
-          console.log(err);
-          let error = JSON.parse(err._body);
-          console.log(error);
+        async (err) => {          
+          let error = JSON.parse(err._body);          
           await this.loading.dismiss();
         }
       );

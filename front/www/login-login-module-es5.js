@@ -136,6 +136,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           });
           this.myForm.controls["email"].setValue(null);
           this.myForm.controls["password"].setValue(null);
+          this.formData = new FormData();
         }
       }, {
         key: "ionViewWillEnter",
@@ -219,9 +220,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                                   serviceDescription: result.serviceDescription,
                                   profilePicture: result.profilePicture
                                 };
-                                this.updateUser(user, result.token);
+                                this.formData.append("userCommand", new Blob([JSON.stringify(user)], {
+                                  type: "application/json"
+                                }));
+                                this.updateUser(result.token);
 
-                              case 7:
+                              case 8:
                               case "end":
                                 return _context.stop();
                             }
@@ -260,10 +264,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }
       }, {
         key: "updateUser",
-        value: function updateUser(body, token) {
+        value: function updateUser(token) {
           var _this2 = this;
 
-          this.usersService.update(body, token).toPromise().then(function (res) {
+          this.usersService.update(this.formData, token).toPromise().then(function (res) {
             return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this2, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
               return regeneratorRuntime.wrap(function _callee4$(_context4) {
                 while (1) {

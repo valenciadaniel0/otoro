@@ -3,7 +3,11 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { SafeResourceUrl, DomSanitizer } from "@angular/platform-browser";
 import { Router } from "@angular/router";
 import { Storage } from "@ionic/storage";
-import { ModalController, LoadingController } from "@ionic/angular";
+import {
+  ModalController,
+  LoadingController,
+  AlertController,
+} from "@ionic/angular";
 import { UsersService } from "../users.service";
 import { CameraSource, Plugins, CameraResultType } from "@capacitor/core";
 import { SelectCityComponent } from "src/app/shared/select-city/select-city.component";
@@ -24,6 +28,7 @@ export class ProfilePage implements OnInit {
   private uploadImage: (webPatth: string) => void;
   constructor(
     private router: Router,
+    private alertController: AlertController,
     private storage: Storage,
     private modalController: ModalController,
     private usersService: UsersService,
@@ -104,7 +109,10 @@ export class ProfilePage implements OnInit {
     await this.loading.dismiss("login");
   }
 
-  updateUser() {
+  async updateUser() {
+    this.loading = await this.loadingController.create({
+      message: "Cargando...",
+    });
     let controls = this.myForm.controls;
     if (this.myForm.invalid) {
       Object.keys(controls).forEach((controlName) =>
@@ -123,6 +131,7 @@ export class ProfilePage implements OnInit {
       serviceDescription: controls["serviceDescription"].value,
       password: controls["password"].value,
       username: controls["email"].value,
+      profilePicture: this.auth.profilePicture,
       city: this.city,
       roles: [{ id: 2 }],
     };
@@ -133,16 +142,33 @@ export class ProfilePage implements OnInit {
         type: "application/json",
       })
     );
+    this.loading.present();
     this.usersService
-      .update(body, this.auth.token)
+      .update(this.formData, this.auth.token)
       .toPromise()
       .then(
         async (res) => {
-          console.log("guardado!");
+          this.loading.dismiss();
           let newAuth = { ...body, token: this.auth.token };
           this.storage.set("auth", newAuth);
+
+          let alert = await this.alertController.create({
+            header: "Perfil actualizado",
+            message: "Tu perfil ha sido actualizado correctamente",
+            buttons: [
+              {
+                text: "Aceptar",
+                role: "cancel",
+                handler: () => {
+                  return false;
+                },
+              },
+            ],
+          });
+          alert.present();
         },
         (err) => {
+          this.loading.dismiss();
           let error = JSON.parse(err._body);
           console.log(error);
         }
