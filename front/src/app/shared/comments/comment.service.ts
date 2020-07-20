@@ -16,4 +16,9 @@ export class CommentService {
     let url = `comments/get-by-post/${postId}`;
     return this.restService.queryGet(url, token);
   }
+
+  delete(id:number,token: string) {
+    let url = `comments/${id}`;
+    return this.restService.queryDelete(url, token);
+  }
 }

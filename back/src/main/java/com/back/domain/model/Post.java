@@ -1,6 +1,7 @@
 package com.back.domain.model;
 
 import java.util.Date;
+import java.util.List;
 
 public class Post {
     private static final String THE_TITLE_IS_REQUIRED = "El campo título es requerido";
@@ -149,5 +150,4 @@ public class Post {
     public void setDestination(City destination) {
         this.destination = destination;
     }
-
 }

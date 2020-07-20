@@ -26,7 +26,7 @@ public class CityEntity {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "department_id", nullable = false)
     @JsonIgnore
-    private DepartmentEntity department;    
+    private DepartmentEntity department;
 
     public Long getId() {
         return this.id;

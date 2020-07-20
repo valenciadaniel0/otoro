@@ -50,4 +50,9 @@ public class PostDaoImplementation implements PostDao {
         return null;
     }
 
+    @Override
+    public int getCommentsNumber(Long id) {
+        return this.postDBRepository.getNumberOfComments(id);
+    }
+
 }

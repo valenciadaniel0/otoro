@@ -7,8 +7,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eaa0f7e4-a19d-4b32-b3c3-d87a4bcc0d08" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/domain/model/DataValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/domain/model/DataValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/domain/model/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/domain/model/Post.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/domain/port/dao/PostDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/domain/port/dao/PostDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/domain/port/repository/CommentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/domain/port/repository/CommentRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/adapter/CommentRepositoryImplementation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/adapter/CommentRepositoryImplementation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/adapter/query/PostDaoImplementation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/adapter/query/PostDaoImplementation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/config/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/config/beans/PostServiceBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/config/beans/PostServiceBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/config/beans/UserServiceBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/config/beans/UserServiceBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/controller/CommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/controller/CommentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/controller/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/controller/PostController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/dbRepository/PostDBRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/dbRepository/PostDBRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/entity/PostEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/entity/PostEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/static/pictures/profile-pictures/ibiZNIHGyt_6851506681.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/static/pictures/profile-pictures/wwpkIVucUN_9698503356.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/domain/model/DataValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/domain/model/DataValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/domain/model/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/domain/model/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/domain/port/dao/PostDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/domain/port/dao/PostDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/domain/port/repository/CommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/domain/port/repository/CommentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/domain/port/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/domain/port/repository/PostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/adapter/CommentRepositoryImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/adapter/CommentRepositoryImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/adapter/query/PostDaoImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/adapter/query/PostDaoImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/config/beans/PostServiceBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/config/beans/PostServiceBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/config/beans/UserServiceBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/config/beans/UserServiceBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/dbRepository/CommentDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/dbRepository/CommentDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/dbRepository/PostDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/dbRepository/PostDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/entity/CityEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/entity/CityEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/entity/DepartmentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/entity/DepartmentEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/entity/PostEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/entity/PostEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/entity/RoleEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/entity/RoleEntity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,10 +161,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="402" y="9" key="#app" timestamp="1593343127838">
+    <state x="402" y="9" key="#app" timestamp="1595280651596">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="402" y="9" key="#app/0.0.1366.728@0.0.1366.728" timestamp="1593343127838" />
+    <state x="402" y="9" key="#app/0.0.1366.728@0.0.1366.728" timestamp="1595280651596" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1592961263717">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -154,9 +185,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="661" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1594498840629" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1594477550480">
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1595287310883">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1594477550480" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1595287310883" />
   </component>
 </project>

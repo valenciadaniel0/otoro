@@ -7,7 +7,7 @@
     </ion-row>
     <ion-row (click)="openDetailsModal(post)">
       <ion-col size="4" class="post-image">
-        <app-image [url]="imageSrc" class="post-image"></app-image>
+        <app-image [url]="image" class="post-image"></app-image>
       </ion-col>
       <ion-col size="8" class="post-details">
         <div class="details" *ngIf="type === '1'">
@@ -43,7 +43,7 @@
         Comentarios
       </ion-col>
       <ion-col size="2">
-        <span class="badge badge-pill badge-primary">20</span>
+        <span class="badge badge-pill badge-primary">{{ commentsNumber }}</span>
       </ion-col>
     </ion-row>
   </ion-grid>

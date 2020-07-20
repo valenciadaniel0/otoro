@@ -74,7 +74,6 @@ export class FormPage implements OnInit {
     });
 
     await this.loading.present();
-
     this.loginService
       .run(body)
       .toPromise()
@@ -95,7 +94,6 @@ export class FormPage implements OnInit {
             serviceDescription: result.serviceDescription,
             profilePicture: result.profilePicture,
           };
-
           this.formData.append(
             "userCommand",
             new Blob([JSON.stringify(user)], {
@@ -104,8 +102,8 @@ export class FormPage implements OnInit {
           );
           this.updateUser(result.token);
         },
-        async (err) => {          
-          let error = JSON.parse(err._body);          
+        async (err) => {
+          let error = JSON.parse(err._body);
           await this.loading.dismiss();
         }
       );
@@ -121,8 +119,8 @@ export class FormPage implements OnInit {
           await this.loading.dismiss();
           this.router.navigate(["/dashboard"]);
         },
-        async (err) => {          
-          let error = JSON.parse(err._body);          
+        async (err) => {
+          let error = JSON.parse(err._body);
           await this.loading.dismiss();
         }
       );

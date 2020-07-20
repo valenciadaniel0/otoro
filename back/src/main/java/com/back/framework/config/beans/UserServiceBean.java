@@ -1,6 +1,5 @@
 package com.back.framework.config.beans;
 
-import com.back.application.handler.users.RecoverPasswordHandler;
 import com.back.domain.port.repository.UserRepository;
 import com.back.domain.service.users.CreateUserService;
 import com.back.domain.service.users.GetUserByEmailService;

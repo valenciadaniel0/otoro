@@ -32,6 +32,11 @@ export class PostService {
     return this.service.queryGet(url, auth.token);
   }
 
+  getCommentsNumber(id:number, auth: any) {
+    let url = `posts/${id}/comments-number`;    
+    return this.service.queryGet(url, auth.token);
+  }
+
   search(auth:any,query:string, type: number) {
     let url = `posts/search/${type}${
       undefined != query && null != query && "" != query

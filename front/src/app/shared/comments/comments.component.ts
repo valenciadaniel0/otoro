@@ -1,5 +1,9 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { ModalController, LoadingController } from "@ionic/angular";
+import {
+  ModalController,
+  LoadingController,
+  AlertController,
+} from "@ionic/angular";
 import { CommentService } from "./comment.service";
 import { Storage } from "@ionic/storage";
 import { FormGroup, FormControl } from "@angular/forms";
@@ -20,7 +24,8 @@ export class CommentsComponent implements OnInit {
     private modalController: ModalController,
     private commentService: CommentService,
     private storage: Storage,
-    private loadingController: LoadingController
+    private loadingController: LoadingController,
+    private alertController: AlertController
   ) {}
 
   ngOnInit() {
@@ -90,6 +95,50 @@ export class CommentsComponent implements OnInit {
         async (res) => {
           await this.loading.dismiss();
           this.commentForm.controls["comment"].setValue(null);
+          this.getComments();
+        },
+        async (err) => {
+          await this.loading.dismiss();
+          let error = JSON.parse(err._body);
+          console.log(error);
+        }
+      );
+  }
+
+  async confirmDeletion(commentId: number) {
+    let alert = await this.alertController.create({
+      header: "Eliminar comentario",
+      message: "Estás seguro de eliminar este comentario?",
+      buttons: [
+        {
+          text: "Cancelar",
+          role: "cancel",
+          handler: () => {
+            return false;
+          },
+        },
+        {
+          text: "Eliminar",
+          handler: () => {
+            this.deleteComment(commentId);
+          },
+        },
+      ],
+    });
+    alert.present();
+  }
+
+  async deleteComment(commentId: number) {
+    this.loading = await this.loadingController.create({
+      message: "Cargando...",
+    });
+    await this.loading.present();
+    this.commentService
+      .delete(commentId, this.auth.token)
+      .toPromise()
+      .then(
+        async (res) => {
+          await this.loading.dismiss();
           this.getComments();
         },
         async (err) => {

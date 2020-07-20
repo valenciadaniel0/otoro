@@ -21,7 +21,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-content>\r\n  <div id=\"container\">\r\n    <ion-grid>\r\n      <ion-row>\r\n        <ion-col class=\"ion-align-self-center\" col-8 offset=\"2\">\r\n          <img src=\"../../../assets/logo/otoro.png\" width=\"70%\" height=\"auto\" />\r\n        </ion-col>\r\n      </ion-row>\r\n      <ion-row>\r\n        <ion-col col-12>\r\n          <h4 class=\"no-margin-bottom\">Iniciar sesi&oacute;n</h4>\r\n          <small>Es genial verte de nuevo</small>\r\n        </ion-col>\r\n      </ion-row>\r\n      <ion-row id=\"form-container\">\r\n        <ion-col col-12>\r\n          <form [formGroup]=\"myForm\">\r\n            <div class=\"form-group\">\r\n              <label class=\"bold\">Correo electrónico</label>\r\n              <input\r\n                type=\"text\"\r\n                class=\"form-control width-100\"\r\n                formControlName=\"email\"\r\n              />\r\n              <span *ngIf=\"controlHasError('email', 'required')\">\r\n                <strong class=\"error\">Campo requerido</strong>\r\n              </span>\r\n            </div>\r\n            <div class=\"form-group\">\r\n              <label class=\"bold\">Contraseña</label>\r\n              <input\r\n                type=\"password\"\r\n                class=\"form-control width-100\"\r\n                formControlName=\"password\"\r\n              />\r\n              <span *ngIf=\"controlHasError('password', 'required')\">\r\n                <strong class=\"error\">Campo requerido</strong>\r\n              </span>\r\n            </div>\r\n            <div class=\"display-flex\" id=\"btn-container\">\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"login()\"\r\n                class=\"margin-center\"\r\n              >\r\n                Ingresar\r\n              </ion-button>\r\n            </div>\r\n          </form>\r\n        </ion-col>\r\n      </ion-row>\r\n      <ion-row>\r\n        <ion-col col-6>\r\n          <small (click)=\"goToRecoverPassword()\">Olvid&eacute; mi contrase&ntilde;a</small>\r\n        </ion-col>\r\n        <ion-col col-6 class=\"align-text-right\">\r\n          <small (click)=\"goToRegistration()\">Registrarme</small>\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-grid>\r\n  </div>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<ion-content>\r\n  <div id=\"container\">\r\n    <ion-grid>\r\n      <ion-row>\r\n        <ion-col class=\"ion-align-self-center\" col-8 offset=\"2\">\r\n          <img src=\"../../../assets/logo/otoro.png\" width=\"70%\" height=\"auto\" />\r\n        </ion-col>\r\n      </ion-row>\r\n      <ion-row>\r\n        <ion-col col-12>\r\n          <h4 class=\"no-margin-bottom\">Iniciar sesi&oacute;n</h4>\r\n          <small>Es genial verte de nuevo</small>\r\n        </ion-col>\r\n      </ion-row>\r\n      <ion-row id=\"form-container\">\r\n        <ion-col col-12>\r\n          <form [formGroup]=\"myForm\">\r\n            <div class=\"form-group\">\r\n              <label class=\"bold\">Correo electrónico</label>\r\n              <input\r\n                type=\"text\"\r\n                class=\"form-control width-100\"\r\n                [class.error-input]=\"controlHasError('email', 'required')\"\r\n                formControlName=\"email\"\r\n              />\r\n              <span\r\n                class=\"error-input-label\"\r\n                *ngIf=\"controlHasError('email', 'required')\"\r\n              >\r\n                <strong class=\"error\">Campo requerido</strong>\r\n              </span>\r\n            </div>\r\n            <div class=\"form-group\">\r\n              <label class=\"bold\">Contraseña</label>\r\n              <input\r\n                type=\"password\"\r\n                class=\"form-control width-100\"\r\n                [class.error-input]=\"controlHasError('password', 'required')\"\r\n                formControlName=\"password\"\r\n              />\r\n              <span\r\n                class=\"error-input-label\"\r\n                *ngIf=\"controlHasError('password', 'required')\"\r\n              >\r\n                <strong class=\"error\">Campo requerido</strong>\r\n              </span>\r\n            </div>\r\n            <div class=\"display-flex\" id=\"btn-container\">\r\n              <ion-button\r\n                color=\"primary\"\r\n                (click)=\"login()\"\r\n                class=\"margin-center\"\r\n              >\r\n                Ingresar\r\n              </ion-button>\r\n            </div>\r\n          </form>\r\n        </ion-col>\r\n      </ion-row>\r\n      <ion-row>\r\n        <ion-col col-6>\r\n          <small (click)=\"goToRecoverPassword()\"\r\n            >Olvid&eacute; mi contrase&ntilde;a</small\r\n          >\r\n        </ion-col>\r\n        <ion-col col-6 class=\"align-text-right\">\r\n          <small (click)=\"goToRegistration()\">Registrarme</small>\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-grid>\r\n  </div>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -239,13 +239,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                           while (1) {
                             switch (_context2.prev = _context2.next) {
                               case 0:
-                                console.log(err);
                                 error = JSON.parse(err._body);
-                                console.log(error);
-                                _context2.next = 5;
+                                _context2.next = 3;
                                 return this.loading.dismiss();
 
-                              case 5:
+                              case 3:
                               case "end":
                                 return _context2.stop();
                             }
@@ -294,13 +292,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 while (1) {
                   switch (_context5.prev = _context5.next) {
                     case 0:
-                      console.log(err);
                       error = JSON.parse(err._body);
-                      console.log(error);
-                      _context5.next = 5;
+                      _context5.next = 3;
                       return this.loading.dismiss();
 
-                    case 5:
+                    case 3:
                     case "end":
                       return _context5.stop();
                   }

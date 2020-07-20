@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { PostService } from "src/app/posts/post.service";
+import { environment } from "../../../environments/environment";
 
 @Component({
   selector: "app-post-card",
@@ -6,6 +8,7 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./post-card.component.scss"],
 })
 export class PostCardComponent implements OnInit {
+  @Input() auth: any;
   @Input() date: string;
   @Input() description: string;
   @Input() destination: any;
@@ -20,11 +23,18 @@ export class PostCardComponent implements OnInit {
   @Input() type: string;
   @Input() user: any;
 
+  private commentsNumber: any = 0;
   private destinationName: string = "";
   private originName: string = "";
-  constructor() {}
+  private image: string = `${environment.default_post_img}`;
+  constructor(private postService: PostService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getCommentsNumber();
+    if (this.imageSrc) {
+      this.image = `${environment.posts_pictures_url}${this.imageSrc}.jpg`;
+    }
+  }
 
   ngOnChanges() {
     this.getOriginName();
@@ -42,5 +52,15 @@ export class PostCardComponent implements OnInit {
     if (this.origin) {
       this.originName = this.origin.name + " - " + this.origin.department.name;
     }
+  }
+
+  getCommentsNumber() {
+    this.postService
+      .getCommentsNumber(this.id, this.auth)
+      .toPromise()
+      .then((response) => {
+        /* let body = response._body?response._body:undefined;
+        this.commentsNumber = _body; */
+      });
   }
 }

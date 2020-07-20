@@ -13,7 +13,7 @@ public class RoleEntity {
     private Long id;
 
     @Column(name = "name", nullable = false)
-    private String name;    
+    private String name;
 
     public Long getId() {
         return this.id;
@@ -29,5 +29,5 @@ public class RoleEntity {
 
     public void setName(String name) {
         this.name = name;
-    }    
+    }
 }

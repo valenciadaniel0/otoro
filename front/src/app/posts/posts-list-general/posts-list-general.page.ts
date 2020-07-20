@@ -6,6 +6,7 @@ import { FormGroup, FormControl } from "@angular/forms";
 import { ModalController, LoadingController } from "@ionic/angular";
 import { CommentsComponent } from "src/app/shared/comments/comments.component";
 import { PostDetailsComponent } from "src/app/shared/post-details/post-details.component";
+import { async } from "@angular/core/testing";
 
 @Component({
   selector: "app-posts-list-general",
@@ -142,11 +143,10 @@ export class PostsListGeneralPage implements OnInit {
       .then(
         (res) => {
           const result = res.json();
-          this.shippings = result;
+          this.shippings = result;                                    
         },
         (err) => {
           let error = JSON.parse(err._body);
-          console.log(error);
         }
       );
   }
@@ -177,7 +177,7 @@ export class PostsListGeneralPage implements OnInit {
       .toPromise()
       .then(
         async (res) => {
-          await this.loading.present();
+          await this.loading.dismiss();
           if (this.activeTab === 1) {
             this.getShippings();
           } else {
@@ -185,7 +185,7 @@ export class PostsListGeneralPage implements OnInit {
           }
         },
         async (err) => {
-          await this.loading.present();
+          await this.loading.dismiss();
           let error = JSON.parse(err._body);
           console.log(error);
         }

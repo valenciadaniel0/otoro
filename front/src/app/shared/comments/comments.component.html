@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Modal Header</ion-title>
+    <ion-title>Comentarios</ion-title>
     <ion-buttons slot="primary">
       <ion-button (click)="dismiss()">
         <ion-icon slot="icon-only" name="close"></ion-icon>
@@ -10,9 +10,17 @@
 </ion-header>
 <ion-content class="ion-padding">
   <div id="comments-container">
-    <div *ngFor="let comment of comments">
-      {{ comment.comment }}
-      <div class="separator"></div>
+    <div *ngFor="let comment of comments" class="comment-section">
+      <ion-icon
+        name="trash"
+        *ngIf="auth && comment.user && auth.id === comment.user.id"
+        class="delete-icon"
+        (click)="confirmDeletion(comment.id)"
+      ></ion-icon>
+      <small *ngIf="comment.user" class="user-name">{{
+        comment.user.name
+      }}</small>
+      <p class="comment">{{ comment.comment }}</p>
     </div>
   </div>
   <form [formGroup]="commentForm" id="comment-form">

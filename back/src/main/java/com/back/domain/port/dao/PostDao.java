@@ -10,4 +10,6 @@ public interface PostDao {
     List<Post> search(int type, String query);
 
     Post findById(Long id);
+
+    int getCommentsNumber(Long id);
 }

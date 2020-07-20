@@ -7,6 +7,7 @@ import com.back.application.handler.posts.CreatePostHandler;
 import com.back.application.handler.posts.DeleteHandler;
 import com.back.application.handler.posts.UpdateHandler;
 import com.back.application.handler.posts.query.GetByIdHandler;
+import com.back.application.handler.posts.query.GetCommentsNumberHandler;
 import com.back.application.handler.posts.query.GetPostsByTypeHandler;
 import com.back.application.handler.posts.query.SearchPostsHandler;
 import com.back.domain.model.Post;
@@ -18,7 +19,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
@@ -34,19 +34,21 @@ public class PostController {
     private GetByIdHandler getByIdHandler;
     private UpdateHandler updateHandler;
     private DeleteHandler deleteHandler;
+    private GetCommentsNumberHandler getCommentsNumberHandler;
 
     @Autowired
     private FileStorageService fileStorageService;
 
     public PostController(CreatePostHandler createPostHandler, GetPostsByTypeHandler getPostsByTypeHandler,
             SearchPostsHandler searchPostsHandler, GetByIdHandler getByIdHandler, UpdateHandler updateHandler,
-            DeleteHandler deleteHandler) {
+            DeleteHandler deleteHandler, GetCommentsNumberHandler getCommentsNumberHandler) {
         this.createPostHandler = createPostHandler;
         this.getPostsByTypeHandler = getPostsByTypeHandler;
         this.searchPostsHandler = searchPostsHandler;
         this.getByIdHandler = getByIdHandler;
         this.updateHandler = updateHandler;
         this.deleteHandler = deleteHandler;
+        this.getCommentsNumberHandler = getCommentsNumberHandler;
     }
 
     @PostMapping(value = "")
@@ -136,6 +138,11 @@ public class PostController {
     @GetMapping(value = "/get-by-type/{type}/{userId}")
     public List<Post> getByType(@PathVariable(value = "type") int type, @PathVariable(value = "userId") int userId) {
         return this.getPostsByTypeHandler.run(type, userId);
+    }
+
+    @GetMapping(value = "/{id}/comments-number")
+    public int getCommentsNumber(@PathVariable(value = "id") Long id) {
+        return this.getCommentsNumberHandler.run(id);
     }
 
     @GetMapping(value = "/search/{type}")

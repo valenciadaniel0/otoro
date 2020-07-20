@@ -30,7 +30,7 @@
   <div class="posts-list" *ngIf="shippings.length > 0 && activeTab === 1">
     <app-post-card
       *ngFor="let shipping of shippings"
-      imageSrc="http://cinnco.co/dist/img/apple-iphone.png"
+      [imageSrc]="shipping.image1"
       [title]="shipping.title"
       [date]="shipping.date"
       [description]="shipping.description"
@@ -40,6 +40,7 @@
       [openDetailsModal]="openDetailsModal"
       [id]="shipping.id"
       [destination]="shipping.destination"
+      [auth]="auth"
       [post]="shipping"
       type="1"
     ></app-post-card>
@@ -47,7 +48,7 @@
   <div class="posts-list" *ngIf="sells.length > 0 && activeTab === 2">
     <app-post-card
       *ngFor="let sell of sells"
-      imageSrc="http://cinnco.co/dist/img/apple-iphone.png"
+      [imageSrc]="sell.image1"
       [title]="sell.title"
       [price]="sell.price"
       [user]="sell.user"
@@ -56,6 +57,7 @@
       [openDetailsModal]="openDetailsModal"
       [origin]="sell.origin"
       [post]="sell"
+      [auth]="auth"
       [id]="sell.id"
       type="2"
     ></app-post-card>

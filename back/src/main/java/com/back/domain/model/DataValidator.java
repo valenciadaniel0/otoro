@@ -1,7 +1,5 @@
 package com.back.domain.model;
 
-import java.util.Date;
-
 import com.back.domain.exception.GeneralException;
 
 public class DataValidator {
