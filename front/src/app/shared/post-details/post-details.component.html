@@ -11,6 +11,20 @@
 <ion-content class="ion-padding">
   <div id="container">
     <h4 class="centered-text">{{ post.title }}</h4>
+    <ion-slides [pager]="post.image2 || post.image3">
+      <ion-slide>
+        <ion-icon name="expand-outline" (click)="openImageModal(1)"></ion-icon>
+        <app-image [url]="image1" class="post-image"></app-image>
+      </ion-slide>
+      <ion-slide *ngIf="post.image2">
+        <ion-icon name="expand-outline" (click)="openImageModal(2)"></ion-icon>
+        <app-image [url]="image2" class="post-image"></app-image>
+      </ion-slide>
+      <ion-slide *ngIf="post.image3">
+        <ion-icon name="expand-outline" (click)="openImageModal(3)"></ion-icon>
+        <app-image [url]="image3" class="post-image"></app-image>
+      </ion-slide>
+    </ion-slides>
     <p>
       <ion-icon name="person-outline" class="font-bold"></ion-icon>
       {{ post.user.name }}

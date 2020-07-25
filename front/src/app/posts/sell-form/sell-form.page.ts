@@ -222,7 +222,7 @@ export class SellFormPage implements OnInit {
               text: "Aceptar",
               role: "cancel",
               handler: () => {
-                return false;
+                this.goBackToDashboard();
               },
             },
           ],

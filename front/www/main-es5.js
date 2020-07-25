@@ -883,9 +883,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var environment = {
       production: false,
       //api_url: 'http://localhost:8081/api/'
-      api_url: "http://192.168.0.17:8081/api/",
-      posts_pictures_url: "http://192.168.0.17:8081/pictures/posts-pictures/",
-      default_post_img: "http://192.168.0.17:8081/pictures/default/default_post.png"
+      api_url: "http://192.168.0.12:8081/api/",
+      posts_pictures_url: "http://192.168.0.12:8081/pictures/posts-pictures/",
+      default_post_img: "http://192.168.0.12:8081/pictures/default/default_post.png"
     };
     /*
      * For easier debugging in development mode, you can import the following file
