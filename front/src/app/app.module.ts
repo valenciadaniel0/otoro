@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { LOCALE_ID,NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouteReuseStrategy } from "@angular/router";
 
@@ -13,7 +13,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { HTTP } from "@ionic-native/http/ngx";
 import { IonicStorageModule } from "@ionic/storage";
 import { AppVersion } from "@ionic-native/app-version/ngx";
-
+import localeEs from '@angular/common/locales/es-CO';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localeEs, 'es-Co');
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -31,6 +33,7 @@ import { AppVersion } from "@ionic-native/app-version/ngx";
     HTTP,
     AppVersion,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    {provide:LOCALE_ID,useValue:'es-Co'}
   ],
   bootstrap: [AppComponent],
 })

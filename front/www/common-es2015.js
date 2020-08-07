@@ -592,6 +592,10 @@ let UsersService = class UsersService {
         let url = `users`;
         return this.service.queryPut(url, body, token);
     }
+    getByEmail(email, token) {
+        let url = `users/get-by-email?email=${email}`;
+        return this.service.queryGet(url, token);
+    }
     updateRecoverCode(body) {
         let url = `users/set-recover-code`;
         return this.service.queryPostRegular(url, body);

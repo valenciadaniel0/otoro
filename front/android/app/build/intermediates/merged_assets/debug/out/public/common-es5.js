@@ -954,6 +954,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           return this.service.queryPut(url, body, token);
         }
       }, {
+        key: "getByEmail",
+        value: function getByEmail(email, token) {
+          var url = "users/get-by-email?email=".concat(email);
+          return this.service.queryGet(url, token);
+        }
+      }, {
         key: "updateRecoverCode",
         value: function updateRecoverCode(body) {
           var url = "users/set-recover-code";

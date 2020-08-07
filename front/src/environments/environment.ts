@@ -5,10 +5,11 @@
 export const environment = {
   production: false,
   //api_url: 'http://localhost:8081/api/'
-  api_url: "http://192.168.0.12:8081/api/",
-  posts_pictures_url: "http://192.168.0.12:8081/pictures/posts-pictures/",
+  api_url: "http://192.168.0.21:8081/api/",
+  posts_pictures_url: "http://192.168.0.21:8081/pictures/posts-pictures/",
+  profile_pictures_url: "http://192.168.0.21:8081/pictures/profile-pictures/",
   default_post_img:
-    "http://192.168.0.12:8081/pictures/default/default_post.png",
+    "http://192.168.0.21:8081/pictures/default/default_post.png",
 };
 
 /*

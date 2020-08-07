@@ -33,12 +33,7 @@ export class AppComponent implements OnInit {
       title: "Perfil",
       url: "users/profile",
       icon: "person",
-    },
-    {
-      title: "Notificaciones",
-      url: "/folder/Outbox",
-      icon: "notifications",
-    },
+    }
   ];
 
   constructor(

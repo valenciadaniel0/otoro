@@ -16,7 +16,7 @@
             {{ user.name }}
           </p>
           <p>
-            <ion-icon name="calendar" class="font-bold"></ion-icon> {{ date }}
+            <ion-icon name="calendar" class="font-bold"></ion-icon> {{ date | date }}
           </p>
           <p><span class="font-bold">Origen:</span> {{ originName }}</p>
           <p><span class="font-bold">Destino:</span> {{ destinationName }}</p>

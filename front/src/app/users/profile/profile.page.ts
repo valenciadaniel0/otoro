@@ -11,6 +11,7 @@ import {
 import { UsersService } from "../users.service";
 import { CameraSource, Plugins, CameraResultType } from "@capacitor/core";
 import { SelectCityComponent } from "src/app/shared/select-city/select-city.component";
+import { environment } from "../../../environments/environment";
 
 @Component({
   selector: "app-profile",
@@ -25,6 +26,7 @@ export class ProfilePage implements OnInit {
   private loading: any;
   private myForm: FormGroup;
   private photo: SafeResourceUrl;
+  private storedPhoto:string;
   private uploadImage: (webPatth: string) => void;
   constructor(
     private router: Router,
@@ -56,7 +58,7 @@ export class ProfilePage implements OnInit {
     this.myForm.controls["confirmPassword"].setValue(null);
 
     this.storage.get("auth").then((auth) => {
-      this.auth = auth;
+      this.auth = auth;      
       this.myForm.controls["name"].setValue(auth.name);
       this.myForm.controls["city"].setValue(auth.city.name);
       this.city = auth.city;
@@ -65,6 +67,10 @@ export class ProfilePage implements OnInit {
         auth.serviceDescription
       );
       this.myForm.controls["email"].setValue(auth.email);
+
+      if(this.auth.profilePicture){
+        this.storedPhoto =  `${environment.profile_pictures_url}${this.auth.profilePicture}.jpg`; 
+      }
     });
 
     this.formData = new FormData();
@@ -150,8 +156,8 @@ export class ProfilePage implements OnInit {
         async (res) => {
           this.loading.dismiss();
           let newAuth = { ...body, token: this.auth.token };
-          this.storage.set("auth", newAuth);
-
+          await this.storage.set("auth", newAuth);
+          await this.getUser(newAuth.email);
           let alert = await this.alertController.create({
             header: "Perfil actualizado",
             message: "Tu perfil ha sido actualizado correctamente",
@@ -166,6 +172,24 @@ export class ProfilePage implements OnInit {
             ],
           });
           alert.present();
+        },
+        (err) => {
+          this.loading.dismiss();
+          let error = JSON.parse(err._body);
+          console.log(error);
+        }
+      );
+  }
+
+  async getUser(email:string){
+    this.usersService
+      .getByEmail(email, this.auth.token)
+      .toPromise()
+      .then(
+        async (res) => {
+          console.log("the user");        
+          console.log(res);          
+
         },
         (err) => {
           this.loading.dismiss();

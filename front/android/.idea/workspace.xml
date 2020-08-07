@@ -6,7 +6,10 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eaa0f7e4-a19d-4b32-b3c3-d87a4bcc0d08" name="Default Changelist" comment="" />
+    <list default="true" id="eaa0f7e4-a19d-4b32-b3c3-d87a4bcc0d08" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/bin/main/com/back/framework/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/src/main/java/com/back/framework/controller/UserController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,9 +130,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="402" y="9" key="#app" timestamp="1595280651596">
+    <state x="402" y="9" key="#app" timestamp="1596813533061">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="402" y="9" key="#app/0.0.1366.728/-1600.74.1600.860@0.0.1366.728" timestamp="1596813533061" />
     <state x="402" y="9" key="#app/0.0.1366.728@0.0.1366.728" timestamp="1595280651596" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1592961263717">
       <screen x="0" y="0" width="1366" height="728" />
@@ -155,10 +159,10 @@
     </state>
     <state width="661" height="178" key="GridCell.Tab.0.right/0.0.1366.728/-1600.74.1600.860@0.0.1366.728" timestamp="1595710263471" />
     <state width="661" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1594498840629" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1595693564134">
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1596823672767">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728/-1600.74.1600.860@0.0.1366.728" timestamp="1595693564134" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728/-1600.74.1600.860@0.0.1366.728" timestamp="1596823672767" />
     <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1595287310883" />
   </component>
 </project>

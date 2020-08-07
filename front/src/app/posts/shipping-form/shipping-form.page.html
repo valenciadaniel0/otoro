@@ -19,7 +19,7 @@
       >
     </ion-row>
     <ion-row id="form-container">
-      <ion-slides>
+      <ion-slides [pager]="true" class="form-images-slider">
         <ion-slide>
           <ion-row>
             <ion-col>
@@ -143,6 +143,8 @@
                 displayFormat="MMMM DD YYYY"
                 value="1994-12-15"
                 formControlName="date"
+                monthNames="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre"
+                monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic"
               ></ion-datetime>
             </ion-item>
             <span

@@ -12,7 +12,8 @@
     <h4 class="centered-text">Perfil</h4>
     <ion-row>
       <ion-col>
-        <img [src]="photo" />
+        <img *ngIf="photo" [src]="photo" />
+        <img *ngIf="auth && !photo && auth.profilePicture" [src]="storedPhoto" />
       </ion-col>
     </ion-row>
     <ion-row>

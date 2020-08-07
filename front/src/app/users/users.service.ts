@@ -22,6 +22,11 @@ export class UsersService {
     return this.service.queryPut(url, body, token);
   }
 
+  getByEmail(email: string, token: string) {
+    let url = `users/get-by-email?email=${email}`;
+    return this.service.queryGet(url, token);
+  }
+
   updateRecoverCode(body: any) {
     let url = `users/set-recover-code`;
     return this.service.queryPostRegular(url, body);
